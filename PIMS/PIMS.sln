@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIMS", "PIMS\PIMS.csproj", "{C8012F8C-3B1A-4362-AC03-2A31B2DDAE73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIMS.Test", "PIMSTests\PIMS.Test.csproj", "{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DBI", "DBI\DBI.shproj", "{D4CE48B2-32FB-4F6E-88FD-E568D9C24DCC}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DBI\DBI.projitems*{c8012f8c-3b1a-4362-ac03-2a31b2ddae73}*SharedItemsImports = 4
+		DBI\DBI.projitems*{d4ce48b2-32fb-4f6e-88fd-e568d9c24dcc}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8012F8C-3B1A-4362-AC03-2A31B2DDAE73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8012F8C-3B1A-4362-AC03-2A31B2DDAE73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8012F8C-3B1A-4362-AC03-2A31B2DDAE73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8012F8C-3B1A-4362-AC03-2A31B2DDAE73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

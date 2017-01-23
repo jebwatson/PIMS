@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>d4ce48b2-32fb-4f6e-88fd-e568d9c24dcc</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DBI</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IAdmittances.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IBills.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\ICases.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\ICharges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IEmergencyContact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IInsurance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesDoctor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesNurse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesOfficeStaff.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesVolunteer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IPatient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IPrescriptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IProcedures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersDoctor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersNurse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersOfficeStaff.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersVolunteer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IVisitors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Admittances.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Bills.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cases.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Charges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EmergencyContact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Insurance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotesDoctor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotesNurse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotesOfficeStaff.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotesVolunteer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Patient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Prescriptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Procedures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersDoctor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersNurse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersOfficeStaff.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersVolunteer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Visitors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IAdmittancesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IBillsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\ICasesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IChargesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IEmergencyContactTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\INotesDoctorTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\INotesNurseTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\INotesOfficeStaffTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\INotesVolunteerTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IPatientTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IPrescriptionsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IProceduresTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IUsersDoctorTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IUsersNurseTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IUsersOfficeStaffTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IVisitorsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IVolunteerTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\AdmittancesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\BillsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\CasesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\ChargesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\EmergencyContactTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\InsuranceTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\NotesDoctorTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\NotesNurseTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\NotesOfficeStaffTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\NotesVolunteerTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\PatientTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\PrescriptionsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\ProceduresTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersDoctorTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersNurseTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersOfficeStaffTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersVolunteerTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\VisitorsTable.cs" />
+  </ItemGroup>
+</Project>
