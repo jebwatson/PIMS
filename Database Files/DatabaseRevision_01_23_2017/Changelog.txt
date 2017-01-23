@@ -1,0 +1,5 @@
+-patientpersonal is now patients
+-admittanceLog is now admittances
+-caseHistory is now cases
+-approvedVisitors is now visitors
+-billing is now bills
