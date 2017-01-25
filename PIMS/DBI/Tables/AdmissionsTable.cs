@@ -14,6 +14,9 @@ namespace DBI
 
         public List<Admission> ItemList { get; set; } = new List<Admission>();
 
+        /// <summary>
+        /// Delete all records from the table.
+        /// </summary>
         public void ClearTable()
         {
             if (CountRows() == 0)
@@ -23,6 +26,10 @@ namespace DBI
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
+        /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="admissionId"></param>
         public void ClearTableById(int admissionId)
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
@@ -40,6 +47,10 @@ namespace DBI
             }
         }
 
+        /// <summary>
+        /// Get a count of all records in the table.
+        /// </summary>
+        /// <returns></returns>
         public int CountRows()
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
@@ -237,7 +248,6 @@ namespace DBI
                 myConnection.Close();
             } // using
         } // WriteItem
-
 
         /// <summary>
         /// Insert a list of admission records into the database.
