@@ -17,14 +17,14 @@ namespace PIMS.Test
             sut = new Calculator();
         }
 
-        [Test]
+        [Test, Ignore("Not part of the main project")]
         public void ShouldAddNumbers()
         {
             int expectedResult = sut.Add(7, 8);
             Assert.That(expectedResult, Is.EqualTo(15));
         }
 
-        [Test]
+        [Test, Ignore("Not part of the main project")]
         public void ShouldMulNumbers()
         {
             int expectedResult = sut.Mul(7, 8);

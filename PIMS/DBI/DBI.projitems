@@ -9,25 +9,7 @@
     <Import_RootNamespace>DBI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IAdmittances.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IBills.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\ICases.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\ICharges.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IEmergencyContact.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IInsurance.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesDoctor.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesNurse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesOfficeStaff.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\INotesVolunteer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IPatient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IPrescriptions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IProcedures.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersDoctor.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersNurse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersOfficeStaff.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IUsersVolunteer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelInterfaces\IVisitors.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Admittances.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Admission.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Bills.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Cases.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Charges.cs" />
@@ -45,7 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\UsersOfficeStaff.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UsersVolunteer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Visitors.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IAdmittancesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IAdmissionsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IBillsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\ICasesTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IChargesTable.cs" />
@@ -62,7 +44,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IUsersOfficeStaffTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IVisitorsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TableInterfaces\IVolunteerTable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tables\AdmittancesTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\AdmissionsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\BillsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\CasesTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\ChargesTable.cs" />
@@ -80,5 +62,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersOfficeStaffTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersVolunteerTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\VisitorsTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ConnectionsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ConnectionString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\QueryExecutor.cs" />
   </ItemGroup>
 </Project>

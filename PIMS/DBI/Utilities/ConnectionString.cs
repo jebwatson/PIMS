@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DBI.TableInterfaces
+namespace DBI.Utilities
 {
-    interface IAdmittancesTable
+    public class ConnectionString
     {
+        
     }
 }
