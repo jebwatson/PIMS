@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CalculatorTest.cs" />
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
+    <Compile Include="ModelTableTests\BillsTableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilitiesTests\ConnectionManagerTests.cs" />
     <Compile Include="UtilitiesTests\QueryExecutorTests.cs" />
