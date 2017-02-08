@@ -1,5 +1,4 @@
-﻿using DBI.TableInterfaces;
-using DBI.Utilities;
+﻿using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace DBI
 {
-    class BillsTable : IBillsTable
+    class BillsTable
     {
         public const string theTable = "bills";
 
