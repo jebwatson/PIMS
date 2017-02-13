@@ -35,12 +35,6 @@ namespace PIMSTests.UtilitiesTests
             Assert.That(result, Is.Not.TypeOf<Exception>());
         }
 
-        [Test, Ignore("Until we actually have a need for this")]
-        public void ShouldExecuteStoredProcedureQuery()
-        {
-            // No need for this right now
-        }
-
         [Test]
         public void ShouldExecuteSQLQueryScalar()
         {
