@@ -1,10 +1,216 @@
-﻿using System;
+﻿using DBI.Utilities;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 
 namespace DBI
 {
     class PrescriptionsTable
     {
+        public const string theTable = "prescriptions";
+
+        public List<Prescriptions> ItemList { get; set; } = new List<Prescriptions>();
+
+        /// <summary>
+        /// Delete all records from the table.
+        /// </summary>
+        public void ClearTable() {
+            if (CountRows() == 0)
+                return;
+
+            string myCommand = "DELETE FROM " + theTable;
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
+        }
+
+        /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="prescId"></param>
+        public void ClearTableById(int prescId) {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "prescId = @prescId";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@prescId", prescId);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
+        /// <summary>
+        /// Get a count of all records in the table.
+        /// </summary>
+        /// <returns></returns>
+        public int CountRows() {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
+                string myQuery = "SELECT COUNT(*) FROM " + theTable;
+                return QueryExecutor.ExecuteSqlQueryScalar(myQuery, myConnection);
+            } // using
+        } // CountRows
+
+        /// <summary>
+        /// Read all records from the table and save them in the ItemList
+        /// as Admission objects.
+        /// </summary>
+        public void ReadList() {
+            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+
+            string myQuery = "SELECT * FROM " + theTable;
+            DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+            if (dsObject != null && dsObject.Tables[0].Rows.Count > 0) {
+                DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                foreach (DataRow dr in dtObject.Rows) {
+                    // extract all fields of the current row
+                    int prescId = Convert.ToInt32(dr["prescId"]);
+                    string prescName = dr["prescName"].ToString();
+                    int caseId = Convert.ToInt32(dr["caseId"]);
+                    int patientId = Convert.ToInt32(dr["patientId"]);
+                    DateTime prescDate = Convert.ToDateTime(dr["prescDate"]);
+                    int duration = Convert.ToInt32(dr["duration"]);
+                    string amount = dr["amount"].ToString();
+
+                    // fill the ItemList
+                    Prescriptions prescription = new Prescriptions();
+                    prescription.prescId = prescId;
+                    prescription.prescName = prescName;
+                    prescription.caseId = caseId;
+                    prescription.patientId = patientId;
+                    prescription.prescDate = prescDate;
+                    prescription.duration = duration;
+                    prescription.amount = amount;
+
+                    ItemList.Add(prescription);
+                } // for
+            } // if
+        } // ReadList
+
+        /// <summary>
+        /// Read a sinlge record from the table and save the record in the
+        /// ItemList as an admission object.
+        /// </summary>
+        public void ReadListById(int inputPrescId) {
+            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+
+            string myQuery = "SELECT * FROM " + theTable + " WHERE prescId = " + "'" + inputPrescId + "'";
+
+            DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+            if (dsObject != null && dsObject.Tables[0].Rows.Count > 0) {
+                DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                foreach (DataRow dr in dtObject.Rows) {
+                    // extract all fields of the current row
+                    int prescId = Convert.ToInt32(dr["prescId"]);
+                    string prescName = dr["prescName"].ToString();
+                    int caseId = Convert.ToInt32(dr["caseId"]);
+                    int patientId = Convert.ToInt32(dr["patientId"]);
+                    DateTime prescDate = Convert.ToDateTime(dr["prescDate"]);
+                    DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
+                    int duration = Convert.ToInt32(dr["duration"]);
+                    string amount = dr["amount"].ToString();
+
+                    // fill the ItemList
+                    Prescriptions prescription = new Prescriptions();
+                    prescription.prescId = prescId;
+                    prescription.prescName = prescName;
+                    prescription.caseId = caseId;
+                    prescription.patientId = patientId;
+                    prescription.prescDate = prescDate;
+                    prescription.duration = duration;
+                    prescription.amount = amount;
+
+                    ItemList.Add(prescription);
+                } // for
+            } // if
+        } // ReadList
+
+        /// <summary>
+        /// Given a single admission object, update the record correspnoding
+        /// to the object's admission id with any discrepancies in the admission
+        /// object.
+        /// </summary>
+        /// <param name="updatedPresc"></param>
+        public void UpdateItem(Prescriptions updatedPresc) {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
+                string myQuery = "UPDATE " + theTable +
+                    " SET " +
+                    "prescName = @prescName, " +
+                    "caseId = @caseId, " +
+                    "patientId = @patientId, " +
+                    "prescDate = @prescDate, " +
+                    "duration = @duration, " +
+                    "amount = @amount, " +
+                    "WHERE " +
+                    "prescId = @prescId";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@prescName", updatedPresc.prescName);
+                myCommand.Parameters.AddWithValue("@caseId", updatedPresc.caseId);
+                myCommand.Parameters.AddWithValue("@patientId", updatedPresc.patientId);
+                myCommand.Parameters.AddWithValue("@prescDate", updatedPresc.prescDate);
+                myCommand.Parameters.AddWithValue("@duration", updatedPresc.duration);
+                myCommand.Parameters.AddWithValue("@amount", updatedPresc.amount);
+                myCommand.Parameters.AddWithValue("@prescId", updatedPresc.prescId);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+            } // using
+        } // UpdateItem
+
+        /// <summary>
+        /// Given a list of admission objects, update their properties to the database
+        /// by admission id.
+        /// </summary>
+        public void UpdateList() {
+            foreach (var prescription in ItemList) {
+                UpdateItem(prescription);
+            }
+        }
+
+        /// <summary>
+        /// Insert a single admission record into the database.
+        /// </summary>
+        public void WriteItem(Prescriptions newPresc) {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
+                string myQuery = "INSERT INTO " + theTable +
+                    " (prescId, prescName, caseId, patientId, prescDate, " +
+                    "duration, amount)" +
+                    "VALUES (@prescId, @prescName, @caseId, @patientId, @prescDate, " +
+                    "@duration, @amount)";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@prescId", newPresc.prescId);
+                myCommand.Parameters.AddWithValue("@prescName", newPresc.prescName);
+                myCommand.Parameters.AddWithValue("@caseId", newPresc.caseId);
+                myCommand.Parameters.AddWithValue("@patientId", newPresc.patientId);
+                myCommand.Parameters.AddWithValue("@prescDate", newPresc.prescDate);
+                myCommand.Parameters.AddWithValue("@duration", newPresc.duration);
+                myCommand.Parameters.AddWithValue("@amount", newPresc.amount);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+            } // using
+        } // WriteItem
+
+        /// <summary>
+        /// Insert a list of admission records into the database.
+        /// </summary>
+        public void WriteList() {
+            foreach (var prescription in ItemList) {
+                WriteItem(prescription);
+            } // foreach
+        } // writelist
     }
 }
