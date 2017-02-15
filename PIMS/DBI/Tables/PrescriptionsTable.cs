@@ -113,7 +113,6 @@ namespace DBI
                     int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime prescDate = Convert.ToDateTime(dr["prescDate"]);
-                    DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int duration = Convert.ToInt32(dr["duration"]);
                     string amount = dr["amount"].ToString();
 
@@ -147,7 +146,7 @@ namespace DBI
                     "patientId = @patientId, " +
                     "prescDate = @prescDate, " +
                     "duration = @duration, " +
-                    "amount = @amount, " +
+                    "amount = @amount " +
                     "WHERE " +
                     "prescId = @prescId";
 

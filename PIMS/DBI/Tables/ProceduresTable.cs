@@ -120,7 +120,6 @@ namespace DBI
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime startTime = Convert.ToDateTime(dr["startTime"]);
                     DateTime stopTime = Convert.ToDateTime(dr["stopTime"]);
-                    DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int doctorId = Convert.ToInt32(dr["doctorId"]);
                     string procNotes = dr["procNotes"].ToString();
                     int durationHrs = Convert.ToInt32(dr["durationHrs"]);
@@ -163,7 +162,7 @@ namespace DBI
                     "doctorId = @doctorId, " +
                     "durationHrs = @durationHrs, " +
                     "durationMins = @durationMins, " +
-                    "procNotes = @procNotes, " +
+                    "procNotes = @procNotes " +
                     "WHERE " +
                     "procId = @procId";
 
@@ -176,7 +175,6 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@stopTime", updatedProc.startTime);
                 myCommand.Parameters.AddWithValue("@doctorId", updatedProc.doctorId);
                 myCommand.Parameters.AddWithValue("@procNotes", updatedProc.procNotes);
-                myCommand.Parameters.AddWithValue("@procId", updatedProc.procId);
                 myCommand.Parameters.AddWithValue("@procId", updatedProc.procId);
                 myCommand.Parameters.AddWithValue("@durationHrs", updatedProc.durationHrs);
                 myCommand.Parameters.AddWithValue("@durationMins", updatedProc.durationMins);
@@ -215,7 +213,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@caseId", newProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", newProc.startTime);
-                myCommand.Parameters.AddWithValue("@stopTime", newProc.startTime);
+                myCommand.Parameters.AddWithValue("@stopTime", newProc.stopTime);
                 myCommand.Parameters.AddWithValue("@doctorId", newProc.doctorId);
                 myCommand.Parameters.AddWithValue("@procNotes", newProc.procNotes);
                 myCommand.Parameters.AddWithValue("@durationHrs", newProc.durationHrs);

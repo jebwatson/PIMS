@@ -42,14 +42,14 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO visitors (visitorId, lastName, firstName, firstNameCents, relation, " +
-                    "dateDue, lastVisit, officeStaffId, patientId, caseId) " +
+                string populationQuery1 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                    "lastVisit, patientId, caseId) " +
                     "VALUES (1, 'test1', 'test1', 'test1', '01 / 01 / 2017', 1, 1)";
-                string populationQuery2 = "INSERT INTO visitors (visitorId, lastName, firstName, firstNameCents, relation, " +
-                    "dateDue, lastVisit, officeStaffId, patientId, caseId) " +
+                string populationQuery2 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                    "lastVisit, patientId, caseId) " +
                     "VALUES (2, 'test2', 'test2', 'test2', '01 / 02 / 2017', 2, 2)";
-                string populationQuery3 = "INSERT INTO visitors (visitorId, lastName, firstName, firstNameCents, relation, " +
-                    "dateDue, lastVisit, officeStaffId, patientId, caseId) " +
+                string populationQuery3 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                    "lastVisit, patientId, caseId) " +
                     "VALUES (3, 'test3', 'test3', 'test3', '01 / 03 / 2017', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
@@ -69,8 +69,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(myList[i].lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(myList[i].firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
@@ -88,8 +88,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(myList[0].visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(myList[0].lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(myList[0].firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(myList[0].nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(myList[0].nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(myList[0].relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(myList[0].lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(myList[0].patientId));
@@ -136,8 +136,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(myList[i].lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(myList[i].firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
@@ -160,8 +160,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(myList[0].visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(myList[0].lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(myList[0].firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(myList[0].nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(myList[0].nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(myList[0].relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(myList[0].lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(myList[0].patientId));
@@ -194,8 +194,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(myList[i].lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(myList[i].firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
@@ -220,8 +220,8 @@ namespace PIMSTests.ModelTableTests
             foreach (var visitor in myTable.ItemList)
             {
                 Assert.That(visitor.visitorId, Is.EqualTo(updatedVisitor.visitorId));
-                Assert.That(visitor.lastName, Is.EqualTo(updatedVisitor.lastName));
-                Assert.That(visitor.firstName, Is.EqualTo(updatedVisitor.firstName));
+                Assert.That(visitor.nameLast, Is.EqualTo(updatedVisitor.nameLast));
+                Assert.That(visitor.nameFirst, Is.EqualTo(updatedVisitor.nameFirst));
                 Assert.That(visitor.relation, Is.EqualTo(updatedVisitor.relation));
                 Assert.That(visitor.lastVisit, Is.EqualTo(updatedVisitor.lastVisit));
                 Assert.That(visitor.patientId, Is.EqualTo(updatedVisitor.patientId));

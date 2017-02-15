@@ -27,8 +27,8 @@ namespace DBI
         /// <summary>
         /// Delete any records with the admissionId specified.
         /// </summary>
-        /// <param name="lastName"></param>
-        /// <param name="firstName"></param>
+        /// <param name="nameLast"></param>
+        /// <param name="nameFirst"></param>
         public void ClearTableById(int visitorId) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "DELETE FROM " + theTable +
@@ -71,8 +71,8 @@ namespace DBI
                 foreach (DataRow dr in dtObject.Rows) {
                     // extract all fields of the current row
                     int visitorId = Convert.ToInt32(dr["visitorId"]);
-                    string lastName = dr["lastName"].ToString();
-                    string firstName = dr["firstName"].ToString();
+                    string nameLast = dr["nameLast"].ToString();
+                    string nameFirst = dr["nameFirst"].ToString();
                     int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime lastVisit = Convert.ToDateTime(dr["lastVisit"]);
@@ -81,8 +81,8 @@ namespace DBI
                     // fill the ItemList
                     Visitors visitor = new Visitors();
                     visitor.visitorId = visitorId;
-                    visitor.lastName = lastName;
-                    visitor.firstName = firstName;
+                    visitor.nameLast = nameLast;
+                    visitor.nameFirst = nameFirst;
                     visitor.caseId = caseId;
                     visitor.patientId = patientId;
                     visitor.lastVisit = lastVisit;
@@ -110,8 +110,8 @@ namespace DBI
                 foreach (DataRow dr in dtObject.Rows) {
                     // extract all fields of the current row
                     int visitorId = Convert.ToInt32(dr["visitorId"]);
-                    string lastName = dr["lastName"].ToString();
-                    string firstName = dr["firstName"].ToString();
+                    string nameLast = dr["nameLast"].ToString();
+                    string nameFirst = dr["nameFirst"].ToString();
                     int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime lastVisit = Convert.ToDateTime(dr["lastVisit"]);
@@ -120,8 +120,8 @@ namespace DBI
                     // fill the ItemList
                     Visitors visitor = new Visitors();
                     visitor.visitorId = visitorId;
-                    visitor.lastName = lastName;
-                    visitor.firstName = firstName;
+                    visitor.nameLast = nameLast;
+                    visitor.nameFirst = nameFirst;
                     visitor.caseId = caseId;
                     visitor.patientId = patientId;
                     visitor.lastVisit = lastVisit;
@@ -142,24 +142,24 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
-                    "lastName = @lastName," +
-                    "firstName = @firstName," +
+                    "nameLast = @nameLast," +
+                    "nameFirst = @nameFirst," +
                     "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "lastVisit = @lastVisit, " +
-                    "duration = @duration, " +
-                    "relation = @relation, " +
+                    "relation = @relation " +
                     "WHERE " +
                     "visitorId = @visitorId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@firstName", updatedVisitor.firstName);
+                myCommand.Parameters.AddWithValue("@nameFirst", updatedVisitor.nameFirst);
                 myCommand.Parameters.AddWithValue("@caseId", updatedVisitor.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedVisitor.patientId);
                 myCommand.Parameters.AddWithValue("@lastVisit", updatedVisitor.lastVisit);
                 myCommand.Parameters.AddWithValue("@relation", updatedVisitor.relation);
-                myCommand.Parameters.AddWithValue("@lastName", updatedVisitor.lastName);
+                myCommand.Parameters.AddWithValue("@nameLast", updatedVisitor.nameLast);
+                myCommand.Parameters.AddWithValue("@visitorId", updatedVisitor.visitorId);
 
                 myCommand.ExecuteNonQuery();
 
@@ -183,16 +183,16 @@ namespace DBI
         public void WriteItem(Visitors newVisitor) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (visitorId, lastName, firstName, caseId, patientId, lastVisit, " +
+                    " (visitorId, nameLast, nameFirst, caseId, patientId, lastVisit, " +
                     "relation)" +
-                    "VALUES (@visitorId, @lastName, @firstName, @caseId, @patientId, @lastVisit, " +
+                    "VALUES (@visitorId, @nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
                     "@relation)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@visitorId", newVisitor.visitorId);
-                myCommand.Parameters.AddWithValue("@lastName", newVisitor.lastName);
-                myCommand.Parameters.AddWithValue("@firstName", newVisitor.firstName);
+                myCommand.Parameters.AddWithValue("@nameLast", newVisitor.nameLast);
+                myCommand.Parameters.AddWithValue("@nameFirst", newVisitor.nameFirst);
                 myCommand.Parameters.AddWithValue("@caseId", newVisitor.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newVisitor.patientId);
                 myCommand.Parameters.AddWithValue("@lastVisit", newVisitor.lastVisit);
