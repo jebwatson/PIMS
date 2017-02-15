@@ -29,17 +29,15 @@ namespace DBI
         /// </summary>
         /// <param name="lastName"></param>
         /// <param name="firstName"></param>
-        public void ClearTableById(string lastName, string firstName) {
+        public void ClearTableById(int visitorId) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "DELETE FROM " + theTable +
                     " WHERE " +
-                    "lastName = @lastName" + 
-                    "AND firstName = @firstName";
+                    "visitorId = @visitorId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@lastName", lastName);
-                myCommand.Parameters.AddWithValue("@firstName", firstName);
+                myCommand.Parameters.AddWithValue("@visitorId", visitorId);
 
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
@@ -72,6 +70,7 @@ namespace DBI
 
                 foreach (DataRow dr in dtObject.Rows) {
                     // extract all fields of the current row
+                    int visitorId = Convert.ToInt32(dr["visitorId"]);
                     string lastName = dr["lastName"].ToString();
                     string firstName = dr["firstName"].ToString();
                     int caseId = Convert.ToInt32(dr["caseId"]);
@@ -81,6 +80,7 @@ namespace DBI
 
                     // fill the ItemList
                     Visitors visitor = new Visitors();
+                    visitor.visitorId = visitorId;
                     visitor.lastName = lastName;
                     visitor.firstName = firstName;
                     visitor.caseId = caseId;
@@ -97,10 +97,10 @@ namespace DBI
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an admission object.
         /// </summary>
-        public void ReadListById(int inputLastName, int inputFirstName) {
+        public void ReadListById(int inputVisitorId) {
             ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
 
-            string myQuery = "SELECT * FROM " + theTable + " WHERE lastName = " + "'" + inputLastName + "'" + " AND firstName = " + "'" + inputFirstName + "'";
+            string myQuery = "SELECT * FROM " + theTable + " WHERE visitorId = " + "'" + inputVisitorId + "'";
 
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
 
@@ -109,6 +109,7 @@ namespace DBI
 
                 foreach (DataRow dr in dtObject.Rows) {
                     // extract all fields of the current row
+                    int visitorId = Convert.ToInt32(dr["visitorId"]);
                     string lastName = dr["lastName"].ToString();
                     string firstName = dr["firstName"].ToString();
                     int caseId = Convert.ToInt32(dr["caseId"]);
@@ -118,6 +119,7 @@ namespace DBI
 
                     // fill the ItemList
                     Visitors visitor = new Visitors();
+                    visitor.visitorId = visitorId;
                     visitor.lastName = lastName;
                     visitor.firstName = firstName;
                     visitor.caseId = caseId;
@@ -140,14 +142,15 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
+                    "lastName = @lastName," +
+                    "firstName = @firstName," +
                     "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "lastVisit = @lastVisit, " +
                     "duration = @duration, " +
                     "relation = @relation, " +
                     "WHERE " +
-                    "lastName = @lastName" +
-                    "AND firstName = @firstName";
+                    "visitorId = @visitorId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -180,13 +183,14 @@ namespace DBI
         public void WriteItem(Visitors newVisitor) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (lastName, firstName, caseId, patientId, lastVisit, " +
+                    " (visitorId, lastName, firstName, caseId, patientId, lastVisit, " +
                     "relation)" +
-                    "VALUES (@lastName, @firstName, @caseId, @patientId, @lastVisit, " +
+                    "VALUES (@visitorId, @lastName, @firstName, @caseId, @patientId, @lastVisit, " +
                     "@relation)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
+                myCommand.Parameters.AddWithValue("@visitorId", newVisitor.visitorId);
                 myCommand.Parameters.AddWithValue("@lastName", newVisitor.lastName);
                 myCommand.Parameters.AddWithValue("@firstName", newVisitor.firstName);
                 myCommand.Parameters.AddWithValue("@caseId", newVisitor.caseId);

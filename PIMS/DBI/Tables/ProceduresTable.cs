@@ -74,6 +74,7 @@ namespace DBI
                     int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime startTime = Convert.ToDateTime(dr["startTime"]);
+                    DateTime stopTime = Convert.ToDateTime(dr["stopTime"]);
                     int doctorId = Convert.ToInt32(dr["doctorId"]);
                     string procNotes = dr["procNotes"].ToString();
                     int durationHrs = Convert.ToInt32(dr["durationHrs"]);
@@ -86,6 +87,7 @@ namespace DBI
                     procedure.caseId = caseId;
                     procedure.patientId = patientId;
                     procedure.startTime = startTime;
+                    procedure.stopTime = stopTime;
                     procedure.doctorId = doctorId;
                     procedure.procNotes = procNotes;
                     procedure.durationHrs = durationHrs;
@@ -117,6 +119,7 @@ namespace DBI
                     int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime startTime = Convert.ToDateTime(dr["startTime"]);
+                    DateTime stopTime = Convert.ToDateTime(dr["stopTime"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int doctorId = Convert.ToInt32(dr["doctorId"]);
                     string procNotes = dr["procNotes"].ToString();
@@ -131,6 +134,7 @@ namespace DBI
                     procedure.caseId = caseId;
                     procedure.patientId = patientId;
                     procedure.startTime = startTime;
+                    procedure.stopTime = stopTime;
                     procedure.doctorId = doctorId;
                     procedure.procNotes = procNotes;
                     procedure.durationHrs = durationHrs;
@@ -155,6 +159,7 @@ namespace DBI
                     "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "startTime = @startTime, " +
+                    "stopTime = @stopTime," +
                     "doctorId = @doctorId, " +
                     "durationHrs = @durationHrs, " +
                     "durationMins = @durationMins, " +
@@ -168,6 +173,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@caseId", updatedProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", updatedProc.startTime);
+                myCommand.Parameters.AddWithValue("@stopTime", updatedProc.startTime);
                 myCommand.Parameters.AddWithValue("@doctorId", updatedProc.doctorId);
                 myCommand.Parameters.AddWithValue("@procNotes", updatedProc.procNotes);
                 myCommand.Parameters.AddWithValue("@procId", updatedProc.procId);
@@ -197,9 +203,9 @@ namespace DBI
         public void WriteItem(Procedures newProc) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (procId, procType, caseId, patientId, startTime, " +
+                    " (procId, procType, caseId, patientId, startTime, stopTime, " +
                     "doctorId, durationHrs, durationMins, procNotes)" +
-                    "VALUES (@procId, @procType, @caseId, @patientId, @startTime, " +
+                    "VALUES (@procId, @procType, @caseId, @patientId, @startTime, @stopTime, " +
                     "@doctorId, @durationHrs, @durationMins, @procNotes)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
@@ -209,6 +215,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@caseId", newProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", newProc.startTime);
+                myCommand.Parameters.AddWithValue("@stopTime", newProc.startTime);
                 myCommand.Parameters.AddWithValue("@doctorId", newProc.doctorId);
                 myCommand.Parameters.AddWithValue("@procNotes", newProc.procNotes);
                 myCommand.Parameters.AddWithValue("@durationHrs", newProc.durationHrs);

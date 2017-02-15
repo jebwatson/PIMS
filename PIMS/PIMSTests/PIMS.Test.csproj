@@ -49,6 +49,9 @@
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
     <Compile Include="ModelTableTests\BillsTableTests.cs" />
     <Compile Include="ModelTableTests\CasesTableTests.cs" />
+    <Compile Include="ModelTableTests\ProceduresTableTests.cs" />
+    <Compile Include="ModelTableTests\PrescriptionsTableTests.cs" />
+    <Compile Include="ModelTableTests\VisitorsTableTests.cs" />
     <Compile Include="ModelTableTests\ChargesTableTests.cs" />
     <Compile Include="ModelTableTests\EmergencyContactTableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

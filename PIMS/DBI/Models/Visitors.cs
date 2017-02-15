@@ -8,6 +8,7 @@ namespace DBI
     {
         private const int _unassigned = -1;
 
+        public int visitorId { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set; }
         public string relation { get; set; }
@@ -22,15 +23,17 @@ namespace DBI
             patientId = _unassigned;
             lastVisit = DateTime.Now;
             caseId = _unassigned;
+            visitorId = _unassigned;
         }
 
-        public Visitors(string firstName, string lastName, string relation, int patientId, DateTime lastVisit, int caseId) {
+        public Visitors(int visitorId, string lastName, string firstName, string relation, DateTime lastVisit, int patientId, int caseId) {
             this.lastName = lastName;
             this.firstName = firstName;
             this.relation = relation;
             this.patientId = patientId;
             this.lastVisit = lastVisit;
             this.caseId = caseId;
+            this.visitorId = visitorId;
         }
     }
 }

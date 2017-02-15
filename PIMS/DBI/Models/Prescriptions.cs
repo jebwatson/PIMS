@@ -26,7 +26,7 @@ namespace DBI
             duration = _unassigned;
         }
 
-        public Prescriptions(int prescId, string prescName, int caseId, int patientId, string amount, DateTime prescDate, int duration) {
+        public Prescriptions(int prescId, string prescName, string amount, DateTime prescDate, int duration, int patientId, int caseId) {
             this.prescName = prescName;
             this.prescId = prescId;
             this.caseId = caseId;
