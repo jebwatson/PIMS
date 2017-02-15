@@ -8,7 +8,6 @@ using NUnit.Framework;
 
 namespace PIMSTests.Helpers
 {
-    [TestFixture]
     class EmergencyContactComparer : ICompare<EmergencyContact>
     {
         public void Compare(EmergencyContact ec1, EmergencyContact ec2)

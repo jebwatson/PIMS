@@ -1,37 +1,46 @@
-﻿using DBI;
-using DBI.Utilities;
-using NUnit.Framework;
-using PIMSTests.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
+using DBI;
+using PIMSTests.Helpers;
+using DBI.Utilities;
+using System.Data.SqlClient;
 
 namespace PIMSTests.ModelTableTests
 {
     [TestFixture]
-    class EmergencyContactTableTests
+    class InsuranceTableTests
     {
-        EmergencyContactTable myTable;
-        List<EmergencyContact> myList;
-        ICompare<EmergencyContact> Comparer;
+        crudTests<InsuranceTable, Insurance> insuranceTableTests = new crudTests<InsuranceTable, Insurance>();
+        InsuranceTable myTable;
+        List<Insurance> myList;
+        List<Insurance> myList2;
+        ICompare<Insurance> Comparer;
 
         [SetUp]
         public void SetupTest()
         {
             // NOTE: This occurs before each and every test case.
 
-            myTable = new EmergencyContactTable();
-            myList = new List<EmergencyContact>()
+            myTable = new InsuranceTable();
+            myList = new List<Insurance>()
             {
-                new EmergencyContact(1, "Watson", "Jeb", "W", "8076874", "205", 1),
-                new EmergencyContact(2, "Burcham", "David", "A", "1111111", "256", 1),
-                new EmergencyContact(3, "Morrow", "Jasper", "A", "2222222", "256", 1)
+                new Insurance(1, "A", "1", "1", 1),
+                new Insurance(2, "B", "2", "2", 2),
+                new Insurance(3, "C", "3", "3", 3)
             };
 
-            Comparer = new EmergencyContactComparer();
+            myList2 = new List<Insurance>
+            {
+                new Insurance(1, "D", "4", "4", 4),
+                new Insurance(2, "E", "5", "5", 5),
+                new Insurance(3, "F", "6", "6", 6)
+            };
+
+            Comparer = new InsuranceComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -42,16 +51,16 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM emergencyContact";
+                string clearQuery = "DELETE FROM insurance";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (1, 'Watson', 'Jeb', 'W', '8076874', '205', 1)";
-                string populationQuery2 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (2, 'Burcham', 'David', 'A', '1111111', '256', 1)";
-                string populationQuery3 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (3, 'Morrow', 'Jasper', 'A', '2222222', '256', 1)";
+                string populationQuery1 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES (1, 'A', '1', '1', 1)";
+                string populationQuery2 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES (2, 'B', '2', '2', 2)";
+                string populationQuery3 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES (3, 'C', '3', '3', 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -67,9 +76,9 @@ namespace PIMSTests.ModelTableTests
 
             int i = 0;
 
-            foreach (var ec in myTable.ItemList)
+            foreach (var item in myTable.ItemList)
             {
-                Comparer.Compare(ec, myTable.ItemList[i]);
+                Comparer.Compare(item, myTable.ItemList[i]);
                 i++;
             }
         }
@@ -118,9 +127,9 @@ namespace PIMSTests.ModelTableTests
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var item in myTable.ItemList)
             {
-                Comparer.Compare(admission, myTable.ItemList[i]);
+                Comparer.Compare(item, myTable.ItemList[i]);
                 i++;
             }
         }
@@ -141,18 +150,9 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateList()
         {
-            // Need some updated data
-            EmergencyContact updated1 = new EmergencyContact(1, "Majors", "John", "E", "3333333", "205", 1);
-            EmergencyContact updated2 = new EmergencyContact(2, "Stevens", "Chris", "A", "4444444", "256", 1);
-            EmergencyContact updated3 = new EmergencyContact(3, "Kane", "Alex", "A", "5555555", "256", 1);
-
             myList.Clear();
 
-            myList.Add(updated1);
-            myList.Add(updated2);
-            myList.Add(updated3);
-
-            myTable.ItemList = myList;
+            myTable.ItemList = myList2;
             myTable.UpdateList();
 
             // Now read the table back out and compare to myList
@@ -160,9 +160,9 @@ namespace PIMSTests.ModelTableTests
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var item in myTable.ItemList)
             {
-                Comparer.Compare(admission, myList[i]);
+                Comparer.Compare(item, myList2[i]);
                 i++;
             }
 
@@ -171,15 +171,12 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
-            // Need some updated data
-            EmergencyContact updatedEmergencyContact = new EmergencyContact(1, "Matrix", "Neo", "M", "1010110", "110", 1);
-
             // Update the table with the updated admission (id = 1)
-            myTable.UpdateItem(updatedEmergencyContact);
+            myTable.UpdateItem(myList2[0]);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
             myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], updatedEmergencyContact);
+            Comparer.Compare(myTable.ItemList[0], myList2[0]);
         }
 
         [Test]

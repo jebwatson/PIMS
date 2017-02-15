@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Helpers\EmergencyContactComparer.cs" />
     <Compile Include="Helpers\ICompare.cs" />
+    <Compile Include="Helpers\InsuranceComparer.cs" />
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
     <Compile Include="ModelTableTests\BillsTableTests.cs" />
     <Compile Include="ModelTableTests\CasesTableTests.cs" />
@@ -53,7 +54,9 @@
     <Compile Include="ModelTableTests\PrescriptionsTableTests.cs" />
     <Compile Include="ModelTableTests\VisitorsTableTests.cs" />
     <Compile Include="ModelTableTests\ChargesTableTests.cs" />
+    <Compile Include="ModelTableTests\crudTests.cs" />
     <Compile Include="ModelTableTests\EmergencyContactTableTests.cs" />
+    <Compile Include="ModelTableTests\InsuranceTableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilitiesTests\ConnectionManagerTests.cs" />
     <Compile Include="UtilitiesTests\QueryExecutorTests.cs" />
