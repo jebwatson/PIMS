@@ -1,45 +1,44 @@
-﻿using System;
+﻿using DBI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using DBI;
 using PIMSTests.Helpers;
 using DBI.Utilities;
 using System.Data.SqlClient;
 
 namespace PIMSTests.ModelTableTests
 {
-    [TestFixture]
-    class InsuranceTableTests
+    class PatientTableTests
     {
-        InsuranceTable myTable;
-        List<Insurance> myList;
-        List<Insurance> myList2;
-        ICompare<Insurance> Comparer;
+        PatientTable myTable;
+        List<Patient> myList;
+        List<Patient> myList2;
+        ICompare<Patient> Comparer;
 
         [SetUp]
         public void SetupTest()
         {
             // NOTE: This occurs before each and every test case.
 
-            myTable = new InsuranceTable();
-            myList = new List<Insurance>()
+            myTable = new PatientTable();
+            myList = new List<Patient>()
             {
-                new Insurance(1, "A", "1", "1", 1),
-                new Insurance(2, "B", "2", "2", 2),
-                new Insurance(3, "C", "3", "3", 3)
+                new Patient(1, "Watson", "Jeb", "W", "A", "A", "A", "11111", "1111111", "256", "1111111", "256", "1111111", "256", "A"),
+                new Patient(2, "Burcham", "David", "A", "B", "B", "B", "22222", "2222222", "256", "2222222", "256", "2222222", "256", "B"),
+                new Patient(3, "Morrow", "Jasper", "A", "C", "C", "C", "33333", "3333333", "256", "3333333", "256", "3333333", "256", "C")
             };
 
-            myList2 = new List<Insurance>
+            myList2 = new List<Patient>
             {
-                new Insurance(1, "D", "4", "4", 4),
-                new Insurance(2, "E", "5", "5", 5),
-                new Insurance(3, "F", "6", "6", 6)
+                new Patient(1, "Indihar", "Alex", "B", "D", "D", "D", "44444", "4444444", "256", "4444444", "256", "4444444", "256", "D"),
+                new Patient(2, "Norris", "Chuck", "B", "E", "E", "E", "55555", "5555555", "256", "5555555", "256", "5555555", "256", "E"),
+                new Patient(3, "Dempsey", "Jack", "B", "F", "F", "F", "66666", "6666666", "256", "6666666", "256", "6666666", "256", "F")
             };
 
-            Comparer = new InsuranceComparer();
+            Comparer = new PatientComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -50,16 +49,19 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM insurance";
+                string clearQuery = "DELETE FROM patients";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (1, 'A', '1', '1', 1)";
-                string populationQuery2 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (2, 'B', '2', '2', 2)";
-                string populationQuery3 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (3, 'C', '3', '3', 3)";
+                string populationQuery1 = "INSERT INTO patients (patientId, nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                    "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
+                    "VALUES (1, 'Watson', 'Jeb', 'W', 'A', 'A', 'A', '11111', '1111111', '256', '1111111', '256', '1111111', '256', 'A')";
+                string populationQuery2 = "INSERT INTO patients (patientId, nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                    "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
+                    "VALUES (2, 'Burcham', 'David', 'A', 'B', 'B', 'B', '22222', '2222222', '256', '2222222', '256', '2222222', '256', 'B')";
+                string populationQuery3 = "INSERT INTO patients (patientId, nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                    "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
+                    "VALUES (3, 'Morrow', 'Jasper', 'A', 'C', 'C', 'C', '33333', '3333333', '256', '3333333', '256', '3333333', '256', 'C')";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -170,10 +172,7 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
-            // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(myList2[0]);
-
-            // Now read the admission back out and compare it to the updatedAdmission above.
             myTable.ReadListById(1);
             Comparer.Compare(myTable.ItemList[0], myList2[0]);
         }

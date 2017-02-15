@@ -35,12 +35,13 @@ namespace PIMSTests.UtilitiesTests
             Assert.That(result, Is.Not.TypeOf<Exception>());
         }
 
-        [Test]
-        public void ShouldExecuteSQLQueryScalar()
-        {
-            int i = 1;
-            int j = QueryExecutor.ExecuteSqlQueryScalar("SELECT COUNT(*) FROM patients");
-            Assert.That(i, Is.EqualTo(j));
-        }
+        // Save this for when/if we actually need it
+        //[Test]
+        //public void ShouldExecuteSQLQueryScalar()
+        //{
+        //    int i = 1;
+        //    int j = QueryExecutor.ExecuteSqlQueryScalar("SELECT COUNT(*) FROM patients");
+        //    Assert.That(i, Is.EqualTo(j));
+        //}
     }
 }

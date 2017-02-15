@@ -47,9 +47,11 @@
     <Compile Include="Helpers\EmergencyContactComparer.cs" />
     <Compile Include="Helpers\ICompare.cs" />
     <Compile Include="Helpers\InsuranceComparer.cs" />
+    <Compile Include="Helpers\PatientComparer.cs" />
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
     <Compile Include="ModelTableTests\BillsTableTests.cs" />
     <Compile Include="ModelTableTests\CasesTableTests.cs" />
+    <Compile Include="ModelTableTests\PatientTableTests.cs" />
     <Compile Include="ModelTableTests\ProceduresTableTests.cs" />
     <Compile Include="ModelTableTests\PrescriptionsTableTests.cs" />
     <Compile Include="ModelTableTests\VisitorsTableTests.cs" />
