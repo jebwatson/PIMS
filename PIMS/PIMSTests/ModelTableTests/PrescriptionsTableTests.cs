@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +13,7 @@ namespace PIMSTests.ModelTableTests
     {
         PrescriptionsTable myTable;
         List<Prescriptions> myList;
+        ICompare<Prescriptions> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -28,6 +27,7 @@ namespace PIMSTests.ModelTableTests
                 new Prescriptions(2, "test2", "2mg", DateTime.Parse("01/02/2017"), 2, 2, 2),
                 new Prescriptions(3, "test3", "3mg", DateTime.Parse("01/03/2017"), 3, 3, 3)
             };
+            comparer = new PrescriptionsComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -61,20 +61,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Prescriptions> prescs = new List<Prescriptions>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            prescs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var prescription in myTable.ItemList)
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(myList[i].prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(myList[i].prescName));
-                Assert.That(prescription.amount, Is.EqualTo(myList[i].amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(myList[i].prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(myList[i].duration));
-                Assert.That(prescription.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(prescription, myList[i]);
                 i++;
             }
         }
@@ -82,18 +78,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
-            // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Prescriptions> prescs = new List<Prescriptions>();
 
-            foreach (var prescription in myTable.ItemList)
+            // Read from a pre-populated test database and compare results.
+            prescs = myTable.ReadListById(1);
+
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(myList[0].prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(myList[0].prescName));
-                Assert.That(prescription.amount, Is.EqualTo(myList[0].amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(myList[0].prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(myList[0].duration));
-                Assert.That(prescription.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(prescription, myList[0]);
             }
         }
 
@@ -111,10 +103,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Prescriptions> prescs = new List<Prescriptions>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            prescs = myTable.ReadListById(1);
+            int missingRecordCount = prescs.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -122,26 +115,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Prescriptions> prescs = new List<Prescriptions>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            prescs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var prescription in myTable.ItemList)
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(myList[i].prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(myList[i].prescName));
-                Assert.That(prescription.amount, Is.EqualTo(myList[i].amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(myList[i].prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(myList[i].duration));
-                Assert.That(prescription.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(prescription, myList[i]);
                 i++;
             }
         }
@@ -149,33 +137,31 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Prescriptions> prescs = new List<Prescriptions>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
+            prescs = myTable.ReadList();
 
-            foreach (var prescription in myTable.ItemList)
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(myList[0].prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(myList[0].prescName));
-                Assert.That(prescription.amount, Is.EqualTo(myList[0].amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(myList[0].prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(myList[0].duration));
-                Assert.That(prescription.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(prescription, myList[0]);
             }
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Prescriptions> prescs = new List<Prescriptions>();
+
             // Need some updated data
-            Prescriptions updated1 = new Prescriptions(4, "test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 4);
-            Prescriptions updated2 = new Prescriptions(5, "test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5, 5);
-            Prescriptions updated3 = new Prescriptions(6, "test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6, 6);
+            Prescriptions updated1 = new Prescriptions(1, "test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 4);
+            Prescriptions updated2 = new Prescriptions(2, "test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5, 5);
+            Prescriptions updated3 = new Prescriptions(3, "test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6, 6);
 
             myList.Clear();
 
@@ -183,23 +169,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            prescs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var prescription in myTable.ItemList)
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(myList[i].prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(myList[i].prescName));
-                Assert.That(prescription.amount, Is.EqualTo(myList[i].amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(myList[i].prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(myList[i].duration));
-                Assert.That(prescription.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(prescription, myList[i]);
                 i++;
             }
 
@@ -208,6 +187,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Prescriptions> prescs = new List<Prescriptions>();
+
             // Need some updated data
             Prescriptions updatedPrescription = new Prescriptions(4, "test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 4);
 
@@ -215,17 +196,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedPrescription);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(4);
+            prescs = myTable.ReadListById(4);
 
-            foreach (var prescription in myTable.ItemList)
+            foreach (var prescription in prescs)
             {
-                Assert.That(prescription.prescId, Is.EqualTo(updatedPrescription.prescId));
-                Assert.That(prescription.prescName, Is.EqualTo(updatedPrescription.prescName));
-                Assert.That(prescription.amount, Is.EqualTo(updatedPrescription.amount));
-                Assert.That(prescription.prescDate, Is.EqualTo(updatedPrescription.prescDate));
-                Assert.That(prescription.duration, Is.EqualTo(updatedPrescription.duration));
-                Assert.That(prescription.patientId, Is.EqualTo(updatedPrescription.patientId));
-                Assert.That(prescription.caseId, Is.EqualTo(updatedPrescription.caseId));
+                comparer.Compare(prescription, updatedPrescription);
             }
         }
 

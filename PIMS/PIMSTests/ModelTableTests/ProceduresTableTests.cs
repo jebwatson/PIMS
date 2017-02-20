@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +13,7 @@ namespace PIMSTests.ModelTableTests
     {
         ProceduresTable myTable;
         List<Procedures> myList;
+        ICompare<Procedures> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -28,6 +27,7 @@ namespace PIMSTests.ModelTableTests
                 new Procedures(2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "test2", 2, 2, 2, "test2", 2, 2),
                 new Procedures(3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "test3", 3, 3, 3, "test3", 3, 3)
             };
+            comparer = new ProceduresComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -61,23 +61,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Procedures> procs = new List<Procedures>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            procs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var procedure in myTable.ItemList)
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.startTime, Is.EqualTo(myList[i].startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(myList[i].stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(myList[i].procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(myList[i].durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(myList[i].durationMins));
-                Assert.That(procedure.doctorId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(myList[i].procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(procedure, myList[i]);
                 i++;
             }
         }
@@ -85,21 +78,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
-            // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Procedures> procs = new List<Procedures>();
 
-            foreach (var procedure in myTable.ItemList)
+            // Read from a pre-populated test database and compare results.
+            procs = myTable.ReadListById(1);
+
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(myList[0].procId));
-                Assert.That(procedure.startTime, Is.EqualTo(myList[0].startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(myList[0].stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(myList[0].procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(myList[0].durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(myList[0].durationMins));
-                Assert.That(procedure.procId, Is.EqualTo(myList[0].procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(myList[0].procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(procedure, myList[0]);
             }
         }
 
@@ -117,10 +103,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Procedures> procs = new List<Procedures>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            procs = myTable.ReadListById(1);
+            int missingRecordCount = procs.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -128,29 +115,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Procedures> procs = new List<Procedures>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            procs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var procedure in myTable.ItemList)
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.startTime, Is.EqualTo(myList[i].startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(myList[i].stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(myList[i].procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(myList[i].durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(myList[i].durationMins));
-                Assert.That(procedure.doctorId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(myList[i].procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(procedure, myList[i]);
                 i++;
             }
         }
@@ -158,36 +137,31 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Procedures> procs = new List<Procedures>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
+            procs = myTable.ReadList();
 
-            foreach (var procedure in myTable.ItemList)
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(myList[0].procId));
-                Assert.That(procedure.startTime, Is.EqualTo(myList[0].startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(myList[0].stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(myList[0].procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(myList[0].durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(myList[0].durationMins));
-                Assert.That(procedure.doctorId, Is.EqualTo(myList[0].procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(myList[0].procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(procedure, myList[0]);
             }
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Procedures> procs = new List<Procedures>();
+
             // Need some updated data
-            Procedures updated1 = new Procedures(4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4, 4);
-            Procedures updated2 = new Procedures(5, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), "test5", 5, 5, 5, "test5", 5, 5);
-            Procedures updated3 = new Procedures(6, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), "test6", 6, 6, 6, "test6", 6, 6);
+            Procedures updated1 = new Procedures(1, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4, 4);
+            Procedures updated2 = new Procedures(2, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), "test5", 5, 5, 5, "test5", 5, 5);
+            Procedures updated3 = new Procedures(3, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), "test6", 6, 6, 6, "test6", 6, 6);
 
             myList.Clear();
 
@@ -195,26 +169,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            procs = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var procedure in myTable.ItemList)
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.startTime, Is.EqualTo(myList[i].startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(myList[i].stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(myList[i].procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(myList[i].durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(myList[i].durationMins));
-                Assert.That(procedure.doctorId, Is.EqualTo(myList[i].procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(myList[i].procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(procedure, myList[i]);
                 i++;
             }
 
@@ -223,6 +187,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Procedures> procs = new List<Procedures>();
+
             // Need some updated data
             Procedures updatedProcedure = new Procedures(4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4, 4);
 
@@ -230,20 +196,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedProcedure);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(4);
+            procs = myTable.ReadListById(4);
 
-            foreach (var procedure in myTable.ItemList)
+            foreach (var procedure in procs)
             {
-                Assert.That(procedure.procId, Is.EqualTo(updatedProcedure.procId));
-                Assert.That(procedure.startTime, Is.EqualTo(updatedProcedure.startTime));
-                Assert.That(procedure.stopTime, Is.EqualTo(updatedProcedure.stopTime));
-                Assert.That(procedure.procType, Is.EqualTo(updatedProcedure.procType));
-                Assert.That(procedure.durationHrs, Is.EqualTo(updatedProcedure.durationHrs));
-                Assert.That(procedure.durationMins, Is.EqualTo(updatedProcedure.durationMins));
-                Assert.That(procedure.doctorId, Is.EqualTo(updatedProcedure.procId));
-                Assert.That(procedure.procNotes, Is.EqualTo(updatedProcedure.procNotes));
-                Assert.That(procedure.patientId, Is.EqualTo(updatedProcedure.patientId));
-                Assert.That(procedure.caseId, Is.EqualTo(updatedProcedure.caseId));
+                comparer.Compare(procedure, updatedProcedure);
             }
         }
 

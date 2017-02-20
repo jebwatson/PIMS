@@ -1,40 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using DBI.Tables;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
     [TestFixture]
     class AdmissionsTableTests
     {
-        AdmissionsTable myTable;
+        IRepository<Admission, int> myTable;
         List<Admission> myList;
+        List<Admission> admissions;
+        ICompare<Admission> comparer;
 
         [SetUp]
         public void SetupTest()
         {
-            // NOTE: This occurs before each and every test case.
-
             myTable = new AdmissionsTable();
-            myList = new List<Admission>()
-            {
-                new Admission(1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "A", "A", "1", "1", "1", "1", 1, 1),
-                new Admission(2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "B", "B", "2", "2", "2", "2", 2, 2),
-                new Admission(3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "C", "3", "3", "3", "3", 3, 3)
-            };
+            myList = new List<Admission>();
+            admissions = new List<Admission>();
+            comparer = new AdmissionsComparer();
+
+            // NOTE: This occurs before each and every test case.
+            myList.Clear();
+            myList.Add(new Admission(1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "A", "A", "1", "1", "1", "1", 1, 1));
+            myList.Add(new Admission(2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "B", "B", "2", "2", "2", "2", 2, 2));
+            myList.Add(new Admission(3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "C", "3", "3", "3", "3", 3, 3));
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
-
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
@@ -62,23 +63,15 @@ namespace PIMSTests.ModelTableTests
         public void ShouldReadList()
         {
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            List<Admission> Admissions;
+
+            Admissions = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var admission in Admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(myList[i].admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(myList[i].admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(myList[i].dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(myList[i].admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(myList[i].dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(myList[i].facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(myList[i].floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(myList[i].roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(myList[i].bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(admission.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(admission, myList[i]);
                 i++;
             }
         }
@@ -87,21 +80,13 @@ namespace PIMSTests.ModelTableTests
         public void ShouldReadListById()
         {
             // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Admission> Admissions;
 
-            foreach (var admission in myTable.ItemList)
+            Admissions = myTable.ReadListById(1);
+
+            foreach (var admission in Admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(myList[0].admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(myList[0].admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(myList[0].dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(myList[0].admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(myList[0].dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(myList[0].facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(myList[0].floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(myList[0].roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(myList[0].bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(admission.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(admission, myList[0]);
             }
         }
 
@@ -121,8 +106,8 @@ namespace PIMSTests.ModelTableTests
             // by id = 1 and check for itemlist.count = 0.
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            admissions = myTable.ReadListById(1);
+            int missingRecordCount = admissions.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -135,25 +120,14 @@ namespace PIMSTests.ModelTableTests
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            admissions = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var admission in admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(myList[i].admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(myList[i].admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(myList[i].dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(myList[i].admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(myList[i].dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(myList[i].facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(myList[i].floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(myList[i].roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(myList[i].bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(admission.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(admission, myList[i]);
                 i++;
             }
         }
@@ -167,21 +141,11 @@ namespace PIMSTests.ModelTableTests
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[1]);
-            myTable.ReadList();
+            admissions = myTable.ReadList();
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var admission in admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(myList[1].admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(myList[1].admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(myList[1].dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(myList[1].admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(myList[1].dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(myList[1].facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(myList[1].floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(myList[1].roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(myList[1].bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(myList[1].patientId));
-                Assert.That(admission.caseId, Is.EqualTo(myList[1].caseId));
+                comparer.Compare(admission, myList[1]);
             }
         }
 
@@ -199,27 +163,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            admissions = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var admission in admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(myList[i].admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(myList[i].admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(myList[i].dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(myList[i].admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(myList[i].dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(myList[i].facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(myList[i].floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(myList[i].roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(myList[i].bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(admission.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(admission, myList[i]);
                 i++;
             }
 
@@ -236,21 +189,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedAdmission);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(1);
+            admissions = myTable.ReadListById(1);
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var admission in admissions)
             {
-                Assert.That(admission.admissionId, Is.EqualTo(updatedAdmission.admissionId));
-                Assert.That(admission.admissionTime, Is.EqualTo(updatedAdmission.admissionTime));
-                Assert.That(admission.dischargeTime, Is.EqualTo(updatedAdmission.dischargeTime));
-                Assert.That(admission.admissionReason, Is.EqualTo(updatedAdmission.admissionReason));
-                Assert.That(admission.dischargeReason, Is.EqualTo(updatedAdmission.dischargeReason));
-                Assert.That(admission.facilityNumber, Is.EqualTo(updatedAdmission.facilityNumber));
-                Assert.That(admission.floorNumber, Is.EqualTo(updatedAdmission.floorNumber));
-                Assert.That(admission.roomNumber, Is.EqualTo(updatedAdmission.roomNumber));
-                Assert.That(admission.bedNumber, Is.EqualTo(updatedAdmission.bedNumber));
-                Assert.That(admission.patientId, Is.EqualTo(updatedAdmission.patientId));
-                Assert.That(admission.caseId, Is.EqualTo(updatedAdmission.caseId));
+                comparer.Compare(admission, updatedAdmission);
             }
         }
 

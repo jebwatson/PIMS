@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +13,7 @@ namespace PIMSTests.ModelTableTests
     {
         ChargesTable myTable;
         List<Charges> myList;
+        ICompare<Charges> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -28,6 +27,7 @@ namespace PIMSTests.ModelTableTests
                 new Charges(2, "test2", 2, 2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2, 2, 2),
                 new Charges(3, "test3", 3, 3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3, 3, 3)
             };
+            comparer = new ChargesComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -61,23 +61,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Charges> charges = new List<Charges>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            charges = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var charge in myTable.ItemList)
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(myList[i].chargeId));
-                Assert.That(charge.description, Is.EqualTo(myList[i].description));
-                Assert.That(charge.amountDollars, Is.EqualTo(myList[i].amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(myList[i].amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(myList[i].procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(myList[i].officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(charge.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(charge, myList[i]);
                 i++;
             }
         }
@@ -85,21 +78,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
-            // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Charges> charges = new List<Charges>();
 
-            foreach (var charge in myTable.ItemList)
+            // Read from a pre-populated test database and compare results.
+            charges = myTable.ReadListById(1);
+
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(myList[0].chargeId));
-                Assert.That(charge.description, Is.EqualTo(myList[0].description));
-                Assert.That(charge.amountDollars, Is.EqualTo(myList[0].amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(myList[0].amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(myList[0].dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(myList[0].dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(myList[0].procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(myList[0].officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(charge.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(charge, myList[0]);
             }
         }
 
@@ -117,10 +103,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Charges> charges = new List<Charges>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            charges = myTable.ReadListById(1);
+            int missingRecordCount = charges.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -128,29 +115,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Charges> charges = new List<Charges>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            charges = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var charge in myTable.ItemList)
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(myList[i].chargeId));
-                Assert.That(charge.description, Is.EqualTo(myList[i].description));
-                Assert.That(charge.amountDollars, Is.EqualTo(myList[i].amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(myList[i].amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(myList[i].procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(myList[i].officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(charge.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(charge, myList[i]);
                 i++;
             }
         }
@@ -158,36 +137,31 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Charges> charges = new List<Charges>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
+            charges = myTable.ReadList();
 
-            foreach (var charge in myTable.ItemList)
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(myList[0].chargeId));
-                Assert.That(charge.description, Is.EqualTo(myList[0].description));
-                Assert.That(charge.amountDollars, Is.EqualTo(myList[0].amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(myList[0].amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(myList[0].dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(myList[0].dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(myList[0].procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(myList[0].officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(charge.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(charge, myList[0]);
             }
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Charges> charges = new List<Charges>();
+
             // Need some updated data
-            Charges updated1 = new Charges(4, "test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
-            Charges updated2 = new Charges(5, "test5", 5, 5, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5, 5);
-            Charges updated3 = new Charges(6, "test6", 6, 6, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6, 6);
+            Charges updated1 = new Charges(1, "test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
+            Charges updated2 = new Charges(2, "test5", 5, 5, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5, 5);
+            Charges updated3 = new Charges(3, "test6", 6, 6, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6, 6);
 
             myList.Clear();
 
@@ -195,26 +169,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            charges = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var charge in myTable.ItemList)
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(myList[i].chargeId));
-                Assert.That(charge.description, Is.EqualTo(myList[i].description));
-                Assert.That(charge.amountDollars, Is.EqualTo(myList[i].amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(myList[i].amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(myList[i].procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(myList[i].officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(charge.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(charge, myList[i]);
                 i++;
             }
 
@@ -223,6 +187,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Charges> charges = new List<Charges>();
+
             // Need some updated data
             Charges updatedCharge = new Charges(4, "test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
 
@@ -230,20 +196,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedCharge);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(4);
+            charges = myTable.ReadListById(4);
 
-            foreach (var charge in myTable.ItemList)
+            foreach (var charge in charges)
             {
-                Assert.That(charge.chargeId, Is.EqualTo(updatedCharge.chargeId));
-                Assert.That(charge.description, Is.EqualTo(updatedCharge.description));
-                Assert.That(charge.amountDollars, Is.EqualTo(updatedCharge.amountDollars));
-                Assert.That(charge.amountCents, Is.EqualTo(updatedCharge.amountCents));
-                Assert.That(charge.dateCharged, Is.EqualTo(updatedCharge.dateCharged));
-                Assert.That(charge.dateDue, Is.EqualTo(updatedCharge.dateDue));
-                Assert.That(charge.procedureId, Is.EqualTo(updatedCharge.procedureId));
-                Assert.That(charge.officeStaffId, Is.EqualTo(updatedCharge.officeStaffId));
-                Assert.That(charge.patientId, Is.EqualTo(updatedCharge.patientId));
-                Assert.That(charge.caseId, Is.EqualTo(updatedCharge.caseId));
+                comparer.Compare(charge, updatedCharge);
             }
         }
 

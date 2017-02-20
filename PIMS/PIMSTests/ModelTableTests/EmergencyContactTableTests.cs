@@ -2,12 +2,8 @@
 using DBI.Utilities;
 using NUnit.Framework;
 using PIMSTests.Helpers;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -16,7 +12,7 @@ namespace PIMSTests.ModelTableTests
     {
         EmergencyContactTable myTable;
         List<EmergencyContact> myList;
-        ICompare<EmergencyContact> Comparer;
+        ICompare<EmergencyContact> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -31,7 +27,7 @@ namespace PIMSTests.ModelTableTests
                 new EmergencyContact(3, "Morrow", "Jasper", "A", "2222222", "256", 1)
             };
 
-            Comparer = new EmergencyContactComparer();
+            comparer = new EmergencyContactComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -62,14 +58,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            contacts = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var ec in myTable.ItemList)
+            foreach (var ec in contacts)
             {
-                Comparer.Compare(ec, myTable.ItemList[i]);
+                comparer.Compare(ec, myList[i]);
                 i++;
             }
         }
@@ -77,9 +75,11 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            contacts = myTable.ReadListById(1);
+            comparer.Compare(contacts[0], myList[0]);
         }
 
         [Test]
@@ -96,10 +96,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            contacts = myTable.ReadListById(1);
+            int missingRecordCount = contacts.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -107,20 +108,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            contacts = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var contact in contacts)
             {
-                Comparer.Compare(admission, myTable.ItemList[i]);
+                comparer.Compare(contact, myList[i]);
                 i++;
             }
         }
@@ -128,19 +130,23 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            contacts = myTable.ReadList();
+            comparer.Compare(contacts[0], myList[0]);
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Need some updated data
             EmergencyContact updated1 = new EmergencyContact(1, "Majors", "John", "E", "3333333", "205", 1);
             EmergencyContact updated2 = new EmergencyContact(2, "Stevens", "Chris", "A", "4444444", "256", 1);
@@ -152,17 +158,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            contacts = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var contact in contacts)
             {
-                Comparer.Compare(admission, myList[i]);
+                comparer.Compare(contact, myList[i]);
                 i++;
             }
 
@@ -171,6 +176,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
             // Need some updated data
             EmergencyContact updatedEmergencyContact = new EmergencyContact(1, "Matrix", "Neo", "M", "1010110", "110", 1);
 
@@ -178,8 +185,8 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedEmergencyContact);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], updatedEmergencyContact);
+            contacts = myTable.ReadListById(1);
+            comparer.Compare(contacts[0], updatedEmergencyContact);
         }
 
         [Test]

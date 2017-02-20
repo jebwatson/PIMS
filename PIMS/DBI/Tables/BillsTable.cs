@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class BillsTable
+    public class BillsTable : IRepository<Bills, int>
     {
         public const string theTable = "bills";
-
-        public List<Bills> ItemList { get; set; } = new List<Bills>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -59,9 +58,9 @@ namespace DBI
             } // using
         } // count rows
 
-        public void ReadList()
+        public List<Bills> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Bills> bills = new List<Bills>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -103,14 +102,16 @@ namespace DBI
                     newBill.patientId = patientId;
                     newBill.caseId = caseId;
 
-                    ItemList.Add(newBill);
+                    bills.Add(newBill);
                 } // for
             } // if
+
+            return bills;
         }
 
-        public void ReadListById(int inputBillId)
+        public List<Bills> ReadListById(int inputBillId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Bills> bills = new List<Bills>();
 
             string myQuery = "SELECT * FROM " + theTable + "WHERE billId = " + "'" + inputBillId + "'";
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -152,9 +153,11 @@ namespace DBI
                     newBill.patientId = patientId;
                     newBill.caseId = caseId;
 
-                    ItemList.Add(newBill);
+                    bills.Add(newBill);
                 } // for
             } // if
+
+            return bills;
         }
 
         /// <summary>
@@ -186,8 +189,8 @@ namespace DBI
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@billId", bill.billId);
-                myCommand.Parameters.AddWithValue("@amountTotalDollars", bill.amountOwedDollars);
-                myCommand.Parameters.AddWithValue("@amountTotalCents", bill.amountOwedCents);
+                myCommand.Parameters.AddWithValue("@amountTotalDollars", bill.amountTotalDollars);
+                myCommand.Parameters.AddWithValue("@amountTotalCents", bill.amountTotalCents);
                 myCommand.Parameters.AddWithValue("@amountPaidByPatientDollars", bill.amountPaidByPatientDollars);
                 myCommand.Parameters.AddWithValue("@amountPaidByPatientCents", bill.amountPaidByPatientCents);
                 myCommand.Parameters.AddWithValue("@amountPaidByInsuranceDollars", bill.amountPaidByInsuranceDollars);
@@ -208,9 +211,9 @@ namespace DBI
         /// <summary>
         /// Given a list of bill objects, update their properties to the database by bill id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<Bills> bills)
         {
-            foreach (var bill in ItemList)
+            foreach (var bill in bills)
             {
                 UpdateItem(bill);
             }
@@ -250,9 +253,9 @@ namespace DBI
             } // using
         }
 
-        public void WriteList()
+        public void WriteList(List<Bills> bills)
         {
-            foreach (var bill in ItemList)
+            foreach (var bill in bills)
             {
                 WriteItem(bill);
             }

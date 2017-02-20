@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    class UsersNurseTable
+    public class UsersNurseTable
     {
     }
 }

@@ -9,6 +9,7 @@
     <Import_RootNamespace>DBI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Admission.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Bills.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Cases.cs" />

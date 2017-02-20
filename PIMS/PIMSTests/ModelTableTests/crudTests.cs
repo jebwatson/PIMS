@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using PIMSTests.Helpers;
-using DBI.Utilities;
-using System.Data.SqlClient;
-
-namespace PIMSTests.ModelTableTests
+﻿namespace PIMSTests.ModelTableTests
 {
     // Save this for future refactoring
     //[TestFixture]
