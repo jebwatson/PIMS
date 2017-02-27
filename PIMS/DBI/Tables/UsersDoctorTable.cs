@@ -31,7 +31,7 @@ namespace DBI
             {
                 string myQuery = "DELETE FROM " + theTable +
                     " WHERE " +
-                    "prescId = @prescId";
+                    "userId = @userId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -85,8 +85,47 @@ namespace DBI
                return doctors;
 
         } // ReadList
- 
-    public void UpdateItem(UsersDoctor updatedDoctors)
+
+
+        public List<UsersDoctor> ReadListById(int inputId)
+        {
+            List<UsersDoctor> doctors = new List<UsersDoctor>();
+
+            string myQuery = "SELECT * FROM " + theTable + " WHERE userId = " + "'" + inputId + "'";
+
+            DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+            if (dsObject != null && dsObject.Tables[0].Rows.Count > 0)
+            {
+                DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                foreach (DataRow dr in dtObject.Rows)
+                {
+                    // extract all fields of the current row
+                    int userId = Convert.ToInt32(dr["userId"]);
+                    string nameLast = dr["nameLast"].ToString();
+                    string nameFirst = dr["nameFirst"].ToString();
+                    string title = dr["title"].ToString();
+                    string accessLevel = dr["accessLevel"].ToString();
+                    
+
+                    // fill the ItemList
+                    UsersDoctor newUsersDoctor = new UsersDoctor();
+                    newUsersDoctor.userId = userId;
+                    newUsersDoctor.nameLast = nameLast;
+                    newUsersDoctor.nameFirst = nameFirst;
+                    newUsersDoctor.title = title;
+                    newUsersDoctor.accessLevel = accessLevel;
+                   
+
+                    doctors.Add(newUsersDoctor);
+                } // for
+            } // if
+
+            return doctors;
+        } // ReadList
+
+        public void UpdateItem(UsersDoctor updatedDoctors)
     {
         using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
         {
