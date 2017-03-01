@@ -47,7 +47,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersVolunteerTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\VisitorsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ConnectionsManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ConnectionString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\QueryExecutor.cs" />
   </ItemGroup>
 </Project>
