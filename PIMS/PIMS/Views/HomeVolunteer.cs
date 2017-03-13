@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PIMS
+namespace PIMS.Views
 {
-    public partial class Form1 : Form
+    public partial class HomeVolunteer : Form
     {
-        public Form1()
+        public HomeVolunteer()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

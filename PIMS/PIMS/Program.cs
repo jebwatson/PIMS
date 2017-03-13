@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIMS.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace PIMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run();
+
+            //if (new Login().ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new Home());
+            //}
         }
     }
 }

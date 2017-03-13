@@ -17,9 +17,9 @@ namespace PIMS.Views
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        // In this class' presenter, we need to authenticate the user's input information by comparing
+        // user name and password to the database table containing the list of approved users. If the user
+        // is verified, then login and proceed to the applicable home screen for that user. If the login
+        // fails, throw up an error message and refuse the login.
     }
 }
