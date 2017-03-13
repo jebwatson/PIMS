@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIMS.Test", "PIMSTests\PIMS
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DBI", "DBI\DBI.shproj", "{D4CE48B2-32FB-4F6E-88FD-E568D9C24DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectListView2012", "..\ObjectListView-2.9.1\ObjectListView\ObjectListView\ObjectListView2012.csproj", "{18FEDA0C-D147-4286-B39A-01204808106A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DBI\DBI.projitems*{c8012f8c-3b1a-4362-ac03-2a31b2ddae73}*SharedItemsImports = 4
@@ -27,6 +29,10 @@ Global
 		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
