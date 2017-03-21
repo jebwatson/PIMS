@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DBI.Utilities
 {
-    class QueryExecutor
+    public class QueryExecutor
     {
         /// <summary>
         /// Executes a standard query that returns a result from the database.

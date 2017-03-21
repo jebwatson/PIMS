@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class CasesTable
+    public class CasesTable : IRepository<Cases, int>
     {
         public const string theTable = "cases";
-
-        public List<Cases> ItemList { get; set; } = new List<Cases>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -59,9 +58,9 @@ namespace DBI
             } // using
         } // count rows
 
-        public void ReadList()
+        public List<Cases> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Cases> caseList = new List<Cases>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -85,14 +84,16 @@ namespace DBI
                     cases.approvedVisitorCount = approvedVisitorCount;
                     cases.patientId = patientId;
 
-                    ItemList.Add(cases);
+                    caseList.Add(cases);
                 } // for
             } // if
+
+            return caseList;
         }
 
-        public void ReadListById(int inputCaseId)
+        public List<Cases> ReadListById(int inputCaseId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Cases> caseList = new List<Cases>();
 
             string myQuery = "SELECT * FROM " + theTable + "WHERE caseId = " + "'" + inputCaseId + "'";
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -116,9 +117,11 @@ namespace DBI
                     newCase.approvedVisitorCount = approvedVisitorCount;
                     newCase.patientId = patientId;
 
-                    ItemList.Add(newCase);
+                    caseList.Add(newCase);
                 } // for
             } // if
+
+            return caseList;
         }
 
         /// <summary>
@@ -154,9 +157,9 @@ namespace DBI
         /// <summary>
         /// Given a list of bill objects, update their properties to the database by bill id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<Cases> caseList)
         {
-            foreach (var bill in ItemList)
+            foreach (var bill in caseList)
             {
                 UpdateItem(bill);
             }
@@ -183,9 +186,9 @@ namespace DBI
             } // using
         }
 
-        public void WriteList()
+        public void WriteList(List<Cases> caseList)
         {
-            foreach (var cases in ItemList)
+            foreach (var cases in caseList)
             {
                 WriteItem(cases);
             }

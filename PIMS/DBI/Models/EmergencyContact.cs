@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    class EmergencyContact
+    public class EmergencyContact
     {
         int _unassigned = -1;
 

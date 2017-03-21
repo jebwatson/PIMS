@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class ProceduresTable
+    public class ProceduresTable : IRepository<Procedures, int>
     {
         public const string theTable = "procedures";
-
-        public List<Procedures> ItemList { get; set; } = new List<Procedures>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -58,8 +57,8 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as Admission objects.
         /// </summary>
-        public void ReadList() {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+        public List<Procedures> ReadList() {
+            List<Procedures> procedures = new List<Procedures>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -93,17 +92,19 @@ namespace DBI
                     procedure.durationHrs = durationHrs;
                     procedure.durationMins = durationMins;
 
-                    ItemList.Add(procedure);
+                    procedures.Add(procedure);
                 } // for
             } // if
+
+            return procedures;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an admission object.
         /// </summary>
-        public void ReadListById(int inputProcId) {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+        public List<Procedures> ReadListById(int inputProcId) {
+            List<Procedures> procedures = new List<Procedures>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE procId = " + "'" + inputProcId + "'";
 
@@ -139,9 +140,11 @@ namespace DBI
                     procedure.durationHrs = durationHrs;
                     procedure.durationMins = durationMins;
 
-                    ItemList.Add(procedure);
+                    procedures.Add(procedure);
                 } // for
             } // if
+
+            return procedures;
         } // ReadList
 
         /// <summary>
@@ -172,7 +175,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@caseId", updatedProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", updatedProc.startTime);
-                myCommand.Parameters.AddWithValue("@stopTime", updatedProc.startTime);
+                myCommand.Parameters.AddWithValue("@stopTime", updatedProc.stopTime);
                 myCommand.Parameters.AddWithValue("@doctorId", updatedProc.doctorId);
                 myCommand.Parameters.AddWithValue("@procNotes", updatedProc.procNotes);
                 myCommand.Parameters.AddWithValue("@procId", updatedProc.procId);
@@ -189,8 +192,8 @@ namespace DBI
         /// Given a list of admission objects, update their properties to the database
         /// by admission id.
         /// </summary>
-        public void UpdateList() {
-            foreach (var procedure in ItemList) {
+        public void UpdateList(List<Procedures> procedures) {
+            foreach (var procedure in procedures) {
                 UpdateItem(procedure);
             }
         }
@@ -228,8 +231,8 @@ namespace DBI
         /// <summary>
         /// Insert a list of admission records into the database.
         /// </summary>
-        public void WriteList() {
-            foreach (var procedure in ItemList) {
+        public void WriteList(List<Procedures> procedures) {
+            foreach (var procedure in procedures) {
                 WriteItem(procedure);
             } // foreach
         } // writelist

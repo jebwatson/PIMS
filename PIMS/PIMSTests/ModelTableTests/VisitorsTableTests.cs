@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +13,7 @@ namespace PIMSTests.ModelTableTests
     {
         VisitorsTable myTable;
         List<Visitors> myList;
+        ICompare<Visitors> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -28,6 +27,7 @@ namespace PIMSTests.ModelTableTests
                 new Visitors(2, "test2", "test2", "test2", DateTime.Parse("01/02/2017"), 2, 2),
                 new Visitors(3, "test3", "test3", "test3", DateTime.Parse("01/03/2017"), 3, 3)
             };
+            comparer = new VisitorsComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -61,20 +61,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Visitors> visitors = new List<Visitors>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            visitors = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var visitor in myTable.ItemList)
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(visitor, myList[i]);
                 i++;
             }
         }
@@ -82,18 +78,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
-            // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Visitors> visitors = new List<Visitors>();
 
-            foreach (var visitor in myTable.ItemList)
+            // Read from a pre-populated test database and compare results.
+            visitors = myTable.ReadListById(1);
+
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(myList[0].visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(myList[0].nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(myList[0].nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(myList[0].relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(myList[0].lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(visitor, myList[0]);
             }
         }
 
@@ -111,10 +103,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Visitors> visitors = new List<Visitors>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            visitors = myTable.ReadListById(1);
+            int missingRecordCount = visitors.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -122,26 +115,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Visitors> visitors = new List<Visitors>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            visitors = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var visitor in myTable.ItemList)
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(visitor, myList[i]);
                 i++;
             }
         }
@@ -149,33 +137,31 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Visitors> visitors = new List<Visitors>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
+            visitors = myTable.ReadList();
 
-            foreach (var visitor in myTable.ItemList)
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(myList[0].visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(myList[0].nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(myList[0].nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(myList[0].relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(myList[0].lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(visitor, myList[0]);
             }
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Visitors> visitors = new List<Visitors>();
+
             // Need some updated data
-            Visitors updated1 = new Visitors(4, "test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
-            Visitors updated2 = new Visitors(5, "test5", "test5", "test5", DateTime.Parse("01/05/2017"), 5, 5);
-            Visitors updated3 = new Visitors(6, "test6", "test6", "test6", DateTime.Parse("01/06/2017"), 6, 6);
+            Visitors updated1 = new Visitors(1, "test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
+            Visitors updated2 = new Visitors(2, "test5", "test5", "test5", DateTime.Parse("01/05/2017"), 5, 5);
+            Visitors updated3 = new Visitors(3, "test6", "test6", "test6", DateTime.Parse("01/06/2017"), 6, 6);
 
             myList.Clear();
 
@@ -183,23 +169,16 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
+            myTable.UpdateList(myList);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            visitors = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var visitor in myTable.ItemList)
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(myList[i].visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(myList[i].nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(myList[i].nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(myList[i].relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(myList[i].lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(visitor, myList[i]);
                 i++;
             }
 
@@ -208,6 +187,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Visitors> visitors = new List<Visitors>();
+
             // Need some updated data
             Visitors updatedVisitor = new Visitors(4, "test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
 
@@ -215,17 +196,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedVisitor);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(4);
+            visitors = myTable.ReadListById(4);
 
-            foreach (var visitor in myTable.ItemList)
+            foreach (var visitor in visitors)
             {
-                Assert.That(visitor.visitorId, Is.EqualTo(updatedVisitor.visitorId));
-                Assert.That(visitor.nameLast, Is.EqualTo(updatedVisitor.nameLast));
-                Assert.That(visitor.nameFirst, Is.EqualTo(updatedVisitor.nameFirst));
-                Assert.That(visitor.relation, Is.EqualTo(updatedVisitor.relation));
-                Assert.That(visitor.lastVisit, Is.EqualTo(updatedVisitor.lastVisit));
-                Assert.That(visitor.patientId, Is.EqualTo(updatedVisitor.patientId));
-                Assert.That(visitor.caseId, Is.EqualTo(updatedVisitor.caseId));
+                comparer.Compare(visitor, updatedVisitor);
             }
         }
 

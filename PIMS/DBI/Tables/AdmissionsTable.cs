@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    public class AdmissionsTable
+    public class AdmissionsTable : IRepository<Admission, int>
     {
         public const string theTable = "admissions";
-
-        public List<Admission> ItemList { get; set; } = new List<Admission>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -63,9 +62,9 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as Admission objects.
         /// </summary>
-        public void ReadList()
+        public List<Admission> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Admission> admissions = new List<Admission>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -103,18 +102,20 @@ namespace DBI
                     newAdmission.patientId = patientId;
                     newAdmission.caseId = caseId;
 
-                    ItemList.Add(newAdmission);
+                    admissions.Add(newAdmission);
                 } // for
             } // if
+
+            return admissions;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an admission object.
         /// </summary>
-        public void ReadListById(int inputAdmissionId)
+        public List<Admission> ReadListById(int inputAdmissionId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Admission> admissions = new List<Admission>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE admissionId = " + "'" + inputAdmissionId + "'";
 
@@ -153,9 +154,11 @@ namespace DBI
                     newAdmission.patientId = patientId;
                     newAdmission.caseId = caseId;
 
-                    ItemList.Add(newAdmission);
+                    admissions.Add(newAdmission);
                 } // for
             } // if
+
+            return admissions;
         } // ReadList
 
         /// <summary>
@@ -207,9 +210,9 @@ namespace DBI
         /// Given a list of admission objects, update their properties to the database
         /// by admission id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<Admission> updatedList)
         {
-            foreach (var admission in ItemList)
+            foreach (var admission in updatedList)
             {
                 UpdateItem(admission);
             }
@@ -251,9 +254,9 @@ namespace DBI
         /// <summary>
         /// Insert a list of admission records into the database.
         /// </summary>
-        public void WriteList()
+        public void WriteList(List<Admission> newList)
         {
-            foreach (var admission in ItemList)
+            foreach (var admission in newList)
             {
                 WriteItem(admission);
             } // foreach

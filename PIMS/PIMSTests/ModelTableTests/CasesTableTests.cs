@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +12,7 @@ namespace PIMSTests.ModelTableTests
     {
         CasesTable myTable;
         List<Cases> myList;
+        ICompare<Cases> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -28,6 +26,7 @@ namespace PIMSTests.ModelTableTests
                 new Cases(2, 1, 1, 2),
                 new Cases(3, 1, 1, 3)
             };
+            comparer = new CasesComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -58,17 +57,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Cases> cases = new List<Cases>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            cases = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var cases in myTable.ItemList)
+            foreach (var @case in cases)
             {
-                Assert.That(cases.caseId, Is.EqualTo(myList[i].caseId));
-                Assert.That(cases.supervisingDoctorId, Is.EqualTo(myList[i].supervisingDoctorId));
-                Assert.That(cases.approvedVisitorCount, Is.EqualTo(myList[i].approvedVisitorCount));
-                Assert.That(cases.patientId, Is.EqualTo(myList[i].patientId));
+                comparer.Compare(@case, myList[i]);
                 i++;
             }
         }
@@ -76,15 +74,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
-            // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
+            List<Cases> cases = new List<Cases>();
 
-            foreach (var cases in myTable.ItemList)
+            // Read from a pre-populated test database and compare results.
+            cases = myTable.ReadListById(1);
+
+            foreach (var @case in cases)
             {
-                Assert.That(cases.caseId, Is.EqualTo(myList[0].caseId));
-                Assert.That(cases.supervisingDoctorId, Is.EqualTo(myList[0].supervisingDoctorId));
-                Assert.That(cases.approvedVisitorCount, Is.EqualTo(myList[0].approvedVisitorCount));
-                Assert.That(cases.patientId, Is.EqualTo(myList[0].patientId));
+                comparer.Compare(@case, myList[0]);
             }
         }
 
@@ -102,10 +99,12 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Cases> cases = new List<Cases>();
+
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            cases = myTable.ReadListById(1);
+            int missingRecordCount = cases.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -113,23 +112,17 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
-            // Need to clear the table first
-            myTable.ClearTable();
+            List<Cases> cases = new List<Cases>();
 
-            // Write some records to the table then retrieve them using previously tested
-            // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.ClearTable();
+            myTable.WriteList(myList);
+            cases = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var cases in myTable.ItemList)
+            foreach (var @case in cases)
             {
-                Assert.That(cases.caseId, Is.EqualTo(myList[i].caseId));
-                Assert.That(cases.supervisingDoctorId, Is.EqualTo(myList[i].supervisingDoctorId));
-                Assert.That(cases.approvedVisitorCount, Is.EqualTo(myList[i].approvedVisitorCount));
-                Assert.That(cases.patientId, Is.EqualTo(myList[i].patientId));
+                comparer.Compare(@case, myList[i]);
                 i++;
             }
         }
@@ -137,30 +130,27 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
-            // Need to clear the table first
+            List<Cases> cases = new List<Cases>();
+
             myTable.ClearTable();
-
-            // Write a record to the table then retrieve it using previously tested
-            // read methods. Compare with original record.
             myTable.WriteItem(myList[1]);
-            myTable.ReadList();
+            cases = myTable.ReadList();
 
-            foreach (var cases in myTable.ItemList)
+            foreach (var @case in cases)
             {
-                Assert.That(cases.caseId, Is.EqualTo(myList[1].caseId));
-                Assert.That(cases.supervisingDoctorId, Is.EqualTo(myList[1].supervisingDoctorId));
-                Assert.That(cases.approvedVisitorCount, Is.EqualTo(myList[1].approvedVisitorCount));
-                Assert.That(cases.patientId, Is.EqualTo(myList[1].patientId));
+                comparer.Compare(@case, myList[1]);
             }
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Cases> cases = new List<Cases>();
+
             // Need some updated data
-            Cases updated1 = new Cases(4, 2, 2, 4);
-            Cases updated2 = new Cases(5, 2, 2, 5);
-            Cases updated3 = new Cases(6, 2, 2, 6);
+            Cases updated1 = new Cases(1, 2, 2, 4);
+            Cases updated2 = new Cases(2, 2, 2, 5);
+            Cases updated3 = new Cases(3, 2, 2, 6);
 
             myList.Clear();
 
@@ -168,20 +158,14 @@ namespace PIMSTests.ModelTableTests
             myList.Add(updated2);
             myList.Add(updated3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
-
-            // Now read the table back out and compare to myList
-            myTable.ReadList();
+            myTable.UpdateList(myList);
+            cases = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var admission in myTable.ItemList)
+            foreach (var @case in cases)
             {
-                Assert.That(admission.caseId, Is.EqualTo(myList[i].caseId));
-                Assert.That(admission.supervisingDoctorId, Is.EqualTo(myList[i].supervisingDoctorId));
-                Assert.That(admission.approvedVisitorCount, Is.EqualTo(myList[i].approvedVisitorCount));
-                Assert.That(admission.patientId, Is.EqualTo(myList[i].patientId));
+                comparer.Compare(@case, myList[i]);
                 i++;
             }
 
@@ -190,6 +174,8 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Cases> cases = new List<Cases>();
+
             // Need some updated data
             Cases updatedCase = new Cases(7, 3, 3, 7);
 
@@ -197,14 +183,11 @@ namespace PIMSTests.ModelTableTests
             myTable.UpdateItem(updatedCase);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(1);
+            cases = myTable.ReadListById(1);
 
-            foreach (var cases in myTable.ItemList)
+            foreach (var @case in cases)
             {
-                Assert.That(cases.caseId, Is.EqualTo(updatedCase.caseId));
-                Assert.That(cases.supervisingDoctorId, Is.EqualTo(updatedCase.supervisingDoctorId));
-                Assert.That(cases.approvedVisitorCount, Is.EqualTo(updatedCase.approvedVisitorCount));
-                Assert.That(cases.patientId, Is.EqualTo(updatedCase.patientId));
+                comparer.Compare(@case, updatedCase);
             }
         }
 

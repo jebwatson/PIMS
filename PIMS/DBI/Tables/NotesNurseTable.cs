@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DBI
 {
-    class NotesNurseTable
+    public class NotesNurseTable
     {
         public const string theTable = "notesNurse";
 

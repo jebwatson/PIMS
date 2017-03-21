@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class PatientTable
+    public class PatientTable : IRepository<Patient, int>
     {
         public const string theTable = "patients";
-
-        public List<Patient> ItemList { get; set; } = new List<Patient>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -63,9 +62,9 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as Patient objects.
         /// </summary>
-        public void ReadList()
+        public List<Patient> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Patient> patients = new List<Patient>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -111,18 +110,20 @@ namespace DBI
                     newPatient.areaCodeMobile = areaCodeMobile;
                     newPatient.familyDoctor = familyDoctor;
 
-                    ItemList.Add(newPatient);
+                    patients.Add(newPatient);
                 } // for
             } // if
+
+            return patients;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an Patient object.
         /// </summary>
-        public void ReadListById(int inputPatientId)
+        public List<Patient> ReadListById(int inputPatientId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Patient> patients = new List<Patient>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE patientId = " + "'" + inputPatientId + "'";
 
@@ -169,9 +170,11 @@ namespace DBI
                     newPatient.areaCodeMobile = areaCodeMobile;
                     newPatient.familyDoctor = familyDoctor;
 
-                    ItemList.Add(newPatient);
+                    patients.Add(newPatient);
                 } // for
             } // if
+
+            return patients;
         } // ReadList
 
         /// <summary>
@@ -231,9 +234,9 @@ namespace DBI
         /// Given a list of Patient objects, update their properties to the database
         /// by Patient id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<Patient> patients)
         {
-            foreach (var Patient in ItemList)
+            foreach (var Patient in patients)
             {
                 UpdateItem(Patient);
             }
@@ -278,9 +281,9 @@ namespace DBI
         /// <summary>
         /// Insert a list of Patient records into the database.
         /// </summary>
-        public void WriteList()
+        public void WriteList(List<Patient> patients)
         {
-            foreach (var Patient in ItemList)
+            foreach (var Patient in patients)
             {
                 WriteItem(Patient);
             } // foreach

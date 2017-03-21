@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    class NotesVolunteer
+    public class NotesVolunteer
     {
         const int _unassigned = -1;
 

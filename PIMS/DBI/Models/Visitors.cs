@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    class Visitors
+    public class Visitors
     {
         private const int _unassigned = -1;
 

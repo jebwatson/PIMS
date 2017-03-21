@@ -1,9 +1,5 @@
 ﻿using DBI;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using PIMSTests.Helpers;
 using DBI.Utilities;
@@ -16,7 +12,7 @@ namespace PIMSTests.ModelTableTests
         PatientTable myTable;
         List<Patient> myList;
         List<Patient> myList2;
-        ICompare<Patient> Comparer;
+        ICompare<Patient> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -38,7 +34,7 @@ namespace PIMSTests.ModelTableTests
                 new Patient(3, "Dempsey", "Jack", "B", "F", "F", "F", "66666", "6666666", "256", "6666666", "256", "6666666", "256", "F")
             };
 
-            Comparer = new PatientComparer();
+            comparer = new PatientComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -72,14 +68,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Patient> patients = new List<Patient>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            patients = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in patients)
             {
-                Comparer.Compare(item, myTable.ItemList[i]);
+                comparer.Compare(item, myList[i]);
                 i++;
             }
         }
@@ -87,9 +85,11 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
+            List<Patient> patients = new List<Patient>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            patients = myTable.ReadListById(1);
+            comparer.Compare(patients[0], myList[0]);
         }
 
         [Test]
@@ -106,10 +106,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Patient> patients = new List<Patient>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            patients = myTable.ReadListById(1);
+            int missingRecordCount = patients.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -117,20 +118,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Patient> patients = new List<Patient>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            patients = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in patients)
             {
-                Comparer.Compare(item, myTable.ItemList[i]);
+                comparer.Compare(item, myList[i]);
                 i++;
             }
         }
@@ -138,32 +140,35 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Patient> patients = new List<Patient>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            patients = myTable.ReadList();
+            comparer.Compare(patients[0], myList[0]);
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Patient> patients = new List<Patient>();
+
             myList.Clear();
 
-            myTable.ItemList = myList2;
-            myTable.UpdateList();
+            myTable.UpdateList(myList2);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            patients = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in patients)
             {
-                Comparer.Compare(item, myList2[i]);
+                comparer.Compare(item, myList2[i]);
                 i++;
             }
 
@@ -172,9 +177,11 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Patient> patients = new List<Patient>();
+
             myTable.UpdateItem(myList2[0]);
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], myList2[0]);
+            patients = myTable.ReadListById(1);
+            comparer.Compare(patients[0], myList2[0]);
         }
 
         [Test]

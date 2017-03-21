@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using DBI;
 using PIMSTests.Helpers;
@@ -17,7 +13,7 @@ namespace PIMSTests.ModelTableTests
         InsuranceTable myTable;
         List<Insurance> myList;
         List<Insurance> myList2;
-        ICompare<Insurance> Comparer;
+        ICompare<Insurance> comparer;
 
         [SetUp]
         public void SetupTest()
@@ -39,7 +35,7 @@ namespace PIMSTests.ModelTableTests
                 new Insurance(3, "F", "6", "6", 6)
             };
 
-            Comparer = new InsuranceComparer();
+            comparer = new InsuranceComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -70,14 +66,16 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadList()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadList();
+            insurances = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in insurances)
             {
-                Comparer.Compare(item, myTable.ItemList[i]);
+                comparer.Compare(item, myList[i]);
                 i++;
             }
         }
@@ -85,9 +83,11 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldReadListById()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             // Read from a pre-populated test database and compare results.
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            insurances = myTable.ReadListById(1);
+            comparer.Compare(insurances[0], myList[0]);
         }
 
         [Test]
@@ -104,10 +104,11 @@ namespace PIMSTests.ModelTableTests
         {
             // clear the table by id = 1. Now check for count = 2 and read
             // by id = 1 and check for itemlist.count = 0.
+            List<Insurance> insurances = new List<Insurance>();
             myTable.ClearTableById(1);
             int recordCount = myTable.CountRows();
-            myTable.ReadListById(1);
-            int missingRecordCount = myTable.ItemList.Count;
+            insurances = myTable.ReadListById(1);
+            int missingRecordCount = insurances.Count;
             Assert.That(recordCount, Is.EqualTo(2));
             Assert.That(missingRecordCount, Is.EqualTo(0));
         }
@@ -115,20 +116,21 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteList()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write some records to the table then retrieve them using previously tested
             // read methods. Compare with original records.
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.WriteList(myList);
+            insurances = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in insurances)
             {
-                Comparer.Compare(item, myTable.ItemList[i]);
+                comparer.Compare(item, myList[i]);
                 i++;
             }
         }
@@ -136,32 +138,35 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldWriteItem()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             // Need to clear the table first
             myTable.ClearTable();
 
             // Write a record to the table then retrieve it using previously tested
             // read methods. Compare with original record.
             myTable.WriteItem(myList[0]);
-            myTable.ReadList();
-            Comparer.Compare(myTable.ItemList[0], myList[0]);
+            insurances = myTable.ReadList();
+            comparer.Compare(insurances[0], myList[0]);
         }
 
         [Test]
         public void ShouldUpdateList()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             myList.Clear();
 
-            myTable.ItemList = myList2;
-            myTable.UpdateList();
+            myTable.UpdateList(myList2);
 
             // Now read the table back out and compare to myList
-            myTable.ReadList();
+            insurances = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var item in myTable.ItemList)
+            foreach (var item in insurances)
             {
-                Comparer.Compare(item, myList2[i]);
+                comparer.Compare(item, myList2[i]);
                 i++;
             }
 
@@ -170,12 +175,14 @@ namespace PIMSTests.ModelTableTests
         [Test]
         public void ShouldUpdateItem()
         {
+            List<Insurance> insurances = new List<Insurance>();
+
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(myList2[0]);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
-            myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], myList2[0]);
+            insurances = myTable.ReadListById(1);
+            comparer.Compare(insurances[0], myList2[0]);
         }
 
         [Test]

@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class InsuranceTable
+    public class InsuranceTable : IRepository<Insurance, int>
     {
         public const string theTable = "insurance";
-
-        public List<Insurance> ItemList { get; set; } = new List<Insurance>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -63,9 +62,9 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as insurance objects.
         /// </summary>
-        public void ReadList()
+        public List<Insurance> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Insurance> insurances = new List<Insurance>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -91,18 +90,20 @@ namespace DBI
                     newinsurance.groupNumber = groupNumber;
                     newinsurance.patientId = patientId;
 
-                    ItemList.Add(newinsurance);
+                    insurances.Add(newinsurance);
                 } // for
             } // if
+
+            return insurances;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an insurance object.
         /// </summary>
-        public void ReadListById(int inputinsuranceId)
+        public List<Insurance> ReadListById(int inputinsuranceId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<Insurance> insurances = new List<Insurance>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE insuranceId = " + "'" + inputinsuranceId + "'";
 
@@ -129,9 +130,11 @@ namespace DBI
                     newinsurance.groupNumber = groupNumber;
                     newinsurance.patientId = patientId;
 
-                    ItemList.Add(newinsurance);
+                    insurances.Add(newinsurance);
                 } // for
             } // if
+
+            return insurances;
         } // ReadList
 
         /// <summary>
@@ -171,9 +174,9 @@ namespace DBI
         /// Given a list of insurance objects, update their properties to the database
         /// by insurance id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<Insurance> insurances)
         {
-            foreach (var insurance in ItemList)
+            foreach (var insurance in insurances)
             {
                 UpdateItem(insurance);
             }
@@ -207,9 +210,9 @@ namespace DBI
         /// <summary>
         /// Insert a list of insurance records into the database.
         /// </summary>
-        public void WriteList()
+        public void WriteList(List<Insurance> insurances)
         {
-            foreach (var insurance in ItemList)
+            foreach (var insurance in insurances)
             {
                 WriteItem(insurance);
             } // foreach

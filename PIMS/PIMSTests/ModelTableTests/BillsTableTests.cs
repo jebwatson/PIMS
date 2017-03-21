@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DBI;
 using DBI.Utilities;
 using System.Data.SqlClient;
+using PIMSTests.Helpers;
 
 namespace PIMSTests.ModelTableTests
 {
@@ -15,6 +13,7 @@ namespace PIMSTests.ModelTableTests
     {
         BillsTable myTable;
         List<Bills> myList;
+        ICompare<Bills> comparer;
 
         [SetUp]
         public void SetupTests()
@@ -26,6 +25,7 @@ namespace PIMSTests.ModelTableTests
                 new Bills(2, 2, 2, 0, 0, 2, 2, 0, 0, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2),
                 new Bills(3, 3, 3, 0, 0, 3, 3, 0, 0, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3)
             };
+            comparer = new BillsComparer();
 
             // Establish Connection String
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -61,25 +61,15 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldReadList()
         {
-            myTable.ReadList();
+            List<Bills> bills = new List<Bills>();
+
+            bills = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var bill in myTable.ItemList)
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(myList[i].billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(myList[i].amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(myList[i].amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(myList[i].amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(myList[i].amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(myList[i].amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(myList[i].amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(myList[i].amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(myList[i].amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(bill.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(bill, myList[i]);
                 i++;
             }
         }
@@ -90,23 +80,13 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldReadListById()
         {
-            myTable.ReadListById(myList[0].billId);
+            List<Bills> bills = new List<Bills>();
 
-            foreach (var bill in myTable.ItemList)
+            bills = myTable.ReadListById(myList[0].billId);
+
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(myList[0].billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(myList[0].amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(myList[0].amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(myList[0].amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(myList[0].amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(myList[0].amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(myList[0].amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(myList[0].amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(myList[0].amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(myList[0].dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(myList[0].dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(bill.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(bill, myList[0]);
             }
         }
 
@@ -116,29 +96,17 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldWriteList()
         {
-            myTable.ClearTable();
+            List<Bills> bills = new List<Bills>();
 
-            myTable.ItemList = myList;
-            myTable.WriteList();
-            myTable.ReadList();
+            myTable.ClearTable();
+            myTable.WriteList(myList);
+            bills = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var bill in myTable.ItemList)
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(myList[i].billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(myList[i].amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(myList[i].amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(myList[i].amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(myList[i].amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(myList[i].amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(myList[i].amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(myList[i].amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(myList[i].amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(bill.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(bill, myList[i]);
                 i++;
             }
         }
@@ -149,26 +117,15 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldWriteItem()
         {
+            List<Bills> bills = new List<Bills>();
+
             myTable.ClearTable();
-
             myTable.WriteItem(myList[0]);
-            myTable.ReadListById(myList[0].billId);
+            bills = myTable.ReadListById(myList[0].billId);
 
-            foreach (var bill in myTable.ItemList)
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(myList[0].billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(myList[0].amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(myList[0].amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(myList[0].amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(myList[0].amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(myList[0].amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(myList[0].amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(myList[0].amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(myList[0].amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(myList[0].dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(myList[0].dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(myList[0].patientId));
-                Assert.That(bill.caseId, Is.EqualTo(myList[0].caseId));
+                comparer.Compare(bill, myList[0]);
             }
         }
 
@@ -222,10 +179,12 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldUpdateList()
         {
+            List<Bills> bills = new List<Bills>();
+
             // Add updated bills
-            Bills newBill1 = new Bills(4, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
-            Bills newBill2 = new Bills(5, 50, 50, 50, 50, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 5, 5);
-            Bills newBill3 = new Bills(6, 100, 100, 100, 100, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 6, 6);
+            Bills newBill1 = new Bills(1, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
+            Bills newBill2 = new Bills(2, 50, 50, 50, 50, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 5, 5);
+            Bills newBill3 = new Bills(3, 100, 100, 100, 100, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 6, 6);
 
             myList.Clear();
 
@@ -233,28 +192,14 @@ namespace PIMSTests.ModelTableTests
             myList.Add(newBill2);
             myList.Add(newBill3);
 
-            myTable.ItemList = myList;
-            myTable.UpdateList();
-
-            myTable.ReadList();
+            myTable.UpdateList(myList);
+            bills = myTable.ReadList();
 
             int i = 0;
 
-            foreach (var bill in myTable.ItemList)
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(myList[i].billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(myList[i].amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(myList[i].amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(myList[i].amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(myList[i].amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(myList[i].amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(myList[i].amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(myList[i].amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(myList[i].amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(myList[i].dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(myList[i].dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(myList[i].patientId));
-                Assert.That(bill.caseId, Is.EqualTo(myList[i].caseId));
+                comparer.Compare(bill, myList[i]);
                 i++;
             }
         }
@@ -268,28 +213,17 @@ namespace PIMSTests.ModelTableTests
         /// </summary>
         public void ShouldUpdateItem()
         {
+            List<Bills> bills = new List<Bills>();
+
             // Add updated bill
-            Bills newBill = new Bills(4, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
+            Bills updatedBill = new Bills(4, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
 
-            myTable.UpdateItem(newBill);
+            myTable.UpdateItem(updatedBill);
+            bills = myTable.ReadListById(updatedBill.billId);
 
-            myTable.ReadListById(newBill.billId);
-
-            foreach (var bill in myTable.ItemList)
+            foreach (var bill in bills)
             {
-                Assert.That(bill.billId, Is.EqualTo(newBill.billId));
-                Assert.That(bill.amountTotalDollars, Is.EqualTo(newBill.amountTotalDollars));
-                Assert.That(bill.amountTotalCents, Is.EqualTo(newBill.amountTotalCents));
-                Assert.That(bill.amountPaidByPatientDollars, Is.EqualTo(newBill.amountPaidByPatientDollars));
-                Assert.That(bill.amountPaidByPatientCents, Is.EqualTo(newBill.amountPaidByPatientCents));
-                Assert.That(bill.amountPaidByInsuranceDollars, Is.EqualTo(newBill.amountPaidByInsuranceDollars));
-                Assert.That(bill.amountPaidByInsuranceCents, Is.EqualTo(newBill.amountPaidByInsuranceCents));
-                Assert.That(bill.amountOwedDollars, Is.EqualTo(newBill.amountOwedDollars));
-                Assert.That(bill.amountOwedCents, Is.EqualTo(newBill.amountOwedCents));
-                Assert.That(bill.dateCharged, Is.EqualTo(newBill.dateCharged));
-                Assert.That(bill.dateDue, Is.EqualTo(newBill.dateDue));
-                Assert.That(bill.patientId, Is.EqualTo(newBill.patientId));
-                Assert.That(bill.caseId, Is.EqualTo(newBill.caseId));
+                comparer.Compare(bill, updatedBill);
             }
         }
 

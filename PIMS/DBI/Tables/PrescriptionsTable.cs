@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class PrescriptionsTable
+    public class PrescriptionsTable : IRepository<Prescriptions, int>
     {
         public const string theTable = "prescriptions";
-
-        public List<Prescriptions> ItemList { get; set; } = new List<Prescriptions>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -58,8 +57,8 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as Admission objects.
         /// </summary>
-        public void ReadList() {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+        public List<Prescriptions> ReadList() {
+            List<Prescriptions> prescriptions = new List<Prescriptions>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -87,17 +86,19 @@ namespace DBI
                     prescription.duration = duration;
                     prescription.amount = amount;
 
-                    ItemList.Add(prescription);
+                    prescriptions.Add(prescription);
                 } // for
             } // if
+
+            return prescriptions;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an admission object.
         /// </summary>
-        public void ReadListById(int inputPrescId) {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+        public List<Prescriptions> ReadListById(int inputPrescId) {
+            List<Prescriptions> prescriptions = new List<Prescriptions>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE prescId = " + "'" + inputPrescId + "'";
 
@@ -126,9 +127,11 @@ namespace DBI
                     prescription.duration = duration;
                     prescription.amount = amount;
 
-                    ItemList.Add(prescription);
+                    prescriptions.Add(prescription);
                 } // for
             } // if
+
+            return prescriptions;
         } // ReadList
 
         /// <summary>
@@ -170,8 +173,8 @@ namespace DBI
         /// Given a list of admission objects, update their properties to the database
         /// by admission id.
         /// </summary>
-        public void UpdateList() {
-            foreach (var prescription in ItemList) {
+        public void UpdateList(List<Prescriptions> prescriptions) {
+            foreach (var prescription in prescriptions) {
                 UpdateItem(prescription);
             }
         }
@@ -206,8 +209,8 @@ namespace DBI
         /// <summary>
         /// Insert a list of admission records into the database.
         /// </summary>
-        public void WriteList() {
-            foreach (var prescription in ItemList) {
+        public void WriteList(List<Prescriptions> prescriptions) {
+            foreach (var prescription in prescriptions) {
                 WriteItem(prescription);
             } // foreach
         } // writelist

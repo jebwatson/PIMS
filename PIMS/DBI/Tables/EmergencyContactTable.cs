@@ -1,4 +1,5 @@
-﻿using DBI.Utilities;
+﻿using DBI.Tables;
+using DBI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +8,9 @@ using System.Text;
 
 namespace DBI
 {
-    class EmergencyContactTable
+    public class EmergencyContactTable : IRepository<EmergencyContact, int>
     {
         public const string theTable = "emergencyContact";
-
-        public List<EmergencyContact> ItemList { get; set; } = new List<EmergencyContact>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -63,9 +62,9 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as EmergencyContact objects.
         /// </summary>
-        public void ReadList()
+        public List<EmergencyContact> ReadList()
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -95,18 +94,20 @@ namespace DBI
                     newEmergencyContact.areaCode = areaCode;
                     newEmergencyContact.patientId = patientId;
 
-                    ItemList.Add(newEmergencyContact);
+                    contacts.Add(newEmergencyContact);
                 } // for
             } // if
+
+            return contacts;
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
         /// ItemList as an EmergencyContact object.
         /// </summary>
-        public void ReadListById(int inputEmergencyContactId)
+        public List<EmergencyContact> ReadListById(int inputEmergencyContactId)
         {
-            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE emergencyContactId = " + "'" + inputEmergencyContactId + "'";
 
@@ -137,9 +138,11 @@ namespace DBI
                     newEmergencyContact.areaCode = areaCode;
                     newEmergencyContact.patientId = patientId;
 
-                    ItemList.Add(newEmergencyContact);
+                    contacts.Add(newEmergencyContact);
                 } // for
             } // if
+
+            return contacts;
         } // ReadList
 
         /// <summary>
@@ -183,9 +186,9 @@ namespace DBI
         /// Given a list of EmergencyContact objects, update their properties to the database
         /// by EmergencyContact id.
         /// </summary>
-        public void UpdateList()
+        public void UpdateList(List<EmergencyContact> contacts)
         {
-            foreach (var EmergencyContact in ItemList)
+            foreach (var EmergencyContact in contacts)
             {
                 UpdateItem(EmergencyContact);
             }
@@ -221,9 +224,9 @@ namespace DBI
         /// <summary>
         /// Insert a list of EmergencyContact records into the database.
         /// </summary>
-        public void WriteList()
+        public void WriteList(List<EmergencyContact> contacts)
         {
-            foreach (var EmergencyContact in ItemList)
+            foreach (var EmergencyContact in contacts)
             {
                 WriteItem(EmergencyContact);
             } // foreach

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    class Procedures
+    public class Procedures
     {
         private const int _unassigned = -1;
 
