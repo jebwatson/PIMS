@@ -11,6 +11,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DBI", "DBI\DBI.shproj", "{D
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DBI\DBI.projitems*{72126db6-2a45-4cdb-a293-1f891f3a0dd7}*SharedItemsImports = 4
 		DBI\DBI.projitems*{c8012f8c-3b1a-4362-ac03-2a31b2ddae73}*SharedItemsImports = 4
 		DBI\DBI.projitems*{d4ce48b2-32fb-4f6e-88fd-e568d9c24dcc}*SharedItemsImports = 13
 	EndGlobalSection
