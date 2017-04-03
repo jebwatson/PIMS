@@ -21,5 +21,13 @@ namespace PIMS.Views
         {
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Close();
+            login.Show();
+
+        }
     }
 }

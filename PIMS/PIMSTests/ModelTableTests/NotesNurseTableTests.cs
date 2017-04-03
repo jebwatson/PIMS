@@ -31,7 +31,7 @@ namespace PIMSTests.ModelTableTests
                 new NotesNurse(6, "this is a much longer note, which is opposite of the last, null note", 6, 6, 6)
             };
 
-            Comparer = new NotesDoctorComparer();
+            Comparer = new NotesNurseComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +

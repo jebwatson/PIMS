@@ -40,7 +40,6 @@
             // 
             // imgPims
             // 
-            this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
             this.imgPims.Location = new System.Drawing.Point(12, 12);
             this.imgPims.Name = "imgPims";
@@ -51,7 +50,6 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(336, 174);
             this.txtUsername.Multiline = true;
@@ -61,18 +59,16 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(336, 268);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(270, 46);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.PasswordChar = '*';
             // 
             // lblUser
             // 
-            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(140, 174);
             this.lblUser.Name = "lblUser";
@@ -83,7 +79,6 @@
             // 
             // lblPassword
             // 
-            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(140, 268);
             this.lblPassword.Name = "lblPassword";
@@ -94,7 +89,6 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(287, 350);
             this.btnLogin.Name = "btnLogin";
@@ -106,7 +100,6 @@
             // 
             // btnSignup
             // 
-            this.btnSignup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSignup.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.Location = new System.Drawing.Point(492, 350);
             this.btnSignup.Name = "btnSignup";
@@ -117,6 +110,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 458);
