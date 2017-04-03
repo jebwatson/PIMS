@@ -12,26 +12,26 @@ using System.Threading.Tasks;
 namespace PIMSTests.ModelTableTests
 {
     [TestFixture]
-    class NotesNurseTableTests
+    class NotesOfficeStaffTableTests
     {
-        NotesNurseTable myTable;
-        List<NotesNurse> myList;
-        ICompare<NotesNurse> Comparer;
+        NotesOfficeStaffTable myTable;
+        List<NotesOfficeStaff> myList;
+        ICompare<NotesOfficeStaff> Comparer;
 
         [SetUp]
         public void SetupTest()
         {
             // NOTE: This occurs before each and every test case.
 
-            myTable = new NotesNurseTable();
-            myList = new List<NotesNurse>()
+            myTable = new NotesOfficeStaffTable();
+            myList = new List<NotesOfficeStaff>()
             {
-                new NotesNurse(4, "this is a note", 4, 4, 4),
-                new NotesNurse(5, "", 5, 5, 5),
-                new NotesNurse(6, "this is a much longer note, which is opposite of the last, null note", 6, 6, 6)
+                new NotesOfficeStaff(7, "this is a note", 7, 7, 7),
+                new NotesOfficeStaff(8, "", 9, 9, 9),
+                new NotesOfficeStaff(9, "this is a much longer note, which is opposite of the last, null note", 9, 9, 9)
             };
 
-            Comparer = new NotesDoctorComparer();
+            Comparer = new NotesOfficeStaffComparer();
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
@@ -42,16 +42,16 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM notesNurse";
+                string clearQuery = "DELETE FROM notesOfficeStaff";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO notesNurse (notesId, notes, nurseId, patientId, caseId) " +
-                    "VALUES (4, 'this is a note', 4, 4, 4)";
-                string populationQuery2 = "INSERT INTO notesNurse (notesId, notes, nurseId, patientId, caseId) " +
-                    "VALUES (5, '', 5, 5, 5)";
-                string populationQuery3 = "INSERT INTO notesNurse (notesId, notes, nurseId, patientId, caseId) " +
-                    "VALUES (6, 'this is a much longer note, which is opposite of the last, null note', 6, 6, 6)";
+                string populationQuery1 = "INSERT INTO notesOfficeStaff (notesId, notes, officeStaffId, patientId, caseId) " +
+                    "VALUES (7, 'this is a note', 7, 7, 7)";
+                string populationQuery2 = "INSERT INTO notesOfficeStaff (notesId, notes, officeStaffId, patientId, caseId) " +
+                    "VALUES (8, '', 8, 8, 8)";
+                string populationQuery3 = "INSERT INTO notesOfficeStaff (notesId, notes, officeStaffId, patientId, caseId) " +
+                    "VALUES (9, 'this is a much longer note, which is opposite of the last, null note', 9, 9, 9)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -142,9 +142,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            NotesNurse updated1 = new NotesNurse(4, "note", 4, 4, 4);
-            NotesNurse updated2 = new NotesNurse(5, "this note now gets to be a longer note for probably not a lot of reason while the next one will be null", 5, 5, 5);
-            NotesNurse updated3 = new NotesNurse(6, "", 6, 6, 6);
+            NotesOfficeStaff updated1 = new NotesOfficeStaff(7, "note", 7, 7, 7);
+            NotesOfficeStaff updated2 = new NotesOfficeStaff(8, "this note now gets to be a longer note for probably not a lot of reason while the next one will be null", 9, 9, 9);
+            NotesOfficeStaff updated3 = new NotesOfficeStaff(9, "", 9, 9, 9);
 
             myList.Clear();
 
@@ -172,14 +172,14 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            NotesNurse updatedNotesNurse = new NotesNurse(4, "omg this dork made a matrix reference lol", 4, 4, 4);
+            NotesOfficeStaff updatedNotesOfficeStaff = new NotesOfficeStaff(7, "omg this dork made a matrix reference lol", 7, 7, 7);
 
             // Update the table with the updated admission (id = 1)
-            myTable.UpdateItem(updatedNotesNurse);
+            myTable.UpdateItem(updatedNotesOfficeStaff);
 
             // Now read the admission back out and compare it to the updatedAdmission above.
             myTable.ReadListById(1);
-            Comparer.Compare(myTable.ItemList[0], updatedNotesNurse);
+            Comparer.Compare(myTable.ItemList[0], updatedNotesOfficeStaff);
         }
 
         [Test]
@@ -198,3 +198,4 @@ namespace PIMSTests.ModelTableTests
         }
     }
 }
+
