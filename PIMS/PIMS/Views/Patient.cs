@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class HomeVolunteer : Form
+    public partial class frmPatient : Form
     {
-        public HomeVolunteer()
+        public frmPatient()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

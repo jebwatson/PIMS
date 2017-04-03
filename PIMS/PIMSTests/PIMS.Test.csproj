@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AdmissionsComparer.cs" />
+    <Compile Include="Helpers\BillsComparer.cs" />
+    <Compile Include="Helpers\CasesComparer.cs" />
+    <Compile Include="Helpers\ChargesComparer.cs" />
     <Compile Include="Helpers\NotesDoctorComparer.cs" />
     <Compile Include="Helpers\EmergencyContactComparer.cs" />
     <Compile Include="Helpers\ICompare.cs" />
@@ -52,6 +56,9 @@
     <Compile Include="Helpers\NotesOfficeStaffComparer.cs" />
     <Compile Include="Helpers\NotesVolunteerComparer.cs" />
     <Compile Include="Helpers\PatientComparer.cs" />
+    <Compile Include="Helpers\PrescriptionsComparer.cs" />
+    <Compile Include="Helpers\ProceduresComparer.cs" />
+    <Compile Include="Helpers\VisitorsComparer.cs" />
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
     <Compile Include="ModelTableTests\BillsTableTests.cs" />
     <Compile Include="ModelTableTests\CasesTableTests.cs" />

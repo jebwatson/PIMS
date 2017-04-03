@@ -10,15 +10,38 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
-        // In this class' presenter, we need to authenticate the user's input information by comparing
-        // user name and password to the database table containing the list of approved users. If the user
-        // is verified, then login and proceed to the applicable home screen for that user. If the login
-        // fails, throw up an error message and refuse the login.
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Equals("test") && txtPassword.Text.Equals("test"))
+            {
+                this.Close();
+                frmHome home = new frmHome();
+                home.Show();
+            }
+            else
+            {
+                MessageBox.Show("Your username and/or password is incorrect.", "Invalid Login",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public string getUsername()
+        {
+            return txtUsername.Text;
+        }
+
+        public string getPassword()
+        {
+            return txtPassword.Text;
+        }
+
+     
     }
 }

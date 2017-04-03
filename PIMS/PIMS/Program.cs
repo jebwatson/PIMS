@@ -15,9 +15,15 @@ namespace PIMS
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            frmLogin login = new frmLogin();
+
+            login.Show();
+
+           
+           Application.Run();
 
             //if (new Login().ShowDialog() == DialogResult.OK)
             //{
