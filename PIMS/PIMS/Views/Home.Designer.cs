@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.imgPims = new System.Windows.Forms.PictureBox();
             this.casesDatView = new BrightIdeasSoftware.DataListView();
             this.btnAddCase = new System.Windows.Forms.Button();
             this.btnRemoveCase = new System.Windows.Forms.Button();
@@ -38,20 +37,10 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imgPims)).BeginInit();
+            this.imgPims = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.casesDatView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPims)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgPims
-            // 
-            this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
-            this.imgPims.Location = new System.Drawing.Point(12, 26);
-            this.imgPims.Name = "imgPims";
-            this.imgPims.Size = new System.Drawing.Size(122, 122);
-            this.imgPims.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgPims.TabIndex = 1;
-            this.imgPims.TabStop = false;
             // 
             // casesDatView
             // 
@@ -119,6 +108,7 @@
             this.btnAddPatient.TabIndex = 7;
             this.btnAddPatient.Text = "Add Patient";
             this.btnAddPatient.UseVisualStyleBackColor = true;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
             // btnLogout
             // 
@@ -157,6 +147,17 @@
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "Title + Name";
             // 
+            // imgPims
+            // 
+            this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
+            this.imgPims.Location = new System.Drawing.Point(12, 26);
+            this.imgPims.Name = "imgPims";
+            this.imgPims.Size = new System.Drawing.Size(122, 122);
+            this.imgPims.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgPims.TabIndex = 1;
+            this.imgPims.TabStop = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,8 +175,8 @@
             this.Controls.Add(this.imgPims);
             this.Name = "frmHome";
             this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.imgPims)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.casesDatView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPims)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

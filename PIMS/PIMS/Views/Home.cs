@@ -29,5 +29,11 @@ namespace PIMS.Views
             login.Show();
 
         }
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
+        {
+            frmPatient newpatient = new frmPatient();
+            newpatient.Show();
+        }
     }
 }
