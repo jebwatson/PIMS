@@ -22,8 +22,8 @@ namespace PIMS.Views
             if (txtUsername.Text.Equals("test") && txtPassword.Text.Equals("test"))
             {
                 this.Close();
-                //frmHome home = new frmHome();
-                //frmHome.Show();
+                frmHome home = new frmHome();
+                home.Show();
             }
             else
             {
@@ -41,5 +41,7 @@ namespace PIMS.Views
         {
             return txtPassword.Text;
         }
+
+     
     }
 }
