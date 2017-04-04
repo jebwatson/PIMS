@@ -10,16 +10,30 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class Home : Form
+    public partial class frmHome : Form
     {
-        public Home()
+        public frmHome()
         {
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Close();
+            login.Show();
+
+        }
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
+        {
+            frmPatient newpatient = new frmPatient();
+            newpatient.Show();
         }
     }
 }

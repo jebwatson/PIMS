@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace PIMS.Presenters
 {
-    class PLogin
-    {
-
-    }
+    
 }
