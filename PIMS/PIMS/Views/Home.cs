@@ -17,23 +17,36 @@ namespace PIMS.Views
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        #region Event Handlers
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnCases_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            this.Close();
-            login.Show();
 
         }
 
-        private void btnAddPatient_Click(object sender, EventArgs e)
+        private void btnReports_Click(object sender, EventArgs e)
         {
-            frmPatient newpatient = new frmPatient();
-            newpatient.Show();
+
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
