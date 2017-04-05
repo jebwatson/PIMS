@@ -115,6 +115,30 @@
   <ItemGroup>
     <None Include="Resources\Redcrossnew1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cases.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports1.png" />
+  </ItemGroup>
   <Import Project="..\DBI\DBI.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
