@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,36 +13,33 @@ namespace PIMS.Views
 {
     public partial class frmLogin : Form
     {
+        private PLogin presenter;
+
+        /// <summary>
+        /// Initialize the presenter, passing the view in as a dependency.
+        /// </summary>
         public frmLogin()
         {
             InitializeComponent();
+            presenter = new PLogin(this);
         }
 
+        #region Properties
+        public string Username { get { return this.txtUsername.Text; } }
+        public string Password { get { return this.txtPassword.Text; } }
+        #endregion
+
+        #region Event Handlers
+        /// <summary>
+        /// Raise a LoginClick event for the presenter to handle.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Equals("test") && txtPassword.Text.Equals("test"))
-            {
-                this.Close();
-                frmHome home = new frmHome();
-                home.Show();
-            }
-            else
-            {
-                MessageBox.Show("Your username and/or password is incorrect.", "Invalid Login",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            presenter.Login();
         }
+        #endregion
 
-        public string getUsername()
-        {
-            return txtUsername.Text;
-        }
-
-        public string getPassword()
-        {
-            return txtPassword.Text;
-        }
-
-     
     }
 }
