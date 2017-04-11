@@ -79,6 +79,7 @@
             this.btnLogOut.Text = "Logout";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnReports
             // 
@@ -92,6 +93,7 @@
             this.btnReports.Text = "Reports";
             this.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnCases
             // 
@@ -105,6 +107,7 @@
             this.btnCases.Text = "Cases";
             this.btnCases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCases.UseVisualStyleBackColor = false;
+            this.btnCases.Click += new System.EventHandler(this.btnCases_Click);
             // 
             // btnPatients
             // 
@@ -118,6 +121,7 @@
             this.btnPatients.Text = "Patients";
             this.btnPatients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPatients.UseVisualStyleBackColor = false;
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
             // frmHome
             // 
