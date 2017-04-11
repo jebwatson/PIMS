@@ -12,7 +12,8 @@ namespace DBI
         public string nameLast { get; set; }
         public string nameFirst { get; set; }
         public string title { get; set; }
-        public string accessLevel { get; set; }
+        public int accessLevel { get; set; }
+        public string username { get; set; }
 
         public UsersOfficeStaff()
         {
@@ -20,16 +21,18 @@ namespace DBI
             nameLast = string.Empty;
             nameFirst = string.Empty;
             title = string.Empty;
-            accessLevel = string.Empty;
+            accessLevel = _unassigned;
+            username = string.Empty;
         }
 
-        public UsersOfficeStaff(int id, string nameLast, string nameFirst, string title, string accessLevel)
+        public UsersOfficeStaff(int userId, string nameLast, string nameFirst, string title, int accessLevel, string username)
         {
-            userId = id;
+            this.userId = userId;
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
             this.title = title;
             this.accessLevel = accessLevel;
+            this.username = username;
 
         }
     }

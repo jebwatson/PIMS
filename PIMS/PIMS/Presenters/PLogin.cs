@@ -1,6 +1,8 @@
-﻿using PIMS.Views;
+﻿using DBI.Utilities;
+using PIMS.Views;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,17 +24,19 @@ namespace PIMS.Presenters
         /// </summary>
         public void Login()
         {
-            if (view.Username.Equals("test") && view.Password.Equals("test"))
-            {
-                // Close the view and pass control back to the calling function.
-                view.DialogResult = DialogResult.OK;
-                view.Close();
+            try {
+                ConnectionsManager.SQLServerConnectionString = "Data Source=DESKTOP-LCTG0FT\\SQLEXPRESS;Initial Catalog=" +
+                    "PIMSDev;Integrated Security=False;User Id=" + view.Username + ";Password=" + view.Password + ";MultipleActiveResultSets=True;";
+
+                // Establish a connection and close at the end of using
+                using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
+                    // Close the view and pass control back to the calling function.
+                    view.DialogResult = DialogResult.OK;
+                    view.Close();
+                }
             }
-            else
-            {
-                // Throw up an error message.
-                MessageBox.Show("Your username and/or password is incorrect.", "Invalid Login",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -68,7 +68,8 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
                     // fill the ItemList
                     UsersNurse Nurses = new UsersNurse();
@@ -77,6 +78,7 @@ namespace DBI
                     Nurses.nameFirst = nameFirst;
                     Nurses.title = title;
                     Nurses.accessLevel = accessLevel;
+                    Nurses.username = username;
 
                     nurses.Add(Nurses);
                 } // for
@@ -105,7 +107,8 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
 
                     // fill the ItemList
@@ -115,7 +118,7 @@ namespace DBI
                     newUsersNurse.nameFirst = nameFirst;
                     newUsersNurse.title = title;
                     newUsersNurse.accessLevel = accessLevel;
-
+                    newUsersNurse.username = username;
 
                     nurses.Add(newUsersNurse);
                 } // for
@@ -134,6 +137,7 @@ namespace DBI
                     "nameFirst = @nameFirst, " +
                     "title = @title, " +
                     "accessLevel = @accessLevel, " +
+                    "username = @username, " +
                     "WHERE " +
                     "userId = @userId";
 
@@ -144,6 +148,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@title", updatedNurses.title);
                 myCommand.Parameters.AddWithValue("@accessLevel", updatedNurses.accessLevel);
                 myCommand.Parameters.AddWithValue("@userId", updatedNurses.userId);
+                myCommand.Parameters.AddWithValue("@username", updatedNurses.username);
 
                 myCommand.ExecuteNonQuery();
 
@@ -166,9 +171,8 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (userId, nameLast, nameFirst, title, accessLevel, " +
-                    "duration, amount)" +
-                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel)";
+                    " (userId, nameLast, nameFirst, title, accessLevel, username) " +
+                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel, @username)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -177,6 +181,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@nameFirst", newNurse.nameFirst);
                 myCommand.Parameters.AddWithValue("@title", newNurse.title);
                 myCommand.Parameters.AddWithValue("@accessLevel", newNurse.accessLevel);
+                myCommand.Parameters.AddWithValue("@username", newNurse.username);
 
                 myCommand.ExecuteNonQuery();
 
