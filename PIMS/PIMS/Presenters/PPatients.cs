@@ -20,6 +20,10 @@ namespace PIMS.Presenters
             View = view;
         }
 
+        /// <summary>
+        /// Populate the patients table for the first time after it is created.
+        /// If there are no patients in the database, add a default case.
+        /// </summary>
         public void PopulatePatientsList()
         {
             MyPatientsTable = new PatientTable();
@@ -33,6 +37,39 @@ namespace PIMS.Presenters
             }
 
             View.PatientsList.SetObjects(MyPatientsTable.ReadList());
+        }
+
+        /// <summary>
+        /// Refresh the patients list.
+        /// </summary>
+        public void RefreshPatientsList()
+        {
+            MyPatientsTable = new PatientTable();
+            View.PatientsList.SetObjects(MyPatientsTable.ReadList());
+        }
+
+        /// <summary>
+        /// Add a new patient to the database and refresh the list.
+        /// </summary>
+        public void AddPatient()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Delete the selected patients from the database and refresh the list.
+        /// </summary>
+        public void DeletePatients()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Read the database by the user specified string and populate the table with the new list of patients.
+        /// </summary>
+        public void SearchPatients()
+        {
+            throw new NotImplementedException();
         }
     }
 }

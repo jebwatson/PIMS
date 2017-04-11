@@ -18,6 +18,17 @@ namespace PIMS.Views
         PPatients Presenter;
 
         public ObjectListView PatientsList { get { return this.olvPatientsList; } }
+        public string PatientSearch
+        {
+            get
+            {
+                return this.txtPatientSearch.Text;
+            }
+            set
+            {
+                this.txtPatientSearch.Text = value;
+            }
+        }
 
         public Patients()
         {
@@ -28,22 +39,22 @@ namespace PIMS.Views
 
         private void btnRefreshPatients_Click(object sender, EventArgs e)
         {
-
+            Presenter.RefreshPatientsList();
         }
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
-
+            Presenter.AddPatient();
         }
 
         private void btnDeletePatients_Click(object sender, EventArgs e)
         {
-
+            Presenter.DeletePatients();
         }
 
         private void btnSearchPatients_Click(object sender, EventArgs e)
         {
-
+            Presenter.SearchPatients();
         }
 
         private void Initialize()
