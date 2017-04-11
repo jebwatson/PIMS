@@ -18,17 +18,11 @@ namespace PIMS
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin login = new frmLogin();
 
-            login.Show();
-
-           
-           Application.Run();
-
-            //if (new Login().ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new Home());
-            //}
+            if (new frmLogin().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmHome());
+            }
         }
     }
 }
