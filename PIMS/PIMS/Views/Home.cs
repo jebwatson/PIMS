@@ -17,6 +17,7 @@ namespace PIMS.Views
             InitializeComponent();
         }
 
+        #region Event Handlers
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -26,5 +27,26 @@ namespace PIMS.Views
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCases_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
