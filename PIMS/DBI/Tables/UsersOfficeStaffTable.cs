@@ -68,7 +68,8 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
                     // fill the ItemList
                     UsersOfficeStaff OfficeStaff = new UsersOfficeStaff();
@@ -77,6 +78,7 @@ namespace DBI
                     OfficeStaff.nameFirst = nameFirst;
                     OfficeStaff.title = title;
                     OfficeStaff.accessLevel = accessLevel;
+                    OfficeStaff.username = username;
 
                     officestaff.Add(OfficeStaff);
                 } // for
@@ -105,7 +107,8 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
 
                     // fill the ItemList
@@ -115,6 +118,7 @@ namespace DBI
                     newUsersOfficeStaff.nameFirst = nameFirst;
                     newUsersOfficeStaff.title = title;
                     newUsersOfficeStaff.accessLevel = accessLevel;
+                    newUsersOfficeStaff.username = username;
 
 
                     officestaff.Add(newUsersOfficeStaff);
@@ -134,6 +138,7 @@ namespace DBI
                     "nameFirst = @nameFirst, " +
                     "title = @title, " +
                     "accessLevel = @accessLevel, " +
+                    "username = @username, " + 
                     "WHERE " +
                     "userId = @userId";
 
@@ -144,6 +149,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@title", updatedOfficeStaff.title);
                 myCommand.Parameters.AddWithValue("@accessLevel", updatedOfficeStaff.accessLevel);
                 myCommand.Parameters.AddWithValue("@userId", updatedOfficeStaff.userId);
+                myCommand.Parameters.AddWithValue("@username", updatedOfficeStaff.username);
 
                 myCommand.ExecuteNonQuery();
 
@@ -166,9 +172,8 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (userId, nameLast, nameFirst, title, accessLevel, " +
-                    "duration, amount)" +
-                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel)";
+                    " (userId, nameLast, nameFirst, title, accessLevel, username) " +
+                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel, @username)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -177,6 +182,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@nameFirst", newOfficeStaff.nameFirst);
                 myCommand.Parameters.AddWithValue("@title", newOfficeStaff.title);
                 myCommand.Parameters.AddWithValue("@accessLevel", newOfficeStaff.accessLevel);
+                myCommand.Parameters.AddWithValue("@username", newOfficeStaff.username);
 
                 myCommand.ExecuteNonQuery();
 
