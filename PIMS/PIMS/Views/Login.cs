@@ -13,7 +13,7 @@ namespace PIMS.Views
 {
     public partial class frmLogin : Form
     {
-        private PLogin presenter;
+        private PLogin Presenter;
 
         /// <summary>
         /// Initialize the presenter, passing the view in as a dependency.
@@ -21,7 +21,7 @@ namespace PIMS.Views
         public frmLogin()
         {
             InitializeComponent();
-            presenter = new PLogin(this);
+            Presenter = new PLogin(this);
         }
 
         #region Properties
@@ -37,7 +37,7 @@ namespace PIMS.Views
         /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            presenter.Login();
+            Presenter.Login();
         }
         #endregion
 
