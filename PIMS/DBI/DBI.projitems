@@ -23,10 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Patient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Prescriptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Procedures.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersDoctor.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersNurse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersOfficeStaff.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\UsersVolunteer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Users.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Visitors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\AdmissionsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\BillsTable.cs" />
@@ -41,10 +38,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tables\PatientTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\PrescriptionsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\ProceduresTable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersDoctorTable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersNurseTable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersOfficeStaffTable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersVolunteerTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tables\UsersTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tables\VisitorsTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ConnectionsManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\QueryExecutor.cs" />

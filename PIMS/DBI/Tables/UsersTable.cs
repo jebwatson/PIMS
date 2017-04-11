@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBI
 {
-    public class UsersTable : IRepository<UsersDoctor, int>
+    public class UsersTable : IRepository<Users, int>
     {
         public const string theTable = "UsersDoctor";
 
@@ -51,9 +51,9 @@ namespace DBI
             } // using
         } // CountRows
 
-        public List<UsersDoctor> ReadList()
+        public List<Users> ReadList()
         {
-            List<UsersDoctor> doctors = new List<UsersDoctor>();
+            List<Users> doctors = new List<Users>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -73,7 +73,7 @@ namespace DBI
                     string username = dr["username"].ToString();
 
                     // fill the ItemList
-                    UsersDoctor Doctors = new UsersDoctor();
+                    Users Doctors = new Users();
                     Doctors.userId = userId;
                     Doctors.nameLast = nameLast;
                     Doctors.nameFirst = nameFirst;
@@ -89,9 +89,9 @@ namespace DBI
         } // ReadList
 
 
-        public List<UsersDoctor> ReadListById(int inputId)
+        public List<Users> ReadListById(int inputId)
         {
-            List<UsersDoctor> doctors = new List<UsersDoctor>();
+            List<Users> doctors = new List<Users>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE userId = " + "'" + inputId + "'";
 
@@ -113,7 +113,7 @@ namespace DBI
 
 
                     // fill the ItemList
-                    UsersDoctor newUsersDoctor = new UsersDoctor();
+                    Users newUsersDoctor = new Users();
                     newUsersDoctor.userId = userId;
                     newUsersDoctor.nameLast = nameLast;
                     newUsersDoctor.nameFirst = nameFirst;
@@ -129,7 +129,7 @@ namespace DBI
             return doctors;
         } // ReadList
 
-        public void UpdateItem(UsersDoctor updatedDoctors)
+        public void UpdateItem(Users updatedDoctors)
     {
         using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
         {
@@ -157,7 +157,7 @@ namespace DBI
             myConnection.Close();
         } // using
     } // UpdateItem
-    public void UpdateList(List<UsersDoctor> doctors) {
+    public void UpdateList(List<Users> doctors) {
         foreach (var Doctor in doctors) {
             UpdateItem(Doctor);
         }
@@ -166,7 +166,7 @@ namespace DBI
 
         /// Insert a single admission record into the database.
         /// </summary>
-        public void WriteItem(UsersDoctor newDoctor)
+        public void WriteItem(Users newDoctor)
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
@@ -189,7 +189,7 @@ namespace DBI
             } // using
         } // WriteItem
 
-        public void WriteList(List<UsersDoctor> doctors)
+        public void WriteList(List<Users> doctors)
         {
             foreach (var Doctor in doctors)
             {

@@ -69,6 +69,7 @@
     <Compile Include="ModelTableTests\PatientTableTests.cs" />
     <Compile Include="ModelTableTests\ProceduresTableTests.cs" />
     <Compile Include="ModelTableTests\PrescriptionsTableTests.cs" />
+    <Compile Include="ModelTableTests\UsersTableTests.cs" />
     <Compile Include="ModelTableTests\VisitorsTableTests.cs" />
     <Compile Include="ModelTableTests\ChargesTableTests.cs" />
     <Compile Include="ModelTableTests\crudTests.cs" />
