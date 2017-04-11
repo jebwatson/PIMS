@@ -136,7 +136,6 @@
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnCases);
             this.Controls.Add(this.btnPatients);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHome";
             this.Text = "Home";

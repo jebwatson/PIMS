@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using PIMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace PIMS.Views
 {
     public partial class Patients : Form
     {
+        // Locals
+        PPatients Presenter;
+
+        public ObjectListView PatientsList { get { return this.olvPatientsList; } }
+
         public Patients()
         {
             InitializeComponent();
+            Presenter = new PPatients(this);
+            Initialize();
         }
 
         private void btnRefreshPatients_Click(object sender, EventArgs e)
@@ -37,9 +46,9 @@ namespace PIMS.Views
 
         }
 
-        private void PopulatePatientsList()
+        private void Initialize()
         {
-
+            Presenter.PopulatePatientsList();
         }
     }
 }
