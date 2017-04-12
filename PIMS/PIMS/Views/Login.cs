@@ -25,6 +25,8 @@ namespace PIMS.Views
         }
 
         #region Properties
+        public string ServerName { get { return this.txtServer.Text; } }
+        public string DatabaseName { get { return this.txtDatabase.Text; } }
         public string Username { get { return this.txtUsername.Text; } }
         public string Password { get { return this.txtPassword.Text; } }
         #endregion

@@ -51,6 +51,11 @@
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Login.settings</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +112,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Settings\Login.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
