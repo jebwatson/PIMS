@@ -26,7 +26,7 @@ namespace PIMS.Presenters
         {
             try
             {
-                ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+                ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                     "PIMSDev;Integrated Security=False;User Id=" + view.Username + ";Password=" + view.Password + ";MultipleActiveResultSets=True;";
 
                 // Establish a connection and close at the end of using

@@ -49,7 +49,9 @@ namespace PIMS.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            frmLogin logout = new frmLogin();
+            logout.Show();
+            this.Hide();
         }
         #endregion
     }
