@@ -34,9 +34,10 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnSignup = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDatabase = new System.Windows.Forms.Label();
+            this.lblServer = new System.Windows.Forms.Label();
+            this.txtServer = new System.Windows.Forms.TextBox();
+            this.txtDatabase = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgPims)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
             this.imgPims.Location = new System.Drawing.Point(9, 10);
-            this.imgPims.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgPims.Margin = new System.Windows.Forms.Padding(2);
             this.imgPims.Name = "imgPims";
             this.imgPims.Size = new System.Drawing.Size(122, 122);
             this.imgPims.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -55,7 +56,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(278, 172);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(204, 38);
@@ -65,7 +66,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(278, 225);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -97,8 +98,8 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(215, 284);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Location = new System.Drawing.Point(278, 282);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(116, 41);
             this.btnLogin.TabIndex = 5;
@@ -106,36 +107,43 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnSignup
+            // lblDatabase
             // 
-            this.btnSignup.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignup.Location = new System.Drawing.Point(369, 284);
-            this.btnSignup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(113, 41);
-            this.btnSignup.TabIndex = 6;
-            this.btnSignup.Text = "Sign Up";
-            this.btnSignup.UseVisualStyleBackColor = true;
+            this.lblDatabase.AutoSize = true;
+            this.lblDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatabase.Location = new System.Drawing.Point(151, 119);
+            this.lblDatabase.Name = "lblDatabase";
+            this.lblDatabase.Size = new System.Drawing.Size(121, 27);
+            this.lblDatabase.TabIndex = 7;
+            this.lblDatabase.Text = "Database:";
             // 
-            // label1
+            // lblServer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(153, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 27);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Database:";
+            this.lblServer.AutoSize = true;
+            this.lblServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServer.Location = new System.Drawing.Point(184, 66);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(88, 27);
+            this.lblServer.TabIndex = 8;
+            this.lblServer.Text = "Server:";
             // 
-            // label2
+            // txtServer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 27);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Server:";
+            this.txtServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServer.Location = new System.Drawing.Point(278, 66);
+            this.txtServer.Multiline = true;
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(204, 38);
+            this.txtServer.TabIndex = 9;
+            // 
+            // txtDatabase
+            // 
+            this.txtDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatabase.Location = new System.Drawing.Point(278, 119);
+            this.txtDatabase.Multiline = true;
+            this.txtDatabase.Name = "txtDatabase";
+            this.txtDatabase.Size = new System.Drawing.Size(204, 38);
+            this.txtDatabase.TabIndex = 10;
             // 
             // frmLogin
             // 
@@ -143,16 +151,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 372);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSignup);
+            this.Controls.Add(this.txtDatabase);
+            this.Controls.Add(this.txtServer);
+            this.Controls.Add(this.lblServer);
+            this.Controls.Add(this.lblDatabase);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.imgPims);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.imgPims)).EndInit();
@@ -169,8 +178,9 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnSignup;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDatabase;
+        private System.Windows.Forms.Label lblServer;
+        private System.Windows.Forms.TextBox txtServer;
+        private System.Windows.Forms.TextBox txtDatabase;
     }
 }
