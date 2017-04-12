@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.olvPatientsList = new BrightIdeasSoftware.ObjectListView();
+            this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.lastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.firstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnRefreshPatients = new System.Windows.Forms.Button();
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.btnDeletePatients = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPatients = new System.Windows.Forms.Button();
-            this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lastName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.firstName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvPatientsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,24 @@
             this.olvPatientsList.TabIndex = 0;
             this.olvPatientsList.UseCompatibleStateImageBehavior = false;
             this.olvPatientsList.View = System.Windows.Forms.View.Details;
+            // 
+            // id
+            // 
+            this.id.AspectName = "patientId";
+            this.id.Text = "Patient Id";
+            this.id.Width = 70;
+            // 
+            // lastName
+            // 
+            this.lastName.AspectName = "nameLast";
+            this.lastName.Text = "Last";
+            this.lastName.Width = 75;
+            // 
+            // firstName
+            // 
+            this.firstName.AspectName = "nameFirst";
+            this.firstName.Text = "First";
+            this.firstName.Width = 93;
             // 
             // btnRefreshPatients
             // 
@@ -105,23 +123,6 @@
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
             this.btnSearchPatients.Click += new System.EventHandler(this.btnSearchPatients_Click);
-            // 
-            // id
-            // 
-            this.id.AspectName = "patientId";
-            this.id.Text = "Patient Id";
-            // 
-            // lastName
-            // 
-            this.lastName.AspectName = "nameLast";
-            this.lastName.Text = "Last";
-            this.lastName.Width = 75;
-            // 
-            // firstName
-            // 
-            this.firstName.AspectName = "nameFirst";
-            this.firstName.Text = "First";
-            this.firstName.Width = 93;
             // 
             // Patients
             // 
