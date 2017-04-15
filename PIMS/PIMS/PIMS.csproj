@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicManagers\PatientsManager.cs" />
     <Compile Include="Helpers\WizardPages.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presenters\PHome.cs" />
     <Compile Include="Presenters\PLogin.cs" />
+    <Compile Include="Presenters\PNewPatient.cs" />
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reports1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="..\DBI\DBI.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

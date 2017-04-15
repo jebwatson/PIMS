@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PIMS.Presenters
 {
@@ -49,11 +50,15 @@ namespace PIMS.Presenters
         }
 
         /// <summary>
-        /// Add a new patient to the database and refresh the list.
+        /// Open a new new patients form.
         /// </summary>
         public void AddPatient()
         {
-            throw new NotImplementedException();
+            Patients MyNewPatientsForm = new Patients();
+            if (MyNewPatientsForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshPatientsList();
+            }
         }
 
         /// <summary>
@@ -61,11 +66,27 @@ namespace PIMS.Presenters
         /// </summary>
         public void DeletePatients()
         {
-            throw new NotImplementedException();
+            if (MessageBox.Show("Are you sure you want to delete the selected patients?", 
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                MyPatientsList = (List<Patient>)View.PatientsList.SelectedObjects;
+
+                foreach (var item in MyPatientsList)
+                {
+                    MyPatientsTable.ClearTableById(item.patientId);
+                }
+
+                RefreshPatientsList();
+            }
+            else
+            {
+                return;
+            }
         }
 
         /// <summary>
-        /// Read the database by the user specified string and populate the table with the new list of patients.
+        /// Read the database by the user specified string and populate the table with 
+        /// the new list of patients.
         /// </summary>
         public void SearchPatients()
         {
