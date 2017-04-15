@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBI
 {
-    public class UsersTable : IRepository<Users, int>
+    public class UsersTable
     {
         public const string theTable = "UsersDoctor";
 
