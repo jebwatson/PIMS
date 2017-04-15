@@ -30,36 +30,46 @@
         {
             this.wizardPages1 = new cssa_appraisal_partner_version3.HelperClasses.WizardPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblPatientId = new System.Windows.Forms.Label();
+            this.lblFamilyDoctor = new System.Windows.Forms.Label();
+            this.txtPatientId = new System.Windows.Forms.TextBox();
+            this.txtFamilyDoctor = new System.Windows.Forms.TextBox();
+            this.lblCellPhone = new System.Windows.Forms.Label();
+            this.lblWorkPhone = new System.Windows.Forms.Label();
+            this.lblHomePhone = new System.Windows.Forms.Label();
+            this.txtCellPhone = new System.Windows.Forms.TextBox();
+            this.txtWorkPhone = new System.Windows.Forms.TextBox();
+            this.txtHomePhone = new System.Windows.Forms.TextBox();
+            this.lblZipCode = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblStreetAddress = new System.Windows.Forms.Label();
+            this.txtZipCode = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtStreetAddress = new System.Windows.Forms.TextBox();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtMiddleName = new System.Windows.Forms.TextBox();
+            this.lblNewPatient1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblNewPatient2 = new System.Windows.Forms.Label();
+            this.lblFirstNameIce = new System.Windows.Forms.Label();
+            this.lblLastNameIce = new System.Windows.Forms.Label();
+            this.txtFirstNameIce = new System.Windows.Forms.TextBox();
+            this.txtLastNameIce = new System.Windows.Forms.TextBox();
+            this.lblAreaCodeIce = new System.Windows.Forms.Label();
+            this.lblPhoneNumberIce = new System.Windows.Forms.Label();
+            this.txtAreaCodeIce = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumberIce = new System.Windows.Forms.TextBox();
             this.wizardPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // wizardPages1
@@ -75,31 +85,31 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnCancel);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.textBox11);
-            this.tabPage1.Controls.Add(this.textBox10);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.textBox9);
-            this.tabPage1.Controls.Add(this.textBox8);
-            this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox6);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.btnSubmit);
+            this.tabPage1.Controls.Add(this.lblPatientId);
+            this.tabPage1.Controls.Add(this.lblFamilyDoctor);
+            this.tabPage1.Controls.Add(this.txtPatientId);
+            this.tabPage1.Controls.Add(this.txtFamilyDoctor);
+            this.tabPage1.Controls.Add(this.lblCellPhone);
+            this.tabPage1.Controls.Add(this.lblWorkPhone);
+            this.tabPage1.Controls.Add(this.lblHomePhone);
+            this.tabPage1.Controls.Add(this.txtCellPhone);
+            this.tabPage1.Controls.Add(this.txtWorkPhone);
+            this.tabPage1.Controls.Add(this.txtHomePhone);
+            this.tabPage1.Controls.Add(this.lblZipCode);
+            this.tabPage1.Controls.Add(this.lblState);
+            this.tabPage1.Controls.Add(this.lblCity);
+            this.tabPage1.Controls.Add(this.lblStreetAddress);
+            this.tabPage1.Controls.Add(this.txtZipCode);
+            this.tabPage1.Controls.Add(this.txtState);
+            this.tabPage1.Controls.Add(this.txtCity);
+            this.tabPage1.Controls.Add(this.txtStreetAddress);
+            this.tabPage1.Controls.Add(this.lblMiddleName);
+            this.tabPage1.Controls.Add(this.lblLastName);
+            this.tabPage1.Controls.Add(this.lblFirstName);
+            this.tabPage1.Controls.Add(this.txtLastName);
+            this.tabPage1.Controls.Add(this.txtMiddleName);
+            this.tabPage1.Controls.Add(this.lblNewPatient1);
             this.tabPage1.Controls.Add(this.txtFirstName);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -108,16 +118,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(572, 460);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -131,284 +131,284 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(133, 408);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 37);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSubmit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(133, 408);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(127, 37);
+            this.btnSubmit.TabIndex = 52;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // lblPatientId
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(414, 382);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 14);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "Patient ID";
+            this.lblPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPatientId.AutoSize = true;
+            this.lblPatientId.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientId.Location = new System.Drawing.Point(414, 382);
+            this.lblPatientId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPatientId.Name = "lblPatientId";
+            this.lblPatientId.Size = new System.Drawing.Size(51, 14);
+            this.lblPatientId.TabIndex = 51;
+            this.lblPatientId.Text = "Patient ID";
             // 
-            // label12
+            // lblFamilyDoctor
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(96, 382);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 14);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Family Doctor";
+            this.lblFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFamilyDoctor.AutoSize = true;
+            this.lblFamilyDoctor.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFamilyDoctor.Location = new System.Drawing.Point(96, 382);
+            this.lblFamilyDoctor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFamilyDoctor.Name = "lblFamilyDoctor";
+            this.lblFamilyDoctor.Size = new System.Drawing.Size(72, 14);
+            this.lblFamilyDoctor.TabIndex = 50;
+            this.lblFamilyDoctor.Text = "Family Doctor";
             // 
-            // textBox11
+            // txtPatientId
             // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(383, 355);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(108, 26);
-            this.textBox11.TabIndex = 49;
+            this.txtPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientId.Location = new System.Drawing.Point(383, 355);
+            this.txtPatientId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientId.Name = "txtPatientId";
+            this.txtPatientId.Size = new System.Drawing.Size(108, 26);
+            this.txtPatientId.TabIndex = 49;
             // 
-            // textBox10
+            // txtFamilyDoctor
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(66, 355);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(134, 26);
-            this.textBox10.TabIndex = 48;
+            this.txtFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFamilyDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFamilyDoctor.Location = new System.Drawing.Point(66, 355);
+            this.txtFamilyDoctor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFamilyDoctor.Name = "txtFamilyDoctor";
+            this.txtFamilyDoctor.Size = new System.Drawing.Size(134, 26);
+            this.txtFamilyDoctor.TabIndex = 48;
             // 
-            // label11
+            // lblCellPhone
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(414, 310);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 14);
-            this.label11.TabIndex = 47;
-            this.label11.Text = "Cell Phone";
+            this.lblCellPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCellPhone.AutoSize = true;
+            this.lblCellPhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCellPhone.Location = new System.Drawing.Point(414, 310);
+            this.lblCellPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCellPhone.Name = "lblCellPhone";
+            this.lblCellPhone.Size = new System.Drawing.Size(57, 14);
+            this.lblCellPhone.TabIndex = 47;
+            this.lblCellPhone.Text = "Cell Phone";
             // 
-            // label10
+            // lblWorkPhone
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(254, 310);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 14);
-            this.label10.TabIndex = 46;
-            this.label10.Text = "Work Phone";
+            this.lblWorkPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWorkPhone.AutoSize = true;
+            this.lblWorkPhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkPhone.Location = new System.Drawing.Point(254, 310);
+            this.lblWorkPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkPhone.Name = "lblWorkPhone";
+            this.lblWorkPhone.Size = new System.Drawing.Size(65, 14);
+            this.lblWorkPhone.TabIndex = 46;
+            this.lblWorkPhone.Text = "Work Phone";
             // 
-            // label9
+            // lblHomePhone
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(96, 310);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 14);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Home Phone";
+            this.lblHomePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHomePhone.AutoSize = true;
+            this.lblHomePhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomePhone.Location = new System.Drawing.Point(96, 310);
+            this.lblHomePhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHomePhone.Name = "lblHomePhone";
+            this.lblHomePhone.Size = new System.Drawing.Size(67, 14);
+            this.lblHomePhone.TabIndex = 45;
+            this.lblHomePhone.Text = "Home Phone";
             // 
-            // textBox9
+            // txtCellPhone
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(373, 284);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(134, 26);
-            this.textBox9.TabIndex = 44;
+            this.txtCellPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCellPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCellPhone.Location = new System.Drawing.Point(373, 284);
+            this.txtCellPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellPhone.Name = "txtCellPhone";
+            this.txtCellPhone.Size = new System.Drawing.Size(134, 26);
+            this.txtCellPhone.TabIndex = 44;
             // 
-            // textBox8
+            // txtWorkPhone
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(219, 284);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(134, 26);
-            this.textBox8.TabIndex = 43;
+            this.txtWorkPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtWorkPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkPhone.Location = new System.Drawing.Point(219, 284);
+            this.txtWorkPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtWorkPhone.Name = "txtWorkPhone";
+            this.txtWorkPhone.Size = new System.Drawing.Size(134, 26);
+            this.txtWorkPhone.TabIndex = 43;
             // 
-            // textBox7
+            // txtHomePhone
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(66, 284);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(134, 26);
-            this.textBox7.TabIndex = 42;
+            this.txtHomePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtHomePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHomePhone.Location = new System.Drawing.Point(66, 284);
+            this.txtHomePhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHomePhone.Name = "txtHomePhone";
+            this.txtHomePhone.Size = new System.Drawing.Size(134, 26);
+            this.txtHomePhone.TabIndex = 42;
             // 
-            // label8
+            // lblZipCode
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(414, 215);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 14);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Zip Code";
+            this.lblZipCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblZipCode.AutoSize = true;
+            this.lblZipCode.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZipCode.Location = new System.Drawing.Point(414, 215);
+            this.lblZipCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblZipCode.Name = "lblZipCode";
+            this.lblZipCode.Size = new System.Drawing.Size(50, 14);
+            this.lblZipCode.TabIndex = 41;
+            this.lblZipCode.Text = "Zip Code";
             // 
-            // label7
+            // lblState
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(371, 215);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(20, 14);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "ST";
+            this.lblState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblState.AutoSize = true;
+            this.lblState.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(371, 215);
+            this.lblState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(20, 14);
+            this.lblState.TabIndex = 40;
+            this.lblState.Text = "ST";
             // 
-            // label6
+            // lblCity
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(314, 215);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 14);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "City";
+            this.lblCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(314, 215);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(25, 14);
+            this.lblCity.TabIndex = 39;
+            this.lblCity.Text = "City";
             // 
-            // label5
+            // lblStreetAddress
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(130, 215);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 14);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Street Address";
+            this.lblStreetAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStreetAddress.AutoSize = true;
+            this.lblStreetAddress.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress.Location = new System.Drawing.Point(130, 215);
+            this.lblStreetAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress.Name = "lblStreetAddress";
+            this.lblStreetAddress.Size = new System.Drawing.Size(80, 14);
+            this.lblStreetAddress.TabIndex = 38;
+            this.lblStreetAddress.Text = "Street Address";
             // 
-            // textBox6
+            // txtZipCode
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(395, 188);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(88, 26);
-            this.textBox6.TabIndex = 37;
+            this.txtZipCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZipCode.Location = new System.Drawing.Point(395, 188);
+            this.txtZipCode.Margin = new System.Windows.Forms.Padding(2);
+            this.txtZipCode.Name = "txtZipCode";
+            this.txtZipCode.Size = new System.Drawing.Size(88, 26);
+            this.txtZipCode.TabIndex = 37;
             // 
-            // textBox5
+            // txtState
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(368, 188);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(30, 26);
-            this.textBox5.TabIndex = 36;
+            this.txtState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtState.Location = new System.Drawing.Point(368, 188);
+            this.txtState.Margin = new System.Windows.Forms.Padding(2);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(30, 26);
+            this.txtState.TabIndex = 36;
             // 
-            // textBox4
+            // txtCity
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(282, 188);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(88, 26);
-            this.textBox4.TabIndex = 35;
+            this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Location = new System.Drawing.Point(282, 188);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(88, 26);
+            this.txtCity.TabIndex = 35;
             // 
-            // textBox3
+            // txtStreetAddress
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(66, 188);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 26);
-            this.textBox3.TabIndex = 34;
+            this.txtStreetAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStreetAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreetAddress.Location = new System.Drawing.Point(66, 188);
+            this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStreetAddress.Name = "txtStreetAddress";
+            this.txtStreetAddress.Size = new System.Drawing.Size(219, 26);
+            this.txtStreetAddress.TabIndex = 34;
             // 
-            // label4
+            // lblMiddleName
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(244, 114);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 14);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Middle Name";
+            this.lblMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMiddleName.AutoSize = true;
+            this.lblMiddleName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiddleName.Location = new System.Drawing.Point(244, 114);
+            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMiddleName.Name = "lblMiddleName";
+            this.lblMiddleName.Size = new System.Drawing.Size(67, 14);
+            this.lblMiddleName.TabIndex = 33;
+            this.lblMiddleName.Text = "Middle Name";
             // 
-            // label3
+            // lblLastName
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(392, 114);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 14);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Last Name";
+            this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(392, 114);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 14);
+            this.lblLastName.TabIndex = 32;
+            this.lblLastName.Text = "Last Name";
             // 
-            // label2
+            // lblFirstName
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 14);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "First Name";
+            this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(96, 114);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(58, 14);
+            this.lblFirstName.TabIndex = 31;
+            this.lblFirstName.Text = "First Name";
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(368, 84);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 26);
-            this.textBox2.TabIndex = 30;
+            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(368, 84);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(108, 26);
+            this.txtLastName.TabIndex = 30;
             // 
-            // textBox1
+            // txtMiddleName
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(219, 84);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 26);
-            this.textBox1.TabIndex = 29;
+            this.txtMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Location = new System.Drawing.Point(219, 84);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(108, 26);
+            this.txtMiddleName.TabIndex = 29;
             // 
-            // label1
+            // lblNewPatient1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 32);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "New Patient Form";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNewPatient1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNewPatient1.AutoSize = true;
+            this.lblNewPatient1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatient1.Location = new System.Drawing.Point(163, 17);
+            this.lblNewPatient1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewPatient1.Name = "lblNewPatient1";
+            this.lblNewPatient1.Size = new System.Drawing.Size(264, 32);
+            this.lblNewPatient1.TabIndex = 28;
+            this.lblNewPatient1.Text = "Personal Information";
+            this.lblNewPatient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtFirstName
             // 
@@ -420,18 +420,113 @@
             this.txtFirstName.Size = new System.Drawing.Size(108, 26);
             this.txtFirstName.TabIndex = 27;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.txtPhoneNumberIce);
+            this.tabPage2.Controls.Add(this.txtAreaCodeIce);
+            this.tabPage2.Controls.Add(this.lblPhoneNumberIce);
+            this.tabPage2.Controls.Add(this.lblAreaCodeIce);
+            this.tabPage2.Controls.Add(this.txtLastNameIce);
+            this.tabPage2.Controls.Add(this.txtFirstNameIce);
+            this.tabPage2.Controls.Add(this.lblLastNameIce);
+            this.tabPage2.Controls.Add(this.lblFirstNameIce);
+            this.tabPage2.Controls.Add(this.lblNewPatient2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(572, 460);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblNewPatient2
+            // 
+            this.lblNewPatient2.AutoSize = true;
+            this.lblNewPatient2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatient2.Location = new System.Drawing.Point(90, 22);
+            this.lblNewPatient2.Name = "lblNewPatient2";
+            this.lblNewPatient2.Size = new System.Drawing.Size(398, 32);
+            this.lblNewPatient2.TabIndex = 0;
+            this.lblNewPatient2.Text = "Emergency Contact Information";
+            // 
+            // lblFirstNameIce
+            // 
+            this.lblFirstNameIce.AutoSize = true;
+            this.lblFirstNameIce.Location = new System.Drawing.Point(163, 124);
+            this.lblFirstNameIce.Name = "lblFirstNameIce";
+            this.lblFirstNameIce.Size = new System.Drawing.Size(58, 13);
+            this.lblFirstNameIce.TabIndex = 1;
+            this.lblFirstNameIce.Text = "FIrst Name";
+            // 
+            // lblLastNameIce
+            // 
+            this.lblLastNameIce.AutoSize = true;
+            this.lblLastNameIce.Location = new System.Drawing.Point(364, 124);
+            this.lblLastNameIce.Name = "lblLastNameIce";
+            this.lblLastNameIce.Size = new System.Drawing.Size(58, 13);
+            this.lblLastNameIce.TabIndex = 3;
+            this.lblLastNameIce.Text = "Last Name";
+            // 
+            // txtFirstNameIce
+            // 
+            this.txtFirstNameIce.Location = new System.Drawing.Point(96, 101);
+            this.txtFirstNameIce.Name = "txtFirstNameIce";
+            this.txtFirstNameIce.Size = new System.Drawing.Size(194, 20);
+            this.txtFirstNameIce.TabIndex = 4;
+            // 
+            // txtLastNameIce
+            // 
+            this.txtLastNameIce.Location = new System.Drawing.Point(296, 101);
+            this.txtLastNameIce.Name = "txtLastNameIce";
+            this.txtLastNameIce.Size = new System.Drawing.Size(192, 20);
+            this.txtLastNameIce.TabIndex = 5;
+            // 
+            // lblAreaCodeIce
+            // 
+            this.lblAreaCodeIce.AutoSize = true;
+            this.lblAreaCodeIce.Location = new System.Drawing.Point(100, 216);
+            this.lblAreaCodeIce.Name = "lblAreaCodeIce";
+            this.lblAreaCodeIce.Size = new System.Drawing.Size(57, 13);
+            this.lblAreaCodeIce.TabIndex = 6;
+            this.lblAreaCodeIce.Text = "Area Code";
+            // 
+            // lblPhoneNumberIce
+            // 
+            this.lblPhoneNumberIce.AutoSize = true;
+            this.lblPhoneNumberIce.Location = new System.Drawing.Point(195, 216);
+            this.lblPhoneNumberIce.Name = "lblPhoneNumberIce";
+            this.lblPhoneNumberIce.Size = new System.Drawing.Size(78, 13);
+            this.lblPhoneNumberIce.TabIndex = 7;
+            this.lblPhoneNumberIce.Text = "Phone Number";
+            // 
+            // txtAreaCodeIce
+            // 
+            this.txtAreaCodeIce.Location = new System.Drawing.Point(96, 193);
+            this.txtAreaCodeIce.Name = "txtAreaCodeIce";
+            this.txtAreaCodeIce.Size = new System.Drawing.Size(61, 20);
+            this.txtAreaCodeIce.TabIndex = 8;
+            // 
+            // txtPhoneNumberIce
+            // 
+            this.txtPhoneNumberIce.Location = new System.Drawing.Point(166, 193);
+            this.txtPhoneNumberIce.Name = "txtPhoneNumberIce";
+            this.txtPhoneNumberIce.Size = new System.Drawing.Size(145, 20);
+            this.txtPhoneNumberIce.TabIndex = 9;
+            // 
             // frmNewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 510);
             this.Controls.Add(this.wizardPages1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNewPatient";
             this.Text = "Patient";
             this.wizardPages1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -441,32 +536,41 @@
         private cssa_appraisal_partner_version3.HelperClasses.WizardPages wizardPages1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblPatientId;
+        private System.Windows.Forms.Label lblFamilyDoctor;
+        private System.Windows.Forms.TextBox txtPatientId;
+        private System.Windows.Forms.TextBox txtFamilyDoctor;
+        private System.Windows.Forms.Label lblCellPhone;
+        private System.Windows.Forms.Label lblWorkPhone;
+        private System.Windows.Forms.Label lblHomePhone;
+        private System.Windows.Forms.TextBox txtCellPhone;
+        private System.Windows.Forms.TextBox txtWorkPhone;
+        private System.Windows.Forms.TextBox txtHomePhone;
+        private System.Windows.Forms.Label lblZipCode;
+        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblStreetAddress;
+        private System.Windows.Forms.TextBox txtZipCode;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtStreetAddress;
+        private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtMiddleName;
+        private System.Windows.Forms.Label lblNewPatient1;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label lblNewPatient2;
+        private System.Windows.Forms.TextBox txtPhoneNumberIce;
+        private System.Windows.Forms.TextBox txtAreaCodeIce;
+        private System.Windows.Forms.Label lblPhoneNumberIce;
+        private System.Windows.Forms.Label lblAreaCodeIce;
+        private System.Windows.Forms.TextBox txtLastNameIce;
+        private System.Windows.Forms.TextBox txtFirstNameIce;
+        private System.Windows.Forms.Label lblLastNameIce;
+        private System.Windows.Forms.Label lblFirstNameIce;
     }
 }
