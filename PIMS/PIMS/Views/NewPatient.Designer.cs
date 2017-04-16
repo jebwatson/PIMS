@@ -28,377 +28,959 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.wizardPages1 = new cssa_appraisal_partner_version3.HelperClasses.WizardPages();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCancel1 = new System.Windows.Forms.Button();
+            this.btnNext1 = new System.Windows.Forms.Button();
+            this.lblPatientId = new System.Windows.Forms.Label();
+            this.lblFamilyDoctor = new System.Windows.Forms.Label();
+            this.txtPatientId = new System.Windows.Forms.TextBox();
+            this.txtFamilyDoctor = new System.Windows.Forms.TextBox();
+            this.lblCellPhone = new System.Windows.Forms.Label();
+            this.lblWorkPhone = new System.Windows.Forms.Label();
+            this.lblHomePhone = new System.Windows.Forms.Label();
+            this.txtCellPhone = new System.Windows.Forms.TextBox();
+            this.txtWorkPhone = new System.Windows.Forms.TextBox();
+            this.txtHomePhone = new System.Windows.Forms.TextBox();
+            this.lblZipCode = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblStreetAddress = new System.Windows.Forms.Label();
+            this.txtZipCode = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtStreetAddress = new System.Windows.Forms.TextBox();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtMiddleName = new System.Windows.Forms.TextBox();
+            this.lblNewPatient1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtPhoneNumberIce = new System.Windows.Forms.TextBox();
+            this.txtAreaCodeIce = new System.Windows.Forms.TextBox();
+            this.lblPhoneNumberIce = new System.Windows.Forms.Label();
+            this.lblAreaCodeIce = new System.Windows.Forms.Label();
+            this.txtLastNameIce = new System.Windows.Forms.TextBox();
+            this.txtFirstNameIce = new System.Windows.Forms.TextBox();
+            this.lblLastNameIce = new System.Windows.Forms.Label();
+            this.lblFirstNameIce = new System.Windows.Forms.Label();
+            this.lblNewPatient2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblNewPatientInsurance = new System.Windows.Forms.Label();
+            this.lblCarrier = new System.Windows.Forms.Label();
+            this.lblGroupNumber = new System.Windows.Forms.Label();
+            this.lblAccountNumber = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.lblAdmissionInformation = new System.Windows.Forms.Label();
+            this.dtpAdmissionTime = new System.Windows.Forms.DateTimePicker();
+            this.lblAdmissionDate = new System.Windows.Forms.Label();
+            this.btnNext2 = new System.Windows.Forms.Button();
+            this.btnCancel2 = new System.Windows.Forms.Button();
+            this.txtCarrier = new System.Windows.Forms.TextBox();
+            this.txtAccountNumber = new System.Windows.Forms.TextBox();
+            this.txtGroupNumber = new System.Windows.Forms.TextBox();
+            this.btnNext3 = new System.Windows.Forms.Button();
+            this.btnCancel3 = new System.Windows.Forms.Button();
+            this.lblFacility = new System.Windows.Forms.Label();
+            this.lblFloor = new System.Windows.Forms.Label();
+            this.lblRoomNumber = new System.Windows.Forms.Label();
+            this.lblBedNumber = new System.Windows.Forms.Label();
+            this.txtFacility = new System.Windows.Forms.TextBox();
+            this.txtFloorNumber = new System.Windows.Forms.TextBox();
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
+            this.txtBedNumber = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCancel4 = new System.Windows.Forms.Button();
+            this.btnPrevious1 = new System.Windows.Forms.Button();
+            this.btnPrevious2 = new System.Windows.Forms.Button();
+            this.btnPrevious3 = new System.Windows.Forms.Button();
+            this.txtAreaCodeHome = new System.Windows.Forms.TextBox();
+            this.txtAreaCodeWork = new System.Windows.Forms.TextBox();
+            this.txtAreaCodeCell = new System.Windows.Forms.TextBox();
+            this.txtAdmissionReason = new System.Windows.Forms.TextBox();
+            this.lblAdmissionReason = new System.Windows.Forms.Label();
+            this.wizardPages1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // wizardPages1
+            // 
+            this.wizardPages1.Controls.Add(this.tabPage1);
+            this.wizardPages1.Controls.Add(this.tabPage2);
+            this.wizardPages1.Controls.Add(this.tabPage3);
+            this.wizardPages1.Controls.Add(this.tabPage4);
+            this.wizardPages1.Location = new System.Drawing.Point(12, 12);
+            this.wizardPages1.Name = "wizardPages1";
+            this.wizardPages1.SelectedIndex = 0;
+            this.wizardPages1.Size = new System.Drawing.Size(580, 486);
+            this.wizardPages1.TabIndex = 0;
+            this.wizardPages1.SelectedIndexChanged += new System.EventHandler(this.wizardPages1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txtAreaCodeCell);
+            this.tabPage1.Controls.Add(this.txtAreaCodeWork);
+            this.tabPage1.Controls.Add(this.txtAreaCodeHome);
+            this.tabPage1.Controls.Add(this.btnCancel1);
+            this.tabPage1.Controls.Add(this.btnNext1);
+            this.tabPage1.Controls.Add(this.lblPatientId);
+            this.tabPage1.Controls.Add(this.lblFamilyDoctor);
+            this.tabPage1.Controls.Add(this.txtPatientId);
+            this.tabPage1.Controls.Add(this.txtFamilyDoctor);
+            this.tabPage1.Controls.Add(this.lblCellPhone);
+            this.tabPage1.Controls.Add(this.lblWorkPhone);
+            this.tabPage1.Controls.Add(this.lblHomePhone);
+            this.tabPage1.Controls.Add(this.txtCellPhone);
+            this.tabPage1.Controls.Add(this.txtWorkPhone);
+            this.tabPage1.Controls.Add(this.txtHomePhone);
+            this.tabPage1.Controls.Add(this.lblZipCode);
+            this.tabPage1.Controls.Add(this.lblState);
+            this.tabPage1.Controls.Add(this.lblCity);
+            this.tabPage1.Controls.Add(this.lblStreetAddress);
+            this.tabPage1.Controls.Add(this.txtZipCode);
+            this.tabPage1.Controls.Add(this.txtState);
+            this.tabPage1.Controls.Add(this.txtCity);
+            this.tabPage1.Controls.Add(this.txtStreetAddress);
+            this.tabPage1.Controls.Add(this.lblMiddleName);
+            this.tabPage1.Controls.Add(this.lblLastName);
+            this.tabPage1.Controls.Add(this.lblFirstName);
+            this.tabPage1.Controls.Add(this.txtLastName);
+            this.tabPage1.Controls.Add(this.txtMiddleName);
+            this.tabPage1.Controls.Add(this.lblNewPatient1);
+            this.tabPage1.Controls.Add(this.txtFirstName);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(572, 460);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel1
+            // 
+            this.btnCancel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel1.Location = new System.Drawing.Point(133, 418);
+            this.btnCancel1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel1.Name = "btnCancel1";
+            this.btnCancel1.Size = new System.Drawing.Size(127, 37);
+            this.btnCancel1.TabIndex = 53;
+            this.btnCancel1.Text = "Cancel";
+            this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
+            // 
+            // btnNext1
+            // 
+            this.btnNext1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNext1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext1.Location = new System.Drawing.Point(323, 418);
+            this.btnNext1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext1.Name = "btnNext1";
+            this.btnNext1.Size = new System.Drawing.Size(127, 37);
+            this.btnNext1.TabIndex = 52;
+            this.btnNext1.Text = "Next";
+            this.btnNext1.UseVisualStyleBackColor = true;
+            this.btnNext1.Click += new System.EventHandler(this.btnNext1_Click);
+            // 
+            // lblPatientId
+            // 
+            this.lblPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPatientId.AutoSize = true;
+            this.lblPatientId.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientId.Location = new System.Drawing.Point(414, 382);
+            this.lblPatientId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPatientId.Name = "lblPatientId";
+            this.lblPatientId.Size = new System.Drawing.Size(51, 14);
+            this.lblPatientId.TabIndex = 51;
+            this.lblPatientId.Text = "Patient ID";
+            // 
+            // lblFamilyDoctor
+            // 
+            this.lblFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFamilyDoctor.AutoSize = true;
+            this.lblFamilyDoctor.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFamilyDoctor.Location = new System.Drawing.Point(96, 382);
+            this.lblFamilyDoctor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFamilyDoctor.Name = "lblFamilyDoctor";
+            this.lblFamilyDoctor.Size = new System.Drawing.Size(72, 14);
+            this.lblFamilyDoctor.TabIndex = 50;
+            this.lblFamilyDoctor.Text = "Family Doctor";
+            // 
+            // txtPatientId
+            // 
+            this.txtPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientId.Location = new System.Drawing.Point(383, 355);
+            this.txtPatientId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientId.Name = "txtPatientId";
+            this.txtPatientId.Size = new System.Drawing.Size(108, 26);
+            this.txtPatientId.TabIndex = 49;
+            // 
+            // txtFamilyDoctor
+            // 
+            this.txtFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFamilyDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFamilyDoctor.Location = new System.Drawing.Point(66, 355);
+            this.txtFamilyDoctor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFamilyDoctor.Name = "txtFamilyDoctor";
+            this.txtFamilyDoctor.Size = new System.Drawing.Size(134, 26);
+            this.txtFamilyDoctor.TabIndex = 48;
+            // 
+            // lblCellPhone
+            // 
+            this.lblCellPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCellPhone.AutoSize = true;
+            this.lblCellPhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCellPhone.Location = new System.Drawing.Point(414, 310);
+            this.lblCellPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCellPhone.Name = "lblCellPhone";
+            this.lblCellPhone.Size = new System.Drawing.Size(57, 14);
+            this.lblCellPhone.TabIndex = 47;
+            this.lblCellPhone.Text = "Cell Phone";
+            // 
+            // lblWorkPhone
+            // 
+            this.lblWorkPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWorkPhone.AutoSize = true;
+            this.lblWorkPhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkPhone.Location = new System.Drawing.Point(254, 310);
+            this.lblWorkPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkPhone.Name = "lblWorkPhone";
+            this.lblWorkPhone.Size = new System.Drawing.Size(65, 14);
+            this.lblWorkPhone.TabIndex = 46;
+            this.lblWorkPhone.Text = "Work Phone";
+            // 
+            // lblHomePhone
+            // 
+            this.lblHomePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHomePhone.AutoSize = true;
+            this.lblHomePhone.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomePhone.Location = new System.Drawing.Point(96, 310);
+            this.lblHomePhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHomePhone.Name = "lblHomePhone";
+            this.lblHomePhone.Size = new System.Drawing.Size(67, 14);
+            this.lblHomePhone.TabIndex = 45;
+            this.lblHomePhone.Text = "Home Phone";
+            // 
+            // txtCellPhone
+            // 
+            this.txtCellPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCellPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCellPhone.Location = new System.Drawing.Point(417, 284);
+            this.txtCellPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellPhone.Name = "txtCellPhone";
+            this.txtCellPhone.Size = new System.Drawing.Size(90, 26);
+            this.txtCellPhone.TabIndex = 44;
+            // 
+            // txtWorkPhone
+            // 
+            this.txtWorkPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtWorkPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkPhone.Location = new System.Drawing.Point(257, 284);
+            this.txtWorkPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtWorkPhone.Name = "txtWorkPhone";
+            this.txtWorkPhone.Size = new System.Drawing.Size(105, 26);
+            this.txtWorkPhone.TabIndex = 43;
+            // 
+            // txtHomePhone
+            // 
+            this.txtHomePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtHomePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHomePhone.Location = new System.Drawing.Point(99, 284);
+            this.txtHomePhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHomePhone.Name = "txtHomePhone";
+            this.txtHomePhone.Size = new System.Drawing.Size(105, 26);
+            this.txtHomePhone.TabIndex = 42;
+            // 
+            // lblZipCode
+            // 
+            this.lblZipCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblZipCode.AutoSize = true;
+            this.lblZipCode.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZipCode.Location = new System.Drawing.Point(414, 215);
+            this.lblZipCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblZipCode.Name = "lblZipCode";
+            this.lblZipCode.Size = new System.Drawing.Size(50, 14);
+            this.lblZipCode.TabIndex = 41;
+            this.lblZipCode.Text = "Zip Code";
+            // 
+            // lblState
+            // 
+            this.lblState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblState.AutoSize = true;
+            this.lblState.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(371, 215);
+            this.lblState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(20, 14);
+            this.lblState.TabIndex = 40;
+            this.lblState.Text = "ST";
+            // 
+            // lblCity
+            // 
+            this.lblCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(314, 215);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(25, 14);
+            this.lblCity.TabIndex = 39;
+            this.lblCity.Text = "City";
+            // 
+            // lblStreetAddress
+            // 
+            this.lblStreetAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStreetAddress.AutoSize = true;
+            this.lblStreetAddress.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress.Location = new System.Drawing.Point(130, 215);
+            this.lblStreetAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress.Name = "lblStreetAddress";
+            this.lblStreetAddress.Size = new System.Drawing.Size(80, 14);
+            this.lblStreetAddress.TabIndex = 38;
+            this.lblStreetAddress.Text = "Street Address";
+            // 
+            // txtZipCode
+            // 
+            this.txtZipCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZipCode.Location = new System.Drawing.Point(395, 188);
+            this.txtZipCode.Margin = new System.Windows.Forms.Padding(2);
+            this.txtZipCode.Name = "txtZipCode";
+            this.txtZipCode.Size = new System.Drawing.Size(88, 26);
+            this.txtZipCode.TabIndex = 37;
+            // 
+            // txtState
+            // 
+            this.txtState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtState.Location = new System.Drawing.Point(368, 188);
+            this.txtState.Margin = new System.Windows.Forms.Padding(2);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(30, 26);
+            this.txtState.TabIndex = 36;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Location = new System.Drawing.Point(282, 188);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(88, 26);
+            this.txtCity.TabIndex = 35;
+            // 
+            // txtStreetAddress
+            // 
+            this.txtStreetAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStreetAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreetAddress.Location = new System.Drawing.Point(66, 188);
+            this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStreetAddress.Name = "txtStreetAddress";
+            this.txtStreetAddress.Size = new System.Drawing.Size(219, 26);
+            this.txtStreetAddress.TabIndex = 34;
+            // 
+            // lblMiddleName
+            // 
+            this.lblMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMiddleName.AutoSize = true;
+            this.lblMiddleName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiddleName.Location = new System.Drawing.Point(244, 114);
+            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMiddleName.Name = "lblMiddleName";
+            this.lblMiddleName.Size = new System.Drawing.Size(67, 14);
+            this.lblMiddleName.TabIndex = 33;
+            this.lblMiddleName.Text = "Middle Name";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(392, 114);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 14);
+            this.lblLastName.TabIndex = 32;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(96, 114);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(58, 14);
+            this.lblFirstName.TabIndex = 31;
+            this.lblFirstName.Text = "First Name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(368, 84);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(108, 26);
+            this.txtLastName.TabIndex = 30;
+            // 
+            // txtMiddleName
+            // 
+            this.txtMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Location = new System.Drawing.Point(219, 84);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(108, 26);
+            this.txtMiddleName.TabIndex = 29;
+            // 
+            // lblNewPatient1
+            // 
+            this.lblNewPatient1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNewPatient1.AutoSize = true;
+            this.lblNewPatient1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatient1.Location = new System.Drawing.Point(163, 17);
+            this.lblNewPatient1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewPatient1.Name = "lblNewPatient1";
+            this.lblNewPatient1.Size = new System.Drawing.Size(264, 32);
+            this.lblNewPatient1.TabIndex = 28;
+            this.lblNewPatient1.Text = "Personal Information";
+            this.lblNewPatient1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(68, 119);
+            this.txtFirstName.Location = new System.Drawing.Point(73, 84);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(142, 30);
-            this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.Size = new System.Drawing.Size(108, 26);
+            this.txtFirstName.TabIndex = 27;
             // 
-            // label1
+            // tabPage2
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(210, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "New Patient Form";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabPage2.Controls.Add(this.btnPrevious1);
+            this.tabPage2.Controls.Add(this.btnCancel2);
+            this.tabPage2.Controls.Add(this.btnNext2);
+            this.tabPage2.Controls.Add(this.txtPhoneNumberIce);
+            this.tabPage2.Controls.Add(this.txtAreaCodeIce);
+            this.tabPage2.Controls.Add(this.lblPhoneNumberIce);
+            this.tabPage2.Controls.Add(this.lblAreaCodeIce);
+            this.tabPage2.Controls.Add(this.txtLastNameIce);
+            this.tabPage2.Controls.Add(this.txtFirstNameIce);
+            this.tabPage2.Controls.Add(this.lblLastNameIce);
+            this.tabPage2.Controls.Add(this.lblFirstNameIce);
+            this.tabPage2.Controls.Add(this.lblNewPatient2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(572, 460);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtPhoneNumberIce
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(263, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 30);
-            this.textBox1.TabIndex = 2;
+            this.txtPhoneNumberIce.Location = new System.Drawing.Point(166, 193);
+            this.txtPhoneNumberIce.Name = "txtPhoneNumberIce";
+            this.txtPhoneNumberIce.Size = new System.Drawing.Size(145, 20);
+            this.txtPhoneNumberIce.TabIndex = 9;
             // 
-            // textBox2
+            // txtAreaCodeIce
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(461, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 30);
-            this.textBox2.TabIndex = 3;
+            this.txtAreaCodeIce.Location = new System.Drawing.Point(96, 193);
+            this.txtAreaCodeIce.Name = "txtAreaCodeIce";
+            this.txtAreaCodeIce.Size = new System.Drawing.Size(61, 20);
+            this.txtAreaCodeIce.TabIndex = 8;
             // 
-            // label2
+            // lblPhoneNumberIce
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "First Name";
+            this.lblPhoneNumberIce.AutoSize = true;
+            this.lblPhoneNumberIce.Location = new System.Drawing.Point(195, 216);
+            this.lblPhoneNumberIce.Name = "lblPhoneNumberIce";
+            this.lblPhoneNumberIce.Size = new System.Drawing.Size(78, 13);
+            this.lblPhoneNumberIce.TabIndex = 7;
+            this.lblPhoneNumberIce.Text = "Phone Number";
             // 
-            // label3
+            // lblAreaCodeIce
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(494, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Last Name";
+            this.lblAreaCodeIce.AutoSize = true;
+            this.lblAreaCodeIce.Location = new System.Drawing.Point(100, 216);
+            this.lblAreaCodeIce.Name = "lblAreaCodeIce";
+            this.lblAreaCodeIce.Size = new System.Drawing.Size(57, 13);
+            this.lblAreaCodeIce.TabIndex = 6;
+            this.lblAreaCodeIce.Text = "Area Code";
             // 
-            // label4
+            // txtLastNameIce
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(296, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Middle Name";
+            this.txtLastNameIce.Location = new System.Drawing.Point(296, 101);
+            this.txtLastNameIce.Name = "txtLastNameIce";
+            this.txtLastNameIce.Size = new System.Drawing.Size(192, 20);
+            this.txtLastNameIce.TabIndex = 5;
             // 
-            // textBox3
+            // txtFirstNameIce
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(58, 247);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(291, 30);
-            this.textBox3.TabIndex = 7;
+            this.txtFirstNameIce.Location = new System.Drawing.Point(96, 101);
+            this.txtFirstNameIce.Name = "txtFirstNameIce";
+            this.txtFirstNameIce.Size = new System.Drawing.Size(194, 20);
+            this.txtFirstNameIce.TabIndex = 4;
             // 
-            // textBox4
+            // lblLastNameIce
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(346, 247);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(116, 30);
-            this.textBox4.TabIndex = 8;
+            this.lblLastNameIce.AutoSize = true;
+            this.lblLastNameIce.Location = new System.Drawing.Point(364, 124);
+            this.lblLastNameIce.Name = "lblLastNameIce";
+            this.lblLastNameIce.Size = new System.Drawing.Size(58, 13);
+            this.lblLastNameIce.TabIndex = 3;
+            this.lblLastNameIce.Text = "Last Name";
             // 
-            // textBox5
+            // lblFirstNameIce
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(461, 247);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(38, 30);
-            this.textBox5.TabIndex = 9;
+            this.lblFirstNameIce.AutoSize = true;
+            this.lblFirstNameIce.Location = new System.Drawing.Point(163, 124);
+            this.lblFirstNameIce.Name = "lblFirstNameIce";
+            this.lblFirstNameIce.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstNameIce.TabIndex = 1;
+            this.lblFirstNameIce.Text = "First Name";
             // 
-            // textBox6
+            // lblNewPatient2
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(497, 247);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 30);
-            this.textBox6.TabIndex = 10;
+            this.lblNewPatient2.AutoSize = true;
+            this.lblNewPatient2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatient2.Location = new System.Drawing.Point(90, 22);
+            this.lblNewPatient2.Name = "lblNewPatient2";
+            this.lblNewPatient2.Size = new System.Drawing.Size(398, 32);
+            this.lblNewPatient2.TabIndex = 0;
+            this.lblNewPatient2.Text = "Emergency Contact Information";
             // 
-            // label5
+            // tabPage3
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(144, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Street Address";
+            this.tabPage3.Controls.Add(this.btnPrevious2);
+            this.tabPage3.Controls.Add(this.btnCancel3);
+            this.tabPage3.Controls.Add(this.btnNext3);
+            this.tabPage3.Controls.Add(this.txtGroupNumber);
+            this.tabPage3.Controls.Add(this.txtAccountNumber);
+            this.tabPage3.Controls.Add(this.txtCarrier);
+            this.tabPage3.Controls.Add(this.lblAccountNumber);
+            this.tabPage3.Controls.Add(this.lblGroupNumber);
+            this.tabPage3.Controls.Add(this.lblCarrier);
+            this.tabPage3.Controls.Add(this.lblNewPatientInsurance);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(572, 460);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // lblNewPatientInsurance
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(389, 280);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "City";
+            this.lblNewPatientInsurance.AutoSize = true;
+            this.lblNewPatientInsurance.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatientInsurance.Location = new System.Drawing.Point(146, 32);
+            this.lblNewPatientInsurance.Name = "lblNewPatientInsurance";
+            this.lblNewPatientInsurance.Size = new System.Drawing.Size(245, 27);
+            this.lblNewPatientInsurance.TabIndex = 0;
+            this.lblNewPatientInsurance.Text = "Insurance Information";
             // 
-            // label7
+            // lblCarrier
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(465, 280);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "ST";
+            this.lblCarrier.AutoSize = true;
+            this.lblCarrier.Location = new System.Drawing.Point(108, 87);
+            this.lblCarrier.Name = "lblCarrier";
+            this.lblCarrier.Size = new System.Drawing.Size(37, 13);
+            this.lblCarrier.TabIndex = 2;
+            this.lblCarrier.Text = "Carrier";
             // 
-            // label8
+            // lblGroupNumber
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(523, 280);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 16);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Zip Code";
+            this.lblGroupNumber.AutoSize = true;
+            this.lblGroupNumber.Location = new System.Drawing.Point(69, 188);
+            this.lblGroupNumber.Name = "lblGroupNumber";
+            this.lblGroupNumber.Size = new System.Drawing.Size(76, 13);
+            this.lblGroupNumber.TabIndex = 3;
+            this.lblGroupNumber.Text = "Group Number";
             // 
-            // textBox7
+            // lblAccountNumber
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(58, 365);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(178, 30);
-            this.textBox7.TabIndex = 15;
+            this.lblAccountNumber.AutoSize = true;
+            this.lblAccountNumber.Location = new System.Drawing.Point(58, 136);
+            this.lblAccountNumber.Name = "lblAccountNumber";
+            this.lblAccountNumber.Size = new System.Drawing.Size(87, 13);
+            this.lblAccountNumber.TabIndex = 4;
+            this.lblAccountNumber.Text = "Account Number";
             // 
-            // textBox8
+            // tabPage4
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(263, 365);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(177, 30);
-            this.textBox8.TabIndex = 16;
+            this.tabPage4.Controls.Add(this.lblAdmissionReason);
+            this.tabPage4.Controls.Add(this.txtAdmissionReason);
+            this.tabPage4.Controls.Add(this.btnPrevious3);
+            this.tabPage4.Controls.Add(this.btnCancel4);
+            this.tabPage4.Controls.Add(this.btnSubmit);
+            this.tabPage4.Controls.Add(this.txtBedNumber);
+            this.tabPage4.Controls.Add(this.txtRoomNumber);
+            this.tabPage4.Controls.Add(this.txtFloorNumber);
+            this.tabPage4.Controls.Add(this.txtFacility);
+            this.tabPage4.Controls.Add(this.lblBedNumber);
+            this.tabPage4.Controls.Add(this.lblRoomNumber);
+            this.tabPage4.Controls.Add(this.lblFloor);
+            this.tabPage4.Controls.Add(this.lblFacility);
+            this.tabPage4.Controls.Add(this.lblAdmissionDate);
+            this.tabPage4.Controls.Add(this.dtpAdmissionTime);
+            this.tabPage4.Controls.Add(this.lblAdmissionInformation);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(572, 460);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // lblAdmissionInformation
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(468, 365);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(177, 30);
-            this.textBox9.TabIndex = 17;
+            this.lblAdmissionInformation.AutoSize = true;
+            this.lblAdmissionInformation.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmissionInformation.Location = new System.Drawing.Point(164, 25);
+            this.lblAdmissionInformation.Name = "lblAdmissionInformation";
+            this.lblAdmissionInformation.Size = new System.Drawing.Size(249, 27);
+            this.lblAdmissionInformation.TabIndex = 0;
+            this.lblAdmissionInformation.Text = "Admission Information";
             // 
-            // label9
+            // dtpAdmissionTime
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(98, 398);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 16);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Home Phone";
+            this.dtpAdmissionTime.Location = new System.Drawing.Point(213, 81);
+            this.dtpAdmissionTime.Name = "dtpAdmissionTime";
+            this.dtpAdmissionTime.Size = new System.Drawing.Size(255, 20);
+            this.dtpAdmissionTime.TabIndex = 1;
             // 
-            // label10
+            // lblAdmissionDate
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(309, 398);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 16);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Work Phone";
+            this.lblAdmissionDate.AutoSize = true;
+            this.lblAdmissionDate.Location = new System.Drawing.Point(99, 87);
+            this.lblAdmissionDate.Name = "lblAdmissionDate";
+            this.lblAdmissionDate.Size = new System.Drawing.Size(97, 13);
+            this.lblAdmissionDate.TabIndex = 2;
+            this.lblAdmissionDate.Text = "Date of Admisssion";
             // 
-            // label11
+            // btnNext2
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(523, 398);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 16);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Cell Phone";
+            this.btnNext2.Location = new System.Drawing.Point(367, 382);
+            this.btnNext2.Name = "btnNext2";
+            this.btnNext2.Size = new System.Drawing.Size(75, 23);
+            this.btnNext2.TabIndex = 10;
+            this.btnNext2.Text = "Next";
+            this.btnNext2.UseVisualStyleBackColor = true;
+            this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
             // 
-            // textBox10
+            // btnCancel2
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(58, 453);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(178, 30);
-            this.textBox10.TabIndex = 21;
+            this.btnCancel2.Location = new System.Drawing.Point(103, 382);
+            this.btnCancel2.Name = "btnCancel2";
+            this.btnCancel2.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel2.TabIndex = 11;
+            this.btnCancel2.Text = "Cancel";
+            this.btnCancel2.UseVisualStyleBackColor = true;
+            this.btnCancel2.Click += new System.EventHandler(this.btnCancel2_Click);
             // 
-            // textBox11
+            // txtCarrier
             // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(481, 453);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(142, 30);
-            this.textBox11.TabIndex = 22;
+            this.txtCarrier.Location = new System.Drawing.Point(151, 84);
+            this.txtCarrier.Name = "txtCarrier";
+            this.txtCarrier.Size = new System.Drawing.Size(358, 20);
+            this.txtCarrier.TabIndex = 5;
             // 
-            // label12
+            // txtAccountNumber
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(98, 486);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 16);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Family Doctor";
+            this.txtAccountNumber.Location = new System.Drawing.Point(151, 133);
+            this.txtAccountNumber.Name = "txtAccountNumber";
+            this.txtAccountNumber.Size = new System.Drawing.Size(358, 20);
+            this.txtAccountNumber.TabIndex = 6;
             // 
-            // label13
+            // txtGroupNumber
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(523, 486);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 16);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Patient ID";
+            this.txtGroupNumber.Location = new System.Drawing.Point(151, 185);
+            this.txtGroupNumber.Name = "txtGroupNumber";
+            this.txtGroupNumber.Size = new System.Drawing.Size(358, 20);
+            this.txtGroupNumber.TabIndex = 7;
             // 
-            // button1
+            // btnNext3
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(136, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 46);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNext3.Location = new System.Drawing.Point(434, 363);
+            this.btnNext3.Name = "btnNext3";
+            this.btnNext3.Size = new System.Drawing.Size(75, 23);
+            this.btnNext3.TabIndex = 8;
+            this.btnNext3.Text = "Next";
+            this.btnNext3.UseVisualStyleBackColor = true;
+            this.btnNext3.Click += new System.EventHandler(this.btnNext3_Click);
             // 
-            // btnCancel
+            // btnCancel3
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(381, 529);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(169, 46);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel3.Location = new System.Drawing.Point(151, 363);
+            this.btnCancel3.Name = "btnCancel3";
+            this.btnCancel3.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel3.TabIndex = 9;
+            this.btnCancel3.Text = "Cancel";
+            this.btnCancel3.UseVisualStyleBackColor = true;
+            this.btnCancel3.Click += new System.EventHandler(this.btnCancel3_Click);
             // 
-            // frmPatient
+            // lblFacility
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.lblFacility.AutoSize = true;
+            this.lblFacility.Location = new System.Drawing.Point(157, 252);
+            this.lblFacility.Name = "lblFacility";
+            this.lblFacility.Size = new System.Drawing.Size(39, 13);
+            this.lblFacility.TabIndex = 3;
+            this.lblFacility.Text = "Facility";
+            // 
+            // lblFloor
+            // 
+            this.lblFloor.AutoSize = true;
+            this.lblFloor.Location = new System.Drawing.Point(126, 294);
+            this.lblFloor.Name = "lblFloor";
+            this.lblFloor.Size = new System.Drawing.Size(70, 13);
+            this.lblFloor.TabIndex = 4;
+            this.lblFloor.Text = "Floor Number";
+            // 
+            // lblRoomNumber
+            // 
+            this.lblRoomNumber.AutoSize = true;
+            this.lblRoomNumber.Location = new System.Drawing.Point(121, 339);
+            this.lblRoomNumber.Name = "lblRoomNumber";
+            this.lblRoomNumber.Size = new System.Drawing.Size(75, 13);
+            this.lblRoomNumber.TabIndex = 5;
+            this.lblRoomNumber.Text = "Room Number";
+            // 
+            // lblBedNumber
+            // 
+            this.lblBedNumber.AutoSize = true;
+            this.lblBedNumber.Location = new System.Drawing.Point(130, 387);
+            this.lblBedNumber.Name = "lblBedNumber";
+            this.lblBedNumber.Size = new System.Drawing.Size(66, 13);
+            this.lblBedNumber.TabIndex = 6;
+            this.lblBedNumber.Text = "Bed Number";
+            // 
+            // txtFacility
+            // 
+            this.txtFacility.Location = new System.Drawing.Point(213, 249);
+            this.txtFacility.Name = "txtFacility";
+            this.txtFacility.Size = new System.Drawing.Size(255, 20);
+            this.txtFacility.TabIndex = 7;
+            // 
+            // txtFloorNumber
+            // 
+            this.txtFloorNumber.Location = new System.Drawing.Point(213, 291);
+            this.txtFloorNumber.Name = "txtFloorNumber";
+            this.txtFloorNumber.Size = new System.Drawing.Size(255, 20);
+            this.txtFloorNumber.TabIndex = 8;
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.Location = new System.Drawing.Point(213, 336);
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(255, 20);
+            this.txtRoomNumber.TabIndex = 9;
+            // 
+            // txtBedNumber
+            // 
+            this.txtBedNumber.Location = new System.Drawing.Point(213, 384);
+            this.txtBedNumber.Name = "txtBedNumber";
+            this.txtBedNumber.Size = new System.Drawing.Size(255, 20);
+            this.txtBedNumber.TabIndex = 10;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(394, 422);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(74, 32);
+            this.btnSubmit.TabIndex = 11;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnCancel4
+            // 
+            this.btnCancel4.Location = new System.Drawing.Point(178, 422);
+            this.btnCancel4.Name = "btnCancel4";
+            this.btnCancel4.Size = new System.Drawing.Size(79, 32);
+            this.btnCancel4.TabIndex = 12;
+            this.btnCancel4.Text = "Cancel";
+            this.btnCancel4.UseVisualStyleBackColor = true;
+            this.btnCancel4.Click += new System.EventHandler(this.btnCancel4_Click);
+            // 
+            // btnPrevious1
+            // 
+            this.btnPrevious1.Location = new System.Drawing.Point(236, 382);
+            this.btnPrevious1.Name = "btnPrevious1";
+            this.btnPrevious1.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious1.TabIndex = 12;
+            this.btnPrevious1.Text = "Previous";
+            this.btnPrevious1.UseVisualStyleBackColor = true;
+            this.btnPrevious1.Click += new System.EventHandler(this.btnPrevious1_Click);
+            // 
+            // btnPrevious2
+            // 
+            this.btnPrevious2.Location = new System.Drawing.Point(293, 363);
+            this.btnPrevious2.Name = "btnPrevious2";
+            this.btnPrevious2.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious2.TabIndex = 10;
+            this.btnPrevious2.Text = "Previous";
+            this.btnPrevious2.UseVisualStyleBackColor = true;
+            this.btnPrevious2.Click += new System.EventHandler(this.btnPrevious2_Click);
+            // 
+            // btnPrevious3
+            // 
+            this.btnPrevious3.Location = new System.Drawing.Point(289, 422);
+            this.btnPrevious3.Name = "btnPrevious3";
+            this.btnPrevious3.Size = new System.Drawing.Size(75, 32);
+            this.btnPrevious3.TabIndex = 13;
+            this.btnPrevious3.Text = "Previous";
+            this.btnPrevious3.UseVisualStyleBackColor = true;
+            this.btnPrevious3.Click += new System.EventHandler(this.btnPrevious3_Click);
+            // 
+            // txtAreaCodeHome
+            // 
+            this.txtAreaCodeHome.Location = new System.Drawing.Point(55, 284);
+            this.txtAreaCodeHome.Multiline = true;
+            this.txtAreaCodeHome.Name = "txtAreaCodeHome";
+            this.txtAreaCodeHome.Size = new System.Drawing.Size(39, 26);
+            this.txtAreaCodeHome.TabIndex = 54;
+            // 
+            // txtAreaCodeWork
+            // 
+            this.txtAreaCodeWork.Location = new System.Drawing.Point(209, 284);
+            this.txtAreaCodeWork.Multiline = true;
+            this.txtAreaCodeWork.Name = "txtAreaCodeWork";
+            this.txtAreaCodeWork.Size = new System.Drawing.Size(43, 26);
+            this.txtAreaCodeWork.TabIndex = 55;
+            // 
+            // txtAreaCodeCell
+            // 
+            this.txtAreaCodeCell.Location = new System.Drawing.Point(374, 284);
+            this.txtAreaCodeCell.Multiline = true;
+            this.txtAreaCodeCell.Name = "txtAreaCodeCell";
+            this.txtAreaCodeCell.Size = new System.Drawing.Size(38, 26);
+            this.txtAreaCodeCell.TabIndex = 56;
+            // 
+            // txtAdmissionReason
+            // 
+            this.txtAdmissionReason.Location = new System.Drawing.Point(213, 124);
+            this.txtAdmissionReason.Multiline = true;
+            this.txtAdmissionReason.Name = "txtAdmissionReason";
+            this.txtAdmissionReason.Size = new System.Drawing.Size(255, 102);
+            this.txtAdmissionReason.TabIndex = 14;
+            // 
+            // lblAdmissionReason
+            // 
+            this.lblAdmissionReason.AutoSize = true;
+            this.lblAdmissionReason.Location = new System.Drawing.Point(87, 127);
+            this.lblAdmissionReason.Name = "lblAdmissionReason";
+            this.lblAdmissionReason.Size = new System.Drawing.Size(109, 13);
+            this.lblAdmissionReason.TabIndex = 15;
+            this.lblAdmissionReason.Text = "Reason for Admission";
+            // 
+            // frmNewPatient
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 589);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtFirstName);
-            this.Name = "frmPatient";
+            this.ClientSize = new System.Drawing.Size(604, 510);
+            this.Controls.Add(this.wizardPages1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmNewPatient";
             this.Text = "Patient";
+            this.wizardPages1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private cssa_appraisal_partner_version3.HelperClasses.WizardPages wizardPages1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnCancel1;
+        private System.Windows.Forms.Button btnNext1;
+        private System.Windows.Forms.Label lblPatientId;
+        private System.Windows.Forms.Label lblFamilyDoctor;
+        private System.Windows.Forms.TextBox txtPatientId;
+        private System.Windows.Forms.TextBox txtFamilyDoctor;
+        private System.Windows.Forms.Label lblCellPhone;
+        private System.Windows.Forms.Label lblWorkPhone;
+        private System.Windows.Forms.Label lblHomePhone;
+        private System.Windows.Forms.TextBox txtCellPhone;
+        private System.Windows.Forms.TextBox txtWorkPhone;
+        private System.Windows.Forms.TextBox txtHomePhone;
+        private System.Windows.Forms.Label lblZipCode;
+        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblStreetAddress;
+        private System.Windows.Forms.TextBox txtZipCode;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtStreetAddress;
+        private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtMiddleName;
+        private System.Windows.Forms.Label lblNewPatient1;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label lblNewPatient2;
+        private System.Windows.Forms.TextBox txtPhoneNumberIce;
+        private System.Windows.Forms.TextBox txtAreaCodeIce;
+        private System.Windows.Forms.Label lblPhoneNumberIce;
+        private System.Windows.Forms.Label lblAreaCodeIce;
+        private System.Windows.Forms.TextBox txtLastNameIce;
+        private System.Windows.Forms.TextBox txtFirstNameIce;
+        private System.Windows.Forms.Label lblLastNameIce;
+        private System.Windows.Forms.Label lblFirstNameIce;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label lblAccountNumber;
+        private System.Windows.Forms.Label lblGroupNumber;
+        private System.Windows.Forms.Label lblCarrier;
+        private System.Windows.Forms.Label lblNewPatientInsurance;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label lblAdmissionDate;
+        private System.Windows.Forms.DateTimePicker dtpAdmissionTime;
+        private System.Windows.Forms.Label lblAdmissionInformation;
+        private System.Windows.Forms.Button btnCancel2;
+        private System.Windows.Forms.Button btnNext2;
+        private System.Windows.Forms.Button btnCancel3;
+        private System.Windows.Forms.Button btnNext3;
+        private System.Windows.Forms.TextBox txtGroupNumber;
+        private System.Windows.Forms.TextBox txtAccountNumber;
+        private System.Windows.Forms.TextBox txtCarrier;
+        private System.Windows.Forms.Button btnCancel4;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.TextBox txtBedNumber;
+        private System.Windows.Forms.TextBox txtRoomNumber;
+        private System.Windows.Forms.TextBox txtFloorNumber;
+        private System.Windows.Forms.TextBox txtFacility;
+        private System.Windows.Forms.Label lblBedNumber;
+        private System.Windows.Forms.Label lblRoomNumber;
+        private System.Windows.Forms.Label lblFloor;
+        private System.Windows.Forms.Label lblFacility;
+        private System.Windows.Forms.Button btnPrevious1;
+        private System.Windows.Forms.Button btnPrevious2;
+        private System.Windows.Forms.Button btnPrevious3;
+        private System.Windows.Forms.TextBox txtAreaCodeCell;
+        private System.Windows.Forms.TextBox txtAreaCodeWork;
+        private System.Windows.Forms.TextBox txtAreaCodeHome;
+        private System.Windows.Forms.Label lblAdmissionReason;
+        private System.Windows.Forms.TextBox txtAdmissionReason;
     }
 }

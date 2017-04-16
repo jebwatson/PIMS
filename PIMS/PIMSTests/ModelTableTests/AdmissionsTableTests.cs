@@ -12,7 +12,7 @@ namespace PIMSTests.ModelTableTests
     [TestFixture]
     class AdmissionsTableTests
     {
-        IRepository<Admission, int> myTable;
+        AdmissionsTable myTable;
         List<Admission> myList;
         List<Admission> admissions;
         ICompare<Admission> comparer;
