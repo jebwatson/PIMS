@@ -1,7 +1,10 @@
 ﻿using DBI;
+using DBI.Utilities;
 using PIMS.Views;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,13 +32,6 @@ namespace PIMS.Presenters
         {
             MyPatientsTable = new PatientTable();
             MyPatientsList = MyPatientsTable.ReadList();
-
-            if (MyPatientsList.Count == 0)
-            {
-                Patient Patient1 = new Patient(1, "Doe", "Jane", "A.", "Generic Street", "Huntsville", 
-                    "AL", "35758", "", "", "", "", "", "", "Bob");
-                MyPatientsTable.WriteItem(Patient1);
-            }
 
             View.PatientsList.SetObjects(MyPatientsTable.ReadList());
         }
@@ -90,7 +86,8 @@ namespace PIMS.Presenters
         /// </summary>
         public void SearchPatients()
         {
-            throw new NotImplementedException();
+            MyPatientsTable = new PatientTable();
+            View.PatientsList.SetObjects(MyPatientsTable.ReadListByName(View.PatientSearch));
         }
     }
 }

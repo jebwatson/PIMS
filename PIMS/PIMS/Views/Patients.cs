@@ -18,18 +18,8 @@ namespace PIMS.Views
         PPatients Presenter;
 
         public ObjectListView PatientsList { get { return this.olvPatientsList; } }
-        public string PatientSearch
-        {
-            get
-            {
-                return this.txtPatientSearch.Text;
-            }
-            set
-            {
-                this.txtPatientSearch.Text = value;
-            }
-        }
-
+        public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
+   
         public Patients()
         {
             InitializeComponent();
