@@ -11,6 +11,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DBI", "DBI\DBI.shproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectListView2012", "..\ObjectListView-2.9.1\ObjectListView\ObjectListView\ObjectListView2012.csproj", "{18FEDA0C-D147-4286-B39A-01204808106A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIMS.Testing", "PIMSTesting\PIMS.Testing.csproj", "{6F31CA01-7099-402B-8026-7056179A42B5}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DBI\DBI.projitems*{c8012f8c-3b1a-4362-ac03-2a31b2ddae73}*SharedItemsImports = 4
@@ -61,6 +63,18 @@ Global
 		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|x64.Build.0 = Release|Any CPU
 		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|x86.ActiveCfg = Release|Any CPU
 		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|x86.Build.0 = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|x64.Build.0 = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{6F31CA01-7099-402B-8026-7056179A42B5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
