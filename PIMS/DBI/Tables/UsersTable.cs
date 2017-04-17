@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+
 namespace DBI
 {
-    public class UsersNurseTable : IRepository<UsersNurse, int>
+    public class UsersTable
     {
-        public const string theTable = "UsersNurse";
+        public const string theTable = "UsersDoctor";
 
         /// <summary>
         /// Delete all records from the table.
@@ -50,9 +51,9 @@ namespace DBI
             } // using
         } // CountRows
 
-        public List<UsersNurse> ReadList()
+        public List<Users> ReadList()
         {
-            List<UsersNurse> nurses = new List<UsersNurse>();
+            List<Users> doctors = new List<Users>();
 
             string myQuery = "SELECT * FROM " + theTable;
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
@@ -68,27 +69,29 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
                     // fill the ItemList
-                    UsersNurse Nurses = new UsersNurse();
-                    Nurses.userId = userId;
-                    Nurses.nameLast = nameLast;
-                    Nurses.nameFirst = nameFirst;
-                    Nurses.title = title;
-                    Nurses.accessLevel = accessLevel;
+                    Users Doctors = new Users();
+                    Doctors.userId = userId;
+                    Doctors.nameLast = nameLast;
+                    Doctors.nameFirst = nameFirst;
+                    Doctors.title = title;
+                    Doctors.accessLevel = accessLevel;
+                    Doctors.username = username;
 
-                    nurses.Add(Nurses);
+                    doctors.Add(Doctors);
                 } // for
             } // if
-            return nurses;
+               return doctors;
 
         } // ReadList
 
 
-        public List<UsersNurse> ReadListById(int inputId)
+        public List<Users> ReadListById(int inputId)
         {
-            List<UsersNurse> nurses = new List<UsersNurse>();
+            List<Users> doctors = new List<Users>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE userId = " + "'" + inputId + "'";
 
@@ -105,78 +108,80 @@ namespace DBI
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
                     string title = dr["title"].ToString();
-                    string accessLevel = dr["accessLevel"].ToString();
+                    int accessLevel = Convert.ToInt32(dr["accessLevel"]);
+                    string username = dr["username"].ToString();
 
 
                     // fill the ItemList
-                    UsersNurse newUsersNurse = new UsersNurse();
-                    newUsersNurse.userId = userId;
-                    newUsersNurse.nameLast = nameLast;
-                    newUsersNurse.nameFirst = nameFirst;
-                    newUsersNurse.title = title;
-                    newUsersNurse.accessLevel = accessLevel;
+                    Users newUsersDoctor = new Users();
+                    newUsersDoctor.userId = userId;
+                    newUsersDoctor.nameLast = nameLast;
+                    newUsersDoctor.nameFirst = nameFirst;
+                    newUsersDoctor.title = title;
+                    newUsersDoctor.accessLevel = accessLevel;
+                    newUsersDoctor.username = username;
+                   
 
-
-                    nurses.Add(newUsersNurse);
+                    doctors.Add(newUsersDoctor);
                 } // for
             } // if
 
-            return nurses;
+            return doctors;
         } // ReadList
 
-        public void UpdateItem(UsersNurse updatedNurses)
+        public void UpdateItem(Users updatedDoctors)
+    {
+        using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
         {
-            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
-            {
-                string myQuery = "UPDATE " + theTable +
-                    " SET " +
-                    "nameLast = @nameLast, " +
-                    "nameFirst = @nameFirst, " +
-                    "title = @title, " +
-                    "accessLevel = @accessLevel, " +
-                    "WHERE " +
-                    "userId = @userId";
+            string myQuery = "UPDATE " + theTable +
+                " SET " +
+                "nameLast = @nameLast, " +
+                "nameFirst = @nameFirst, " +
+                "title = @title, " +
+                "accessLevel = @accessLevel, " +
+                "username = @username, " +
+                "WHERE " +
+                "userId = @userId";
 
-                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+            SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@nameLast", updatedNurses.nameLast);
-                myCommand.Parameters.AddWithValue("@nameFirst", updatedNurses.nameFirst);
-                myCommand.Parameters.AddWithValue("@title", updatedNurses.title);
-                myCommand.Parameters.AddWithValue("@accessLevel", updatedNurses.accessLevel);
-                myCommand.Parameters.AddWithValue("@userId", updatedNurses.userId);
+            myCommand.Parameters.AddWithValue("@nameLast", updatedDoctors.nameLast);
+            myCommand.Parameters.AddWithValue("@nameFirst", updatedDoctors.nameFirst);
+            myCommand.Parameters.AddWithValue("@title", updatedDoctors.title);
+            myCommand.Parameters.AddWithValue("@accessLevel", updatedDoctors.accessLevel);
+            myCommand.Parameters.AddWithValue("@userId", updatedDoctors.userId);
+            myCommand.Parameters.AddWithValue("@username", updatedDoctors.username);
 
-                myCommand.ExecuteNonQuery();
+            myCommand.ExecuteNonQuery();
 
-                myConnection.Close();
-            } // using
-        } // UpdateItem
-        public void UpdateList(List<UsersNurse> nurses)
-        {
-            foreach (var Nurse in nurses)
-            {
-                UpdateItem(Nurse);
-            }
+            myConnection.Close();
+        } // using
+    } // UpdateItem
+    public void UpdateList(List<Users> doctors) {
+        foreach (var Doctor in doctors) {
+            UpdateItem(Doctor);
+        }
 
         }
 
         /// Insert a single admission record into the database.
         /// </summary>
-        public void WriteItem(UsersNurse newNurse)
+        public void WriteItem(Users newDoctor)
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (userId, nameLast, nameFirst, title, accessLevel, " +
-                    "duration, amount)" +
-                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel)";
+                    " (userId, nameLast, nameFirst, title, accessLevel, username) " +
+                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel, @username)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@userId", newNurse.userId);
-                myCommand.Parameters.AddWithValue("@nameLast", newNurse.nameLast);
-                myCommand.Parameters.AddWithValue("@nameFirst", newNurse.nameFirst);
-                myCommand.Parameters.AddWithValue("@title", newNurse.title);
-                myCommand.Parameters.AddWithValue("@accessLevel", newNurse.accessLevel);
+                myCommand.Parameters.AddWithValue("@userId", newDoctor.userId);
+                myCommand.Parameters.AddWithValue("@nameLast", newDoctor.nameLast);
+                myCommand.Parameters.AddWithValue("@nameFirst", newDoctor.nameFirst);
+                myCommand.Parameters.AddWithValue("@title", newDoctor.title);
+                myCommand.Parameters.AddWithValue("@accessLevel", newDoctor.accessLevel);
+                myCommand.Parameters.AddWithValue("@username", newDoctor.username);
 
                 myCommand.ExecuteNonQuery();
 
@@ -184,11 +189,11 @@ namespace DBI
             } // using
         } // WriteItem
 
-        public void WriteList(List<UsersNurse> nurses)
+        public void WriteList(List<Users> doctors)
         {
-            foreach (var Nurse in nurses)
+            foreach (var Doctor in doctors)
             {
-                WriteItem(Nurse);
+                WriteItem(Doctor);
             } // foreach
         } // writelist
 

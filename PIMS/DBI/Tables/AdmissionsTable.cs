@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBI
 {
-    public class AdmissionsTable : IRepository<Admission, int>
+    public class AdmissionsTable
     {
         public const string theTable = "admissions";
 

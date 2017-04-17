@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,28 +13,86 @@ namespace PIMS.Views
 {
     public partial class frmHome : Form
     {
+        private PHome Presenter;
+
         public frmHome()
         {
             InitializeComponent();
+            Presenter = new PHome();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        #region Event Handlers
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            Presenter.CreatePatientsForm();
+        }
+
+        private void btnCases_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnReports_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            this.Close();
-            login.Show();
 
         }
 
-        private void btnAddPatient_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            frmPatient newpatient = new frmPatient();
-            newpatient.Show();
+            frmLogin logout = new frmLogin();
+            logout.Show();
+            this.Hide();
         }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCharges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrescriptions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProcedures_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdmissions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVisitors_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEmergencyContact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsurance_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

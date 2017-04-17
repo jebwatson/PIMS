@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBI
 {
-    public class PatientTable : IRepository<Patient, int>
+    public class PatientTable
     {
         public const string theTable = "patients";
 
@@ -126,6 +126,66 @@ namespace DBI
             List<Patient> patients = new List<Patient>();
 
             string myQuery = "SELECT * FROM " + theTable + " WHERE patientId = " + "'" + inputPatientId + "'";
+
+            DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+            if (dsObject != null && dsObject.Tables[0].Rows.Count > 0)
+            {
+                DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                foreach (DataRow dr in dtObject.Rows)
+                {
+                    // extract all fields of the current row
+                    int patientId = Convert.ToInt32(dr["patientId"]);
+                    string nameLast = dr["nameLast"].ToString();
+                    string nameFirst = dr["nameFirst"].ToString();
+                    string nameMiddle = dr["nameMiddle"].ToString();
+                    string street = dr["street"].ToString();
+                    string city = dr["city"].ToString();
+                    string state = dr["state"].ToString();
+                    string zip = dr["zip"].ToString();
+                    string phoneHome = dr["phoneHome"].ToString();
+                    string areaCodeHome = dr["areaCodeHome"].ToString();
+                    string phoneWork = dr["phoneWork"].ToString();
+                    string areaCodeWork = dr["areaCodeWork"].ToString();
+                    string phoneMobile = dr["phoneMobile"].ToString();
+                    string areaCodeMobile = dr["areaCodeMobile"].ToString();
+                    string familyDoctor = dr["familyDoctor"].ToString();
+
+                    // fill the ItemList
+                    Patient newPatient = new Patient();
+                    newPatient.patientId = patientId;
+                    newPatient.nameLast = nameLast;
+                    newPatient.nameFirst = nameFirst;
+                    newPatient.nameMiddle = nameMiddle;
+                    newPatient.street = street;
+                    newPatient.city = city;
+                    newPatient.state = state;
+                    newPatient.zip = zip;
+                    newPatient.phoneHome = phoneHome;
+                    newPatient.areaCodeHome = areaCodeHome;
+                    newPatient.phoneWork = phoneWork;
+                    newPatient.areaCodeWork = areaCodeWork;
+                    newPatient.phoneMobile = phoneMobile;
+                    newPatient.areaCodeMobile = areaCodeMobile;
+                    newPatient.familyDoctor = familyDoctor;
+
+                    patients.Add(newPatient);
+                } // for
+            } // if
+
+            return patients;
+        } // ReadList
+
+        /// <summary>
+        /// Read a sinlge record from the table and save the record in the
+        /// ItemList as an Patient object.
+        /// </summary>
+        public List<Patient> ReadListByName(string name)
+        {
+            List<Patient> patients = new List<Patient>();
+
+            string myQuery = "SELECT * FROM " + theTable + " WHERE nameFirst LIKE '" + name + "' OR nameLast LIKE '" + name + "'";
 
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
 
