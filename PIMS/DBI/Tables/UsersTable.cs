@@ -171,8 +171,8 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (userId, nameLast, nameFirst, title, accessLevel, username) " +
-                    "VALUES (@userId, @nameLast, @nameFirst, @title, @accessLevel, @username)";
+                    " (nameLast, nameFirst, title, accessLevel, username) " +
+                    "VALUES (@nameLast, @nameFirst, @title, @accessLevel, @username)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 

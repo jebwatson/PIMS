@@ -204,9 +204,9 @@ namespace DBI
         public void WriteItem(Procedures newProc) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (procId, procType, caseId, patientId, startTime, stopTime, " +
+                    " (procType, caseId, patientId, startTime, stopTime, " +
                     "doctorId, durationHrs, durationMins, procNotes)" +
-                    "VALUES (@procId, @procType, @caseId, @patientId, @startTime, @stopTime, " +
+                    "VALUES (@procType, @caseId, @patientId, @startTime, @stopTime, " +
                     "@doctorId, @durationHrs, @durationMins, @procNotes)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);

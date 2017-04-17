@@ -309,9 +309,9 @@ namespace DBI
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
-                string myQuery = "INSERT INTO patients (patientId, nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                string myQuery = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES (@patientId, @nameLast, @nameFirst, @nameMiddle, @street, @city, @state, @zip, " +
+                    "VALUES (@nameLast, @nameFirst, @nameMiddle, @street, @city, @state, @zip, " +
                     "@phoneHome, @areaCodeHome, @phoneWork, @areaCodeWork, @phoneMobile, @areaCodeMobile, @familyDoctor)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);

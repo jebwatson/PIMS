@@ -226,9 +226,9 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (admissionId, admissionTime, dischargeTime, admissionReason, dischargeReason, " +
+                    " (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
                     "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId)" +
-                    "VALUES (@admissionId, @admissionTime, @dischargeTime, @admissionReason, @dischargeReason, " +
+                    "VALUES (@admissionTime, @dischargeTime, @admissionReason, @dischargeReason, " +
                     "@facilityNumber, @floorNumber, @roomNumber, @bedNumber, @patientId, @caseId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);

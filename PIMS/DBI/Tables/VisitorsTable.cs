@@ -186,9 +186,9 @@ namespace DBI
         public void WriteItem(Visitors newVisitor) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (visitorId, nameLast, nameFirst, caseId, patientId, lastVisit, " +
+                    " (nameLast, nameFirst, caseId, patientId, lastVisit, " +
                     "relation)" +
-                    "VALUES (@visitorId, @nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
+                    "VALUES (@nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
                     "@relation)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
