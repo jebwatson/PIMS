@@ -32,8 +32,7 @@ namespace DBI
             procNotes = string.Empty;
         }
 
-        public Procedures(int procId, DateTime startTime, DateTime stopTime, string procType, int durationHrs, int durationMins, int doctorId,  string procNotes, int patientId, int caseId) {
-            this.procId = procId;
+        public Procedures(DateTime startTime, DateTime stopTime, string procType, int durationHrs, int durationMins, int doctorId,  string procNotes, int patientId, int caseId) {
             this.procType = procType;
             this.caseId = caseId;
             this.patientId = patientId;

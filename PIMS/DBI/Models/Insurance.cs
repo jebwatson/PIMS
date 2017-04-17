@@ -23,9 +23,8 @@ namespace DBI
             patientId = _unassigned;
         }
 
-        public Insurance(int id, string carrier, string accountNumber, string groupNumber, int patientId)
+        public Insurance(string carrier, string accountNumber, string groupNumber, int patientId)
         {
-            insuranceId = id;
             insuranceCarrier = carrier;
             this.accountNumber = accountNumber;
             this.groupNumber = groupNumber;

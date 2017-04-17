@@ -35,10 +35,9 @@ namespace DBI
             caseId = _unassigned;
         }
 
-        public Admission(int valAdmittanceId, DateTime valAdmittanceTime, DateTime valDischargeTime, string valAdmittanceReason, string valDischargeReason,
+        public Admission(DateTime valAdmittanceTime, DateTime valDischargeTime, string valAdmittanceReason, string valDischargeReason,
             string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId, int valCaseId)
         {
-            admissionId = valAdmittanceId;
             admissionTime = valAdmittanceTime;
             dischargeTime = valDischargeTime;
             admissionReason = valAdmittanceReason;

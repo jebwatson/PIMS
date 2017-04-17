@@ -33,10 +33,9 @@ namespace DBI
             caseId = _unassigned;
         }
 
-        public Charges(int chargeId, string description, int amountDollars, int amountCents, DateTime dateCharged, DateTime dateDue, int procedureId,
+        public Charges(string description, int amountDollars, int amountCents, DateTime dateCharged, DateTime dateDue, int procedureId,
             int officeStaffId, int patientId, int caseId)
         {
-            this.chargeId = chargeId;
             this.description = description;
             this.amountDollars = amountDollars;
             this.amountCents = amountCents;
