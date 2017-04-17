@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.btnMinimize.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::PIMS.Properties.Resources.Minimize;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.Location = new System.Drawing.Point(661, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimize.Name = "btnMinimize";
@@ -58,7 +59,7 @@
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Image = global::PIMS.Properties.Resources.CloseForm;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(693, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
@@ -71,7 +72,7 @@
             // 
             this.btnLogOut.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogOut.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Image = global::PIMS.Properties.Resources.Logout;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.Location = new System.Drawing.Point(375, 350);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(256, 256);
@@ -85,7 +86,7 @@
             // 
             this.btnReports.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnReports.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Image = global::PIMS.Properties.Resources.Reports1;
+            this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
             this.btnReports.Location = new System.Drawing.Point(75, 350);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(256, 256);
@@ -99,7 +100,7 @@
             // 
             this.btnCases.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCases.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCases.Image = global::PIMS.Properties.Resources.Cases;
+            this.btnCases.Image = ((System.Drawing.Image)(resources.GetObject("btnCases.Image")));
             this.btnCases.Location = new System.Drawing.Point(375, 50);
             this.btnCases.Name = "btnCases";
             this.btnCases.Size = new System.Drawing.Size(256, 256);
@@ -113,7 +114,7 @@
             // 
             this.btnPatients.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPatients.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatients.Image = global::PIMS.Properties.Resources.Patient;
+            this.btnPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnPatients.Image")));
             this.btnPatients.Location = new System.Drawing.Point(75, 50);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(256, 256);
@@ -135,7 +136,6 @@
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnCases);
             this.Controls.Add(this.btnPatients);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHome";
             this.Text = "Home";

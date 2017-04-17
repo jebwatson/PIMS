@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace PIMS.Views
 {
     public partial class frmHome : Form
     {
+        private PHome Presenter;
+
         public frmHome()
         {
             InitializeComponent();
+            Presenter = new PHome();
         }
 
         #region Event Handlers
@@ -30,7 +34,7 @@ namespace PIMS.Views
 
         private void btnPatients_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreatePatientsForm();
         }
 
         private void btnCases_Click(object sender, EventArgs e)
@@ -45,7 +49,9 @@ namespace PIMS.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            frmLogin logout = new frmLogin();
+            logout.Show();
+            this.Hide();
         }
         #endregion
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DBI
 {
-    public class UsersVolunteer
+    public class Users
     {
         private int _unassigned = -1;
 
@@ -15,7 +15,7 @@ namespace DBI
         public int accessLevel { get; set; }
         public string username { get; set; }
 
-        public UsersVolunteer()
+        public Users()
         {
             userId = _unassigned;
             nameLast = string.Empty;
@@ -25,7 +25,7 @@ namespace DBI
             username = string.Empty;
         }
 
-        public UsersVolunteer(int userId, string nameLast, string nameFirst, string title, int accessLevel, string username)
+        public Users(int userId, string nameLast, string nameFirst, string title, int accessLevel, string username)
         {
             this.userId = userId;
             this.nameLast = nameLast;

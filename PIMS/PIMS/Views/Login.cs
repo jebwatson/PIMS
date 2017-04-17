@@ -13,7 +13,7 @@ namespace PIMS.Views
 {
     public partial class frmLogin : Form
     {
-        private PLogin presenter;
+        private PLogin Presenter;
 
         /// <summary>
         /// Initialize the presenter, passing the view in as a dependency.
@@ -21,10 +21,12 @@ namespace PIMS.Views
         public frmLogin()
         {
             InitializeComponent();
-            presenter = new PLogin(this);
+            Presenter = new PLogin(this);
         }
 
         #region Properties
+        public string ServerName { get { return this.txtServer.Text; } }
+        public string DatabaseName { get { return this.txtDatabase.Text; } }
         public string Username { get { return this.txtUsername.Text; } }
         public string Password { get { return this.txtPassword.Text; } }
         #endregion
@@ -37,7 +39,7 @@ namespace PIMS.Views
         /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            presenter.Login();
+            Presenter.Login();
         }
         #endregion
 
