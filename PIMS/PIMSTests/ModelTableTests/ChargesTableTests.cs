@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new ChargesTable();
             myList = new List<Charges>()
             {
-                new Charges(1, "test1", 1, 1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1, 1, 1),
-                new Charges(2, "test2", 2, 2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2, 2, 2),
-                new Charges(3, "test3", 3, 3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3, 3, 3)
+                new Charges("test1", 1, 1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1, 1, 1),
+                new Charges("test2", 2, 2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2, 2, 2),
+                new Charges("test3", 3, 3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3, 3, 3)
             };
             comparer = new ChargesComparer();
 
@@ -42,15 +42,15 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO charges (chargeId, description, amountDollars, amountCents, dateCharged, " +
+                string populationQuery1 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
                     "dateDue, procedureId, officeStaffId, patientId, caseId) " +
-                    "VALUES (1, 'test1', 1, 1, '01/01/2017', '12/01/2017', 1, 1, 1, 1)";
-                string populationQuery2 = "INSERT INTO charges (chargeId, description, amountDollars, amountCents, dateCharged, " +
+                    "VALUES ('test1', 1, 1, '01/01/2017', '12/01/2017', 1, 1, 1, 1)";
+                string populationQuery2 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
                     "dateDue, procedureId, officeStaffId, patientId, caseId) " +
-                    "VALUES (2, 'test2', 2, 2, '01/02/2017', '12/02/2017', 2, 2, 2, 2)";
-                string populationQuery3 = "INSERT INTO charges (chargeId, description, amountDollars, amountCents, dateCharged, " +
+                    "VALUES ('test2', 2, 2, '01/02/2017', '12/02/2017', 2, 2, 2, 2)";
+                string populationQuery3 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
                     "dateDue, procedureId, officeStaffId, patientId, caseId) " +
-                    "VALUES (3, 'test3', 3, 3, '01/03/2017', '12/03/2017', 3, 3, 3, 3)";
+                    "VALUES ('test3', 3, 3, '01/03/2017', '12/03/2017', 3, 3, 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Charges> charges = new List<Charges>();
 
             // Need some updated data
-            Charges updated1 = new Charges(1, "test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
-            Charges updated2 = new Charges(2, "test5", 5, 5, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5, 5);
-            Charges updated3 = new Charges(3, "test6", 6, 6, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6, 6);
+            Charges updated1 = new Charges("test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
+            Charges updated2 = new Charges("test5", 5, 5, DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5, 5);
+            Charges updated3 = new Charges("test6", 6, 6, DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6, 6);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Charges> charges = new List<Charges>();
 
             // Need some updated data
-            Charges updatedCharge = new Charges(4, "test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
+            Charges updatedCharge = new Charges("test4", 4, 4, DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 4);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedCharge);

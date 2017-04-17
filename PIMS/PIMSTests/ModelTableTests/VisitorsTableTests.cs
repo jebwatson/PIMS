@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new VisitorsTable();
             myList = new List<Visitors>()
             {
-                new Visitors(1, "test1", "test1", "test1", DateTime.Parse("01/01/2017"), 1, 1),
-                new Visitors(2, "test2", "test2", "test2", DateTime.Parse("01/02/2017"), 2, 2),
-                new Visitors(3, "test3", "test3", "test3", DateTime.Parse("01/03/2017"), 3, 3)
+                new Visitors("test1", "test1", "test1", DateTime.Parse("01/01/2017"), 1, 1),
+                new Visitors("test2", "test2", "test2", DateTime.Parse("01/02/2017"), 2, 2),
+                new Visitors("test3", "test3", "test3", DateTime.Parse("01/03/2017"), 3, 3)
             };
             comparer = new VisitorsComparer();
 
@@ -42,15 +42,15 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                string populationQuery1 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId, caseId) " +
-                    "VALUES (1, 'test1', 'test1', 'test1', '01 / 01 / 2017', 1, 1)";
-                string populationQuery2 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                    "VALUES ('test1', 'test1', 'test1', '01 / 01 / 2017', 1, 1)";
+                string populationQuery2 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId, caseId) " +
-                    "VALUES (2, 'test2', 'test2', 'test2', '01 / 02 / 2017', 2, 2)";
-                string populationQuery3 = "INSERT INTO visitors (visitorId, nameLast, nameFirst, relation, " +
+                    "VALUES ('test2', 'test2', 'test2', '01 / 02 / 2017', 2, 2)";
+                string populationQuery3 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId, caseId) " +
-                    "VALUES (3, 'test3', 'test3', 'test3', '01 / 03 / 2017', 3, 3)";
+                    "VALUES ('test3', 'test3', 'test3', '01 / 03 / 2017', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Visitors> visitors = new List<Visitors>();
 
             // Need some updated data
-            Visitors updated1 = new Visitors(1, "test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
-            Visitors updated2 = new Visitors(2, "test5", "test5", "test5", DateTime.Parse("01/05/2017"), 5, 5);
-            Visitors updated3 = new Visitors(3, "test6", "test6", "test6", DateTime.Parse("01/06/2017"), 6, 6);
+            Visitors updated1 = new Visitors("test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
+            Visitors updated2 = new Visitors("test5", "test5", "test5", DateTime.Parse("01/05/2017"), 5, 5);
+            Visitors updated3 = new Visitors("test6", "test6", "test6", DateTime.Parse("01/06/2017"), 6, 6);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Visitors> visitors = new List<Visitors>();
 
             // Need some updated data
-            Visitors updatedVisitor = new Visitors(4, "test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
+            Visitors updatedVisitor = new Visitors("test4", "test4", "test4", DateTime.Parse("01/04/2017"), 4, 4);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedVisitor);

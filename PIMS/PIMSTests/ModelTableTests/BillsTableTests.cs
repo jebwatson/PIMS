@@ -21,9 +21,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new BillsTable();
             myList = new List<Bills>()
             {
-                new Bills(1, 1, 1, 0, 0, 1, 1, 0, 0, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1),
-                new Bills(2, 2, 2, 0, 0, 2, 2, 0, 0, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2),
-                new Bills(3, 3, 3, 0, 0, 3, 3, 0, 0, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3)
+                new Bills(1, 1, 0, 0, 1, 1, 0, 0, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1),
+                new Bills(2, 2, 0, 0, 2, 2, 0, 0, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2),
+                new Bills(3, 3, 0, 0, 3, 3, 0, 0, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3)
             };
             comparer = new BillsComparer();
 
@@ -39,15 +39,15 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO bills (billId, amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
+                string populationQuery1 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (1, 1, 1, 0, 0, 1, 1, 0, 0, '01/01/2017', '12/01/2017', 1, 1)";
-                string populationQuery2 = "INSERT INTO bills (billId, amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
+                    "dateCharged, dateDue, patientId, caseId) VALUES (1, 1, 0, 0, 1, 1, 0, 0, '01/01/2017', '12/01/2017', 1, 1)";
+                string populationQuery2 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (2, 2, 2, 0, 0, 2, 2, 0, 0, '01/02/2017', '12/02/2017', 2, 2)";
-                string populationQuery3 = "INSERT INTO bills (billId, amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
+                    "dateCharged, dateDue, patientId, caseId) VALUES (2, 2, 0, 0, 2, 2, 0, 0, '01/02/2017', '12/02/2017', 2, 2)";
+                string populationQuery3 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (3, 3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3, 3)";
+                    "dateCharged, dateDue, patientId, caseId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -182,9 +182,9 @@ namespace PIMSTests.ModelTableTests
             List<Bills> bills = new List<Bills>();
 
             // Add updated bills
-            Bills newBill1 = new Bills(1, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
-            Bills newBill2 = new Bills(2, 50, 50, 50, 50, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 5, 5);
-            Bills newBill3 = new Bills(3, 100, 100, 100, 100, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 6, 6);
+            Bills newBill1 = new Bills(25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
+            Bills newBill2 = new Bills(50, 50, 50, 50, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 5, 5);
+            Bills newBill3 = new Bills(100, 100, 100, 100, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 6, 6);
 
             myList.Clear();
 
@@ -216,7 +216,7 @@ namespace PIMSTests.ModelTableTests
             List<Bills> bills = new List<Bills>();
 
             // Add updated bill
-            Bills updatedBill = new Bills(4, 25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
+            Bills updatedBill = new Bills(25, 25, 25, 25, 0, 0, 0, 0, DateTime.Parse("01/31/2017"), DateTime.Parse("12/31/2017"), 4, 4);
 
             myTable.UpdateItem(updatedBill);
             bills = myTable.ReadListById(updatedBill.billId);
