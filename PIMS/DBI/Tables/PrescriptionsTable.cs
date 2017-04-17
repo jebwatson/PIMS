@@ -185,9 +185,9 @@ namespace DBI
         public void WriteItem(Prescriptions newPresc) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (prescId, prescName, caseId, patientId, prescDate, " +
+                    " (prescName, caseId, patientId, prescDate, " +
                     "duration, amount)" +
-                    "VALUES (@prescId, @prescName, @caseId, @patientId, @prescDate, " +
+                    "VALUES (@prescName, @caseId, @patientId, @prescDate, " +
                     "@duration, @amount)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
