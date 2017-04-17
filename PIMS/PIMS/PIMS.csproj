@@ -50,10 +50,18 @@
     <Compile Include="Helpers\WizardPages.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Presenters\PAdmissions.cs" />
+    <Compile Include="Presenters\PBills.cs" />
+    <Compile Include="Presenters\PCharges.cs" />
+    <Compile Include="Presenters\PEmergencyContacts.cs" />
     <Compile Include="Presenters\PHome.cs" />
+    <Compile Include="Presenters\PInsurance.cs" />
     <Compile Include="Presenters\PLogin.cs" />
     <Compile Include="Presenters\PNewPatient.cs" />
     <Compile Include="Presenters\PPatients.cs" />
+    <Compile Include="Presenters\PPrescriptions.cs" />
+    <Compile Include="Presenters\PProcedures.cs" />
+    <Compile Include="Presenters\PVisitors.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Login.Designer.cs">
