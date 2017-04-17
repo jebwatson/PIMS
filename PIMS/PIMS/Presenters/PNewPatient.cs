@@ -58,7 +58,22 @@ namespace PIMS.Presenters
         /// </summary>
         public void RetreatTabs()
         {
-
+            switch (View.CurrentTab)
+            {
+                case 0:
+                    break;
+                case 1:
+                    View.CurrentTab = 0;
+                    break;
+                case 2:
+                    View.CurrentTab = 1;
+                    break;
+                case 3:
+                    View.CurrentTab = 2;
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>

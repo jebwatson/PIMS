@@ -35,17 +35,16 @@
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvPatientsList = new BrightIdeasSoftware.ObjectListView();
             this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvPatientsList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefreshPatients
             // 
-            this.btnRefreshPatients.Location = new System.Drawing.Point(28, 132);
-            this.btnRefreshPatients.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnRefreshPatients.Location = new System.Drawing.Point(12, 59);
             this.btnRefreshPatients.Name = "btnRefreshPatients";
-            this.btnRefreshPatients.Size = new System.Drawing.Size(233, 100);
+            this.btnRefreshPatients.Size = new System.Drawing.Size(100, 45);
             this.btnRefreshPatients.TabIndex = 1;
             this.btnRefreshPatients.Text = "Refresh";
             this.btnRefreshPatients.UseVisualStyleBackColor = true;
@@ -53,10 +52,9 @@
             // 
             // btnAddPatient
             // 
-            this.btnAddPatient.Location = new System.Drawing.Point(28, 245);
-            this.btnAddPatient.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnAddPatient.Location = new System.Drawing.Point(12, 110);
             this.btnAddPatient.Name = "btnAddPatient";
-            this.btnAddPatient.Size = new System.Drawing.Size(233, 112);
+            this.btnAddPatient.Size = new System.Drawing.Size(100, 50);
             this.btnAddPatient.TabIndex = 2;
             this.btnAddPatient.Text = "Add Patient(s)";
             this.btnAddPatient.UseVisualStyleBackColor = true;
@@ -64,10 +62,9 @@
             // 
             // btnDeletePatients
             // 
-            this.btnDeletePatients.Location = new System.Drawing.Point(28, 370);
-            this.btnDeletePatients.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnDeletePatients.Location = new System.Drawing.Point(12, 166);
             this.btnDeletePatients.Name = "btnDeletePatients";
-            this.btnDeletePatients.Size = new System.Drawing.Size(233, 112);
+            this.btnDeletePatients.Size = new System.Drawing.Size(100, 50);
             this.btnDeletePatients.TabIndex = 3;
             this.btnDeletePatients.Text = "Delete Patient(s)";
             this.btnDeletePatients.UseVisualStyleBackColor = true;
@@ -75,18 +72,16 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(828, 74);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtPatientSearch.Location = new System.Drawing.Point(355, 33);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(865, 35);
+            this.txtPatientSearch.Size = new System.Drawing.Size(373, 20);
             this.txtPatientSearch.TabIndex = 4;
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(639, 67);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnSearchPatients.Location = new System.Drawing.Point(274, 30);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(175, 51);
+            this.btnSearchPatients.Size = new System.Drawing.Size(75, 23);
             this.btnSearchPatients.TabIndex = 5;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -105,11 +100,10 @@
             this.olvPatientsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvPatientsList.FullRowSelect = true;
             this.olvPatientsList.GridLines = true;
-            this.olvPatientsList.Location = new System.Drawing.Point(275, 132);
-            this.olvPatientsList.Margin = new System.Windows.Forms.Padding(7);
+            this.olvPatientsList.Location = new System.Drawing.Point(118, 59);
             this.olvPatientsList.Name = "olvPatientsList";
             this.olvPatientsList.ShowGroups = false;
-            this.olvPatientsList.Size = new System.Drawing.Size(1418, 914);
+            this.olvPatientsList.Size = new System.Drawing.Size(610, 157);
             this.olvPatientsList.TabIndex = 0;
             this.olvPatientsList.UseCompatibleStateImageBehavior = false;
             this.olvPatientsList.View = System.Windows.Forms.View.Details;
@@ -120,30 +114,29 @@
             this.id.Text = "Patient Id";
             this.id.Width = 131;
             // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First";
-            this.fname.Width = 188;
-            // 
             // lname
             // 
             this.lname.AspectName = "nameLast";
             this.lname.Text = "Last";
             this.lname.Width = 205;
             // 
+            // fname
+            // 
+            this.fname.AspectName = "nameFirst";
+            this.fname.Text = "First";
+            this.fname.Width = 188;
+            // 
             // Patients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1727, 1077);
+            this.ClientSize = new System.Drawing.Size(774, 495);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnDeletePatients);
             this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.btnRefreshPatients);
             this.Controls.Add(this.olvPatientsList);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "Patients";
             this.Text = "Patients";
             ((System.ComponentModel.ISupportInitialize)(this.olvPatientsList)).EndInit();
