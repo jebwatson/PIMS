@@ -92,6 +92,12 @@
     <Compile Include="Views\Perscriptions.Designer.cs">
       <DependentUpon>Perscriptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Procedures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Procedures.Designer.cs">
+      <DependentUpon>Procedures.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Perscriptions.resx">
       <DependentUpon>Perscriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Procedures.resx">
+      <DependentUpon>Procedures.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
