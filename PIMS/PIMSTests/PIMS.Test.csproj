@@ -55,6 +55,7 @@
     <Compile Include="Helpers\PatientComparer.cs" />
     <Compile Include="Helpers\PrescriptionsComparer.cs" />
     <Compile Include="Helpers\ProceduresComparer.cs" />
+    <Compile Include="Helpers\UsersComparer.cs" />
     <Compile Include="Helpers\VisitorsComparer.cs" />
     <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
     <Compile Include="ModelTableTests\BillsTableTests.cs" />
