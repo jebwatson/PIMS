@@ -126,6 +126,7 @@
             this.btnBills.TabIndex = 15;
             this.btnBills.Text = "Bills";
             this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // btnCharges
             // 
@@ -135,6 +136,7 @@
             this.btnCharges.TabIndex = 16;
             this.btnCharges.Text = "Charges";
             this.btnCharges.UseVisualStyleBackColor = true;
+            this.btnCharges.Click += new System.EventHandler(this.btnCharges_Click);
             // 
             // btnPrescriptions
             // 
@@ -144,6 +146,7 @@
             this.btnPrescriptions.TabIndex = 17;
             this.btnPrescriptions.Text = "Prescriptions";
             this.btnPrescriptions.UseVisualStyleBackColor = true;
+            this.btnPrescriptions.Click += new System.EventHandler(this.btnPrescriptions_Click);
             // 
             // btnProcedures
             // 
@@ -153,6 +156,7 @@
             this.btnProcedures.TabIndex = 18;
             this.btnProcedures.Text = "Procedures";
             this.btnProcedures.UseVisualStyleBackColor = true;
+            this.btnProcedures.Click += new System.EventHandler(this.btnProcedures_Click);
             // 
             // btnAdmissions
             // 
@@ -162,6 +166,7 @@
             this.btnAdmissions.TabIndex = 19;
             this.btnAdmissions.Text = "Admissions";
             this.btnAdmissions.UseVisualStyleBackColor = true;
+            this.btnAdmissions.Click += new System.EventHandler(this.btnAdmissions_Click);
             // 
             // btnVisitors
             // 
@@ -171,6 +176,7 @@
             this.btnVisitors.TabIndex = 20;
             this.btnVisitors.Text = "Visitors";
             this.btnVisitors.UseVisualStyleBackColor = true;
+            this.btnVisitors.Click += new System.EventHandler(this.btnVisitors_Click);
             // 
             // btnEmergencyContact
             // 
@@ -180,6 +186,7 @@
             this.btnEmergencyContact.TabIndex = 21;
             this.btnEmergencyContact.Text = "Emergency Contact";
             this.btnEmergencyContact.UseVisualStyleBackColor = true;
+            this.btnEmergencyContact.Click += new System.EventHandler(this.btnEmergencyContact_Click);
             // 
             // btnInsurance
             // 
@@ -189,6 +196,7 @@
             this.btnInsurance.TabIndex = 22;
             this.btnInsurance.Text = "Insurance";
             this.btnInsurance.UseVisualStyleBackColor = true;
+            this.btnInsurance.Click += new System.EventHandler(this.btnInsurance_Click);
             // 
             // button3
             // 

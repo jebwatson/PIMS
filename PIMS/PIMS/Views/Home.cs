@@ -53,6 +53,46 @@ namespace PIMS.Views
             logout.Show();
             this.Hide();
         }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCharges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrescriptions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProcedures_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdmissions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVisitors_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEmergencyContact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsurance_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
     }
 }
