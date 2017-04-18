@@ -42,15 +42,15 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM notesDoctor";
+                string clearQuery = "DELETE FROM notes";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO notesDoctor (notes, doctor, nurse, doctorId, patientId) " +
+                string populationQuery1 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
                     "VALUES ('note1', 'true', 'false', 1, 1)";
-                string populationQuery2 = "INSERT INTO notesDoctor (notes, doctor, nurse, doctorId, patientId) " +
+                string populationQuery2 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
                     "VALUES ('note2', 'false', 'true', 2, 2)";
-                string populationQuery3 = "INSERT INTO notesDoctor (notes, doctor, nurse, doctorId, patientId) " +
+                string populationQuery3 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
                     "VALUES ('note3', 'true', 'false', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
