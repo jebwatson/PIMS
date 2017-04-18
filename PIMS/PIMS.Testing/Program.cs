@@ -13,7 +13,7 @@ namespace PIMS.Testing
         {
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
-                "PIMSTest;Integrated Security=False;User Id=ami0001;Password=poop;MultipleActiveResultSets=True;";
+                "PIMSTesting;Integrated Security=False;User Id=ami0001;Password=poop;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
