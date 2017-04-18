@@ -60,7 +60,6 @@
     <Compile Include="Presenters\PNewPatient.cs" />
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Presenters\PPrescriptions.cs" />
-
     <Compile Include="Presenters\PProcedures.cs" />
     <Compile Include="Presenters\PVisitors.cs" />
     <Compile Include="Program.cs" />
@@ -193,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\money%24%24.png" />
   </ItemGroup>
   <Import Project="..\DBI\DBI.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
