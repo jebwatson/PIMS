@@ -29,52 +29,162 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnNotes = new System.Windows.Forms.Button();
+            this.btnInsurance = new System.Windows.Forms.Button();
+            this.btnEmergencyContact = new System.Windows.Forms.Button();
+            this.btnVisitors = new System.Windows.Forms.Button();
+            this.btnAdmissions = new System.Windows.Forms.Button();
+            this.btnProcedures = new System.Windows.Forms.Button();
+            this.btnPrescriptions = new System.Windows.Forms.Button();
+            this.btnCharges = new System.Windows.Forms.Button();
+            this.btnBills = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnPatients = new System.Windows.Forms.Button();
-            this.btnBills = new System.Windows.Forms.Button();
-            this.btnCharges = new System.Windows.Forms.Button();
-            this.btnPrescriptions = new System.Windows.Forms.Button();
-            this.btnProcedures = new System.Windows.Forms.Button();
-            this.btnAdmissions = new System.Windows.Forms.Button();
-            this.btnVisitors = new System.Windows.Forms.Button();
-            this.btnEmergencyContact = new System.Windows.Forms.Button();
-            this.btnInsurance = new System.Windows.Forms.Button();
-            this.btnNotes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnMinimize
+            // btnNotes
             // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(779, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(43, 39);
-            this.btnMinimize.TabIndex = 14;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnNotes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnNotes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
+            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNotes.Location = new System.Drawing.Point(102, 610);
+            this.btnNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNotes.Name = "btnNotes";
+            this.btnNotes.Size = new System.Drawing.Size(179, 145);
+            this.btnNotes.TabIndex = 23;
+            this.btnNotes.Text = "Notes";
+            this.btnNotes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNotes.UseVisualStyleBackColor = false;
             // 
-            // btnClose
+            // btnInsurance
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(822, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(43, 39);
-            this.btnClose.TabIndex = 13;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnInsurance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnInsurance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsurance.Image = ((System.Drawing.Image)(resources.GetObject("btnInsurance.Image")));
+            this.btnInsurance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnInsurance.Location = new System.Drawing.Point(102, 420);
+            this.btnInsurance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInsurance.Name = "btnInsurance";
+            this.btnInsurance.Size = new System.Drawing.Size(179, 145);
+            this.btnInsurance.TabIndex = 22;
+            this.btnInsurance.Text = "Insurance";
+            this.btnInsurance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInsurance.UseVisualStyleBackColor = false;
+            this.btnInsurance.Click += new System.EventHandler(this.btnInsurance_Click);
+            // 
+            // btnEmergencyContact
+            // 
+            this.btnEmergencyContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEmergencyContact.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmergencyContact.Image = global::PIMS.Properties.Resources.Cases;
+            this.btnEmergencyContact.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmergencyContact.Location = new System.Drawing.Point(568, 237);
+            this.btnEmergencyContact.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmergencyContact.Name = "btnEmergencyContact";
+            this.btnEmergencyContact.Size = new System.Drawing.Size(179, 145);
+            this.btnEmergencyContact.TabIndex = 21;
+            this.btnEmergencyContact.Text = "Emerg. Contact";
+            this.btnEmergencyContact.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmergencyContact.UseVisualStyleBackColor = false;
+            this.btnEmergencyContact.Click += new System.EventHandler(this.btnEmergencyContact_Click);
+            // 
+            // btnVisitors
+            // 
+            this.btnVisitors.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnVisitors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisitors.Image = global::PIMS.Properties.Resources.Patient;
+            this.btnVisitors.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVisitors.Location = new System.Drawing.Point(566, 61);
+            this.btnVisitors.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisitors.Name = "btnVisitors";
+            this.btnVisitors.Size = new System.Drawing.Size(179, 145);
+            this.btnVisitors.TabIndex = 20;
+            this.btnVisitors.Text = "Visitors";
+            this.btnVisitors.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVisitors.UseVisualStyleBackColor = false;
+            this.btnVisitors.Click += new System.EventHandler(this.btnVisitors_Click);
+            // 
+            // btnAdmissions
+            // 
+            this.btnAdmissions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAdmissions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmissions.Image = global::PIMS.Properties.Resources.Patient;
+            this.btnAdmissions.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAdmissions.Location = new System.Drawing.Point(334, 61);
+            this.btnAdmissions.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdmissions.Name = "btnAdmissions";
+            this.btnAdmissions.Size = new System.Drawing.Size(179, 145);
+            this.btnAdmissions.TabIndex = 19;
+            this.btnAdmissions.Text = "Admissions";
+            this.btnAdmissions.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdmissions.UseVisualStyleBackColor = false;
+            this.btnAdmissions.Click += new System.EventHandler(this.btnAdmissions_Click);
+            // 
+            // btnProcedures
+            // 
+            this.btnProcedures.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnProcedures.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcedures.Image = global::PIMS.Properties.Resources.Cases;
+            this.btnProcedures.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProcedures.Location = new System.Drawing.Point(334, 237);
+            this.btnProcedures.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProcedures.Name = "btnProcedures";
+            this.btnProcedures.Size = new System.Drawing.Size(179, 145);
+            this.btnProcedures.TabIndex = 18;
+            this.btnProcedures.Text = "Procedures";
+            this.btnProcedures.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProcedures.UseVisualStyleBackColor = false;
+            this.btnProcedures.Click += new System.EventHandler(this.btnProcedures_Click);
+            // 
+            // btnPrescriptions
+            // 
+            this.btnPrescriptions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPrescriptions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrescriptions.Image = global::PIMS.Properties.Resources.Cases;
+            this.btnPrescriptions.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrescriptions.Location = new System.Drawing.Point(102, 237);
+            this.btnPrescriptions.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrescriptions.Name = "btnPrescriptions";
+            this.btnPrescriptions.Size = new System.Drawing.Size(179, 145);
+            this.btnPrescriptions.TabIndex = 17;
+            this.btnPrescriptions.Text = "Prescriptions";
+            this.btnPrescriptions.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrescriptions.UseVisualStyleBackColor = false;
+            this.btnPrescriptions.Click += new System.EventHandler(this.btnPrescriptions_Click);
+            // 
+            // btnCharges
+            // 
+            this.btnCharges.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCharges.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCharges.Image = ((System.Drawing.Image)(resources.GetObject("btnCharges.Image")));
+            this.btnCharges.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCharges.Location = new System.Drawing.Point(334, 420);
+            this.btnCharges.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCharges.Name = "btnCharges";
+            this.btnCharges.Size = new System.Drawing.Size(179, 145);
+            this.btnCharges.TabIndex = 16;
+            this.btnCharges.Text = "Charges";
+            this.btnCharges.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCharges.UseVisualStyleBackColor = false;
+            this.btnCharges.Click += new System.EventHandler(this.btnCharges_Click);
+            // 
+            // btnBills
+            // 
+            this.btnBills.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBills.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBills.Image = ((System.Drawing.Image)(resources.GetObject("btnBills.Image")));
+            this.btnBills.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBills.Location = new System.Drawing.Point(568, 420);
+            this.btnBills.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBills.Name = "btnBills";
+            this.btnBills.Size = new System.Drawing.Size(179, 145);
+            this.btnBills.TabIndex = 15;
+            this.btnBills.Text = "Bills";
+            this.btnBills.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBills.UseVisualStyleBackColor = false;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // btnLogOut
             // 
@@ -124,149 +234,6 @@
             this.btnPatients.UseVisualStyleBackColor = false;
             this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
-            // btnBills
-            // 
-            this.btnBills.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBills.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBills.Image = ((System.Drawing.Image)(resources.GetObject("btnBills.Image")));
-            this.btnBills.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBills.Location = new System.Drawing.Point(568, 420);
-            this.btnBills.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBills.Name = "btnBills";
-            this.btnBills.Size = new System.Drawing.Size(179, 145);
-            this.btnBills.TabIndex = 15;
-            this.btnBills.Text = "Bills";
-            this.btnBills.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBills.UseVisualStyleBackColor = false;
-            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
-            // 
-            // btnCharges
-            // 
-            this.btnCharges.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCharges.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCharges.Image = ((System.Drawing.Image)(resources.GetObject("btnCharges.Image")));
-            this.btnCharges.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCharges.Location = new System.Drawing.Point(334, 420);
-            this.btnCharges.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCharges.Name = "btnCharges";
-            this.btnCharges.Size = new System.Drawing.Size(179, 145);
-            this.btnCharges.TabIndex = 16;
-            this.btnCharges.Text = "Charges";
-            this.btnCharges.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCharges.UseVisualStyleBackColor = false;
-            this.btnCharges.Click += new System.EventHandler(this.btnCharges_Click);
-            // 
-            // btnPrescriptions
-            // 
-            this.btnPrescriptions.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPrescriptions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrescriptions.Image = global::PIMS.Properties.Resources.Cases;
-            this.btnPrescriptions.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrescriptions.Location = new System.Drawing.Point(102, 237);
-            this.btnPrescriptions.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrescriptions.Name = "btnPrescriptions";
-            this.btnPrescriptions.Size = new System.Drawing.Size(179, 145);
-            this.btnPrescriptions.TabIndex = 17;
-            this.btnPrescriptions.Text = "Prescriptions";
-            this.btnPrescriptions.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnPrescriptions.UseVisualStyleBackColor = false;
-            this.btnPrescriptions.Click += new System.EventHandler(this.btnPrescriptions_Click);
-            // 
-            // btnProcedures
-            // 
-            this.btnProcedures.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnProcedures.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcedures.Image = global::PIMS.Properties.Resources.Cases;
-            this.btnProcedures.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProcedures.Location = new System.Drawing.Point(334, 237);
-            this.btnProcedures.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProcedures.Name = "btnProcedures";
-            this.btnProcedures.Size = new System.Drawing.Size(179, 145);
-            this.btnProcedures.TabIndex = 18;
-            this.btnProcedures.Text = "Procedures";
-            this.btnProcedures.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnProcedures.UseVisualStyleBackColor = false;
-            this.btnProcedures.Click += new System.EventHandler(this.btnProcedures_Click);
-            // 
-            // btnAdmissions
-            // 
-            this.btnAdmissions.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdmissions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmissions.Image = global::PIMS.Properties.Resources.Patient;
-            this.btnAdmissions.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdmissions.Location = new System.Drawing.Point(334, 61);
-            this.btnAdmissions.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdmissions.Name = "btnAdmissions";
-            this.btnAdmissions.Size = new System.Drawing.Size(179, 145);
-            this.btnAdmissions.TabIndex = 19;
-            this.btnAdmissions.Text = "Admissions";
-            this.btnAdmissions.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAdmissions.UseVisualStyleBackColor = false;
-            this.btnAdmissions.Click += new System.EventHandler(this.btnAdmissions_Click);
-            // 
-            // btnVisitors
-            // 
-            this.btnVisitors.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnVisitors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisitors.Image = global::PIMS.Properties.Resources.Patient;
-            this.btnVisitors.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisitors.Location = new System.Drawing.Point(566, 61);
-            this.btnVisitors.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVisitors.Name = "btnVisitors";
-            this.btnVisitors.Size = new System.Drawing.Size(179, 145);
-            this.btnVisitors.TabIndex = 20;
-            this.btnVisitors.Text = "Visitors";
-            this.btnVisitors.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVisitors.UseVisualStyleBackColor = false;
-            this.btnVisitors.Click += new System.EventHandler(this.btnVisitors_Click);
-            // 
-            // btnEmergencyContact
-            // 
-            this.btnEmergencyContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEmergencyContact.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmergencyContact.Image = global::PIMS.Properties.Resources.Cases;
-            this.btnEmergencyContact.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmergencyContact.Location = new System.Drawing.Point(568, 237);
-            this.btnEmergencyContact.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEmergencyContact.Name = "btnEmergencyContact";
-            this.btnEmergencyContact.Size = new System.Drawing.Size(179, 145);
-            this.btnEmergencyContact.TabIndex = 21;
-            this.btnEmergencyContact.Text = "Emerg. Contact";
-            this.btnEmergencyContact.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEmergencyContact.UseVisualStyleBackColor = false;
-            this.btnEmergencyContact.Click += new System.EventHandler(this.btnEmergencyContact_Click);
-            // 
-            // btnInsurance
-            // 
-            this.btnInsurance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnInsurance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsurance.Image = ((System.Drawing.Image)(resources.GetObject("btnInsurance.Image")));
-            this.btnInsurance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInsurance.Location = new System.Drawing.Point(102, 420);
-            this.btnInsurance.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInsurance.Name = "btnInsurance";
-            this.btnInsurance.Size = new System.Drawing.Size(179, 145);
-            this.btnInsurance.TabIndex = 22;
-            this.btnInsurance.Text = "Insurance";
-            this.btnInsurance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInsurance.UseVisualStyleBackColor = false;
-            this.btnInsurance.Click += new System.EventHandler(this.btnInsurance_Click);
-            // 
-            // btnNotes
-            // 
-            this.btnNotes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNotes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
-            this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNotes.Location = new System.Drawing.Point(102, 610);
-            this.btnNotes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNotes.Name = "btnNotes";
-            this.btnNotes.Size = new System.Drawing.Size(179, 145);
-            this.btnNotes.TabIndex = 23;
-            this.btnNotes.Text = "Notes";
-            this.btnNotes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNotes.UseVisualStyleBackColor = false;
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,8 +249,6 @@
             this.Controls.Add(this.btnPrescriptions);
             this.Controls.Add(this.btnCharges);
             this.Controls.Add(this.btnBills);
-            this.Controls.Add(this.btnMinimize);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnPatients);
@@ -299,8 +264,6 @@
         private System.Windows.Forms.Button btnPatients;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnBills;
         private System.Windows.Forms.Button btnCharges;
         private System.Windows.Forms.Button btnPrescriptions;

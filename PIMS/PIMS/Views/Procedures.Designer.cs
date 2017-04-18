@@ -37,19 +37,22 @@
             this.DurationMins = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProceduresSearch
             // 
-            this.txtProceduresSearch.Location = new System.Drawing.Point(426, 82);
+            this.txtProceduresSearch.Location = new System.Drawing.Point(499, 82);
             this.txtProceduresSearch.Name = "txtProceduresSearch";
             this.txtProceduresSearch.Size = new System.Drawing.Size(341, 22);
             this.txtProceduresSearch.TabIndex = 5;
             // 
             // btnSearchProcedures
             // 
-            this.btnSearchProcedures.Location = new System.Drawing.Point(279, 79);
+            this.btnSearchProcedures.Location = new System.Drawing.Point(351, 79);
             this.btnSearchProcedures.Name = "btnSearchProcedures";
             this.btnSearchProcedures.Size = new System.Drawing.Size(125, 29);
             this.btnSearchProcedures.TabIndex = 4;
@@ -58,6 +61,9 @@
             // 
             // olvProceduresList
             // 
+            this.olvProceduresList.AllColumns.Add(this.patientid);
+            this.olvProceduresList.AllColumns.Add(this.lname);
+            this.olvProceduresList.AllColumns.Add(this.fname);
             this.olvProceduresList.AllColumns.Add(this.ProcedureID);
             this.olvProceduresList.AllColumns.Add(this.ProcedureType);
             this.olvProceduresList.AllColumns.Add(this.DurationHrs);
@@ -66,6 +72,9 @@
             this.olvProceduresList.AllColumns.Add(this.StopTime);
             this.olvProceduresList.CellEditUseWholeCell = false;
             this.olvProceduresList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.patientid,
+            this.lname,
+            this.fname,
             this.ProcedureID,
             this.ProcedureType,
             this.DurationHrs,
@@ -76,7 +85,7 @@
             this.olvProceduresList.GridLines = true;
             this.olvProceduresList.Location = new System.Drawing.Point(60, 118);
             this.olvProceduresList.Name = "olvProceduresList";
-            this.olvProceduresList.Size = new System.Drawing.Size(934, 279);
+            this.olvProceduresList.Size = new System.Drawing.Size(1084, 279);
             this.olvProceduresList.TabIndex = 3;
             this.olvProceduresList.UseCompatibleStateImageBehavior = false;
             this.olvProceduresList.View = System.Windows.Forms.View.Details;
@@ -85,43 +94,61 @@
             // 
             this.ProcedureID.AspectName = "procId";
             this.ProcedureID.Text = "Procedure ID";
-            this.ProcedureID.Width = 155;
+            this.ProcedureID.Width = 120;
             // 
             // ProcedureType
             // 
             this.ProcedureType.AspectName = "procType";
             this.ProcedureType.Text = "Procedure Type";
-            this.ProcedureType.Width = 155;
+            this.ProcedureType.Width = 120;
             // 
             // DurationHrs
             // 
             this.DurationHrs.AspectName = "durationHrs";
             this.DurationHrs.Text = "Durations(Hours)";
-            this.DurationHrs.Width = 155;
+            this.DurationHrs.Width = 120;
             // 
             // DurationMins
             // 
             this.DurationMins.AspectName = "durationMins";
             this.DurationMins.Text = "DurationMins";
-            this.DurationMins.Width = 155;
+            this.DurationMins.Width = 120;
             // 
             // StartTime
             // 
             this.StartTime.AspectName = "startTime";
             this.StartTime.Text = "Start Time";
-            this.StartTime.Width = 155;
+            this.StartTime.Width = 120;
             // 
             // StopTime
             // 
             this.StopTime.AspectName = "stopTime";
             this.StopTime.Text = "Stop Time";
-            this.StopTime.Width = 155;
+            this.StopTime.Width = 120;
+            // 
+            // patientid
+            // 
+            this.patientid.AspectName = "patientId";
+            this.patientid.Text = "Patient ID";
+            this.patientid.Width = 120;
+            // 
+            // lname
+            // 
+            this.lname.AspectName = "nameLast";
+            this.lname.Text = "Last Name";
+            this.lname.Width = 120;
+            // 
+            // fname
+            // 
+            this.fname.AspectName = "nameFirst";
+            this.fname.Text = "First Name";
+            this.fname.Width = 120;
             // 
             // Procedures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 497);
+            this.ClientSize = new System.Drawing.Size(1214, 538);
             this.Controls.Add(this.txtProceduresSearch);
             this.Controls.Add(this.btnSearchProcedures);
             this.Controls.Add(this.olvProceduresList);
@@ -144,5 +171,8 @@
         private BrightIdeasSoftware.OLVColumn DurationMins;
         private BrightIdeasSoftware.OLVColumn StartTime;
         private BrightIdeasSoftware.OLVColumn StopTime;
+        private BrightIdeasSoftware.OLVColumn patientid;
+        private BrightIdeasSoftware.OLVColumn lname;
+        private BrightIdeasSoftware.OLVColumn fname;
     }
 }
