@@ -30,15 +30,15 @@
         {
             this.txtProceduresSearch = new System.Windows.Forms.TextBox();
             this.btnSearchProcedures = new System.Windows.Forms.Button();
-            this.olvProceduresList = new BrightIdeasSoftware.ObjectListView();
+            this.olvPrescriptionsList = new BrightIdeasSoftware.ObjectListView();
+            this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Duration = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProceduresSearch
@@ -57,17 +57,17 @@
             this.btnSearchProcedures.Text = "Search";
             this.btnSearchProcedures.UseVisualStyleBackColor = true;
             // 
-            // olvProceduresList
+            // olvPrescriptionsList
             // 
-            this.olvProceduresList.AllColumns.Add(this.PatientID);
-            this.olvProceduresList.AllColumns.Add(this.lname);
-            this.olvProceduresList.AllColumns.Add(this.fname);
-            this.olvProceduresList.AllColumns.Add(this.PrescriptionID);
-            this.olvProceduresList.AllColumns.Add(this.PrescriptionName);
-            this.olvProceduresList.AllColumns.Add(this.PrescriptionDate);
-            this.olvProceduresList.AllColumns.Add(this.Duration);
-            this.olvProceduresList.CellEditUseWholeCell = false;
-            this.olvProceduresList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvPrescriptionsList.AllColumns.Add(this.PatientID);
+            this.olvPrescriptionsList.AllColumns.Add(this.lname);
+            this.olvPrescriptionsList.AllColumns.Add(this.fname);
+            this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionID);
+            this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionName);
+            this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionDate);
+            this.olvPrescriptionsList.AllColumns.Add(this.Duration);
+            this.olvPrescriptionsList.CellEditUseWholeCell = false;
+            this.olvPrescriptionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
             this.lname,
             this.fname,
@@ -75,14 +75,32 @@
             this.PrescriptionName,
             this.PrescriptionDate,
             this.Duration});
-            this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvProceduresList.GridLines = true;
-            this.olvProceduresList.Location = new System.Drawing.Point(52, 84);
-            this.olvProceduresList.Name = "olvProceduresList";
-            this.olvProceduresList.Size = new System.Drawing.Size(921, 279);
-            this.olvProceduresList.TabIndex = 6;
-            this.olvProceduresList.UseCompatibleStateImageBehavior = false;
-            this.olvProceduresList.View = System.Windows.Forms.View.Details;
+            this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvPrescriptionsList.GridLines = true;
+            this.olvPrescriptionsList.Location = new System.Drawing.Point(52, 84);
+            this.olvPrescriptionsList.Name = "olvPrescriptionsList";
+            this.olvPrescriptionsList.Size = new System.Drawing.Size(921, 279);
+            this.olvPrescriptionsList.TabIndex = 6;
+            this.olvPrescriptionsList.UseCompatibleStateImageBehavior = false;
+            this.olvPrescriptionsList.View = System.Windows.Forms.View.Details;
+            // 
+            // PatientID
+            // 
+            this.PatientID.AspectName = "patientId";
+            this.PatientID.Text = "Patient ID";
+            this.PatientID.Width = 120;
+            // 
+            // lname
+            // 
+            this.lname.AspectName = "nameLast";
+            this.lname.Text = "Last Name";
+            this.lname.Width = 120;
+            // 
+            // fname
+            // 
+            this.fname.AspectName = "nameFirst";
+            this.fname.Text = "First Name";
+            this.fname.Width = 120;
             // 
             // PrescriptionID
             // 
@@ -108,24 +126,6 @@
             this.Duration.Text = "Duration";
             this.Duration.Width = 120;
             // 
-            // PatientID
-            // 
-            this.PatientID.AspectName = "patientId";
-            this.PatientID.Text = "Patient ID";
-            this.PatientID.Width = 120;
-            // 
-            // lname
-            // 
-            this.lname.AspectName = "nameLast";
-            this.lname.Text = "Last Name";
-            this.lname.Width = 120;
-            // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 120;
-            // 
             // Prescriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,10 +133,10 @@
             this.ClientSize = new System.Drawing.Size(1032, 457);
             this.Controls.Add(this.txtProceduresSearch);
             this.Controls.Add(this.btnSearchProcedures);
-            this.Controls.Add(this.olvProceduresList);
+            this.Controls.Add(this.olvPrescriptionsList);
             this.Name = "Prescriptions";
             this.Text = "Perscriptions";
-            ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,7 +146,7 @@
 
         private System.Windows.Forms.TextBox txtProceduresSearch;
         private System.Windows.Forms.Button btnSearchProcedures;
-        private BrightIdeasSoftware.ObjectListView olvProceduresList;
+        private BrightIdeasSoftware.ObjectListView olvPrescriptionsList;
         private BrightIdeasSoftware.OLVColumn PrescriptionID;
         private BrightIdeasSoftware.OLVColumn PrescriptionName;
         private BrightIdeasSoftware.OLVColumn PrescriptionDate;
