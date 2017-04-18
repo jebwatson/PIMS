@@ -14,5 +14,24 @@ namespace PIMS.Presenters
             Patients PatientsForm = new Patients();
             PatientsForm.ShowDialog();
         }
+
+        public void CreateProceduresForm()
+        {
+            Procedures ProcedureForm = new Procedures();
+            ProcedureForm.ShowDialog();
+        }
+
+        public void CreatePrescriptionsForm()
+        {
+            Prescriptions PrescriptionsForm = new Prescriptions();
+            PrescriptionsForm.ShowDialog();
+        }
+
+        public void CreateAdmissionsForm()
+        {
+            Admissions AdmissionsForm = new Admissions();
+            AdmissionsForm.ShowDialog();
+        }
+
     }
 }

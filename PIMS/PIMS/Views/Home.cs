@@ -37,10 +37,6 @@ namespace PIMS.Views
             Presenter.CreatePatientsForm();
         }
 
-        private void btnCases_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
@@ -66,17 +62,17 @@ namespace PIMS.Views
 
         private void btnPrescriptions_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreatePrescriptionsForm();
         }
 
         private void btnProcedures_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateProceduresForm();
         }
 
         private void btnAdmissions_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateAdmissionsForm();
         }
 
         private void btnVisitors_Click(object sender, EventArgs e)
