@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72126DB6-2A45-4CDB-A293-1F891F3A0DD7}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{BFB559D2-69C7-4120-906C-8FAEB43E0163}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PIMSTests</RootNamespace>
-    <AssemblyName>PIMSTests</AssemblyName>
+    <RootNamespace>PIMS.Testing</RootNamespace>
+    <AssemblyName>PIMS.Testing</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,45 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\AdmissionsComparer.cs" />
-    <Compile Include="Helpers\BillsComparer.cs" />
-    <Compile Include="Helpers\ChargesComparer.cs" />
-    <Compile Include="Helpers\NotesComparer.cs" />
-    <Compile Include="Helpers\EmergencyContactComparer.cs" />
-    <Compile Include="Helpers\ICompare.cs" />
-    <Compile Include="Helpers\InsuranceComparer.cs" />
-    <Compile Include="Helpers\PatientComparer.cs" />
-    <Compile Include="Helpers\PrescriptionsComparer.cs" />
-    <Compile Include="Helpers\ProceduresComparer.cs" />
-    <Compile Include="Helpers\UsersComparer.cs" />
-    <Compile Include="Helpers\VisitorsComparer.cs" />
-    <Compile Include="ModelTableTests\AdmissionsTableTests.cs" />
-    <Compile Include="ModelTableTests\BillsTableTests.cs" />
-    <Compile Include="ModelTableTests\NotesTableTests.cs" />
-    <Compile Include="ModelTableTests\PatientTableTests.cs" />
-    <Compile Include="ModelTableTests\ProceduresTableTests.cs" />
-    <Compile Include="ModelTableTests\PrescriptionsTableTests.cs" />
-    <Compile Include="ModelTableTests\UsersTableTests.cs" />
-    <Compile Include="ModelTableTests\VisitorsTableTests.cs" />
-    <Compile Include="ModelTableTests\ChargesTableTests.cs" />
-    <Compile Include="ModelTableTests\crudTests.cs" />
-    <Compile Include="ModelTableTests\EmergencyContactTableTests.cs" />
-    <Compile Include="ModelTableTests\InsuranceTableTests.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilitiesTests\ConnectionManagerTests.cs" />
-    <Compile Include="UtilitiesTests\QueryExecutorTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PIMS\PIMS.csproj">
       <Project>{c8012f8c-3b1a-4362-ac03-2a31b2ddae73}</Project>
       <Name>PIMS</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

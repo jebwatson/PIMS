@@ -34,7 +34,7 @@ namespace PIMSTests.ModelTableTests
             Comparer = new NotesComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using

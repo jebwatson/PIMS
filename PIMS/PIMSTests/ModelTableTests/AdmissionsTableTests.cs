@@ -32,7 +32,7 @@ namespace PIMSTests.ModelTableTests
             myList.Add(new Admission(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "C", "3", "3", "3", "3", 3));
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
