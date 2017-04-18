@@ -60,7 +60,6 @@
     <Compile Include="Presenters\PNewPatient.cs" />
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Presenters\PPrescriptions.cs" />
-
     <Compile Include="Presenters\PProcedures.cs" />
     <Compile Include="Presenters\PVisitors.cs" />
     <Compile Include="Program.cs" />
@@ -69,6 +68,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Login.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admissions.Designer.cs">
+      <DependentUpon>Admissions.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
@@ -94,11 +99,11 @@
     <Compile Include="Views\Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Perscriptions.cs">
+    <Compile Include="Views\Prescriptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Perscriptions.Designer.cs">
-      <DependentUpon>Perscriptions.cs</DependentUpon>
+    <Compile Include="Views\Prescriptions.Designer.cs">
+      <DependentUpon>Prescriptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Procedures.cs">
       <SubType>Form</SubType>
@@ -116,6 +121,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Admissions.resx">
+      <DependentUpon>Admissions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,8 +136,8 @@
     <EmbeddedResource Include="Views\Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Perscriptions.resx">
-      <DependentUpon>Perscriptions.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Prescriptions.resx">
+      <DependentUpon>Prescriptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Procedures.resx">
       <DependentUpon>Procedures.cs</DependentUpon>
@@ -193,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\money%24%24.png" />
   </ItemGroup>
   <Import Project="..\DBI\DBI.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

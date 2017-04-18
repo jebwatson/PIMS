@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class Perscriptions : Form
+    public partial class Admissions : Form
     {
-        public Perscriptions()
+        public Admissions()
         {
             InitializeComponent();
         }
