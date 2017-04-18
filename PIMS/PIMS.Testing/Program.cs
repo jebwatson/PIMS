@@ -19,71 +19,83 @@ namespace PIMS.Testing
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string query1 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
                     "VALUES ('01/01/2017', '12/01/2017', 'A', 'A', '1', '1', '1', '1', 1)";
                 string query2 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
                     "VALUES ('01/02/2017', '12/02/2017', 'B', 'B', '2', '2', '2', '2', 2)";
                 string query3 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
                     "VALUES ('01/03/2017', '12/03/2017', 'C', 'C', '3', '3', '3', '3', 3)";
                 string query4 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
                     "VALUES ('01/03/2017', '12/03/2017', 'C', 'D', '4', '4', '4', '4', 4)";
                 string query5 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
                     "VALUES ('01/04/2017', '12/04/2017', 'C', 'E', '5', '5', '5', '5', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 /*
                 query1 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (1, 1, 0, 0, 1, 1, 0, 0, '01/01/2017', '12/01/2017', 1)";
+                    "dateCharged, dateDue, patientId) VALUES (1, 1, 0, 0, 1, 1, 0, 0, '01/01/2017', '12/01/2017', 1)";
                 query2 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (2, 2, 0, 0, 2, 2, 0, 0, '01/02/2017', '12/02/2017', 2)";
+                    "dateCharged, dateDue, patientId) VALUES (2, 2, 0, 0, 2, 2, 0, 0, '01/02/2017', '12/02/2017', 2)";
                 query3 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3)";
+                    "dateCharged, dateDue, patientId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3)";
                 query4 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3)";
+                    "dateCharged, dateDue, patientId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 4)";
                 query5 = "INSERT INTO bills (amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, " +
                     "amountPaidByPatientCents, amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, " +
-                    "dateCharged, dateDue, patientId, caseId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 3)";
+                    "dateCharged, dateDue, patientId) VALUES (3, 3, 0, 0, 3, 3, 0, 0, '01/03/2017', '12/03/2017', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
-                    "dateDue, procedureId, officeStaffId, patientId, caseId) " +
+                    "dateDue, procedureId, officeStaffId, patientId) " +
                     "VALUES ('test1', 1, 1, '01/01/2017', '12/01/2017', 1, 1, 1)";
                 query2 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
-                    "dateDue, procedureId, officeStaffId, patientId, caseId) " +
+                    "dateDue, procedureId, officeStaffId, patientId) " +
                     "VALUES ('test2', 2, 2, '01/02/2017', '12/02/2017', 2, 2, 2)";
                 query3 = "INSERT INTO charges (description, amountDollars, amountCents, dateCharged, " +
-                    "dateDue, procedureId, officeStaffId, patientId, caseId) " +
+                    "dateDue, procedureId, officeStaffId, patientId) " +
                     "VALUES ('test3', 3, 3, '01/03/2017', '12/03/2017', 3, 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
                 */
 
                 query1 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
                     "VALUES ('Watson', 'Jeb', 'W', '8076874', '205', 1)";
                 query2 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES ('Burcham', 'David', 'A', '1111111', '256', 1)";
+                    "VALUES ('Burcham', 'David', 'A', '1111111', '256', 2)";
                 query3 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES ('Morrow', 'Jasper', 'A', '2222222', '256', 1)";
+                    "VALUES ('Morrow', 'Jasper', 'A', '2222222', '256', 3)";
+                query4 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
+                    "VALUES ('Indihar', 'Alex', 'M', '5095561', '256', 4)";
+                query5 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
+                    "VALUES ('Indihar', 'Alexander', 'M', '6907499', '256', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
                     "VALUES ('A', '1', '1', 1)";
@@ -91,103 +103,154 @@ namespace PIMS.Testing
                     "VALUES ('B', '2', '2', 2)";
                 query3 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
                     "VALUES ('C', '3', '3', 3)";
+                query4 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES ('C', '4', '3', 4)";
+                query5 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES ('C', '5', '3', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
-                // Populate the table with known values before tests occur
-                query1 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                /*
+                query1 = "INSERT INTO notesDoctor (notes, doctorId, patientId) " +
                     "VALUES ('this is a note', 1, 1)";
-                query2 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                query2 = "INSERT INTO notesDoctor (notes, doctorId, patientId) " +
                     "VALUES ('', 2, 2)";
-                query3 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                query3 = "INSERT INTO notesDoctor (notes, doctorId, patientId) " +
                     "VALUES ('this is a much longer note, which is opposite of the last, null note', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
-                query1 = "INSERT INTO notesNurse (notes, nurseId, patientId, caseId) " +
+                query1 = "INSERT INTO notesNurse (notes, nurseId, patientId) " +
                     "VALUES ('this is a note', 4, 4)";
-                query2 = "INSERT INTO notesNurse (notes, nurseId, patientId, caseId) " +
+                query2 = "INSERT INTO notesNurse (notes, nurseId, patientId) " +
                     "VALUES ('', 5, 5)";
-                query3 = "INSERT INTO notesNurse (notes, nurseId, patientId, caseId) " +
+                query3 = "INSERT INTO notesNurse (notes, nurseId, patientId) " +
                     "VALUES ('this is a much longer note, which is opposite of the last, null note', 6, 6)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
+                */
 
                 query1 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES ('Watson', 'Jeb', 'W', 'A', 'A', 'A', '11111', '1111111', '256', '1111111', '256', '1111111', '256', 'A')";
+                    "VALUES ('Watson', 'Jeb', 'W', '405 Kings Lane', 'Huntsville', 'AL', '11111', '1111111', '256', '1111111', '256', '1111111', '256', 'Brown')";
                 query2 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES ('Burcham', 'David', 'A', 'B', 'B', 'B', '22222', '2222222', '256', '2222222', '256', '2222222', '256', 'B')";
+                    "VALUES ('Burcham', 'David', 'A', '5654 Walnut Dr', 'Dallas', 'TX', '22222', '2222222', '256', '2222222', '256', '2222222', '256', 'Middleton')";
                 query3 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES ('Morrow', 'Jasper', 'A', 'C', 'C', 'C', '33333', '3333333', '256', '3333333', '256', '3333333', '256', 'C')";
+                    "VALUES ('Morrow', 'Jasper', 'A', '1234 Frizz St', 'Bismarck', 'ND', '33333', '3333333', '256', '3333333', '256', '3333333', '256', 'Ingram')";
+                query4 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                    "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
+                    "VALUES ('Indihar', 'Alex', 'M', '4901 Blue Spring Rd', 'Huntsville', 'AL', '44444', '4444444', '256', '4444444', '256', '4444444', '256', 'Ingram')";
+                query5 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
+                    "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
+                    "VALUES ('Indihar', 'Alexander', 'M', '2617 Garth Rd', 'Huntsville', 'AL', '55555', '5555555', '256', '5555555', '256', '5555555', '256', 'Ingram')";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test1', '1mg', '01 / 01 / 2017', 1, 1)";
+                    "duration, patientId) " +
+                    "VALUES ('Tums', '1mg', '01/01/2017', 1, 1)";
                 query2 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test2', '2mg', '01 / 02 / 2017', 2, 2)";
+                    "duration, patientId) " +
+                    "VALUES ('Ibuprofen', '2mg', '01/02/2017', 2, 2)";
                 query3 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test3', '3mg', '01 / 03 / 2017', 3, 3)";
+                    "duration, patientId) " +
+                    "VALUES ('Tylenol', '3mg', '01/03/2017', 3, 3)";
+                query4 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
+                    "duration, patientId) " +
+                    "VALUES ('Sudafed', '3mg', '01/03/2017', 3, 4)";
+                query5 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
+                    "duration, patientId) " +
+                    "VALUES ('Protein Powder', '3mg', '01/03/2017', 3, 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO procedures (startTime, stopTime, procType, durationHrs, " +
-                    "durationMins, doctorId, procNotes, patientId, caseId) " +
-                    "VALUES ('01 / 01 / 2017', '12 / 01 / 2017', 'test1', 1, 1, 1, 'test1', 1)";
+                    "durationMins, doctorId, procNotes, patientId) " +
+                    "VALUES ('01 / 01 / 2017 1:00pm', '12 / 01 / 2017 2:00pm', 'test1', 1, 1, 1, 'test1', 1)";
                 query2 = "INSERT INTO procedures (startTime, stopTime, procType, durationHrs, " +
-                    "durationMins, doctorId, procNotes, patientId, caseId) " +
-                    "VALUES ('01 / 02 / 2017', '12 / 02 / 2017', 'test2', 2, 2, 2, 'test2', 2)";
+                    "durationMins, doctorId, procNotes, patientId) " +
+                    "VALUES ('01 / 02 / 2017 3:30am', '12 / 02 / 2017 4:40am', 'test2', 2, 2, 2, 'test2', 2)";
                 query3 = "INSERT INTO procedures (startTime, stopTime, procType, durationHrs, " +
-                    "durationMins, doctorId, procNotes, patientId, caseId) " +
-                    "VALUES ('01 / 03 / 2017', '12 / 03 / 2017', 'test3', 3, 3, 3, 'test3', 3)";
+                    "durationMins, doctorId, procNotes, patientId) " +
+                    "VALUES ('01 / 03 / 2017 5:08am', '12 / 03 / 2017 8:56pm', 'test3', 3, 3, 3, 'test3', 3)";
+                query4 = "INSERT INTO procedures (startTime, stopTime, procType, durationHrs, " +
+                    "durationMins, doctorId, procNotes, patientId) " +
+                    "VALUES ('01 / 03 / 2017 4:20pm', '12 / 03 / 2017 4:20am', 'test3', 3, 3, 3, 'test3', 4)";
+                query5 = "INSERT INTO procedures (startTime, stopTime, procType, durationHrs, " +
+                    "durationMins, doctorId, procNotes, patientId) " +
+                    "VALUES ('01 / 03 / 2017 10:10am', '12 / 03 / 2017 12:00pm', 'test3', 3, 3, 3, 'test3', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test1', 'test1', 'test1', 1, 'test1')";
+                    "VALUES ('Watson', 'Jeb', 'Doctor', 4, 'watson')";
                 query2 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test2', 'test2', 'test2', '2', 'test2')";
+                    "VALUES ('Burcham', 'David', 'Volunteer', 1, 'burcham')";
                 query3 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test3', 'test3', 'test3', '3', 'test3')";
+                    "VALUES ('Jasper', 'Morrow', 'Nurse', 3, 'jasper')";
+                query4 = "INSERT INTO users (nameLast, nameFirst, title, " +
+                    "accessLevel, username) " +
+                    "VALUES ('Indihar', 'Alex', 'Doctor', 4, 'alex')";
+                query5 = "INSERT INTO users (nameLast, nameFirst, title, " +
+                    "accessLevel, username) " +
+                    "VALUES ('Indihar', 'Alexander', 'Staff', 2, 'indihar')";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
                 query1 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
-                    "lastVisit, patientId, caseId) " +
-                    "VALUES ('test1', 'test1', 'test1', '01 / 01 / 2017', 1, 1)";
+                    "lastVisit, patientId) " +
+                    "VALUES ('Watson', 'Jeb', 'big daddy', '01 / 01 / 2017', 1)";
                 query2 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
-                    "lastVisit, patientId, caseId) " +
-                    "VALUES ('test2', 'test2', 'test2', '01 / 02 / 2017', 2, 2)";
+                    "lastVisit, patientId) " +
+                    "VALUES ('Burcham', 'David', 'dad', '01 / 02 / 2017', 2)";
                 query3 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
-                    "lastVisit, patientId, caseId) " +
-                    "VALUES ('test3', 'test3', 'test3', '01 / 03 / 2017', 3, 3)";
+                    "lastVisit, patientId) " +
+                    "VALUES ('Morrow', 'Jasper', 'mom', '01 / 03 / 2017', 3)";
+                query4 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
+                    "lastVisit, patientId) " +
+                    "VALUES ('Indihar', 'Alex', 'twin', '01 / 03 / 2017', 4)";
+                query5 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
+                    "lastVisit, patientId) " +
+                    "VALUES ('Indihar', 'Alexander', 'twin', '01 / 03 / 2017', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
+                QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
             }
         }
     }
