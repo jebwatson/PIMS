@@ -22,16 +22,7 @@ namespace PIMS.Views
         }
 
         #region Event Handlers
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+        
         private void btnPatients_Click(object sender, EventArgs e)
         {
             Presenter.CreatePatientsForm();
