@@ -27,10 +27,9 @@ namespace DBI
             patientId = _unassigned;
         }
 
-        public EmergencyContact(int ecId, string nameLast, string nameFirst, string nameMiddle, string phone,
+        public EmergencyContact(string nameLast, string nameFirst, string nameMiddle, string phone,
             string areaCode, int patientId)
         {
-            emergencyContactId = ecId;
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
             this.nameMiddle = nameMiddle;

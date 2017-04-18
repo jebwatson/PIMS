@@ -14,7 +14,6 @@ namespace DBI
         public string relation { get; set; }
         public DateTime lastVisit { get; set; }
         public int patientId { get; set; }
-        public int caseId { get; set; }
 
         public Visitors() {
             nameLast = string.Empty;
@@ -22,17 +21,15 @@ namespace DBI
             relation = string.Empty;
             patientId = _unassigned;
             lastVisit = DateTime.Now;
-            caseId = _unassigned;
             visitorId = _unassigned;
         }
 
-        public Visitors(int visitorId, string lastName, string firstName, string relation, DateTime lastVisit, int patientId, int caseId) {
+        public Visitors(string lastName, string firstName, string relation, DateTime lastVisit, int patientId) {
             this.nameLast = lastName;
             this.nameFirst = firstName;
             this.relation = relation;
             this.patientId = patientId;
             this.lastVisit = lastVisit;
-            this.caseId = caseId;
             this.visitorId = visitorId;
         }
     }

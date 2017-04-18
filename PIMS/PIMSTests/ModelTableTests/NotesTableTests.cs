@@ -12,29 +12,29 @@ using System.Threading.Tasks;
 namespace PIMSTests.ModelTableTests
 {
     [TestFixture]
-    class NotesDoctorTableTests
+    class NotesTableTests
     {
-        NotesDoctorTable myTable;
-        List<NotesDoctor> myList;
-        ICompare<NotesDoctor> Comparer;
+        NotesTable myTable;
+        List<Notes> myList;
+        ICompare<Notes> Comparer;
 
         [SetUp]
         public void SetupTest()
         {
             // NOTE: This occurs before each and every test case.
 
-            myTable = new NotesDoctorTable();
-            myList = new List<NotesDoctor>()
+            myTable = new NotesTable();
+            myList = new List<Notes>()
             {
-                new NotesDoctor(1, "this is a note", 1, 1, 1),
-                new NotesDoctor(2, "", 2, 2, 2),
-                new NotesDoctor(3, "this is a much longer note, which is opposite of the last, null note", 3, 3, 3)
+                new Notes("note1", true, false, 1, 1),
+                new Notes("note2", false, true, 2, 2),
+                new Notes("note3", true, false, 3, 3)
             };
 
-            Comparer = new NotesDoctorComparer();
+            Comparer = new NotesComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -42,16 +42,16 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM notesDoctor";
+                string clearQuery = "DELETE FROM notes";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (1, 'this is a note', 1, 1, 1)";
-                string populationQuery2 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (2, '', 2, 2, 2)";
-                string populationQuery3 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (3, 'this is a much longer note, which is opposite of the last, null note', 3, 3, 3)";
+                string populationQuery1 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
+                    "VALUES ('note1', 'true', 'false', 1, 1)";
+                string populationQuery2 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
+                    "VALUES ('note2', 'false', 'true', 2, 2)";
+                string populationQuery3 = "INSERT INTO notes (notes, doctor, nurse, userId, patientId) " +
+                    "VALUES ('note3', 'true', 'false', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -142,9 +142,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            NotesDoctor updated1 = new NotesDoctor(1, "note", 1, 1, 1);
-            NotesDoctor updated2 = new NotesDoctor(2, "this note now gets to be a longer note for probably not a lot of reason while the next one will be null", 2, 2, 2);
-            NotesDoctor updated3 = new NotesDoctor(3, "", 3, 3, 3);
+            Notes updated1 = new Notes("note", false, true, 1, 1);
+            Notes updated2 = new Notes("this note now gets to be a longer note", true, false, 2, 2);
+            Notes updated3 = new Notes("longish note", false, true, 3, 3);
 
             myList.Clear();
 
@@ -172,7 +172,7 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            NotesDoctor updatedNotesDoctor = new NotesDoctor(1, "omg this dork made a matrix reference lol", 1, 1, 1);
+            Notes updatedNotesDoctor = new Notes("omg this dork made a matrix reference lol", false, true, 1, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedNotesDoctor);

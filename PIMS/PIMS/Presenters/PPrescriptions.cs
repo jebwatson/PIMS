@@ -1,4 +1,5 @@
-﻿using DBI;
+
+using DBI;
 using DBI.Utilities;
 using PIMS.Views;
 using System;
@@ -14,16 +15,6 @@ namespace PIMS.Presenters
 {
     class PPrescriptions
     {
-        // Locals
-        Prescriptions View;
-        PrescriptionsTable MyPrescriptionsTable;
-        List<Prescriptions> MyPrescriptionsList;
 
-        public PPrescriptions(Prescriptions view)
-        {
-            View = view;
-        }
-
-       
     }
 }

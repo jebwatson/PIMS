@@ -86,7 +86,6 @@ namespace DBI
                     string roomNumber = dr["roomNumber"].ToString();
                     string bedNumber = dr["bedNumber"].ToString();
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Admission newAdmission = new Admission();
@@ -100,7 +99,6 @@ namespace DBI
                     newAdmission.roomNumber = roomNumber;
                     newAdmission.bedNumber = bedNumber;
                     newAdmission.patientId = patientId;
-                    newAdmission.caseId = caseId;
 
                     admissions.Add(newAdmission);
                 } // for
@@ -138,7 +136,6 @@ namespace DBI
                     string roomNumber = dr["roomNumber"].ToString();
                     string bedNumber = dr["bedNumber"].ToString();
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Admission newAdmission = new Admission();
@@ -152,7 +149,6 @@ namespace DBI
                     newAdmission.roomNumber = roomNumber;
                     newAdmission.bedNumber = bedNumber;
                     newAdmission.patientId = patientId;
-                    newAdmission.caseId = caseId;
 
                     admissions.Add(newAdmission);
                 } // for
@@ -181,8 +177,7 @@ namespace DBI
                     "floorNumber = @floorNumber, " +
                     "roomNumber = @roomNumber, " +
                     "bedNumber = @bedNumber, " +
-                    "patientId = @patientId, " +
-                    "caseId = @caseId " +
+                    "patientId = @patientId " +
                     "WHERE " +
                     "admissionId = @admissionId";
 
@@ -197,7 +192,6 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@roomNumber", updatedAdmission.roomNumber);
                 myCommand.Parameters.AddWithValue("@bedNumber", updatedAdmission.bedNumber);
                 myCommand.Parameters.AddWithValue("@patientId", updatedAdmission.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", updatedAdmission.caseId);
                 myCommand.Parameters.AddWithValue("@admissionId", updatedAdmission.admissionId);
 
                 myCommand.ExecuteNonQuery();
@@ -227,9 +221,9 @@ namespace DBI
             {
                 string myQuery = "INSERT INTO " + theTable +
                     " (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId)" +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId)" +
                     "VALUES (@admissionTime, @dischargeTime, @admissionReason, @dischargeReason, " +
-                    "@facilityNumber, @floorNumber, @roomNumber, @bedNumber, @patientId, @caseId)";
+                    "@facilityNumber, @floorNumber, @roomNumber, @bedNumber, @patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -243,7 +237,6 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@roomNumber", newAdmission.roomNumber);
                 myCommand.Parameters.AddWithValue("@bedNumber", newAdmission.bedNumber);
                 myCommand.Parameters.AddWithValue("@patientId", newAdmission.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", newAdmission.caseId);
 
                 myCommand.ExecuteNonQuery();
 
