@@ -42,13 +42,13 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO visitors (nameLast, nameFirst, title, " +
+                string populationQuery1 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
                     "VALUES ('test1', 'test1', 'test1', 1, 'test1')";
-                string populationQuery2 = "INSERT INTO visitors (nameLast, nameFirst, title, " +
+                string populationQuery2 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
                     "VALUES ('test2', 'test2', 'test2', '2', 'test2')";
-                string populationQuery3 = "INSERT INTO visitors (nameLast, nameFirst, title, " +
+                string populationQuery3 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
                     "VALUES ('test3', 'test3', 'test3', '3', 'test3')";
 
