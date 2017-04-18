@@ -4,31 +4,34 @@ using System.Text;
 
 namespace DBI
 {
-    public class NotesNurse
+    public class Notes
     {
         const int _unassigned = -1;
 
         public int notesId { get; set; }
         public string notes { get; set; }
-        public int nurseId { get; set; }
+        public bool doctor { get; set; }
+        public bool nurse { get; set; }
+        public int userId { get; set; }
         public int patientId { get; set; }
-        public int caseId { get; set; }
 
-        public NotesNurse()
+        public Notes()
         {
             notesId = _unassigned;
             notes = string.Empty;
-            nurseId = _unassigned;
+            doctor = false;
+            nurse = false;
+            userId = _unassigned;
             patientId = _unassigned;
-            caseId = _unassigned;
         }
 
-        public NotesNurse(string notes, int nurseId, int patientId, int caseId)
+        public Notes(string notes, bool doctor, bool nurse, int doctorId, int patientId)
         {
             this.notes = notes;
-            this.nurseId = nurseId;
+            this.doctor = doctor;
+            this.nurse = nurse;
+            this.userId = doctorId;
             this.patientId = patientId;
-            this.caseId = caseId;
         }
     }
 }

@@ -9,52 +9,37 @@ namespace DBI
         private const int _unassigned = -1;
 
         public int billId { get; set; }
-        public int amountTotalDollars { get; set; }
-        public int amountTotalCents { get; set; }
-        public int amountPaidByPatientDollars { get; set; }
-        public int amountPaidByPatientCents { get; set; }
-        public int amountPaidByInsuranceDollars { get; set; }
-        public int amountPaidByInsuranceCents { get; set; }
-        public int amountOwedDollars { get; set; }
-        public int amountOwedCents { get; set; }
+        public string amountTotal { get; set; }
+        public string amountPaidByPatient { get; set; }
+        public string amountPaidByInsurance { get; set; }
+        public string amountOwed { get; set; }
         public DateTime dateCharged { get; set; }
         public DateTime dateDue { get; set; }
         public int patientId { get; set; }
-        public int caseId { get; set; }
 
         public Bills()
         {
             billId = _unassigned;
-            amountTotalDollars = _unassigned;
-            amountTotalCents = _unassigned;
-            amountPaidByPatientDollars = _unassigned;
-            amountPaidByPatientCents = _unassigned;
-            amountPaidByInsuranceDollars = _unassigned;
-            amountPaidByInsuranceCents = _unassigned;
-            amountOwedDollars = _unassigned;
-            amountOwedCents = _unassigned;
+            amountTotal = string.Empty;
+            amountPaidByPatient = string.Empty;
+            amountPaidByInsurance = string.Empty;
+            amountOwed = string.Empty;
             dateCharged = DateTime.Now;
             dateDue = DateTime.Now;
             patientId = _unassigned;
-            caseId = _unassigned;
         }
 
-        public Bills(int valAmountTotalDollars, int valAmountTotalCents, int valAmountPaidByPatientDollars, int valAmountPaidByPatientCents,
-            int valAmountPaidByInsuranceDollars, int valAmountPaidByInsuranceCents, int valAmountOwedDollars, int valAmountOwedCents, DateTime valDateCharged,
-            DateTime valDateDue, int valPatientId, int valCaseId)
+        public Bills(string valAmountTotal, string valAmountPaidByPatient,
+            string valAmountPaidByInsurance, string valAmountOwed, DateTime valDateCharged,
+            DateTime valDateDue, int valPatientId)
         {
-            amountTotalDollars = valAmountTotalDollars;
-            amountTotalCents = valAmountTotalCents;
-            amountPaidByPatientDollars = valAmountPaidByPatientDollars;
-            amountPaidByPatientCents = valAmountPaidByPatientCents;
-            amountPaidByInsuranceDollars = valAmountPaidByInsuranceDollars;
-            amountPaidByInsuranceCents = valAmountPaidByInsuranceCents;
-            amountOwedDollars = valAmountOwedDollars;
-            amountOwedCents = valAmountOwedCents;
+            amountTotal = valAmountTotal;
+            amountPaidByPatient = valAmountPaidByPatient;
+            amountPaidByInsurance = valAmountPaidByInsurance;
+            amountOwed = valAmountOwed;
             dateCharged = valDateCharged;
             dateDue = valDateDue;
             patientId = valPatientId;
-            caseId = valCaseId;
         }
     }
 }

@@ -70,7 +70,6 @@ namespace DBI
                     // extract all fields of the current row
                     int procId = Convert.ToInt32(dr["procId"]);
                     string procType = dr["procType"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime startTime = Convert.ToDateTime(dr["startTime"]);
                     DateTime stopTime = Convert.ToDateTime(dr["stopTime"]);
@@ -83,7 +82,6 @@ namespace DBI
                     Procedures procedure = new Procedures();
                     procedure.procId = procId;
                     procedure.procType = procType;
-                    procedure.caseId = caseId;
                     procedure.patientId = patientId;
                     procedure.startTime = startTime;
                     procedure.stopTime = stopTime;
@@ -117,7 +115,6 @@ namespace DBI
                     // extract all fields of the current row
                     int procId = Convert.ToInt32(dr["procId"]);
                     string procType = dr["procType"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime startTime = Convert.ToDateTime(dr["startTime"]);
                     DateTime stopTime = Convert.ToDateTime(dr["stopTime"]);
@@ -131,7 +128,6 @@ namespace DBI
                     Procedures procedure = new Procedures();
                     procedure.procId = procId;
                     procedure.procType = procType;
-                    procedure.caseId = caseId;
                     procedure.patientId = patientId;
                     procedure.startTime = startTime;
                     procedure.stopTime = stopTime;
@@ -158,7 +154,6 @@ namespace DBI
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
                     "procType = @procType, " +
-                    "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "startTime = @startTime, " +
                     "stopTime = @stopTime," +
@@ -172,7 +167,6 @@ namespace DBI
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@procType", updatedProc.procType);
-                myCommand.Parameters.AddWithValue("@caseId", updatedProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", updatedProc.startTime);
                 myCommand.Parameters.AddWithValue("@stopTime", updatedProc.stopTime);
@@ -204,16 +198,15 @@ namespace DBI
         public void WriteItem(Procedures newProc) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (procType, caseId, patientId, startTime, stopTime, " +
+                    " (procType, patientId, startTime, stopTime, " +
                     "doctorId, durationHrs, durationMins, procNotes)" +
-                    "VALUES (@procType, @caseId, @patientId, @startTime, @stopTime, " +
+                    "VALUES (@procType, @patientId, @startTime, @stopTime, " +
                     "@doctorId, @durationHrs, @durationMins, @procNotes)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@procId", newProc.procId);
                 myCommand.Parameters.AddWithValue("@procType", newProc.procType);
-                myCommand.Parameters.AddWithValue("@caseId", newProc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newProc.patientId);
                 myCommand.Parameters.AddWithValue("@startTime", newProc.startTime);
                 myCommand.Parameters.AddWithValue("@stopTime", newProc.stopTime);

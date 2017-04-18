@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new PrescriptionsTable();
             myList = new List<Prescriptions>()
             {
-                new Prescriptions("test1", "1mg", DateTime.Parse("01/01/2017"), 1, 1, 1),
-                new Prescriptions("test2", "2mg", DateTime.Parse("01/02/2017"), 2, 2, 2),
-                new Prescriptions("test3", "3mg", DateTime.Parse("01/03/2017"), 3, 3, 3)
+                new Prescriptions("test1", "1mg", DateTime.Parse("01/01/2017"), 1, 1),
+                new Prescriptions("test2", "2mg", DateTime.Parse("01/02/2017"), 2, 2),
+                new Prescriptions("test3", "3mg", DateTime.Parse("01/03/2017"), 3, 3)
             };
             comparer = new PrescriptionsComparer();
 
@@ -43,14 +43,14 @@ namespace PIMSTests.ModelTableTests
 
                 // Populate the table with known values before tests occur
                 string populationQuery1 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test1', '1mg', '01 / 01 / 2017', 1, 1, 1)";
+                    "duration, patientId) " +
+                    "VALUES ('test1', '1mg', '01 / 01 / 2017', 1, 1)";
                 string populationQuery2 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test2', '2mg', '01 / 02 / 2017', 2, 2, 2)";
+                    "duration, patientId) " +
+                    "VALUES ('test2', '2mg', '01 / 02 / 2017', 2, 2)";
                 string populationQuery3 = "INSERT INTO prescriptions (prescName, amount, prescDate, " +
-                    "duration, patientId, caseId) " +
-                    "VALUES ('test3', '3mg', '01 / 03 / 2017', 3, 3, 3)";
+                    "duration, patientId) " +
+                    "VALUES ('test3', '3mg', '01 / 03 / 2017', 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Prescriptions> prescs = new List<Prescriptions>();
 
             // Need some updated data
-            Prescriptions updated1 = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 4);
-            Prescriptions updated2 = new Prescriptions("test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5, 5);
-            Prescriptions updated3 = new Prescriptions("test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6, 6);
+            Prescriptions updated1 = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4);
+            Prescriptions updated2 = new Prescriptions("test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5);
+            Prescriptions updated3 = new Prescriptions("test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Prescriptions> prescs = new List<Prescriptions>();
 
             // Need some updated data
-            Prescriptions updatedPrescription = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 4);
+            Prescriptions updatedPrescription = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedPrescription);

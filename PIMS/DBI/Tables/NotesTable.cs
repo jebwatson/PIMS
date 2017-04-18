@@ -7,11 +7,11 @@ using System.Text;
 
 namespace DBI
 {
-    public class NotesNurseTable
+    public class NotesTable
     {
-        public const string theTable = "notesNurse";
+        public const string theTable = "notes";
 
-        public List<NotesNurse> ItemList { get; set; } = new List<NotesNurse>();
+        public List<Notes> ItemList { get; set; } = new List<Notes>();
 
         /// <summary>
         /// Delete all records from the table.
@@ -26,7 +26,7 @@ namespace DBI
         }
 
         /// <summary>
-        /// Delete any records with the NotesNurse specified.
+        /// Delete any records with the NotesDoctor specified.
         /// </summary>
         /// <param name="NotesId"></param>
         public void ClearTableById(int NotesId)
@@ -61,7 +61,7 @@ namespace DBI
 
         /// <summary>
         /// Read all records from the table and save them in the ItemList
-        /// as NotesNurse objects.
+        /// as NotesDoctor objects.
         /// </summary>
         public void ReadList()
         {
@@ -79,26 +79,28 @@ namespace DBI
                     // extract all fields of the current row
                     int notesId = Convert.ToInt32(dr["notesId"]);
                     string notes = dr["notes"].ToString();
-                    int nurseId = Convert.ToInt32(dr["nurseId"]);
+                    bool doctor = Convert.ToBoolean(dr["doctor"]);
+                    bool nurse = Convert.ToBoolean(dr["nurse"]);
+                    int doctorId = Convert.ToInt32(dr["doctorId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
-                    NotesNurse newNotesNurse = new NotesNurse();
-                    newNotesNurse.notesId = notesId;
-                    newNotesNurse.notes = notes;
-                    newNotesNurse.nurseId = nurseId;
-                    newNotesNurse.patientId = patientId;
-                    newNotesNurse.caseId = caseId;
+                    Notes newNotes = new Notes();
+                    newNotes.notesId = notesId;
+                    newNotes.notes = notes;
+                    newNotes.doctor = doctor;
+                    newNotes.nurse = nurse;
+                    newNotes.userId = doctorId;
+                    newNotes.patientId = patientId;
 
-                    ItemList.Add(newNotesNurse);
+                    ItemList.Add(newNotes);
                 } // for
             } // if
         } // ReadList
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
-        /// ItemList as a NotesNurse object.
+        /// ItemList as a NotesDoctor object.
         /// </summary>
         public void ReadListById(int inputNotesId)
         {
@@ -117,49 +119,53 @@ namespace DBI
                     // extract all fields of the current row
                     int notesId = Convert.ToInt32(dr["notesId"]);
                     string notes = dr["notes"].ToString();
-                    int nurseId = Convert.ToInt32(dr["nurseId"]);
+                    bool doctor = Convert.ToBoolean(dr["doctor"]);
+                    bool nurse = Convert.ToBoolean(dr["nurse"]);
+                    int doctorId = Convert.ToInt32(dr["doctorId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
-                    NotesNurse newNotesNurse = new NotesNurse();
-                    newNotesNurse.notesId = notesId;
-                    newNotesNurse.notes = notes;
-                    newNotesNurse.nurseId = nurseId;
-                    newNotesNurse.patientId = patientId;
-                    newNotesNurse.caseId = caseId;
+                    Notes newNotes = new Notes();
+                    newNotes.notesId = notesId;
+                    newNotes.notes = notes;
+                    newNotes.doctor = doctor;
+                    newNotes.nurse = nurse;
+                    newNotes.userId = doctorId;
+                    newNotes.patientId = patientId;
 
-                    ItemList.Add(newNotesNurse);
+                    ItemList.Add(newNotes);
                 } // for
             } // if
         } // ReadList
 
         /// <summary>
-        /// Given a single NotesNurse object, update the record corresponding
-        /// to the object's NotesNurse id with any discrepancies in the NotesNurse
+        /// Given a single NotesDoctor object, update the record corresponding
+        /// to the object's NotesDoctor id with any discrepancies in the NotesDoctor
         /// object.
         /// </summary>
-        /// <param name="updatedNotesNurse"></param>
-        public void UpdateItem(NotesNurse updatedNotesNurse)
+        /// <param name="updatedNotes"></param>
+        public void UpdateItem(Notes updatedNotes)
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
                     "notes = @notes, " +
-                    "nurseId = @nurseId, " +
-                    "patientId = @patientId, " +
-                    "caseId = @caseId, " +
+                    "doctor = @doctor, " +
+                    "nurse = @nurse, " +
+                    "doctorId = @doctorId, " +
+                    "patientId = @patientId " +
                     "WHERE " +
                     "notesId = @notesId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@notes", updatedNotesNurse.notes);
-                myCommand.Parameters.AddWithValue("@nurseId", updatedNotesNurse.nurseId);
-                myCommand.Parameters.AddWithValue("@patientId", updatedNotesNurse.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", updatedNotesNurse.caseId);
-                myCommand.Parameters.AddWithValue("@notesId", updatedNotesNurse.notesId);
+                myCommand.Parameters.AddWithValue("@notes", updatedNotes.notes);
+                myCommand.Parameters.AddWithValue("@doctor", updatedNotes.doctor);
+                myCommand.Parameters.AddWithValue("@nurse", updatedNotes.nurse);
+                myCommand.Parameters.AddWithValue("@doctorId", updatedNotes.userId);
+                myCommand.Parameters.AddWithValue("@patientId", updatedNotes.patientId);
+                myCommand.Parameters.AddWithValue("@notesId", updatedNotes.notesId);
 
                 myCommand.ExecuteNonQuery();
 
@@ -168,35 +174,36 @@ namespace DBI
         } // UpdateItem
 
         /// <summary>
-        /// Given a list of NotesNurse objects, update their properties to the database
-        /// by NotesNurse id.
+        /// Given a list of NotesDoctor objects, update their properties to the database
+        /// by NotesDoctor id.
         /// </summary>
         public void UpdateList()
         {
-            foreach (var NotesNurse in ItemList)
+            foreach (var NotesDoctor in ItemList)
             {
-                UpdateItem(NotesNurse);
+                UpdateItem(NotesDoctor);
             }
         }
 
         /// <summary>
-        /// Insert a single NotesNurse record into the database.
+        /// Insert a single NotesDoctor record into the database.
         /// </summary>
-        public void WriteItem(NotesNurse newNotesNurse)
+        public void WriteItem(Notes newNotesDoctor)
         {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    "(notes, nurseId, patientId, caseId) " +
-                    "VALUES (@notes, @nurseId, @patientId, @caseId)";
+                    "(notes, doctor, nurse, doctorId, patientId) " +
+                    "VALUES (@notes, @doctor, @nurse, @doctorId, @patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@notes", newNotesNurse.notes);
-                myCommand.Parameters.AddWithValue("@nurseId", newNotesNurse.nurseId);
-                myCommand.Parameters.AddWithValue("@patientId", newNotesNurse.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", newNotesNurse.caseId);
-                myCommand.Parameters.AddWithValue("@notesId", newNotesNurse.notesId);
+                myCommand.Parameters.AddWithValue("@notes", newNotesDoctor.notes);
+                myCommand.Parameters.AddWithValue("@doctor", newNotesDoctor.doctor);
+                myCommand.Parameters.AddWithValue("@nurse", newNotesDoctor.nurse);
+                myCommand.Parameters.AddWithValue("@doctorId", newNotesDoctor.userId);
+                myCommand.Parameters.AddWithValue("@patientId", newNotesDoctor.patientId);
+                myCommand.Parameters.AddWithValue("@notesId", newNotesDoctor.notesId);
 
                 myCommand.ExecuteNonQuery();
 
@@ -205,13 +212,13 @@ namespace DBI
         } // WriteItem
 
         /// <summary>
-        /// Insert a list of NotesNurse records into the database.
+        /// Insert a list of NotesDoctor records into the database.
         /// </summary>
         public void WriteList()
         {
-            foreach (var NotesNurse in ItemList)
+            foreach (var NotesDoctor in ItemList)
             {
-                WriteItem(NotesNurse);
+                WriteItem(NotesDoctor);
             } // foreach
         } // writelist
     }

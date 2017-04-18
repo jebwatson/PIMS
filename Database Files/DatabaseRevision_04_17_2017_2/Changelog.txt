@@ -1,0 +1,3 @@
+-Remove references to caseId
+-Change amounts in bills and charges to string values
+-Only one notes table now

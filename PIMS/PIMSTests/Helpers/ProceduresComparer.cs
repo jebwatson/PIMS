@@ -16,7 +16,6 @@ namespace PIMSTests.Helpers
             Assert.That(proc1.doctorId, Is.EqualTo(proc2.doctorId));
             Assert.That(proc1.procNotes, Is.EqualTo(proc2.procNotes));
             Assert.That(proc1.patientId, Is.EqualTo(proc2.patientId));
-            Assert.That(proc1.caseId, Is.EqualTo(proc2.caseId));
         }
     }
 }

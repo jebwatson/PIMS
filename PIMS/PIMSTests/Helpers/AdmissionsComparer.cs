@@ -17,7 +17,6 @@ namespace PIMSTests.Helpers
             Assert.That(adm1.roomNumber, Is.EqualTo(adm2.roomNumber));
             Assert.That(adm1.bedNumber, Is.EqualTo(adm2.bedNumber));
             Assert.That(adm1.patientId, Is.EqualTo(adm2.patientId));
-            Assert.That(adm1.caseId, Is.EqualTo(adm2.caseId));
         }
     }
 }
