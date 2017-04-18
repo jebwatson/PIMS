@@ -26,7 +26,7 @@ namespace DBI
             visitorId = _unassigned;
         }
 
-        public Visitors(int visitorId, string lastName, string firstName, string relation, DateTime lastVisit, int patientId, int caseId) {
+        public Visitors(string lastName, string firstName, string relation, DateTime lastVisit, int patientId, int caseId) {
             this.nameLast = lastName;
             this.nameFirst = firstName;
             this.relation = relation;

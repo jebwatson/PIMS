@@ -26,15 +26,15 @@ namespace PIMSTests.ModelTableTests
             myTable = new NotesDoctorTable();
             myList = new List<NotesDoctor>()
             {
-                new NotesDoctor(1, "this is a note", 1, 1, 1),
-                new NotesDoctor(2, "", 2, 2, 2),
-                new NotesDoctor(3, "this is a much longer note, which is opposite of the last, null note", 3, 3, 3)
+                new NotesDoctor("this is a note", 1, 1, 1),
+                new NotesDoctor("", 2, 2, 2),
+                new NotesDoctor("this is a much longer note, which is opposite of the last, null note", 3, 3, 3)
             };
 
             Comparer = new NotesDoctorComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -46,12 +46,12 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (1, 'this is a note', 1, 1, 1)";
-                string populationQuery2 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (2, '', 2, 2, 2)";
-                string populationQuery3 = "INSERT INTO notesDoctor (notesId, notes, doctorId, patientId, caseId) " +
-                    "VALUES (3, 'this is a much longer note, which is opposite of the last, null note', 3, 3, 3)";
+                string populationQuery1 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                    "VALUES ('this is a note', 1, 1, 1)";
+                string populationQuery2 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                    "VALUES ('', 2, 2, 2)";
+                string populationQuery3 = "INSERT INTO notesDoctor (notes, doctorId, patientId, caseId) " +
+                    "VALUES ('this is a much longer note, which is opposite of the last, null note', 3, 3, 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -142,9 +142,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            NotesDoctor updated1 = new NotesDoctor(1, "note", 1, 1, 1);
-            NotesDoctor updated2 = new NotesDoctor(2, "this note now gets to be a longer note for probably not a lot of reason while the next one will be null", 2, 2, 2);
-            NotesDoctor updated3 = new NotesDoctor(3, "", 3, 3, 3);
+            NotesDoctor updated1 = new NotesDoctor("note", 1, 1, 1);
+            NotesDoctor updated2 = new NotesDoctor("this note now gets to be a longer note for probably not a lot of reason while the next one will be null", 2, 2, 2);
+            NotesDoctor updated3 = new NotesDoctor("", 3, 3, 3);
 
             myList.Clear();
 
@@ -172,7 +172,7 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            NotesDoctor updatedNotesDoctor = new NotesDoctor(1, "omg this dork made a matrix reference lol", 1, 1, 1);
+            NotesDoctor updatedNotesDoctor = new NotesDoctor("omg this dork made a matrix reference lol", 1, 1, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedNotesDoctor);

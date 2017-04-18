@@ -39,11 +39,10 @@ namespace DBI
             caseId = _unassigned;
         }
 
-        public Bills(int valBillId, int valAmountTotalDollars, int valAmountTotalCents, int valAmountPaidByPatientDollars, int valAmountPaidByPatientCents,
+        public Bills(int valAmountTotalDollars, int valAmountTotalCents, int valAmountPaidByPatientDollars, int valAmountPaidByPatientCents,
             int valAmountPaidByInsuranceDollars, int valAmountPaidByInsuranceCents, int valAmountOwedDollars, int valAmountOwedCents, DateTime valDateCharged,
             DateTime valDateDue, int valPatientId, int valCaseId)
         {
-            billId = valBillId;
             amountTotalDollars = valAmountTotalDollars;
             amountTotalCents = valAmountTotalCents;
             amountPaidByPatientDollars = valAmountPaidByPatientDollars;

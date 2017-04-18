@@ -23,9 +23,8 @@ namespace DBI
             caseId = _unassigned;
         }
 
-        public NotesNurse(int notesId, string notes, int nurseId, int patientId, int caseId)
+        public NotesNurse(string notes, int nurseId, int patientId, int caseId)
         {
-            this.notesId = notesId;
             this.notes = notes;
             this.nurseId = nurseId;
             this.patientId = patientId;

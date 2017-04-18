@@ -22,15 +22,15 @@ namespace PIMSTests.ModelTableTests
             myTable = new EmergencyContactTable();
             myList = new List<EmergencyContact>()
             {
-                new EmergencyContact(1, "Watson", "Jeb", "W", "8076874", "205", 1),
-                new EmergencyContact(2, "Burcham", "David", "A", "1111111", "256", 1),
-                new EmergencyContact(3, "Morrow", "Jasper", "A", "2222222", "256", 1)
+                new EmergencyContact("Watson", "Jeb", "W", "8076874", "205", 1),
+                new EmergencyContact("Burcham", "David", "A", "1111111", "256", 1),
+                new EmergencyContact("Morrow", "Jasper", "A", "2222222", "256", 1)
             };
 
             comparer = new EmergencyContactComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -42,12 +42,12 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (1, 'Watson', 'Jeb', 'W', '8076874', '205', 1)";
-                string populationQuery2 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (2, 'Burcham', 'David', 'A', '1111111', '256', 1)";
-                string populationQuery3 = "INSERT INTO emergencyContact (emergencyContactId, nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES (3, 'Morrow', 'Jasper', 'A', '2222222', '256', 1)";
+                string populationQuery1 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
+                    "VALUES ('Watson', 'Jeb', 'W', '8076874', '205', 1)";
+                string populationQuery2 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
+                    "VALUES ('Burcham', 'David', 'A', '1111111', '256', 1)";
+                string populationQuery3 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
+                    "VALUES ('Morrow', 'Jasper', 'A', '2222222', '256', 1)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -148,9 +148,9 @@ namespace PIMSTests.ModelTableTests
             List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             // Need some updated data
-            EmergencyContact updated1 = new EmergencyContact(1, "Majors", "John", "E", "3333333", "205", 1);
-            EmergencyContact updated2 = new EmergencyContact(2, "Stevens", "Chris", "A", "4444444", "256", 1);
-            EmergencyContact updated3 = new EmergencyContact(3, "Kane", "Alex", "A", "5555555", "256", 1);
+            EmergencyContact updated1 = new EmergencyContact("Majors", "John", "E", "3333333", "205", 1);
+            EmergencyContact updated2 = new EmergencyContact("Stevens", "Chris", "A", "4444444", "256", 1);
+            EmergencyContact updated3 = new EmergencyContact("Kane", "Alex", "A", "5555555", "256", 1);
 
             myList.Clear();
 
@@ -179,7 +179,7 @@ namespace PIMSTests.ModelTableTests
             List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             // Need some updated data
-            EmergencyContact updatedEmergencyContact = new EmergencyContact(1, "Matrix", "Neo", "M", "1010110", "110", 1);
+            EmergencyContact updatedEmergencyContact = new EmergencyContact("Matrix", "Neo", "M", "1010110", "110", 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedEmergencyContact);

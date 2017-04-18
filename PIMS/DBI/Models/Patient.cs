@@ -43,11 +43,10 @@ namespace DBI
             familyDoctor = string.Empty;
         }
 
-        public Patient(int id, string nameLast, string nameFirst, string nameMiddle, string street,
+        public Patient(string nameLast, string nameFirst, string nameMiddle, string street,
             string city, string state, string zip, string phoneHome, string areaCodeHome, string phoneWork,
             string areaCodeWork, string phoneMobile, string areaCodeMobile, string familyDoctor)
         {
-            patientId = id;
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
             this.nameMiddle = nameMiddle;
