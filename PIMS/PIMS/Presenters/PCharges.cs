@@ -34,12 +34,21 @@ namespace PIMS.Presenters
         {
             MyChargesTable = new ChargesTable();
 
-            View.PatientsList.SetObjects(MyChargesTable.ReadList());
+            View.ChargesList.SetObjects(MyChargesTable.ReadList());
         }
 
         public void AddCharge()
         {
-            throw new NotImplementedException();
+            if (new frmNewCharge().ShowDialog() == DialogResult.OK)
+            {
+                RefreshChargesList();
+            }
+        }
+
+        private void RefreshChargesList()
+        {
+            ChargesTable MyChargesTable = new ChargesTable();
+            View.ChargesList.SetObjects(MyChargesTable.ReadList());
         }
 
         public void DeleteCharges()
@@ -61,9 +70,9 @@ namespace PIMS.Presenters
             foreach (Patient p in MyPatientsList)
             {
                 if (i == 0)
-                    View.PatientsList.SetObjects(MyChargesTable.ReadListById(p.patientId));
+                    View.ChargesList.SetObjects(MyChargesTable.ReadListById(p.patientId));
                 else
-                    View.PatientsList.UpdateObjects(MyChargesTable.ReadListById(p.patientId));
+                    View.ChargesList.UpdateObjects(MyChargesTable.ReadListById(p.patientId));
 
                 i++;
             }

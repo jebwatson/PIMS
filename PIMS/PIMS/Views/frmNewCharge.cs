@@ -1,4 +1,5 @@
 ﻿using BrightIdeasSoftware;
+using DBI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace PIMS.Views
         public frmNewCharge()
         {
             InitializeComponent();
+            ProceduresTable MyProceduresTable = new ProceduresTable();
+            this.olvProcedures.SetObjects(MyProceduresTable.ReadList());
         }
 
         // Properties
@@ -32,7 +35,8 @@ namespace PIMS.Views
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

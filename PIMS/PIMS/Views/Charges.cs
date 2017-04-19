@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PCharges Presenter;
 
-        public ObjectListView PatientsList { get { return this.olvChargesList; } }
+        public ObjectListView ChargesList { get { return this.olvChargesList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public Charges()

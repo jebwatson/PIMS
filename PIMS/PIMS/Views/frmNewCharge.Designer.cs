@@ -40,6 +40,9 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.olvProcedures = new BrightIdeasSoftware.ObjectListView();
             this.lblProcedures = new System.Windows.Forms.Label();
+            this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.type = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.notes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProcedures)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,9 +133,18 @@
             // 
             // olvProcedures
             // 
+            this.olvProcedures.AllColumns.Add(this.id);
+            this.olvProcedures.AllColumns.Add(this.type);
+            this.olvProcedures.AllColumns.Add(this.notes);
             this.olvProcedures.CellEditUseWholeCell = false;
+            this.olvProcedures.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
+            this.type,
+            this.notes});
+            this.olvProcedures.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProcedures.Location = new System.Drawing.Point(12, 39);
             this.olvProcedures.Name = "olvProcedures";
+            this.olvProcedures.ShowGroups = false;
             this.olvProcedures.Size = new System.Drawing.Size(567, 182);
             this.olvProcedures.TabIndex = 11;
             this.olvProcedures.UseCompatibleStateImageBehavior = false;
@@ -146,6 +158,24 @@
             this.lblProcedures.Size = new System.Drawing.Size(61, 13);
             this.lblProcedures.TabIndex = 12;
             this.lblProcedures.Text = "Procedures";
+            // 
+            // id
+            // 
+            this.id.AspectName = "procId";
+            this.id.Text = "ID";
+            this.id.Width = 33;
+            // 
+            // type
+            // 
+            this.type.AspectName = "procType";
+            this.type.Text = "Type";
+            this.type.Width = 156;
+            // 
+            // notes
+            // 
+            this.notes.AspectName = "procNotes";
+            this.notes.FillsFreeSpace = true;
+            this.notes.Text = "Notes";
             // 
             // frmNewCharge
             // 
@@ -186,5 +216,8 @@
         private System.Windows.Forms.Button btnSubmit;
         private BrightIdeasSoftware.ObjectListView olvProcedures;
         private System.Windows.Forms.Label lblProcedures;
+        private BrightIdeasSoftware.OLVColumn id;
+        private BrightIdeasSoftware.OLVColumn type;
+        private BrightIdeasSoftware.OLVColumn notes;
     }
 }
