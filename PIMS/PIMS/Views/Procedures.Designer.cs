@@ -44,18 +44,18 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(602, 67);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Location = new System.Drawing.Point(1405, 153);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.Size = new System.Drawing.Size(594, 35);
             this.txtPatientSearch.TabIndex = 5;
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(504, 64);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Location = new System.Drawing.Point(1176, 143);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.Size = new System.Drawing.Size(219, 54);
             this.btnSearchPatients.TabIndex = 4;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -83,11 +83,11 @@
             this.ProcNotes});
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
-            this.olvProceduresList.Location = new System.Drawing.Point(45, 96);
-            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvProceduresList.Location = new System.Drawing.Point(105, 214);
+            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.olvProceduresList.Name = "olvProceduresList";
             this.olvProceduresList.ShowGroups = false;
-            this.olvProceduresList.Size = new System.Drawing.Size(814, 227);
+            this.olvProceduresList.Size = new System.Drawing.Size(1894, 501);
             this.olvProceduresList.TabIndex = 3;
             this.olvProceduresList.UseCompatibleStateImageBehavior = false;
             this.olvProceduresList.View = System.Windows.Forms.View.Details;
@@ -140,13 +140,13 @@
             // 
             // Procedures
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 437);
+            this.ClientSize = new System.Drawing.Size(2123, 975);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvProceduresList);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Procedures";
             this.Text = "Procedures";
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).EndInit();

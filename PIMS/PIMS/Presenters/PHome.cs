@@ -57,5 +57,10 @@ namespace PIMS.Presenters
             BillsForm.ShowDialog();
         }
 
+        public void CreateVisitorsForm()
+        {
+            Visitors VisitorsForm = new Visitors();
+            VisitorsForm.ShowDialog();
+        }
     }
 }

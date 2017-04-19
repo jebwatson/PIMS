@@ -67,7 +67,7 @@ namespace PIMS.Views
 
         private void btnVisitors_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateVisitorsForm();
         }
 
         private void btnEmergencyContact_Click(object sender, EventArgs e)
