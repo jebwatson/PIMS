@@ -41,18 +41,18 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(1106, 91);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtPatientSearch.Location = new System.Drawing.Point(237, 48);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(594, 35);
+            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
             this.txtPatientSearch.TabIndex = 8;
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(877, 85);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSearchPatients.Location = new System.Drawing.Point(106, 44);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(219, 54);
+            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
             this.btnSearchPatients.TabIndex = 7;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -74,11 +74,11 @@
             this.Duration});
             this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvPrescriptionsList.GridLines = true;
-            this.olvPrescriptionsList.Location = new System.Drawing.Point(91, 152);
-            this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.olvPrescriptionsList.Location = new System.Drawing.Point(52, 84);
+            this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvPrescriptionsList.Name = "olvPrescriptionsList";
             this.olvPrescriptionsList.ShowGroups = false;
-            this.olvPrescriptionsList.Size = new System.Drawing.Size(1609, 501);
+            this.olvPrescriptionsList.Size = new System.Drawing.Size(621, 278);
             this.olvPrescriptionsList.TabIndex = 6;
             this.olvPrescriptionsList.UseCompatibleStateImageBehavior = false;
             this.olvPrescriptionsList.View = System.Windows.Forms.View.Details;
@@ -114,13 +114,14 @@
             // 
             // Prescriptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AcceptButton = this.btnSearchPatients;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1806, 828);
+            this.ClientSize = new System.Drawing.Size(745, 457);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvPrescriptionsList);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Prescriptions";
             this.Text = "Prescriptions";
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).EndInit();

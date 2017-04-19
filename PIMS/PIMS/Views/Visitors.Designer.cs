@@ -41,18 +41,18 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(1098, 158);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtPatientSearch.Location = new System.Drawing.Point(397, 90);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(341, 35);
+            this.txtPatientSearch.Size = new System.Drawing.Size(297, 22);
             this.txtPatientSearch.TabIndex = 5;
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(869, 148);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSearchPatients.Location = new System.Drawing.Point(266, 86);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(219, 54);
+            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
             this.btnSearchPatients.TabIndex = 4;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -74,11 +74,11 @@
             this.LastVisit});
             this.olvVisitorsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvVisitorsList.GridLines = true;
-            this.olvVisitorsList.Location = new System.Drawing.Point(105, 218);
-            this.olvVisitorsList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.olvVisitorsList.Location = new System.Drawing.Point(28, 120);
+            this.olvVisitorsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvVisitorsList.Name = "olvVisitorsList";
             this.olvVisitorsList.ShowGroups = false;
-            this.olvVisitorsList.Size = new System.Drawing.Size(1334, 501);
+            this.olvVisitorsList.Size = new System.Drawing.Size(928, 278);
             this.olvVisitorsList.TabIndex = 3;
             this.olvVisitorsList.UseCompatibleStateImageBehavior = false;
             this.olvVisitorsList.View = System.Windows.Forms.View.Details;
@@ -115,13 +115,14 @@
             // 
             // Visitors
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AcceptButton = this.btnSearchPatients;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1537, 975);
+            this.ClientSize = new System.Drawing.Size(981, 538);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvVisitorsList);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Visitors";
             this.Text = "Visitors";
             ((System.ComponentModel.ISupportInitialize)(this.olvVisitorsList)).EndInit();
