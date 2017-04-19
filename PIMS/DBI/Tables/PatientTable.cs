@@ -185,7 +185,7 @@ namespace DBI
         {
             List<Patient> patients = new List<Patient>();
 
-            string myQuery = "SELECT * FROM " + theTable + " WHERE nameFirst LIKE '" + name + "' OR nameLast LIKE '" + name + "'";
+            string myQuery = "SELECT * FROM " + theTable + " WHERE nameFirst LIKE '%" + name + "%' OR nameLast LIKE '%" + name + "%'";
 
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
 

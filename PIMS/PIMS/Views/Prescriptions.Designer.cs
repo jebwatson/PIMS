@@ -28,58 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtProceduresSearch = new System.Windows.Forms.TextBox();
-            this.btnSearchProcedures = new System.Windows.Forms.Button();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvPrescriptionsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.PrescriptionID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Amount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Duration = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtProceduresSearch
+            // txtPatientSearch
             // 
-            this.txtProceduresSearch.Location = new System.Drawing.Point(381, 52);
-            this.txtProceduresSearch.Name = "txtProceduresSearch";
-            this.txtProceduresSearch.Size = new System.Drawing.Size(341, 22);
-            this.txtProceduresSearch.TabIndex = 8;
+            this.txtPatientSearch.Location = new System.Drawing.Point(474, 41);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.TabIndex = 8;
             // 
-            // btnSearchProcedures
+            // btnSearchPatients
             // 
-            this.btnSearchProcedures.Location = new System.Drawing.Point(250, 49);
-            this.btnSearchProcedures.Name = "btnSearchProcedures";
-            this.btnSearchProcedures.Size = new System.Drawing.Size(125, 29);
-            this.btnSearchProcedures.TabIndex = 7;
-            this.btnSearchProcedures.Text = "Search";
-            this.btnSearchProcedures.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Location = new System.Drawing.Point(376, 38);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Name = "btnSearchPatients";
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.TabIndex = 7;
+            this.btnSearchPatients.Text = "Search";
+            this.btnSearchPatients.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Click += new System.EventHandler(this.btnSearchPatients_Click);
             // 
             // olvPrescriptionsList
             // 
             this.olvPrescriptionsList.AllColumns.Add(this.PatientID);
-            this.olvPrescriptionsList.AllColumns.Add(this.lname);
-            this.olvPrescriptionsList.AllColumns.Add(this.fname);
-            this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionID);
             this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionName);
+            this.olvPrescriptionsList.AllColumns.Add(this.Amount);
             this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionDate);
             this.olvPrescriptionsList.AllColumns.Add(this.Duration);
             this.olvPrescriptionsList.CellEditUseWholeCell = false;
             this.olvPrescriptionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.lname,
-            this.fname,
-            this.PrescriptionID,
             this.PrescriptionName,
+            this.Amount,
             this.PrescriptionDate,
             this.Duration});
             this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvPrescriptionsList.GridLines = true;
-            this.olvPrescriptionsList.Location = new System.Drawing.Point(52, 84);
+            this.olvPrescriptionsList.Location = new System.Drawing.Point(39, 68);
+            this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvPrescriptionsList.Name = "olvPrescriptionsList";
-            this.olvPrescriptionsList.Size = new System.Drawing.Size(921, 279);
+            this.olvPrescriptionsList.ShowGroups = false;
+            this.olvPrescriptionsList.Size = new System.Drawing.Size(692, 227);
             this.olvPrescriptionsList.TabIndex = 6;
             this.olvPrescriptionsList.UseCompatibleStateImageBehavior = false;
             this.olvPrescriptionsList.View = System.Windows.Forms.View.Details;
@@ -90,29 +89,16 @@
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 120;
             // 
-            // lname
-            // 
-            this.lname.AspectName = "nameLast";
-            this.lname.Text = "Last Name";
-            this.lname.Width = 120;
-            // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 120;
-            // 
-            // PrescriptionID
-            // 
-            this.PrescriptionID.AspectName = "prescID";
-            this.PrescriptionID.Text = "Prescription ID";
-            this.PrescriptionID.Width = 120;
-            // 
             // PrescriptionName
             // 
             this.PrescriptionName.AspectName = "prescName";
             this.PrescriptionName.Text = "Prescription Name";
             this.PrescriptionName.Width = 120;
+            // 
+            // Amount
+            // 
+            this.Amount.AspectName = "amount";
+            this.Amount.Text = "Amount";
             // 
             // PrescriptionDate
             // 
@@ -128,12 +114,13 @@
             // 
             // Prescriptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 457);
-            this.Controls.Add(this.txtProceduresSearch);
-            this.Controls.Add(this.btnSearchProcedures);
+            this.ClientSize = new System.Drawing.Size(774, 371);
+            this.Controls.Add(this.txtPatientSearch);
+            this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvPrescriptionsList);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Prescriptions";
             this.Text = "Perscriptions";
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).EndInit();
@@ -144,15 +131,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtProceduresSearch;
-        private System.Windows.Forms.Button btnSearchProcedures;
+        private System.Windows.Forms.TextBox txtPatientSearch;
+        private System.Windows.Forms.Button btnSearchPatients;
         private BrightIdeasSoftware.ObjectListView olvPrescriptionsList;
-        private BrightIdeasSoftware.OLVColumn PrescriptionID;
         private BrightIdeasSoftware.OLVColumn PrescriptionName;
         private BrightIdeasSoftware.OLVColumn PrescriptionDate;
         private BrightIdeasSoftware.OLVColumn Duration;
         private BrightIdeasSoftware.OLVColumn PatientID;
-        private BrightIdeasSoftware.OLVColumn lname;
-        private BrightIdeasSoftware.OLVColumn fname;
+        private BrightIdeasSoftware.OLVColumn Amount;
     }
 }
