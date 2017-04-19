@@ -37,8 +37,8 @@
             this.Mname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AreaCode = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Phone = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.btnSearchEContacts = new System.Windows.Forms.Button();
-            this.txtEContactsSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPatients = new System.Windows.Forms.Button();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ovlEContacts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,31 +120,31 @@
             this.Phone.Text = "Phone #";
             this.Phone.Width = 130;
             // 
-            // btnSearchEContacts
+            // btnSearchPatients
             // 
-            this.btnSearchEContacts.Location = new System.Drawing.Point(429, 45);
-            this.btnSearchEContacts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearchEContacts.Name = "btnSearchEContacts";
-            this.btnSearchEContacts.Size = new System.Drawing.Size(94, 24);
-            this.btnSearchEContacts.TabIndex = 8;
-            this.btnSearchEContacts.Text = "Search";
-            this.btnSearchEContacts.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Location = new System.Drawing.Point(429, 45);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Name = "btnSearchPatients";
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.TabIndex = 8;
+            this.btnSearchPatients.Text = "Search";
+            this.btnSearchPatients.UseVisualStyleBackColor = true;
             // 
-            // txtEContactsSearch
+            // txtPatientSearch
             // 
-            this.txtEContactsSearch.Location = new System.Drawing.Point(527, 48);
-            this.txtEContactsSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtEContactsSearch.Name = "txtEContactsSearch";
-            this.txtEContactsSearch.Size = new System.Drawing.Size(257, 20);
-            this.txtEContactsSearch.TabIndex = 9;
+            this.txtPatientSearch.Location = new System.Drawing.Point(527, 48);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.TabIndex = 9;
             // 
             // EmergencyContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 391);
-            this.Controls.Add(this.txtEContactsSearch);
-            this.Controls.Add(this.btnSearchEContacts);
+            this.Controls.Add(this.txtPatientSearch);
+            this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.ovlEContacts);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmergencyContacts";
@@ -158,8 +158,8 @@
         #endregion
 
         private BrightIdeasSoftware.ObjectListView ovlEContacts;
-        private System.Windows.Forms.Button btnSearchEContacts;
-        private System.Windows.Forms.TextBox txtEContactsSearch;
+        private System.Windows.Forms.Button btnSearchPatients;
+        private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn Plname;
         private BrightIdeasSoftware.OLVColumn Pfname;

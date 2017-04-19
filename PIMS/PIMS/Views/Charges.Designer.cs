@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSearchCharges = new System.Windows.Forms.Button();
-            this.txtChargesSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPatients = new System.Windows.Forms.Button();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.olvChargesList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -44,23 +44,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSearchCharges
+            // btnSearchPatients
             // 
-            this.btnSearchCharges.Location = new System.Drawing.Point(592, 41);
-            this.btnSearchCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearchCharges.Name = "btnSearchCharges";
-            this.btnSearchCharges.Size = new System.Drawing.Size(94, 24);
-            this.btnSearchCharges.TabIndex = 8;
-            this.btnSearchCharges.Text = "Search";
-            this.btnSearchCharges.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Location = new System.Drawing.Point(592, 41);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Name = "btnSearchPatients";
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.TabIndex = 8;
+            this.btnSearchPatients.Text = "Search";
+            this.btnSearchPatients.UseVisualStyleBackColor = true;
             // 
-            // txtChargesSearch
+            // txtPatientSearch
             // 
-            this.txtChargesSearch.Location = new System.Drawing.Point(690, 44);
-            this.txtChargesSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtChargesSearch.Name = "txtChargesSearch";
-            this.txtChargesSearch.Size = new System.Drawing.Size(257, 20);
-            this.txtChargesSearch.TabIndex = 9;
+            this.txtPatientSearch.Location = new System.Drawing.Point(690, 44);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.TabIndex = 9;
             // 
             // olvChargesList
             // 
@@ -162,8 +162,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 371);
             this.Controls.Add(this.olvChargesList);
-            this.Controls.Add(this.txtChargesSearch);
-            this.Controls.Add(this.btnSearchCharges);
+            this.Controls.Add(this.txtPatientSearch);
+            this.Controls.Add(this.btnSearchPatients);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Charges";
             this.Text = "Charges";
@@ -174,8 +174,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSearchCharges;
-        private System.Windows.Forms.TextBox txtChargesSearch;
+        private System.Windows.Forms.Button btnSearchPatients;
+        private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.ObjectListView olvChargesList;
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn lname;

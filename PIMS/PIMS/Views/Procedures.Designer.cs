@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtProceduresSearch = new System.Windows.Forms.TextBox();
-            this.btnSearchProcedures = new System.Windows.Forms.Button();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvProceduresList = new BrightIdeasSoftware.ObjectListView();
             this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -43,23 +43,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtProceduresSearch
+            // txtPatientSearch
             // 
-            this.txtProceduresSearch.Location = new System.Drawing.Point(602, 67);
-            this.txtProceduresSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtProceduresSearch.Name = "txtProceduresSearch";
-            this.txtProceduresSearch.Size = new System.Drawing.Size(257, 20);
-            this.txtProceduresSearch.TabIndex = 5;
+            this.txtPatientSearch.Location = new System.Drawing.Point(602, 67);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.TabIndex = 5;
             // 
-            // btnSearchProcedures
+            // btnSearchPatients
             // 
-            this.btnSearchProcedures.Location = new System.Drawing.Point(504, 64);
-            this.btnSearchProcedures.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearchProcedures.Name = "btnSearchProcedures";
-            this.btnSearchProcedures.Size = new System.Drawing.Size(94, 24);
-            this.btnSearchProcedures.TabIndex = 4;
-            this.btnSearchProcedures.Text = "Search";
-            this.btnSearchProcedures.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Location = new System.Drawing.Point(504, 64);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Name = "btnSearchPatients";
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.TabIndex = 4;
+            this.btnSearchPatients.Text = "Search";
+            this.btnSearchPatients.UseVisualStyleBackColor = true;
             // 
             // olvProceduresList
             // 
@@ -86,7 +86,7 @@
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
             this.olvProceduresList.Location = new System.Drawing.Point(45, 96);
-            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2);
             this.olvProceduresList.Name = "olvProceduresList";
             this.olvProceduresList.Size = new System.Drawing.Size(814, 227);
             this.olvProceduresList.TabIndex = 3;
@@ -152,10 +152,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 437);
-            this.Controls.Add(this.txtProceduresSearch);
-            this.Controls.Add(this.btnSearchProcedures);
+            this.Controls.Add(this.txtPatientSearch);
+            this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvProceduresList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Procedures";
             this.Text = "Procedures";
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).EndInit();
@@ -166,8 +166,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtProceduresSearch;
-        private System.Windows.Forms.Button btnSearchProcedures;
+        private System.Windows.Forms.TextBox txtPatientSearch;
+        private System.Windows.Forms.Button btnSearchPatients;
         private BrightIdeasSoftware.ObjectListView olvProceduresList;
         private BrightIdeasSoftware.OLVColumn ProcedureID;
         private BrightIdeasSoftware.OLVColumn ProcedureType;

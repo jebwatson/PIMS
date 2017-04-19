@@ -37,7 +37,7 @@
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatient = new System.Windows.Forms.Button();
-            this.txtAdmissionsSearch = new System.Windows.Forms.TextBox();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -129,13 +129,13 @@
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
             // 
-            // txtAdmissionsSearch
+            // txtPatientSearch
             // 
-            this.txtAdmissionsSearch.Location = new System.Drawing.Point(419, 37);
-            this.txtAdmissionsSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtAdmissionsSearch.Name = "txtAdmissionsSearch";
-            this.txtAdmissionsSearch.Size = new System.Drawing.Size(270, 20);
-            this.txtAdmissionsSearch.TabIndex = 2;
+            this.txtPatientSearch.Location = new System.Drawing.Point(419, 37);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(270, 20);
+            this.txtPatientSearch.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -226,7 +226,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtAdmissionsSearch);
+            this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.ovlAdmissions);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -242,7 +242,7 @@
 
         private BrightIdeasSoftware.ObjectListView ovlAdmissions;
         private System.Windows.Forms.Button btnSearchPatient;
-        private System.Windows.Forms.TextBox txtAdmissionsSearch;
+        private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn AdmissionTime;
         private BrightIdeasSoftware.OLVColumn DischargeTime;
