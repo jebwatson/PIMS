@@ -31,30 +31,32 @@
             this.txtProceduresSearch = new System.Windows.Forms.TextBox();
             this.btnSearchProcedures = new System.Windows.Forms.Button();
             this.olvProceduresList = new BrightIdeasSoftware.ObjectListView();
+            this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcedureID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcedureType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationHrs = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationMins = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProceduresSearch
             // 
-            this.txtProceduresSearch.Location = new System.Drawing.Point(499, 82);
+            this.txtProceduresSearch.Location = new System.Drawing.Point(602, 67);
+            this.txtProceduresSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtProceduresSearch.Name = "txtProceduresSearch";
-            this.txtProceduresSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtProceduresSearch.Size = new System.Drawing.Size(257, 20);
             this.txtProceduresSearch.TabIndex = 5;
             // 
             // btnSearchProcedures
             // 
-            this.btnSearchProcedures.Location = new System.Drawing.Point(351, 79);
+            this.btnSearchProcedures.Location = new System.Drawing.Point(504, 64);
+            this.btnSearchProcedures.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchProcedures.Name = "btnSearchProcedures";
-            this.btnSearchProcedures.Size = new System.Drawing.Size(125, 29);
+            this.btnSearchProcedures.Size = new System.Drawing.Size(94, 24);
             this.btnSearchProcedures.TabIndex = 4;
             this.btnSearchProcedures.Text = "Search";
             this.btnSearchProcedures.UseVisualStyleBackColor = true;
@@ -83,12 +85,31 @@
             this.StopTime});
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
-            this.olvProceduresList.Location = new System.Drawing.Point(60, 118);
+            this.olvProceduresList.Location = new System.Drawing.Point(45, 96);
+            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.olvProceduresList.Name = "olvProceduresList";
-            this.olvProceduresList.Size = new System.Drawing.Size(1084, 279);
+            this.olvProceduresList.Size = new System.Drawing.Size(814, 227);
             this.olvProceduresList.TabIndex = 3;
             this.olvProceduresList.UseCompatibleStateImageBehavior = false;
             this.olvProceduresList.View = System.Windows.Forms.View.Details;
+            // 
+            // patientid
+            // 
+            this.patientid.AspectName = "patientId";
+            this.patientid.Text = "Patient ID";
+            this.patientid.Width = 120;
+            // 
+            // lname
+            // 
+            this.lname.AspectName = "nameLast";
+            this.lname.Text = "Last Name";
+            this.lname.Width = 120;
+            // 
+            // fname
+            // 
+            this.fname.AspectName = "nameFirst";
+            this.fname.Text = "First Name";
+            this.fname.Width = 120;
             // 
             // ProcedureID
             // 
@@ -126,32 +147,15 @@
             this.StopTime.Text = "Stop Time";
             this.StopTime.Width = 120;
             // 
-            // patientid
-            // 
-            this.patientid.AspectName = "patientId";
-            this.patientid.Text = "Patient ID";
-            this.patientid.Width = 120;
-            // 
-            // lname
-            // 
-            this.lname.AspectName = "nameLast";
-            this.lname.Text = "Last Name";
-            this.lname.Width = 120;
-            // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 120;
-            // 
             // Procedures
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 538);
+            this.ClientSize = new System.Drawing.Size(910, 437);
             this.Controls.Add(this.txtProceduresSearch);
             this.Controls.Add(this.btnSearchProcedures);
             this.Controls.Add(this.olvProceduresList);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Procedures";
             this.Text = "Procedures";
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).EndInit();

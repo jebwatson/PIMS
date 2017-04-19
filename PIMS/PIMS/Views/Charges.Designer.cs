@@ -46,18 +46,20 @@
             // 
             // btnSearchCharges
             // 
-            this.btnSearchCharges.Location = new System.Drawing.Point(427, 49);
+            this.btnSearchCharges.Location = new System.Drawing.Point(592, 41);
+            this.btnSearchCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchCharges.Name = "btnSearchCharges";
-            this.btnSearchCharges.Size = new System.Drawing.Size(125, 29);
+            this.btnSearchCharges.Size = new System.Drawing.Size(94, 24);
             this.btnSearchCharges.TabIndex = 8;
             this.btnSearchCharges.Text = "Search";
             this.btnSearchCharges.UseVisualStyleBackColor = true;
             // 
             // txtChargesSearch
             // 
-            this.txtChargesSearch.Location = new System.Drawing.Point(571, 52);
+            this.txtChargesSearch.Location = new System.Drawing.Point(690, 44);
+            this.txtChargesSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtChargesSearch.Name = "txtChargesSearch";
-            this.txtChargesSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtChargesSearch.Size = new System.Drawing.Size(257, 20);
             this.txtChargesSearch.TabIndex = 9;
             // 
             // olvChargesList
@@ -86,9 +88,10 @@
             this.OfficeStaffId});
             this.olvChargesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvChargesList.GridLines = true;
-            this.olvChargesList.Location = new System.Drawing.Point(56, 89);
+            this.olvChargesList.Location = new System.Drawing.Point(42, 72);
+            this.olvChargesList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.olvChargesList.Name = "olvChargesList";
-            this.olvChargesList.Size = new System.Drawing.Size(1205, 279);
+            this.olvChargesList.Size = new System.Drawing.Size(905, 227);
             this.olvChargesList.TabIndex = 11;
             this.olvChargesList.UseCompatibleStateImageBehavior = false;
             this.olvChargesList.View = System.Windows.Forms.View.Details;
@@ -155,12 +158,13 @@
             // 
             // Charges
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 457);
+            this.ClientSize = new System.Drawing.Size(986, 371);
             this.Controls.Add(this.olvChargesList);
             this.Controls.Add(this.txtChargesSearch);
             this.Controls.Add(this.btnSearchCharges);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Charges";
             this.Text = "Charges";
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).EndInit();

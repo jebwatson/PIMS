@@ -45,18 +45,20 @@
             // 
             // btnSearchBills
             // 
-            this.btnSearchBills.Location = new System.Drawing.Point(250, 49);
+            this.btnSearchBills.Location = new System.Drawing.Point(382, 45);
+            this.btnSearchBills.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchBills.Name = "btnSearchBills";
-            this.btnSearchBills.Size = new System.Drawing.Size(125, 29);
+            this.btnSearchBills.Size = new System.Drawing.Size(94, 24);
             this.btnSearchBills.TabIndex = 8;
             this.btnSearchBills.Text = "Search";
             this.btnSearchBills.UseVisualStyleBackColor = true;
             // 
             // txtBillsSearch
             // 
-            this.txtBillsSearch.Location = new System.Drawing.Point(381, 52);
+            this.txtBillsSearch.Location = new System.Drawing.Point(480, 48);
+            this.txtBillsSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBillsSearch.Name = "txtBillsSearch";
-            this.txtBillsSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtBillsSearch.Size = new System.Drawing.Size(257, 20);
             this.txtBillsSearch.TabIndex = 9;
             // 
             // objectListView1
@@ -83,9 +85,10 @@
             this.DateDue});
             this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListView1.GridLines = true;
-            this.objectListView1.Location = new System.Drawing.Point(42, 94);
+            this.objectListView1.Location = new System.Drawing.Point(32, 76);
+            this.objectListView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.objectListView1.Name = "objectListView1";
-            this.objectListView1.Size = new System.Drawing.Size(939, 279);
+            this.objectListView1.Size = new System.Drawing.Size(705, 227);
             this.objectListView1.TabIndex = 0;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
@@ -146,12 +149,13 @@
             // 
             // Bills
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 457);
+            this.ClientSize = new System.Drawing.Size(774, 371);
             this.Controls.Add(this.txtBillsSearch);
             this.Controls.Add(this.btnSearchBills);
             this.Controls.Add(this.objectListView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Bills";
             this.Text = "Bills";
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();

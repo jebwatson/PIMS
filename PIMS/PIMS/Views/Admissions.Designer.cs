@@ -69,9 +69,10 @@
             this.DischargeReason});
             this.ovlAdmissions.Cursor = System.Windows.Forms.Cursors.Default;
             this.ovlAdmissions.GridLines = true;
-            this.ovlAdmissions.Location = new System.Drawing.Point(12, 81);
+            this.ovlAdmissions.Location = new System.Drawing.Point(9, 66);
+            this.ovlAdmissions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ovlAdmissions.Name = "ovlAdmissions";
-            this.ovlAdmissions.Size = new System.Drawing.Size(905, 379);
+            this.ovlAdmissions.Size = new System.Drawing.Size(680, 309);
             this.ovlAdmissions.TabIndex = 0;
             this.ovlAdmissions.UseCompatibleStateImageBehavior = false;
             this.ovlAdmissions.View = System.Windows.Forms.View.Details;
@@ -120,93 +121,103 @@
             // 
             // btnSearchPatient
             // 
-            this.btnSearchPatient.Location = new System.Drawing.Point(222, 38);
+            this.btnSearchPatient.Location = new System.Drawing.Point(318, 34);
+            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchPatient.Name = "btnSearchPatient";
-            this.btnSearchPatient.Size = new System.Drawing.Size(165, 37);
+            this.btnSearchPatient.Size = new System.Drawing.Size(97, 25);
             this.btnSearchPatient.TabIndex = 1;
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
             // 
             // txtAdmissionsSearch
             // 
-            this.txtAdmissionsSearch.Location = new System.Drawing.Point(409, 45);
+            this.txtAdmissionsSearch.Location = new System.Drawing.Point(419, 37);
+            this.txtAdmissionsSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdmissionsSearch.Name = "txtAdmissionsSearch";
-            this.txtAdmissionsSearch.Size = new System.Drawing.Size(358, 22);
+            this.txtAdmissionsSearch.Size = new System.Drawing.Size(270, 20);
             this.txtAdmissionsSearch.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(302, 510);
+            this.textBox1.Location = new System.Drawing.Point(226, 414);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(74, 22);
+            this.textBox1.Size = new System.Drawing.Size(56, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(382, 510);
+            this.textBox2.Location = new System.Drawing.Point(286, 414);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(74, 22);
+            this.textBox2.Size = new System.Drawing.Size(56, 20);
             this.textBox2.TabIndex = 4;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(462, 510);
+            this.textBox3.Location = new System.Drawing.Point(346, 414);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(74, 22);
+            this.textBox3.Size = new System.Drawing.Size(56, 20);
             this.textBox3.TabIndex = 5;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(542, 510);
+            this.textBox4.Location = new System.Drawing.Point(406, 414);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(74, 22);
+            this.textBox4.Size = new System.Drawing.Size(56, 20);
             this.textBox4.TabIndex = 6;
             // 
             // lblFacility
             // 
             this.lblFacility.AutoSize = true;
-            this.lblFacility.Location = new System.Drawing.Point(313, 535);
+            this.lblFacility.Location = new System.Drawing.Point(235, 435);
+            this.lblFacility.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFacility.Name = "lblFacility";
-            this.lblFacility.Size = new System.Drawing.Size(63, 17);
+            this.lblFacility.Size = new System.Drawing.Size(49, 13);
             this.lblFacility.TabIndex = 7;
             this.lblFacility.Text = "Facility #";
             // 
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(469, 535);
+            this.lblRoom.Location = new System.Drawing.Point(352, 435);
+            this.lblRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(57, 17);
+            this.lblRoom.Size = new System.Drawing.Size(45, 13);
             this.lblRoom.TabIndex = 8;
             this.lblRoom.Text = "Room #";
             // 
             // lblFloor
             // 
             this.lblFloor.AutoSize = true;
-            this.lblFloor.Location = new System.Drawing.Point(394, 535);
+            this.lblFloor.Location = new System.Drawing.Point(296, 435);
+            this.lblFloor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFloor.Name = "lblFloor";
-            this.lblFloor.Size = new System.Drawing.Size(52, 17);
+            this.lblFloor.Size = new System.Drawing.Size(40, 13);
             this.lblFloor.TabIndex = 9;
             this.lblFloor.Text = "Floor #";
             // 
             // lblBed
             // 
             this.lblBed.AutoSize = true;
-            this.lblBed.Location = new System.Drawing.Point(555, 535);
+            this.lblBed.Location = new System.Drawing.Point(416, 435);
+            this.lblBed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBed.Name = "lblBed";
-            this.lblBed.Size = new System.Drawing.Size(45, 17);
+            this.lblBed.Size = new System.Drawing.Size(36, 13);
             this.lblBed.TabIndex = 10;
             this.lblBed.Text = "Bed #";
             // 
             // Admissions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 572);
+            this.ClientSize = new System.Drawing.Size(706, 465);
             this.Controls.Add(this.lblBed);
             this.Controls.Add(this.lblFloor);
             this.Controls.Add(this.lblRoom);
@@ -218,6 +229,7 @@
             this.Controls.Add(this.txtAdmissionsSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.ovlAdmissions);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Admissions";
             this.Text = "Admissions";
             ((System.ComponentModel.ISupportInitialize)(this.ovlAdmissions)).EndInit();

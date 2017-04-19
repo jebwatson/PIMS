@@ -64,9 +64,10 @@
             this.Phone});
             this.ovlEContacts.Cursor = System.Windows.Forms.Cursors.Default;
             this.ovlEContacts.GridLines = true;
-            this.ovlEContacts.Location = new System.Drawing.Point(12, 94);
+            this.ovlEContacts.Location = new System.Drawing.Point(9, 76);
+            this.ovlEContacts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ovlEContacts.Name = "ovlEContacts";
-            this.ovlEContacts.Size = new System.Drawing.Size(1032, 279);
+            this.ovlEContacts.Size = new System.Drawing.Size(775, 227);
             this.ovlEContacts.TabIndex = 0;
             this.ovlEContacts.UseCompatibleStateImageBehavior = false;
             this.ovlEContacts.View = System.Windows.Forms.View.Details;
@@ -121,28 +122,31 @@
             // 
             // btnSearchEContacts
             // 
-            this.btnSearchEContacts.Location = new System.Drawing.Point(307, 49);
+            this.btnSearchEContacts.Location = new System.Drawing.Point(429, 45);
+            this.btnSearchEContacts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchEContacts.Name = "btnSearchEContacts";
-            this.btnSearchEContacts.Size = new System.Drawing.Size(125, 29);
+            this.btnSearchEContacts.Size = new System.Drawing.Size(94, 24);
             this.btnSearchEContacts.TabIndex = 8;
             this.btnSearchEContacts.Text = "Search";
             this.btnSearchEContacts.UseVisualStyleBackColor = true;
             // 
             // txtEContactsSearch
             // 
-            this.txtEContactsSearch.Location = new System.Drawing.Point(438, 52);
+            this.txtEContactsSearch.Location = new System.Drawing.Point(527, 48);
+            this.txtEContactsSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEContactsSearch.Name = "txtEContactsSearch";
-            this.txtEContactsSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtEContactsSearch.Size = new System.Drawing.Size(257, 20);
             this.txtEContactsSearch.TabIndex = 9;
             // 
             // EmergencyContacts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 481);
+            this.ClientSize = new System.Drawing.Size(792, 391);
             this.Controls.Add(this.txtEContactsSearch);
             this.Controls.Add(this.btnSearchEContacts);
             this.Controls.Add(this.ovlEContacts);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmergencyContacts";
             this.Text = "EmergencyContacts";
             ((System.ComponentModel.ISupportInitialize)(this.ovlEContacts)).EndInit();
