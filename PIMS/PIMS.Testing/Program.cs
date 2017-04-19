@@ -12,8 +12,8 @@ namespace PIMS.Testing
         static void Main(string[] args)
         {
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=LUFFY\\SQLEXPRESS;Initial Catalog=" +
-                "PIMSFeatureTest;Integrated Security=False;User Id=luffy;Password=luffy;MultipleActiveResultSets=True;";
+            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
+                "PIMSFeatureTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
@@ -86,9 +86,9 @@ namespace PIMS.Testing
                 query3 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
                     "VALUES ('Morrow', 'Jasper', 'A', '2222222', '256', 3)";
                 query4 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES ('Indihar', 'Alex', 'M', '5095561', '256', 4)";
+                    "VALUES ('Indihar', 'CSSA-JEB', 'M', '5095561', '256', 4)";
                 query5 = "INSERT INTO emergencyContact (nameLast, nameFirst, nameMiddle, phone, areaCode, patientId) " +
-                    "VALUES ('Indihar', 'Alexander', 'M', '6907499', '256', 5)";
+                    "VALUES ('Indihar', 'CSSA-JEBander', 'M', '6907499', '256', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
@@ -141,10 +141,10 @@ namespace PIMS.Testing
                     "VALUES ('Morrow', 'Jasper', 'A', '1234 Frizz St', 'Bismarck', 'ND', '33333', '3333333', '256', '3333333', '256', '3333333', '256', 'Ingram')";
                 query4 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES ('Indihar', 'Alex', 'M', '4901 Blue Spring Rd', 'Huntsville', 'AL', '44444', '4444444', '256', '4444444', '256', '4444444', '256', 'Ingram')";
+                    "VALUES ('Indihar', 'CSSA-JEB', 'M', '4901 Blue Spring Rd', 'Huntsville', 'AL', '44444', '4444444', '256', '4444444', '256', '4444444', '256', 'Ingram')";
                 query5 = "INSERT INTO patients (nameLast, nameFirst, nameMiddle, street, city, state, zip, " +
                     "phoneHome, areaCodeHome, phoneWork, areaCodeWork, phoneMobile, areaCodeMobile, familyDoctor) " +
-                    "VALUES ('Indihar', 'Alexander', 'M', '2617 Garth Rd', 'Huntsville', 'AL', '55555', '5555555', '256', '5555555', '256', '5555555', '256', 'Ingram')";
+                    "VALUES ('Indihar', 'CSSA-JEBander', 'M', '2617 Garth Rd', 'Huntsville', 'AL', '55555', '5555555', '256', '5555555', '256', '5555555', '256', 'Ingram')";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
@@ -207,10 +207,10 @@ namespace PIMS.Testing
                     "VALUES ('Jasper', 'Morrow', 'Nurse', 3, 'jasper')";
                 query4 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Indihar', 'Alex', 'Doctor', 4, 'alex')";
+                    "VALUES ('Indihar', 'CSSA-JEB', 'Doctor', 4, 'CSSA-JEB')";
                 query5 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Indihar', 'Alexander', 'Staff', 2, 'indihar')";
+                    "VALUES ('Indihar', 'CSSA-JEBander', 'Staff', 2, 'indihar')";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
@@ -218,21 +218,21 @@ namespace PIMS.Testing
                 QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
-                query1 = "INSERT INTO visitors (lastName, firstName, relation, " +
+                query1 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId) " +
                     "VALUES ('Watson', 'Jeb', 'big daddy', '01 / 01 / 2017', 1)";
-                query2 = "INSERT INTO visitors (lastName, firstName, relation, " +
+                query2 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId) " +
                     "VALUES ('Burcham', 'David', 'dad', '01 / 02 / 2017', 2)";
-                query3 = "INSERT INTO visitors (lastName, firstName, relation, " +
+                query3 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId) " +
                     "VALUES ('Morrow', 'Jasper', 'mom', '01 / 03 / 2017', 3)";
-                query4 = "INSERT INTO visitors (lastName, firstName, relation, " +
+                query4 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId) " +
-                    "VALUES ('Indihar', 'Alex', 'twin', '01 / 03 / 2017', 4)";
-                query5 = "INSERT INTO visitors (lastName, firstName, relation, " +
+                    "VALUES ('Indihar', 'CSSA-JEB', 'twin', '01 / 03 / 2017', 4)";
+                query5 = "INSERT INTO visitors (nameLast, nameFirst, relation, " +
                     "lastVisit, patientId) " +
-                    "VALUES ('Indihar', 'Alexander', 'twin', '01 / 03 / 2017', 5)";
+                    "VALUES ('Indihar', 'CSSA-JEBander', 'twin', '01 / 03 / 2017', 5)";
 
                 QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);

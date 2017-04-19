@@ -52,6 +52,7 @@
             this.olvAdmissionsList.AllColumns.Add(this.Floor);
             this.olvAdmissionsList.AllColumns.Add(this.Room);
             this.olvAdmissionsList.AllColumns.Add(this.Bed);
+            this.olvAdmissionsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvAdmissionsList.CellEditUseWholeCell = false;
             this.olvAdmissionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -64,11 +65,11 @@
             this.Bed});
             this.olvAdmissionsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvAdmissionsList.GridLines = true;
-            this.olvAdmissionsList.Location = new System.Drawing.Point(21, 147);
-            this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.olvAdmissionsList.Location = new System.Drawing.Point(12, 81);
+            this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvAdmissionsList.Name = "olvAdmissionsList";
             this.olvAdmissionsList.ShowGroups = false;
-            this.olvAdmissionsList.Size = new System.Drawing.Size(1581, 684);
+            this.olvAdmissionsList.Size = new System.Drawing.Size(905, 379);
             this.olvAdmissionsList.TabIndex = 0;
             this.olvAdmissionsList.UseCompatibleStateImageBehavior = false;
             this.olvAdmissionsList.View = System.Windows.Forms.View.Details;
@@ -120,10 +121,11 @@
             // 
             // btnSearchPatient
             // 
-            this.btnSearchPatient.Location = new System.Drawing.Point(742, 76);
-            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSearchPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatient.Location = new System.Drawing.Point(11, 42);
+            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatient.Name = "btnSearchPatient";
-            this.btnSearchPatient.Size = new System.Drawing.Size(226, 56);
+            this.btnSearchPatient.Size = new System.Drawing.Size(129, 31);
             this.btnSearchPatient.TabIndex = 1;
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
@@ -131,21 +133,23 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(978, 83);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(146, 46);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(625, 35);
+            this.txtPatientSearch.Size = new System.Drawing.Size(359, 22);
             this.txtPatientSearch.TabIndex = 2;
             // 
             // Admissions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AcceptButton = this.btnSearchPatient;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1647, 1037);
+            this.ClientSize = new System.Drawing.Size(941, 572);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.olvAdmissionsList);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admissions";
             this.Text = "Admissions";
             ((System.ComponentModel.ISupportInitialize)(this.olvAdmissionsList)).EndInit();

@@ -29,7 +29,7 @@ namespace PIMSTests.ModelTableTests
 
             myList2 = new List<Patient>
             {
-                new Patient("Indihar", "Alex", "B", "D", "D", "D", "44444", "4444444", "256", "4444444", "256", "4444444", "256", "D"),
+                new Patient("Indihar", "CSSA-JEB", "B", "D", "D", "D", "44444", "4444444", "256", "4444444", "256", "4444444", "256", "D"),
                 new Patient("Norris", "Chuck", "B", "E", "E", "E", "55555", "5555555", "256", "5555555", "256", "5555555", "256", "E"),
                 new Patient("Dempsey", "Jack", "B", "F", "F", "F", "66666", "6666666", "256", "6666666", "256", "6666666", "256", "F")
             };
@@ -37,7 +37,7 @@ namespace PIMSTests.ModelTableTests
             comparer = new PatientComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using

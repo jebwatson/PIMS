@@ -43,10 +43,11 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(382, 45);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(42, 54);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -54,10 +55,11 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(480, 48);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(173, 58);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
             this.txtPatientSearch.TabIndex = 9;
             // 
             // olvBillsList
@@ -69,6 +71,7 @@
             this.olvBillsList.AllColumns.Add(this.AmountOwed);
             this.olvBillsList.AllColumns.Add(this.DateCharged);
             this.olvBillsList.AllColumns.Add(this.DateDue);
+            this.olvBillsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvBillsList.CellEditUseWholeCell = false;
             this.olvBillsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -80,11 +83,11 @@
             this.DateDue});
             this.olvBillsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvBillsList.GridLines = true;
-            this.olvBillsList.Location = new System.Drawing.Point(32, 76);
-            this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvBillsList.Location = new System.Drawing.Point(43, 94);
+            this.olvBillsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvBillsList.Name = "olvBillsList";
             this.olvBillsList.ShowGroups = false;
-            this.olvBillsList.Size = new System.Drawing.Size(705, 227);
+            this.olvBillsList.Size = new System.Drawing.Size(939, 278);
             this.olvBillsList.TabIndex = 0;
             this.olvBillsList.UseCompatibleStateImageBehavior = false;
             this.olvBillsList.View = System.Windows.Forms.View.Details;
@@ -133,13 +136,14 @@
             // 
             // Bills
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnSearchPatients;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 371);
+            this.ClientSize = new System.Drawing.Size(1032, 457);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvBillsList);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Bills";
             this.Text = "Bills";
             ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).EndInit();

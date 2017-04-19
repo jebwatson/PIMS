@@ -58,6 +58,7 @@
     <Compile Include="Presenters\PInsurance.cs" />
     <Compile Include="Presenters\PLogin.cs" />
     <Compile Include="Presenters\PNewPatient.cs" />
+    <Compile Include="Presenters\PNotes.cs" />
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Presenters\PPrescriptions.cs" />
     <Compile Include="Presenters\PProcedures.cs" />
@@ -68,6 +69,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Login.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Admissions.cs">
       <SubType>Form</SubType>
@@ -117,6 +124,12 @@
     <Compile Include="Views\NewPatient.Designer.cs">
       <DependentUpon>NewPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Notes.Designer.cs">
+      <DependentUpon>Notes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Patients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +170,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admissions.resx">
       <DependentUpon>Admissions.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewPatient.resx">
       <DependentUpon>NewPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Notes.resx">
+      <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>

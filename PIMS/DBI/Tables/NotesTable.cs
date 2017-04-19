@@ -36,11 +36,11 @@ namespace DBI
             {
                 string myQuery = "DELETE FROM " + theTable +
                     " WHERE " +
-                    "notesId = @notesId";
+                    "noteId = @noteId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
-                myCommand.Parameters.AddWithValue("@notesId", NotesId);
+                myCommand.Parameters.AddWithValue("@noteId", NotesId);
 
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
@@ -78,16 +78,16 @@ namespace DBI
                 foreach (DataRow dr in dtObject.Rows)
                 {
                     // extract all fields of the current row
-                    int notesId = Convert.ToInt32(dr["notesId"]);
+                    int noteId = Convert.ToInt32(dr["noteId"]);
                     string notes = dr["notes"].ToString();
                     bool doctor = Convert.ToBoolean(dr["doctor"]);
                     bool nurse = Convert.ToBoolean(dr["nurse"]);
-                    int doctorId = Convert.ToInt32(dr["doctorId"]);
+                    int doctorId = Convert.ToInt32(dr["userId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
 
                     // fill the ItemList
                     Notes newNotes = new Notes();
-                    newNotes.notesId = notesId;
+                    newNotes.noteId = noteId;
                     newNotes.notes = notes;
                     newNotes.doctor = doctor;
                     newNotes.nurse = nurse;
@@ -114,7 +114,7 @@ namespace DBI
         {
             ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
 
-            string myQuery = "SELECT * FROM " + theTable + " WHERE notesId = " + "'" + inputNotesId + "'";
+            string myQuery = "SELECT * FROM " + theTable + " WHERE noteId = " + "'" + inputNotesId + "'";
 
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
 
@@ -125,7 +125,7 @@ namespace DBI
                 foreach (DataRow dr in dtObject.Rows)
                 {
                     // extract all fields of the current row
-                    int notesId = Convert.ToInt32(dr["notesId"]);
+                    int noteId = Convert.ToInt32(dr["noteId"]);
                     string notes = dr["notes"].ToString();
                     bool doctor = Convert.ToBoolean(dr["doctor"]);
                     bool nurse = Convert.ToBoolean(dr["nurse"]);
@@ -134,7 +134,7 @@ namespace DBI
 
                     // fill the ItemList
                     Notes newNotes = new Notes();
-                    newNotes.notesId = notesId;
+                    newNotes.noteId = noteId;
                     newNotes.notes = notes;
                     newNotes.doctor = doctor;
                     newNotes.nurse = nurse;
@@ -164,7 +164,7 @@ namespace DBI
                     "doctorId = @doctorId, " +
                     "patientId = @patientId " +
                     "WHERE " +
-                    "notesId = @notesId";
+                    "noteId = @noteId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -173,7 +173,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@nurse", updatedNotes.nurse);
                 myCommand.Parameters.AddWithValue("@doctorId", updatedNotes.userId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedNotes.patientId);
-                myCommand.Parameters.AddWithValue("@notesId", updatedNotes.notesId);
+                myCommand.Parameters.AddWithValue("@noteId", updatedNotes.noteId);
 
                 myCommand.ExecuteNonQuery();
 
@@ -211,7 +211,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@nurse", newNotesDoctor.nurse);
                 myCommand.Parameters.AddWithValue("@doctorId", newNotesDoctor.userId);
                 myCommand.Parameters.AddWithValue("@patientId", newNotesDoctor.patientId);
-                myCommand.Parameters.AddWithValue("@notesId", newNotesDoctor.notesId);
+                myCommand.Parameters.AddWithValue("@noteId", newNotesDoctor.noteId);
 
                 myCommand.ExecuteNonQuery();
 

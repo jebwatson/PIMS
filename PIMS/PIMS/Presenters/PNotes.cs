@@ -16,9 +16,7 @@ namespace PIMS.Presenters
     {
         // Locals
         Views.Notes View;
-        PatientTable MyPatientsTable;
         NotesTable MyNotesTable;
-        List<Patient> MyPatientsList;
         List<DBI.Notes> MyNotesList;
 
         public PNotes(Views.Notes view)
@@ -51,10 +49,8 @@ namespace PIMS.Presenters
         public void AddNotes()
         {
             Views.Notes MyNewNotesForm = new Views.Notes();
-            if (MyNewNotesForm.ShowDialog() == DialogResult.OK)
-            {
-                RefreshNotesList();
-            }
+
+            
         }
 
         /// <summary>
@@ -65,11 +61,16 @@ namespace PIMS.Presenters
             if (MessageBox.Show("Are you sure you want to delete the selected notes?",
                 "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                MyNotesList = (List<DBI.Notes>)View.NotesList.SelectedObjects;
-
-                foreach (var item in MyNotesList)
+                if (View.NotesList.SelectedObjects != null)
                 {
-                    MyNotesTable.ClearTableById(item.patientId);
+                    foreach (var item in View.NotesList.SelectedObjects)
+                    {
+                        MyNotesTable.ClearTableById(((DBI.Notes)item).patientId);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No notes available.");
                 }
 
                 RefreshNotesList();

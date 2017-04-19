@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PIMS.Views;
+using DBI;
+using System.Windows.Forms;
 
 namespace PIMS.Presenters
 {
@@ -46,6 +48,31 @@ namespace PIMS.Presenters
                     if (CheckData())
                     {
                         // Submit and create patient
+                        Patient MyPatient = new Patient(View.NameFirst, View.NameMiddle, View.NameLast,
+                            View.StreetAddress, View.City, View.State, View.Zip, View.PhoneHome, View.AreaCodeHome,
+                            View.PhoneWork, View.AreaCodeWork, View.PhoneCell, View.AreaCodeCell, View.FamilyDoctor);
+
+                        PatientTable MyPatientTable = new PatientTable();
+                        MyPatientTable.WriteItem(MyPatient);
+                        List<Patient> MyPatientList = MyPatientTable.ReadListByName(View.NameLast);
+
+                        EmergencyContact MyEmergencyContact = new EmergencyContact(View.NameFirstEC, View.NameLastEC,
+                            "", View.PhoneEC, View.AreaCodeEC, MyPatientList[0].patientId);
+                        DBI.Insurance MyInsurance = new DBI.Insurance(View.Carrier, View.AccountNumber, View.GroupNumber,
+                            MyPatientList[0].patientId);
+                        Admission MyAdmission = new Admission(View.TimeOfAdmission.ToString(), "", View.AdmissionReason, View.Facility,
+                            View.FloorNumber, View.RoomNumber, View.BedNumber, MyPatientList[0].patientId);
+
+                        EmergencyContactTable MyEmergencyContactTable = new EmergencyContactTable();
+                        InsuranceTable MyInsuranceTable = new InsuranceTable();
+                        AdmissionsTable MyAdmissionsTable = new AdmissionsTable();
+
+                        MyEmergencyContactTable.WriteItem(MyEmergencyContact);
+                        MyInsuranceTable.WriteItem(MyInsurance);
+                        MyAdmissionsTable.WriteItem(MyAdmission);
+
+                        View.DialogResult = DialogResult.OK;
+                        View.Close();
                     }
                     break;
                 default:

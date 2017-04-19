@@ -77,8 +77,8 @@ namespace DBI
                 {
                     // extract all fields of the current row
                     int admissionId = Convert.ToInt32(dr["admissionId"]);
-                    DateTime admissionTime = Convert.ToDateTime(dr["admissionTime"]);
-                    DateTime dischargeTime = Convert.ToDateTime(dr["dischargeTime"]);
+                    string admissionTime = (dr["admissionTime"]).ToString();
+                    string dischargeTime = (dr["dischargeTime"]).ToString();
                     string admissionReason = dr["admissionReason"].ToString();
                     string facility = dr["facility"].ToString();
                     string floor = dr["floor"].ToString();
@@ -125,8 +125,8 @@ namespace DBI
                 {
                     // extract all fields of the current row
                     int admissionId = Convert.ToInt32(dr["admissionId"]);
-                    DateTime admissionTime = Convert.ToDateTime(dr["admissionTime"]);
-                    DateTime dischargeTime = Convert.ToDateTime(dr["dischargeTime"]);
+                    string admissionTime = (dr["admissionTime"]).ToString();
+                    string dischargeTime = (dr["dischargeTime"]).ToString();
                     string admissionReason = dr["admissionReason"].ToString();
                     string facility = dr["facility"].ToString();
                     string floor = dr["floor"].ToString();

@@ -60,9 +60,10 @@ namespace PIMS.Views
             // 
             // imgPims
             // 
+            this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
-            this.imgPims.Location = new System.Drawing.Point(21, 22);
-            this.imgPims.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.imgPims.Location = new System.Drawing.Point(9, 10);
+            this.imgPims.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.imgPims.Name = "imgPims";
             this.imgPims.Size = new System.Drawing.Size(122, 122);
             this.imgPims.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -71,96 +72,98 @@ namespace PIMS.Views
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(649, 384);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtUsername.Multiline = true;
+            this.txtUsername.Location = new System.Drawing.Point(278, 172);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(471, 80);
+            this.txtUsername.Size = new System.Drawing.Size(204, 35);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(649, 502);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtPassword.Multiline = true;
+            this.txtPassword.Location = new System.Drawing.Point(278, 225);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(471, 80);
+            this.txtPassword.Size = new System.Drawing.Size(204, 35);
             this.txtPassword.TabIndex = 2;
             // 
             // lblUser
             // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(308, 395);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblUser.Location = new System.Drawing.Point(132, 177);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(331, 69);
+            this.lblUser.Size = new System.Drawing.Size(142, 31);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "Username:";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(308, 513);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPassword.Location = new System.Drawing.Point(132, 230);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(331, 65);
+            this.lblPassword.Size = new System.Drawing.Size(142, 29);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblDatabase
             // 
+            this.lblDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDatabase.AutoSize = true;
             this.lblDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatabase.Location = new System.Drawing.Point(352, 265);
-            this.lblDatabase.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblDatabase.Location = new System.Drawing.Point(151, 119);
             this.lblDatabase.Name = "lblDatabase";
-            this.lblDatabase.Size = new System.Drawing.Size(273, 61);
+            this.lblDatabase.Size = new System.Drawing.Size(121, 27);
             this.lblDatabase.TabIndex = 7;
             this.lblDatabase.Text = "Database:";
             // 
             // lblServer
             // 
+            this.lblServer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblServer.AutoSize = true;
             this.lblServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServer.Location = new System.Drawing.Point(429, 147);
-            this.lblServer.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblServer.Location = new System.Drawing.Point(184, 66);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(201, 61);
+            this.lblServer.Size = new System.Drawing.Size(88, 27);
             this.lblServer.TabIndex = 8;
             this.lblServer.Text = "Server:";
             // 
             // txtServer
             // 
+            this.txtServer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.Location = new System.Drawing.Point(649, 147);
-            this.txtServer.Margin = new System.Windows.Forms.Padding(7);
-            this.txtServer.Multiline = true;
+            this.txtServer.Location = new System.Drawing.Point(278, 66);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(471, 80);
+            this.txtServer.Size = new System.Drawing.Size(204, 35);
             this.txtServer.TabIndex = 9;
+            this.txtServer.Tag = "";
             // 
             // txtDatabase
             // 
+            this.txtDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabase.Location = new System.Drawing.Point(649, 265);
-            this.txtDatabase.Margin = new System.Windows.Forms.Padding(7);
-            this.txtDatabase.Multiline = true;
+            this.txtDatabase.Location = new System.Drawing.Point(278, 119);
             this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(471, 80);
+            this.txtDatabase.Size = new System.Drawing.Size(204, 35);
             this.txtDatabase.TabIndex = 10;
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(649, 629);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnLogin.Location = new System.Drawing.Point(278, 282);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(214, 91);
+            this.btnLogin.Size = new System.Drawing.Size(92, 41);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login ";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -168,11 +171,12 @@ namespace PIMS.Views
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(891, 629);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCancel.Location = new System.Drawing.Point(382, 282);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(229, 91);
+            this.btnCancel.Size = new System.Drawing.Size(98, 41);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -181,9 +185,9 @@ namespace PIMS.Views
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1468, 830);
+            this.ClientSize = new System.Drawing.Size(629, 372);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtDatabase);
             this.Controls.Add(this.txtServer);
@@ -195,7 +199,7 @@ namespace PIMS.Views
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.imgPims);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLogin";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.imgPims)).EndInit();

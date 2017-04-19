@@ -52,8 +52,7 @@ namespace PIMS.Views
         public string GroupNumber { get { return txtGroupNumber.Text; } set { txtGroupNumber.Text = value; } }
 
         // Admission
-        public string DateOfAdmission { get { return dtpAdmissionTime.Value.Date.ToString(); } }
-        public string TimeOfAdmission { get { return dtpAdmissionTime.Value.TimeOfDay.ToString(); } }
+        public string TimeOfAdmission { get { return dtpAdmissionTime.Value.Date.ToString() + " " + dtpAdmissionTime.Value.TimeOfDay.ToString(); } }
         public string AdmissionReason { get { return txtAdmissionReason.Text; } set { txtAdmissionReason.Text = value; } }
         public string Facility { get { return txtFacility.Text; } set { txtFacility.Text = value; } }
         public string FloorNumber { get { return txtFloorNumber.Text; } set { txtFloorNumber.Text = value; } }

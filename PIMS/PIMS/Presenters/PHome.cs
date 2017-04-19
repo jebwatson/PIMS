@@ -62,5 +62,11 @@ namespace PIMS.Presenters
             Visitors VisitorsForm = new Visitors();
             VisitorsForm.ShowDialog();
         }
+        public void CreateNotesForm()
+        {
+            Notes NotesForm = new Notes();
+            NotesForm.ShowDialog();
+        }
+
     }
 }

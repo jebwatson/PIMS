@@ -50,7 +50,7 @@ namespace PIMS.Presenters
         /// </summary>
         public void AddPatient()
         {
-            Patients MyNewPatientsForm = new Patients();
+            frmNewPatient MyNewPatientsForm = new frmNewPatient();
             if (MyNewPatientsForm.ShowDialog() == DialogResult.OK)
             {
                 RefreshPatientsList();
@@ -65,11 +65,16 @@ namespace PIMS.Presenters
             if (MessageBox.Show("Are you sure you want to delete the selected patients?", 
                 "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                MyPatientsList = (List<Patient>)View.PatientsList.SelectedObjects;
-
-                foreach (var item in MyPatientsList)
+                if (View.PatientsList.SelectedObjects != null)
                 {
-                    MyPatientsTable.ClearTableById(item.patientId);
+                    foreach (var item in View.PatientsList.SelectedObjects)
+                    {
+                        MyPatientsTable.ClearTableById(((Patient)item).patientId);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete patients.");
                 }
 
                 RefreshPatientsList();

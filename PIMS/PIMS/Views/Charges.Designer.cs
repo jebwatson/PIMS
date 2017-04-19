@@ -43,10 +43,11 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(592, 41);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(56, 55);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -54,10 +55,11 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(690, 44);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(187, 59);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
             this.txtPatientSearch.TabIndex = 9;
             // 
             // olvChargesList
@@ -69,6 +71,7 @@
             this.olvChargesList.AllColumns.Add(this.DueDate);
             this.olvChargesList.AllColumns.Add(this.ProcedureID);
             this.olvChargesList.AllColumns.Add(this.OfficeStaffId);
+            this.olvChargesList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvChargesList.CellEditUseWholeCell = false;
             this.olvChargesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -80,11 +83,11 @@
             this.OfficeStaffId});
             this.olvChargesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvChargesList.GridLines = true;
-            this.olvChargesList.Location = new System.Drawing.Point(42, 72);
-            this.olvChargesList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvChargesList.Location = new System.Drawing.Point(56, 89);
+            this.olvChargesList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvChargesList.Name = "olvChargesList";
             this.olvChargesList.ShowGroups = false;
-            this.olvChargesList.Size = new System.Drawing.Size(905, 227);
+            this.olvChargesList.Size = new System.Drawing.Size(904, 278);
             this.olvChargesList.TabIndex = 11;
             this.olvChargesList.UseCompatibleStateImageBehavior = false;
             this.olvChargesList.View = System.Windows.Forms.View.Details;
@@ -133,13 +136,14 @@
             // 
             // Charges
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnSearchPatients;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 371);
+            this.ClientSize = new System.Drawing.Size(1018, 457);
             this.Controls.Add(this.olvChargesList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Charges";
             this.Text = "Charges";
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).EndInit();
