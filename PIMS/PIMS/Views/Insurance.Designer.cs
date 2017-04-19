@@ -41,10 +41,11 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(373, 49);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(314, 56);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
+            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -52,10 +53,11 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(471, 52);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(456, 60);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
             this.txtPatientSearch.TabIndex = 9;
             // 
             // olvInsuranceList
@@ -65,6 +67,7 @@
             this.olvInsuranceList.AllColumns.Add(this.InsuranceCarrier);
             this.olvInsuranceList.AllColumns.Add(this.InsuranceAccountNumber);
             this.olvInsuranceList.AllColumns.Add(this.InsuranceGroupNumber);
+            this.olvInsuranceList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvInsuranceList.CellEditUseWholeCell = false;
             this.olvInsuranceList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -74,11 +77,11 @@
             this.InsuranceGroupNumber});
             this.olvInsuranceList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvInsuranceList.GridLines = true;
-            this.olvInsuranceList.Location = new System.Drawing.Point(42, 80);
-            this.olvInsuranceList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvInsuranceList.Location = new System.Drawing.Point(56, 98);
+            this.olvInsuranceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.olvInsuranceList.Name = "olvInsuranceList";
             this.olvInsuranceList.ShowGroups = false;
-            this.olvInsuranceList.Size = new System.Drawing.Size(686, 227);
+            this.olvInsuranceList.Size = new System.Drawing.Size(913, 278);
             this.olvInsuranceList.TabIndex = 10;
             this.olvInsuranceList.UseCompatibleStateImageBehavior = false;
             this.olvInsuranceList.View = System.Windows.Forms.View.Details;
@@ -115,13 +118,13 @@
             // 
             // Insurance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 410);
+            this.ClientSize = new System.Drawing.Size(1032, 505);
             this.Controls.Add(this.olvInsuranceList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Insurance";
             this.Text = "Insurance";
             ((System.ComponentModel.ISupportInitialize)(this.olvInsuranceList)).EndInit();
