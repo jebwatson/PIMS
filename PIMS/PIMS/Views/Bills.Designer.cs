@@ -30,7 +30,7 @@
         {
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.olvBillsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Total = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaidbyPatient = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -38,7 +38,7 @@
             this.AmountOwed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateCharged = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateDue = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
@@ -60,17 +60,17 @@
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
             // 
-            // objectListView1
+            // olvBillsList
             // 
-            this.objectListView1.AllColumns.Add(this.PatientID);
-            this.objectListView1.AllColumns.Add(this.Total);
-            this.objectListView1.AllColumns.Add(this.PaidbyPatient);
-            this.objectListView1.AllColumns.Add(this.PaidbyInsurance);
-            this.objectListView1.AllColumns.Add(this.AmountOwed);
-            this.objectListView1.AllColumns.Add(this.DateCharged);
-            this.objectListView1.AllColumns.Add(this.DateDue);
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvBillsList.AllColumns.Add(this.PatientID);
+            this.olvBillsList.AllColumns.Add(this.Total);
+            this.olvBillsList.AllColumns.Add(this.PaidbyPatient);
+            this.olvBillsList.AllColumns.Add(this.PaidbyInsurance);
+            this.olvBillsList.AllColumns.Add(this.AmountOwed);
+            this.olvBillsList.AllColumns.Add(this.DateCharged);
+            this.olvBillsList.AllColumns.Add(this.DateDue);
+            this.olvBillsList.CellEditUseWholeCell = false;
+            this.olvBillsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
             this.Total,
             this.PaidbyPatient,
@@ -78,15 +78,15 @@
             this.AmountOwed,
             this.DateCharged,
             this.DateDue});
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.GridLines = true;
-            this.objectListView1.Location = new System.Drawing.Point(32, 76);
-            this.objectListView1.Margin = new System.Windows.Forms.Padding(2);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.Size = new System.Drawing.Size(705, 227);
-            this.objectListView1.TabIndex = 0;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.olvBillsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvBillsList.GridLines = true;
+            this.olvBillsList.Location = new System.Drawing.Point(32, 76);
+            this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvBillsList.Name = "olvBillsList";
+            this.olvBillsList.Size = new System.Drawing.Size(705, 227);
+            this.olvBillsList.TabIndex = 0;
+            this.olvBillsList.UseCompatibleStateImageBehavior = false;
+            this.olvBillsList.View = System.Windows.Forms.View.Details;
             // 
             // PatientID
             // 
@@ -137,11 +137,11 @@
             this.ClientSize = new System.Drawing.Size(774, 371);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Controls.Add(this.objectListView1);
+            this.Controls.Add(this.olvBillsList);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Bills";
             this.Text = "Bills";
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +149,7 @@
 
         #endregion
 
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.ObjectListView olvBillsList;
         private System.Windows.Forms.Button btnSearchPatients;
         private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.OLVColumn Total;
