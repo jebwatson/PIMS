@@ -30,8 +30,6 @@
         {
             this.ovlAdmissions = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -46,31 +44,39 @@
             this.lblRoom = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
             this.lblBed = new System.Windows.Forms.Label();
+            this.Facility = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Floor = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Room = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Bed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.ovlAdmissions)).BeginInit();
             this.SuspendLayout();
             // 
             // ovlAdmissions
             // 
             this.ovlAdmissions.AllColumns.Add(this.PatientID);
-            this.ovlAdmissions.AllColumns.Add(this.lname);
-            this.ovlAdmissions.AllColumns.Add(this.fname);
             this.ovlAdmissions.AllColumns.Add(this.AdmissionTime);
             this.ovlAdmissions.AllColumns.Add(this.DischargeTime);
             this.ovlAdmissions.AllColumns.Add(this.AdmissionReason);
             this.ovlAdmissions.AllColumns.Add(this.DischargeReason);
+            this.ovlAdmissions.AllColumns.Add(this.Facility);
+            this.ovlAdmissions.AllColumns.Add(this.Floor);
+            this.ovlAdmissions.AllColumns.Add(this.Room);
+            this.ovlAdmissions.AllColumns.Add(this.Bed);
             this.ovlAdmissions.CellEditUseWholeCell = false;
             this.ovlAdmissions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.lname,
-            this.fname,
             this.AdmissionTime,
             this.DischargeTime,
             this.AdmissionReason,
-            this.DischargeReason});
+            this.DischargeReason,
+            this.Facility,
+            this.Floor,
+            this.Room,
+            this.Bed});
             this.ovlAdmissions.Cursor = System.Windows.Forms.Cursors.Default;
             this.ovlAdmissions.GridLines = true;
             this.ovlAdmissions.Location = new System.Drawing.Point(9, 66);
-            this.ovlAdmissions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ovlAdmissions.Margin = new System.Windows.Forms.Padding(2);
             this.ovlAdmissions.Name = "ovlAdmissions";
             this.ovlAdmissions.Size = new System.Drawing.Size(680, 309);
             this.ovlAdmissions.TabIndex = 0;
@@ -82,18 +88,6 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 120;
-            // 
-            // lname
-            // 
-            this.lname.AspectName = "nameLast";
-            this.lname.Text = "Last Name";
-            this.lname.Width = 120;
-            // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 120;
             // 
             // AdmissionTime
             // 
@@ -122,7 +116,7 @@
             // btnSearchPatient
             // 
             this.btnSearchPatient.Location = new System.Drawing.Point(318, 34);
-            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatient.Name = "btnSearchPatient";
             this.btnSearchPatient.Size = new System.Drawing.Size(97, 25);
             this.btnSearchPatient.TabIndex = 1;
@@ -132,7 +126,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Location = new System.Drawing.Point(419, 37);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(270, 20);
             this.txtPatientSearch.TabIndex = 2;
@@ -140,7 +134,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(226, 414);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(56, 20);
@@ -149,7 +143,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(286, 414);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(56, 20);
@@ -158,7 +152,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(346, 414);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(56, 20);
@@ -167,7 +161,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(406, 414);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(56, 20);
@@ -213,6 +207,27 @@
             this.lblBed.TabIndex = 10;
             this.lblBed.Text = "Bed #";
             // 
+            // Facility
+            // 
+            this.Facility.AspectName = "facility";
+            this.Facility.Text = "Facility";
+            // 
+            // Floor
+            // 
+            this.Floor.AspectName = "floor";
+            this.Floor.Text = "Floor";
+            // 
+            // Room
+            // 
+            this.Room.AspectName = "roomNumber";
+            this.Room.Text = "Room";
+            this.Room.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Bed
+            // 
+            this.Bed.AspectName = "bedNumber";
+            this.Bed.Text = "Bed";
+            // 
             // Admissions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,7 +244,7 @@
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.ovlAdmissions);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Admissions";
             this.Text = "Admissions";
             ((System.ComponentModel.ISupportInitialize)(this.ovlAdmissions)).EndInit();
@@ -256,7 +271,9 @@
         private System.Windows.Forms.Label lblRoom;
         private System.Windows.Forms.Label lblFloor;
         private System.Windows.Forms.Label lblBed;
-        private BrightIdeasSoftware.OLVColumn lname;
-        private BrightIdeasSoftware.OLVColumn fname;
+        private BrightIdeasSoftware.OLVColumn Facility;
+        private BrightIdeasSoftware.OLVColumn Floor;
+        private BrightIdeasSoftware.OLVColumn Room;
+        private BrightIdeasSoftware.OLVColumn Bed;
     }
 }
