@@ -70,7 +70,6 @@ namespace DBI
                     // extract all fields of the current row
                     int prescId = Convert.ToInt32(dr["prescId"]);
                     string prescName = dr["prescName"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime prescDate = Convert.ToDateTime(dr["prescDate"]);
                     int duration = Convert.ToInt32(dr["duration"]);
@@ -80,7 +79,6 @@ namespace DBI
                     Prescriptions prescription = new Prescriptions();
                     prescription.prescId = prescId;
                     prescription.prescName = prescName;
-                    prescription.caseId = caseId;
                     prescription.patientId = patientId;
                     prescription.prescDate = prescDate;
                     prescription.duration = duration;
@@ -111,7 +109,6 @@ namespace DBI
                     // extract all fields of the current row
                     int prescId = Convert.ToInt32(dr["prescId"]);
                     string prescName = dr["prescName"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime prescDate = Convert.ToDateTime(dr["prescDate"]);
                     int duration = Convert.ToInt32(dr["duration"]);
@@ -121,7 +118,6 @@ namespace DBI
                     Prescriptions prescription = new Prescriptions();
                     prescription.prescId = prescId;
                     prescription.prescName = prescName;
-                    prescription.caseId = caseId;
                     prescription.patientId = patientId;
                     prescription.prescDate = prescDate;
                     prescription.duration = duration;
@@ -145,7 +141,6 @@ namespace DBI
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
                     "prescName = @prescName, " +
-                    "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "prescDate = @prescDate, " +
                     "duration = @duration, " +
@@ -156,7 +151,6 @@ namespace DBI
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@prescName", updatedPresc.prescName);
-                myCommand.Parameters.AddWithValue("@caseId", updatedPresc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedPresc.patientId);
                 myCommand.Parameters.AddWithValue("@prescDate", updatedPresc.prescDate);
                 myCommand.Parameters.AddWithValue("@duration", updatedPresc.duration);
@@ -185,16 +179,15 @@ namespace DBI
         public void WriteItem(Prescriptions newPresc) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (prescId, prescName, caseId, patientId, prescDate, " +
+                    " (prescName, patientId, prescDate, " +
                     "duration, amount)" +
-                    "VALUES (@prescId, @prescName, @caseId, @patientId, @prescDate, " +
+                    "VALUES (@prescName, @caseId, @patientId, @prescDate, " +
                     "@duration, @amount)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@prescId", newPresc.prescId);
                 myCommand.Parameters.AddWithValue("@prescName", newPresc.prescName);
-                myCommand.Parameters.AddWithValue("@caseId", newPresc.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newPresc.patientId);
                 myCommand.Parameters.AddWithValue("@prescDate", newPresc.prescDate);
                 myCommand.Parameters.AddWithValue("@duration", newPresc.duration);

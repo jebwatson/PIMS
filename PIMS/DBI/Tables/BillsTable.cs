@@ -73,34 +73,24 @@ namespace DBI
                 {
                     // extract all fields of the current row
                     int billId = Convert.ToInt32(dr["billId"]);
-                    int amountTotalDollars = Convert.ToInt32(dr["amountTotalDollars"]);
-                    int amountTotalCents = Convert.ToInt32(dr["amountTotalCents"]);
-                    int amountPaidByPatientDollars = Convert.ToInt32(dr["amountPaidByPatientDollars"]);
-                    int amountPaidByPatientCents = Convert.ToInt32(dr["amountPaidByPatientCents"]);
-                    int amountPaidByInsuranceDollars = Convert.ToInt32(dr["amountPaidByInsuranceDollars"]);
-                    int amountPaidByInsuranceCents = Convert.ToInt32(dr["amountPaidByInsuranceCents"]);
-                    int amountOwedDollars = Convert.ToInt32(dr["amountOwedDollars"]);
-                    int amountOwedCents = Convert.ToInt32(dr["amountOwedCents"]);
+                    string amountTotal = dr["amountTotal"].ToString();
+                    string amountPaidByPatient = dr["amountPaidByPatient"].ToString();
+                    string amountPaidByInsurance = dr["amountPaidByInsurance"].ToString();
+                    string amountOwed = dr["amountOwed"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Bills newBill = new Bills();
                     newBill.billId = billId;
-                    newBill.amountTotalDollars= amountTotalDollars;
-                    newBill.amountTotalCents = amountTotalCents;
-                    newBill.amountPaidByPatientDollars = amountPaidByPatientDollars;
-                    newBill.amountPaidByPatientCents = amountPaidByPatientCents;
-                    newBill.amountPaidByInsuranceDollars = amountPaidByInsuranceDollars;
-                    newBill.amountPaidByInsuranceCents = amountPaidByInsuranceCents;
-                    newBill.amountOwedDollars = amountOwedDollars;
-                    newBill.amountOwedCents = amountOwedCents;
+                    newBill.amountTotal = amountTotal;
+                    newBill.amountPaidByPatient = amountPaidByPatient;
+                    newBill.amountPaidByInsurance = amountPaidByInsurance;
+                    newBill.amountOwed = amountOwed;
                     newBill.dateCharged = dateCharged;
                     newBill.dateDue = dateDue;
                     newBill.patientId = patientId;
-                    newBill.caseId = caseId;
 
                     bills.Add(newBill);
                 } // for
@@ -124,34 +114,24 @@ namespace DBI
                 {
                     // extract all fields of the current row
                     int billId = Convert.ToInt32(dr["billId"]);
-                    int amountTotalDollars = Convert.ToInt32(dr["amountTotalDollars"]);
-                    int amountTotalCents = Convert.ToInt32(dr["amountTotalCents"]);
-                    int amountPaidByPatientDollars = Convert.ToInt32(dr["amountPaidByPatientDollars"]);
-                    int amountPaidByPatientCents = Convert.ToInt32(dr["amountPaidByPatientCents"]);
-                    int amountPaidByInsuranceDollars = Convert.ToInt32(dr["amountPaidByInsuranceDollars"]);
-                    int amountPaidByInsuranceCents = Convert.ToInt32(dr["amountPaidByInsuranceCents"]);
-                    int amountOwedDollars = Convert.ToInt32(dr["amountOwedDollars"]);
-                    int amountOwedCents = Convert.ToInt32(dr["amountOwedCents"]);
+                    string amountTotal = dr["amountTotalDollars"].ToString();
+                    string amountPaidByPatient = dr["amountPaidByPatientDollars"].ToString();
+                    string amountPaidByInsurance = dr["amountPaidByInsuranceDollars"].ToString();
+                    string amountOwed = dr["amountOwedDollars"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Bills newBill = new Bills();
                     newBill.billId = inputBillId;
-                    newBill.amountTotalDollars = amountTotalDollars;
-                    newBill.amountTotalCents = amountTotalCents;
-                    newBill.amountPaidByPatientDollars = amountPaidByPatientDollars;
-                    newBill.amountPaidByPatientCents = amountPaidByPatientCents;
-                    newBill.amountPaidByInsuranceDollars = amountPaidByInsuranceDollars;
-                    newBill.amountPaidByInsuranceCents = amountPaidByInsuranceCents;
-                    newBill.amountOwedDollars = amountOwedDollars;
-                    newBill.amountOwedCents = amountOwedCents;
+                    newBill.amountTotal = amountTotal;
+                    newBill.amountPaidByPatient = amountPaidByPatient;
+                    newBill.amountPaidByInsurance = amountPaidByInsurance;
+                    newBill.amountOwed = amountOwed;
                     newBill.dateCharged = dateCharged;
                     newBill.dateDue = dateDue;
                     newBill.patientId = patientId;
-                    newBill.caseId = caseId;
 
                     bills.Add(newBill);
                 } // for
@@ -171,36 +151,26 @@ namespace DBI
             {
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
-                    "amountTotalDollars = @amountTotalDollars, " +
-                    "amountTotalCents = @amountTotalCents, " +
-                    "amountPaidByPatientDollars = @amountPaidByPatientDollars, " +
-                    "amountPaidByPatientCents = @amountPaidByPatientCents, " +
-                    "amountPaidByInsuranceDollars = @amountPaidByInsuranceDollars, " +
-                    "amountPaidByInsuranceCents = @amountPaidByInsuranceCents, " +
-                    "amountOwedDollars = @amountOwedDollars, " +
-                    "amountOwedCents = @amountOwedCents, " +
+                    "amountTotal = @amountTotal, " +
+                    "amountPaidByPatient = @amountPaidByPatient, " +
+                    "amountPaidByInsurance = @amountPaidByInsurance, " +
+                    "amountOwed = @amountOwed, " +
                     "dateCharged = @dateCharged, " +
                     "dateDue = @dateDue, " +
-                    "patientId = @patientId, " +
-                    "caseId = @caseId " +
+                    "patientId = @patientId " +
                     "WHERE " +
                     "billId = @billId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@billId", bill.billId);
-                myCommand.Parameters.AddWithValue("@amountTotalDollars", bill.amountTotalDollars);
-                myCommand.Parameters.AddWithValue("@amountTotalCents", bill.amountTotalCents);
-                myCommand.Parameters.AddWithValue("@amountPaidByPatientDollars", bill.amountPaidByPatientDollars);
-                myCommand.Parameters.AddWithValue("@amountPaidByPatientCents", bill.amountPaidByPatientCents);
-                myCommand.Parameters.AddWithValue("@amountPaidByInsuranceDollars", bill.amountPaidByInsuranceDollars);
-                myCommand.Parameters.AddWithValue("@amountPaidByInsuranceCents", bill.amountPaidByInsuranceCents);
-                myCommand.Parameters.AddWithValue("@amountOwedDollars", bill.amountOwedDollars);
-                myCommand.Parameters.AddWithValue("@amountOwedCents", bill.amountOwedCents);
+                myCommand.Parameters.AddWithValue("@amountTotal", bill.amountTotal);
+                myCommand.Parameters.AddWithValue("@amountPaidByPatient", bill.amountPaidByPatient);
+                myCommand.Parameters.AddWithValue("@amountPaidByInsurance", bill.amountPaidByInsurance);
+                myCommand.Parameters.AddWithValue("@amountOwed", bill.amountOwed);
                 myCommand.Parameters.AddWithValue("@dateCharged", bill.dateCharged);
                 myCommand.Parameters.AddWithValue("@dateDue", bill.dateDue);
                 myCommand.Parameters.AddWithValue("@patientId", bill.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", bill.caseId);
 
                 myCommand.ExecuteNonQuery();
 
@@ -224,28 +194,23 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (billId, amountTotalDollars, amountTotalCents, amountPaidByPatientDollars, amountPaidByPatientCents, " +
-                    "amountPaidByInsuranceDollars, amountPaidByInsuranceCents, amountOwedDollars, amountOwedCents, dateCharged, dateDue, " +
-                    "patientId, caseId) " +
-                    "VALUES (@billId, @amountTotalDollars, @amountTotalCents, @amountPaidByPatientDollars, @amountPaidByPatientCents, " +
-                    "@amountPaidByInsuranceDollars, @amountPaidByInsuranceCents, @amountOwedDollars, @amountOwedCents, @dateCharged, @dateDue, " +
-                    "@patientId, @caseId)";
+                    " (amountTotal, amountPaidByPatient, " +
+                    "amountPaidByInsurance, amountOwed, dateCharged, dateDue, " +
+                    "patientId) " +
+                    "VALUES (@amountTotal, @amountPaidByPatient, " +
+                    "@amountPaidByInsurance, @amountOwed, @dateCharged, @dateDue, " +
+                    "@patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@billId", bill.billId);
-                myCommand.Parameters.AddWithValue("@amountTotalDollars", bill.amountTotalDollars);
-                myCommand.Parameters.AddWithValue("@amountTotalCents", bill.amountTotalCents);
-                myCommand.Parameters.AddWithValue("@amountPaidByPatientDollars", bill.amountPaidByPatientDollars);
-                myCommand.Parameters.AddWithValue("@amountPaidByPatientCents", bill.amountPaidByPatientCents);
-                myCommand.Parameters.AddWithValue("@amountPaidByInsuranceDollars", bill.amountPaidByInsuranceDollars);
-                myCommand.Parameters.AddWithValue("@amountPaidByInsuranceCents", bill.amountPaidByInsuranceCents);
-                myCommand.Parameters.AddWithValue("@amountOwedDollars", bill.amountOwedDollars);
-                myCommand.Parameters.AddWithValue("@amountOwedCents", bill.amountOwedCents);
+                myCommand.Parameters.AddWithValue("@amountTotal", bill.amountTotal);
+                myCommand.Parameters.AddWithValue("@amountPaidByPatient", bill.amountPaidByPatient);
+                myCommand.Parameters.AddWithValue("@amountPaidByInsurance", bill.amountPaidByInsurance);
+                myCommand.Parameters.AddWithValue("@amountOwed", bill.amountOwed);
                 myCommand.Parameters.AddWithValue("@dateCharged", bill.dateCharged);
                 myCommand.Parameters.AddWithValue("@dateDue", bill.dateDue);
                 myCommand.Parameters.AddWithValue("@patientId", bill.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", bill.caseId);
 
                 myCommand.ExecuteNonQuery();
 

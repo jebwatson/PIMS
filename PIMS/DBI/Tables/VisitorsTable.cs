@@ -72,7 +72,6 @@ namespace DBI
                     int visitorId = Convert.ToInt32(dr["visitorId"]);
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime lastVisit = Convert.ToDateTime(dr["lastVisit"]);
                     string relation = dr["relation"].ToString();
@@ -82,7 +81,6 @@ namespace DBI
                     visitor.visitorId = visitorId;
                     visitor.nameLast = nameLast;
                     visitor.nameFirst = nameFirst;
-                    visitor.caseId = caseId;
                     visitor.patientId = patientId;
                     visitor.lastVisit = lastVisit;
                     visitor.relation = relation;
@@ -113,7 +111,6 @@ namespace DBI
                     int visitorId = Convert.ToInt32(dr["visitorId"]);
                     string nameLast = dr["nameLast"].ToString();
                     string nameFirst = dr["nameFirst"].ToString();
-                    int caseId = Convert.ToInt32(dr["caseId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
                     DateTime lastVisit = Convert.ToDateTime(dr["lastVisit"]);
                     string relation = dr["relation"].ToString();
@@ -123,7 +120,6 @@ namespace DBI
                     visitor.visitorId = visitorId;
                     visitor.nameLast = nameLast;
                     visitor.nameFirst = nameFirst;
-                    visitor.caseId = caseId;
                     visitor.patientId = patientId;
                     visitor.lastVisit = lastVisit;
                     visitor.relation = relation;
@@ -147,7 +143,6 @@ namespace DBI
                     " SET " +
                     "nameLast = @nameLast," +
                     "nameFirst = @nameFirst," +
-                    "caseId = @caseId, " +
                     "patientId = @patientId, " +
                     "lastVisit = @lastVisit, " +
                     "relation = @relation " +
@@ -157,7 +152,6 @@ namespace DBI
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@nameFirst", updatedVisitor.nameFirst);
-                myCommand.Parameters.AddWithValue("@caseId", updatedVisitor.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedVisitor.patientId);
                 myCommand.Parameters.AddWithValue("@lastVisit", updatedVisitor.lastVisit);
                 myCommand.Parameters.AddWithValue("@relation", updatedVisitor.relation);
@@ -186,9 +180,9 @@ namespace DBI
         public void WriteItem(Visitors newVisitor) {
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection()) {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (visitorId, nameLast, nameFirst, caseId, patientId, lastVisit, " +
+                    " (nameLast, nameFirst, patientId, lastVisit, " +
                     "relation)" +
-                    "VALUES (@visitorId, @nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
+                    "VALUES (@nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
                     "@relation)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
@@ -196,7 +190,6 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@visitorId", newVisitor.visitorId);
                 myCommand.Parameters.AddWithValue("@nameLast", newVisitor.nameLast);
                 myCommand.Parameters.AddWithValue("@nameFirst", newVisitor.nameFirst);
-                myCommand.Parameters.AddWithValue("@caseId", newVisitor.caseId);
                 myCommand.Parameters.AddWithValue("@patientId", newVisitor.patientId);
                 myCommand.Parameters.AddWithValue("@lastVisit", newVisitor.lastVisit);
                 myCommand.Parameters.AddWithValue("@relation", newVisitor.relation);

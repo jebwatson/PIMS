@@ -118,6 +118,7 @@ namespace DBI.Utilities
             catch (Exception ex)
             {
                 dsObject = null;
+                Console.WriteLine(ex.ToString());
                 //LogManager.writeLog("DBUtils.ExecuteStoredProcedure: Exception > [{0}] > strProcedure [{1}]", ex.Message, strProcedure);
             }
             return dsObject;
@@ -141,6 +142,7 @@ namespace DBI.Utilities
             catch (Exception ex)
             {
                 dsObject = null;
+                Console.WriteLine(ex.ToString());
                 //LogManager.writeLog("DBUtils.ExecuteStoredProcedureQuery: Exception > [{0}]", ex.Message);
             }
             finally { daObject.Dispose(); }
@@ -163,6 +165,7 @@ namespace DBI.Utilities
             catch (Exception ex)
             {
                 status = false;
+                Console.WriteLine(ex.ToString());
                 //LogManager.writeLog("DBUtils.ExecuteStoredProcedureNonQuery: Exception [{0}] strProcedure [{1}]", ex.Message, strProcedure);
             }
             return status;
@@ -187,6 +190,7 @@ namespace DBI.Utilities
             catch (Exception ex)
             {
                 status = false;
+                Console.WriteLine(ex.ToString());
                 //LogManager.writeLog("DBUtils.ExecuteStoredProcedureNonQuery: Exception > [{0}]", ex.Message);
             }
             finally
@@ -234,6 +238,7 @@ namespace DBI.Utilities
                     catch (Exception ex)
                     {
                         retValue = -1;
+                        Console.WriteLine(ex.ToString());
                         //LogManager.writeLog("DBUtils.ExecuteSqlQueryScalar: Exception > [{0}]", ex.Message);
                         return 0;
                     }

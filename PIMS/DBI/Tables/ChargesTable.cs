@@ -78,27 +78,23 @@ namespace DBI
                     // extract all fields of the current row
                     int chargeId = Convert.ToInt32(dr["chargeId"]);
                     string description = dr["description"].ToString();
-                    int amountDollars = Convert.ToInt32(dr["amountDollars"]);
-                    int amountCents = Convert.ToInt32(dr["amountCents"]);
+                    string amountTotal = dr["amountTotals"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int procedureId = Convert.ToInt32(dr["procedureId"]);
                     int officeStaffId = Convert.ToInt32(dr["officeStaffId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Charges charge = new Charges();
                     charge.chargeId = chargeId;
                     charge.description = description;
-                    charge.amountDollars = amountDollars;
-                    charge.amountCents = amountCents;
+                    charge.amountTotal = amountTotal;
                     charge.dateCharged = dateCharged;
                     charge.dateDue = dateDue;
                     charge.procedureId = procedureId;
                     charge.officeStaffId = officeStaffId;
                     charge.patientId = patientId;
-                    charge.caseId = caseId;
 
                     charges.Add(charge);
                 } // for
@@ -128,27 +124,23 @@ namespace DBI
                     // extract all fields of the current row
                     int chargeId = Convert.ToInt32(dr["chargeId"]);
                     string description = dr["description"].ToString();
-                    int amountDollars = Convert.ToInt32(dr["amountDollars"]);
-                    int amountCents = Convert.ToInt32(dr["amountCents"]);
+                    string amountTotal = dr["amountTotal"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int procedureId = Convert.ToInt32(dr["procedureId"]);
                     int officeStaffId = Convert.ToInt32(dr["officeStaffId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
-                    int caseId = Convert.ToInt32(dr["caseId"]);
 
                     // fill the ItemList
                     Charges charge = new Charges();
                     charge.chargeId = chargeId;
                     charge.description = description;
-                    charge.amountDollars = amountDollars;
-                    charge.amountCents = amountCents;
+                    charge.amountTotal = amountTotal;
                     charge.dateCharged = dateCharged;
                     charge.dateDue = dateDue;
                     charge.procedureId = procedureId;
                     charge.officeStaffId = officeStaffId;
                     charge.patientId = patientId;
-                    charge.caseId = caseId;
 
                     charges.Add(charge);
                 } // for
@@ -170,28 +162,24 @@ namespace DBI
                 string myQuery = "UPDATE " + theTable +
                     " SET " +
                     "description = @description, " +
-                    "amountDollars = @amountDollars, " +
-                    "amountCents = @amountCents, " +
+                    "amountTotal = @amountTotal, " +
                     "dateCharged = @dateCharged, " +
                     "dateDue = @dateDue, " +
                     "procedureId = @procedureId, " +
                     "officeStaffId = @officeStaffId, " +
-                    "patientId = @patientId, " +
-                    "caseId = @caseId " +
+                    "patientId = @patientId " +
                     "WHERE " +
                     "chargeId = @chargeId";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@description", updatedCharge.description);
-                myCommand.Parameters.AddWithValue("@amountDollars", updatedCharge.amountDollars);
-                myCommand.Parameters.AddWithValue("@amountCents", updatedCharge.amountCents);
+                myCommand.Parameters.AddWithValue("@amountTotal", updatedCharge.amountTotal);
                 myCommand.Parameters.AddWithValue("@dateCharged", updatedCharge.dateCharged);
                 myCommand.Parameters.AddWithValue("@dateDue", updatedCharge.dateDue);
                 myCommand.Parameters.AddWithValue("@procedureId", updatedCharge.procedureId);
                 myCommand.Parameters.AddWithValue("@officeStaffId", updatedCharge.officeStaffId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedCharge.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", updatedCharge.caseId);
                 myCommand.Parameters.AddWithValue("@chargeId", updatedCharge.chargeId);
 
                 myCommand.ExecuteNonQuery();
@@ -220,23 +208,21 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (chargeId, description, amountDollars, amountCents, dateCharged, " +
-                    "dateDue, procedureId, officeStaffId, patientId, caseId)" +
-                    "VALUES (@chargeId, @description, @amountDollars, @amountCents, @dateCharged, " +
-                    "@dateDue, @procedureId, @officeStaffId, @patientId, @caseId)";
+                    " (description, amountTotal, dateCharged, " +
+                    "dateDue, procedureId, officeStaffId, patientId)" +
+                    "VALUES (@description, @amountTotal, @dateCharged, " +
+                    "@dateDue, @procedureId, @officeStaffId, @patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@chargeId", newCharge.chargeId);
                 myCommand.Parameters.AddWithValue("@description", newCharge.description);
-                myCommand.Parameters.AddWithValue("@amountDollars", newCharge.amountDollars);
-                myCommand.Parameters.AddWithValue("@amountCents", newCharge.amountCents);
+                myCommand.Parameters.AddWithValue("@amountTotal", newCharge.amountTotal);
                 myCommand.Parameters.AddWithValue("@dateCharged", newCharge.dateCharged);
                 myCommand.Parameters.AddWithValue("@dateDue", newCharge.dateDue);
                 myCommand.Parameters.AddWithValue("@procedureId", newCharge.procedureId);
                 myCommand.Parameters.AddWithValue("@officeStaffId", newCharge.officeStaffId);
                 myCommand.Parameters.AddWithValue("@patientId", newCharge.patientId);
-                myCommand.Parameters.AddWithValue("@caseId", newCharge.caseId);
 
                 myCommand.ExecuteNonQuery();
 

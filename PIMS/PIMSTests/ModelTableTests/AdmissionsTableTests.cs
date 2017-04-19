@@ -27,12 +27,12 @@ namespace PIMSTests.ModelTableTests
 
             // NOTE: This occurs before each and every test case.
             myList.Clear();
-            myList.Add(new Admission(1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "A", "A", "1", "1", "1", "1", 1, 1));
-            myList.Add(new Admission(2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "B", "B", "2", "2", "2", "2", 2, 2));
-            myList.Add(new Admission(3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "C", "3", "3", "3", "3", 3, 3));
+            myList.Add(new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "A", "A", "1", "1", "1", "1", 1));
+            myList.Add(new Admission(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "B", "B", "2", "2", "2", "2", 2));
+            myList.Add(new Admission(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "C", "3", "3", "3", "3", 3));
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -43,15 +43,15 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO admissions (admissionId, admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
-                    "VALUES (1, '01/01/2017', '12/01/2017', 'A', 'A', '1', '1', '1', '1', 1, 1)";
-                string populationQuery2 = "INSERT INTO admissions (admissionId, admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
-                    "VALUES (2, '01/02/2017', '12/02/2017', 'B', 'B', '2', '2', '2', '2', 2, 2)";
-                string populationQuery3 = "INSERT INTO admissions (admissionId, admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId, caseId) " +
-                    "VALUES (3, '01/03/2017', '12/03/2017', 'C', 'C', '3', '3', '3', '3', 3, 3)";
+                string populationQuery1 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
+                    "VALUES ('01/01/2017', '12/01/2017', 'A', 'A', '1', '1', '1', '1', 1)";
+                string populationQuery2 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
+                    "VALUES ('01/02/2017', '12/02/2017', 'B', 'B', '2', '2', '2', '2', 2)";
+                string populationQuery3 = "INSERT INTO admissions (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
+                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId) " +
+                    "VALUES ('01/03/2017', '12/03/2017', 'C', 'C', '3', '3', '3', '3', 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -153,9 +153,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            Admission updated1 = new Admission(1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "D", "D", "1", "1", "1", "1", 1, 1);
-            Admission updated2 = new Admission(2, DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "E", "E", "2", "2", "2", "2", 2, 2);
-            Admission updated3 = new Admission(3, DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "F", "F", "3", "3", "3", "3", 3, 3);
+            Admission updated1 = new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "D", "D", "1", "1", "1", "1", 1);
+            Admission updated2 = new Admission(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "E", "E", "2", "2", "2", "2", 2);
+            Admission updated3 = new Admission(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "F", "F", "3", "3", "3", "3", 3);
 
             myList.Clear();
 
@@ -182,8 +182,8 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            Admission updatedAdmission = new Admission(1, DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 
-                "Z", "Z", "1", "1", "1", "1", 1, 1);
+            Admission updatedAdmission = new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 
+                "Z", "Z", "1", "1", "1", "1", 1);
             
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedAdmission);

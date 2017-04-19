@@ -13,7 +13,6 @@ namespace PIMSTests.Helpers
             Assert.That(presc1.prescDate, Is.EqualTo(presc2.prescDate));
             Assert.That(presc1.duration, Is.EqualTo(presc2.duration));
             Assert.That(presc1.patientId, Is.EqualTo(presc2.patientId));
-            Assert.That(presc1.caseId, Is.EqualTo(presc2.caseId));
         }
     }
 }

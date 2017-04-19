@@ -13,7 +13,6 @@ namespace PIMSTests.Helpers
             Assert.That(visitor1.relation, Is.EqualTo(visitor2.relation));
             Assert.That(visitor1.lastVisit, Is.EqualTo(visitor2.lastVisit));
             Assert.That(visitor1.patientId, Is.EqualTo(visitor2.patientId));
-            Assert.That(visitor1.caseId, Is.EqualTo(visitor2.caseId));
         }
     }
 }

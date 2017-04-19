@@ -23,22 +23,22 @@ namespace PIMSTests.ModelTableTests
             myTable = new InsuranceTable();
             myList = new List<Insurance>()
             {
-                new Insurance(1, "A", "1", "1", 1),
-                new Insurance(2, "B", "2", "2", 2),
-                new Insurance(3, "C", "3", "3", 3)
+                new Insurance("A", "1", "1", 1),
+                new Insurance("B", "2", "2", 2),
+                new Insurance("C", "3", "3", 3)
             };
 
             myList2 = new List<Insurance>
             {
-                new Insurance(1, "D", "4", "4", 4),
-                new Insurance(2, "E", "5", "5", 5),
-                new Insurance(3, "F", "6", "6", 6)
+                new Insurance("D", "4", "4", 4),
+                new Insurance("E", "5", "5", 5),
+                new Insurance("F", "6", "6", 6)
             };
 
             comparer = new InsuranceComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=JEBSDESKTOP\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -50,12 +50,12 @@ namespace PIMSTests.ModelTableTests
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
-                string populationQuery1 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (1, 'A', '1', '1', 1)";
-                string populationQuery2 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (2, 'B', '2', '2', 2)";
-                string populationQuery3 = "INSERT INTO insurance (insuranceId, insuranceCarrier, accountNumber, groupNumber, patientId) " +
-                    "VALUES (3, 'C', '3', '3', 3)";
+                string populationQuery1 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES ('A', '1', '1', 1)";
+                string populationQuery2 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES ('B', '2', '2', 2)";
+                string populationQuery3 = "INSERT INTO insurance (insuranceCarrier, accountNumber, groupNumber, patientId) " +
+                    "VALUES ('C', '3', '3', 3)";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
