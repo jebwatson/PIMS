@@ -117,6 +117,7 @@ namespace PIMS.Views
 
                         if (user.accessLevel == 3 || user.accessLevel == 4)
                         {
+                            btnPatients.Enabled = true;
                             btnAdmissions.Enabled = true;
                             btnVisitors.Enabled = true;
                             btnPrescriptions.Enabled = true;
@@ -174,5 +175,10 @@ namespace PIMS.Views
             Presenter.CreateInsuranceForm();
         }
         #endregion
+
+        private void btnNotes_Click(object sender, EventArgs e)
+        {
+            Presenter.CreateNotesForm();
+        }
     }
 }

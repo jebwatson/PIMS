@@ -27,14 +27,11 @@ namespace PIMS.Views
             Initialize();
         }
 
-        private void refreshNotes_Click(object sender, EventArgs e)
-        {
-            Presenter.RefreshNotesList();
-        }
+        
 
-        private void addNotes_Click(object sender, EventArgs e)
+        private void Initialize()
         {
-            Presenter.AddNotes();
+            Presenter.PopulateNotesList();
         }
 
         private void removeNote_Click(object sender, EventArgs e)
@@ -42,14 +39,19 @@ namespace PIMS.Views
             Presenter.RemoveNotes();
         }
 
-        private void searchNote_Click(object sender, EventArgs e)
+        private void editNote_Click(object sender, EventArgs e)
         {
-            Presenter.SearchNotes();
+            
         }
 
-        private void Initialize()
+        private void addNote_Click(object sender, EventArgs e)
         {
-            Presenter.PopulateNotesList();
+            Presenter.AddNotes();
+        }
+
+        private void refreshNotes_Click(object sender, EventArgs e)
+        {
+            Presenter.RefreshNotesList();
         }
     }
 }
