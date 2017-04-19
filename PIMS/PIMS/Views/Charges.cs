@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PCharges Presenter;
 
-        public ObjectListView PatientsList { get { return this.olvChargesList; } }
+        public ObjectListView ChargesList { get { return this.olvChargesList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public Charges()
@@ -35,6 +35,16 @@ namespace PIMS.Views
         private void btnSearchPatients_Click(object sender, EventArgs e)
         {
             Presenter.SearchPatients();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Presenter.AddCharge();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteCharges();
         }
     }
 }

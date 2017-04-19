@@ -62,8 +62,13 @@ namespace PIMS.Views
             // 
             this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
+<<<<<<< HEAD
             this.imgPims.Location = new System.Drawing.Point(12, 12);
             this.imgPims.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.imgPims.Location = new System.Drawing.Point(9, 10);
+            this.imgPims.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.imgPims.Name = "imgPims";
             this.imgPims.Size = new System.Drawing.Size(122, 122);
             this.imgPims.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -74,8 +79,13 @@ namespace PIMS.Views
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txtUsername.Location = new System.Drawing.Point(371, 212);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtUsername.Location = new System.Drawing.Point(278, 172);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 41);
             this.txtUsername.TabIndex = 1;
@@ -84,8 +94,13 @@ namespace PIMS.Views
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txtPassword.Location = new System.Drawing.Point(371, 277);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtPassword.Location = new System.Drawing.Point(278, 225);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(271, 41);
@@ -163,8 +178,13 @@ namespace PIMS.Views
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnLogin.Location = new System.Drawing.Point(371, 347);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.btnLogin.Location = new System.Drawing.Point(278, 282);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(123, 50);
             this.btnLogin.TabIndex = 5;
@@ -176,8 +196,13 @@ namespace PIMS.Views
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnCancel.Location = new System.Drawing.Point(509, 347);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.btnCancel.Location = new System.Drawing.Point(382, 282);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(131, 50);
             this.btnCancel.TabIndex = 11;
@@ -202,8 +227,13 @@ namespace PIMS.Views
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.imgPims);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> origin/master
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.imgPims)).EndInit();
             this.ResumeLayout(false);
