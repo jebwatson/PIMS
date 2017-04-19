@@ -18,7 +18,6 @@ namespace PIMS.Views
         PNotes Presenter;
 
         public ObjectListView NotesList { get { return this.olvNotesList; } }
-        public string NoteSearch { get { return this.searchNotesBox.Text.Replace('*', '%'); } }
 
         public Notes()
         {
@@ -26,8 +25,6 @@ namespace PIMS.Views
             Presenter = new PNotes(this);
             Initialize();
         }
-
-        
 
         private void Initialize()
         {
