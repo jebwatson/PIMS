@@ -44,6 +44,7 @@ namespace PIMS.Views
                         btnBills.Enabled = false;
                         btnNotes.Enabled = false;
                         btnReports.Enabled = false;
+                        break;
                     }
 
                     if (user.accessLevel == 2)
@@ -55,6 +56,7 @@ namespace PIMS.Views
                         btnEmergencyContact.Enabled = false;
                         btnNotes.Enabled = false;
                         btnReports.Enabled = false;
+                        break;
                     }
                 }
             }
@@ -89,6 +91,7 @@ namespace PIMS.Views
                     {
                         if (user.accessLevel == 1)
                         {
+                            btnPatients.Enabled = false;
                             btnPrescriptions.Enabled = false;
                             btnProcedures.Enabled = false;
                             btnEmergencyContact.Enabled = false;
@@ -97,6 +100,7 @@ namespace PIMS.Views
                             btnBills.Enabled = false;
                             btnNotes.Enabled = false;
                             btnReports.Enabled = false;
+                            break;
                         }
 
                         if (user.accessLevel == 2)
@@ -108,6 +112,7 @@ namespace PIMS.Views
                             btnEmergencyContact.Enabled = false;
                             btnNotes.Enabled = false;
                             btnReports.Enabled = false;
+                            break;
                         }
 
                         if (user.accessLevel == 3 || user.accessLevel == 4)
@@ -122,6 +127,7 @@ namespace PIMS.Views
                             btnBills.Enabled = true;
                             btnNotes.Enabled = true;
                             btnReports.Enabled = true;
+                            break;
                         }
                     }
                 }

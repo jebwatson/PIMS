@@ -33,6 +33,7 @@ namespace DBI.Utilities
         /// <returns></returns>
         public static DataSet ExecuteSqlQuery(string strSQL, SqlConnection conn)
         {
+            object status = null;
             DataSet dsObject = new DataSet();
             using (SqlDataAdapter daObject = new SqlDataAdapter(strSQL, conn))
             {
@@ -42,6 +43,7 @@ namespace DBI.Utilities
                 }
                 catch (Exception ex)
                 {
+                    status = ex;
                     dsObject = null;
                     //LogManager.writeLog("DBUtils.ExecuteSqlQuery: Exception > [{0}]", ex.Message);
                 }
