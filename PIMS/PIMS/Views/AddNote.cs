@@ -1,5 +1,6 @@
 ﻿using BrightIdeasSoftware;
 using PIMS.Presenters;
+using DBI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,8 @@ namespace PIMS.Views
 {
     public partial class AddNote : Form
     {
-    
-        
         public string AddNoteStr { get { return this.txtAddNote.Text; } }
+
         public AddNote()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace PIMS.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
         }
 

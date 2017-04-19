@@ -17,7 +17,6 @@ namespace PIMS.Presenters
         // Locals
         Views.Notes View;
         NotesTable MyNotesTable;
-        List<DBI.Notes> MyNotesList;
 
         public PNotes(Views.Notes view)
         {
@@ -48,9 +47,8 @@ namespace PIMS.Presenters
         /// </summary>
         public void AddNotes()
         {
-            Views.Notes MyNewNotesForm = new Views.Notes();
-
-            
+            AddNote NewNoteForm = new AddNote();
+            NewNoteForm.ShowDialog();   
         }
 
         /// <summary>

@@ -35,10 +35,10 @@
             // 
             // txtAddNote
             // 
-            this.txtAddNote.Location = new System.Drawing.Point(136, 39);
+            this.txtAddNote.Location = new System.Drawing.Point(221, 56);
             this.txtAddNote.Multiline = true;
             this.txtAddNote.Name = "txtAddNote";
-            this.txtAddNote.Size = new System.Drawing.Size(506, 214);
+            this.txtAddNote.Size = new System.Drawing.Size(344, 159);
             this.txtAddNote.TabIndex = 0;
             // 
             // btnSave
