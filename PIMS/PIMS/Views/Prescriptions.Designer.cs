@@ -41,7 +41,7 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(237, 48);
+            this.txtPatientSearch.Location = new System.Drawing.Point(182, 48);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
@@ -49,7 +49,7 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(106, 44);
+            this.btnSearchPatients.Location = new System.Drawing.Point(51, 44);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);

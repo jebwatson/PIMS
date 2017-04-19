@@ -54,6 +54,7 @@
             // 
             // btnRefreshPatients
             // 
+            this.btnRefreshPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRefreshPatients.Location = new System.Drawing.Point(16, 73);
             this.btnRefreshPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefreshPatients.Name = "btnRefreshPatients";
@@ -65,6 +66,7 @@
             // 
             // btnAddPatient
             // 
+            this.btnAddPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddPatient.Location = new System.Drawing.Point(16, 135);
             this.btnAddPatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddPatient.Name = "btnAddPatient";
@@ -76,6 +78,7 @@
             // 
             // btnDeletePatients
             // 
+            this.btnDeletePatients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDeletePatients.Location = new System.Drawing.Point(16, 204);
             this.btnDeletePatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeletePatients.Name = "btnDeletePatients";
@@ -87,7 +90,8 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(770, 43);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(265, 43);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(496, 22);
@@ -95,7 +99,8 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(662, 39);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(157, 39);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(100, 28);
@@ -121,6 +126,7 @@
             this.olvPatientsList.AllColumns.Add(this.phonemobile);
             this.olvPatientsList.AllColumns.Add(this.areaCodeMobile);
             this.olvPatientsList.AllColumns.Add(this.familydoctor);
+            this.olvPatientsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvPatientsList.CellEditUseWholeCell = false;
             this.olvPatientsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,

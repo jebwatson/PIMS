@@ -44,7 +44,8 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(375, 80);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(156, 83);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
@@ -52,7 +53,8 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(244, 76);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(25, 79);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
@@ -71,6 +73,7 @@
             this.olvProceduresList.AllColumns.Add(this.StopTime);
             this.olvProceduresList.AllColumns.Add(this.DoctorId);
             this.olvProceduresList.AllColumns.Add(this.ProcNotes);
+            this.olvProceduresList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvProceduresList.CellEditUseWholeCell = false;
             this.olvProceduresList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientid,

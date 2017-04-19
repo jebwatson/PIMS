@@ -52,6 +52,7 @@
             this.olvAdmissionsList.AllColumns.Add(this.Floor);
             this.olvAdmissionsList.AllColumns.Add(this.Room);
             this.olvAdmissionsList.AllColumns.Add(this.Bed);
+            this.olvAdmissionsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvAdmissionsList.CellEditUseWholeCell = false;
             this.olvAdmissionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -120,7 +121,8 @@
             // 
             // btnSearchPatient
             // 
-            this.btnSearchPatient.Location = new System.Drawing.Point(424, 42);
+            this.btnSearchPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatient.Location = new System.Drawing.Point(11, 42);
             this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatient.Name = "btnSearchPatient";
             this.btnSearchPatient.Size = new System.Drawing.Size(129, 31);
@@ -131,7 +133,8 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(559, 46);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(146, 46);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(359, 22);

@@ -46,6 +46,7 @@
             this.ovlEmergencyContactsList.AllColumns.Add(this.ECfname);
             this.ovlEmergencyContactsList.AllColumns.Add(this.AreaCode);
             this.ovlEmergencyContactsList.AllColumns.Add(this.Phone);
+            this.ovlEmergencyContactsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ovlEmergencyContactsList.CellEditUseWholeCell = false;
             this.ovlEmergencyContactsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -96,7 +97,8 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(149, 48);
+            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchPatients.Location = new System.Drawing.Point(54, 48);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
@@ -107,7 +109,8 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(280, 52);
+            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatientSearch.Location = new System.Drawing.Point(185, 52);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
