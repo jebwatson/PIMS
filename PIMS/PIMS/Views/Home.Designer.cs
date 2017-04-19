@@ -49,13 +49,15 @@
             this.btnNotes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotes.Image = ((System.Drawing.Image)(resources.GetObject("btnNotes.Image")));
             this.btnNotes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNotes.Location = new System.Drawing.Point(44, 490);
+            this.btnNotes.Location = new System.Drawing.Point(102, 643);
+            this.btnNotes.Margin = new System.Windows.Forms.Padding(4);
             this.btnNotes.Name = "btnNotes";
             this.btnNotes.Size = new System.Drawing.Size(134, 118);
             this.btnNotes.TabIndex = 23;
             this.btnNotes.Text = "Notes";
             this.btnNotes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNotes.UseVisualStyleBackColor = false;
+            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
             // btnInsurance
             // 
@@ -63,7 +65,8 @@
             this.btnInsurance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsurance.Image = ((System.Drawing.Image)(resources.GetObject("btnInsurance.Image")));
             this.btnInsurance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInsurance.Location = new System.Drawing.Point(44, 336);
+            this.btnInsurance.Location = new System.Drawing.Point(102, 453);
+            this.btnInsurance.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsurance.Name = "btnInsurance";
             this.btnInsurance.Size = new System.Drawing.Size(134, 118);
             this.btnInsurance.TabIndex = 22;
@@ -78,7 +81,8 @@
             this.btnEmergencyContact.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmergencyContact.Image = global::PIMS.Properties.Resources.Cases;
             this.btnEmergencyContact.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmergencyContact.Location = new System.Drawing.Point(394, 187);
+            this.btnEmergencyContact.Location = new System.Drawing.Point(568, 270);
+            this.btnEmergencyContact.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmergencyContact.Name = "btnEmergencyContact";
             this.btnEmergencyContact.Size = new System.Drawing.Size(134, 118);
             this.btnEmergencyContact.TabIndex = 21;
@@ -93,7 +97,8 @@
             this.btnVisitors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitors.Image = global::PIMS.Properties.Resources.Patient;
             this.btnVisitors.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisitors.Location = new System.Drawing.Point(392, 44);
+            this.btnVisitors.Location = new System.Drawing.Point(566, 94);
+            this.btnVisitors.Margin = new System.Windows.Forms.Padding(4);
             this.btnVisitors.Name = "btnVisitors";
             this.btnVisitors.Size = new System.Drawing.Size(134, 118);
             this.btnVisitors.TabIndex = 20;
@@ -108,7 +113,8 @@
             this.btnAdmissions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmissions.Image = global::PIMS.Properties.Resources.Patient;
             this.btnAdmissions.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdmissions.Location = new System.Drawing.Point(218, 44);
+            this.btnAdmissions.Location = new System.Drawing.Point(334, 94);
+            this.btnAdmissions.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdmissions.Name = "btnAdmissions";
             this.btnAdmissions.Size = new System.Drawing.Size(134, 118);
             this.btnAdmissions.TabIndex = 19;
@@ -123,7 +129,8 @@
             this.btnProcedures.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcedures.Image = global::PIMS.Properties.Resources.Cases;
             this.btnProcedures.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProcedures.Location = new System.Drawing.Point(218, 187);
+            this.btnProcedures.Location = new System.Drawing.Point(334, 270);
+            this.btnProcedures.Margin = new System.Windows.Forms.Padding(4);
             this.btnProcedures.Name = "btnProcedures";
             this.btnProcedures.Size = new System.Drawing.Size(134, 118);
             this.btnProcedures.TabIndex = 18;
@@ -138,7 +145,8 @@
             this.btnPrescriptions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrescriptions.Image = global::PIMS.Properties.Resources.Cases;
             this.btnPrescriptions.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrescriptions.Location = new System.Drawing.Point(44, 187);
+            this.btnPrescriptions.Location = new System.Drawing.Point(102, 270);
+            this.btnPrescriptions.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrescriptions.Name = "btnPrescriptions";
             this.btnPrescriptions.Size = new System.Drawing.Size(134, 118);
             this.btnPrescriptions.TabIndex = 17;
@@ -153,7 +161,8 @@
             this.btnCharges.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCharges.Image = ((System.Drawing.Image)(resources.GetObject("btnCharges.Image")));
             this.btnCharges.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCharges.Location = new System.Drawing.Point(218, 336);
+            this.btnCharges.Location = new System.Drawing.Point(334, 453);
+            this.btnCharges.Margin = new System.Windows.Forms.Padding(4);
             this.btnCharges.Name = "btnCharges";
             this.btnCharges.Size = new System.Drawing.Size(134, 118);
             this.btnCharges.TabIndex = 16;
@@ -168,7 +177,8 @@
             this.btnBills.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBills.Image = ((System.Drawing.Image)(resources.GetObject("btnBills.Image")));
             this.btnBills.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBills.Location = new System.Drawing.Point(394, 336);
+            this.btnBills.Location = new System.Drawing.Point(568, 453);
+            this.btnBills.Margin = new System.Windows.Forms.Padding(4);
             this.btnBills.Name = "btnBills";
             this.btnBills.Size = new System.Drawing.Size(134, 118);
             this.btnBills.TabIndex = 15;
@@ -183,7 +193,8 @@
             this.btnLogOut.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogOut.Location = new System.Drawing.Point(392, 490);
+            this.btnLogOut.Location = new System.Drawing.Point(566, 643);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(134, 118);
             this.btnLogOut.TabIndex = 12;
@@ -198,7 +209,8 @@
             this.btnReports.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReports.Location = new System.Drawing.Point(218, 490);
+            this.btnReports.Location = new System.Drawing.Point(334, 643);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(134, 118);
             this.btnReports.TabIndex = 11;
@@ -213,7 +225,8 @@
             this.btnPatients.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnPatients.Image")));
             this.btnPatients.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPatients.Location = new System.Drawing.Point(44, 44);
+            this.btnPatients.Location = new System.Drawing.Point(102, 93);
+            this.btnPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(134, 118);
             this.btnPatients.TabIndex = 9;

@@ -8,7 +8,7 @@ namespace DBI
     {
         const int _unassigned = -1;
 
-        public int notesId { get; set; }
+        public int noteId { get; set; }
         public string notes { get; set; }
         public bool doctor { get; set; }
         public bool nurse { get; set; }
@@ -17,7 +17,7 @@ namespace DBI
 
         public Notes()
         {
-            notesId = _unassigned;
+            noteId = _unassigned;
             notes = string.Empty;
             doctor = false;
             nurse = false;
