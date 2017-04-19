@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ovlAdmissions = new BrightIdeasSoftware.ObjectListView();
+            this.olvAdmissionsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Facility = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Floor = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Room = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Bed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatient = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,26 +48,22 @@
             this.lblRoom = new System.Windows.Forms.Label();
             this.lblFloor = new System.Windows.Forms.Label();
             this.lblBed = new System.Windows.Forms.Label();
-            this.Facility = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Floor = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Room = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Bed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.ovlAdmissions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvAdmissionsList)).BeginInit();
             this.SuspendLayout();
             // 
-            // ovlAdmissions
+            // olvAdmissionsList
             // 
-            this.ovlAdmissions.AllColumns.Add(this.PatientID);
-            this.ovlAdmissions.AllColumns.Add(this.AdmissionTime);
-            this.ovlAdmissions.AllColumns.Add(this.DischargeTime);
-            this.ovlAdmissions.AllColumns.Add(this.AdmissionReason);
-            this.ovlAdmissions.AllColumns.Add(this.DischargeReason);
-            this.ovlAdmissions.AllColumns.Add(this.Facility);
-            this.ovlAdmissions.AllColumns.Add(this.Floor);
-            this.ovlAdmissions.AllColumns.Add(this.Room);
-            this.ovlAdmissions.AllColumns.Add(this.Bed);
-            this.ovlAdmissions.CellEditUseWholeCell = false;
-            this.ovlAdmissions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvAdmissionsList.AllColumns.Add(this.PatientID);
+            this.olvAdmissionsList.AllColumns.Add(this.AdmissionTime);
+            this.olvAdmissionsList.AllColumns.Add(this.DischargeTime);
+            this.olvAdmissionsList.AllColumns.Add(this.AdmissionReason);
+            this.olvAdmissionsList.AllColumns.Add(this.DischargeReason);
+            this.olvAdmissionsList.AllColumns.Add(this.Facility);
+            this.olvAdmissionsList.AllColumns.Add(this.Floor);
+            this.olvAdmissionsList.AllColumns.Add(this.Room);
+            this.olvAdmissionsList.AllColumns.Add(this.Bed);
+            this.olvAdmissionsList.CellEditUseWholeCell = false;
+            this.olvAdmissionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
             this.AdmissionTime,
             this.DischargeTime,
@@ -73,15 +73,15 @@
             this.Floor,
             this.Room,
             this.Bed});
-            this.ovlAdmissions.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ovlAdmissions.GridLines = true;
-            this.ovlAdmissions.Location = new System.Drawing.Point(9, 66);
-            this.ovlAdmissions.Margin = new System.Windows.Forms.Padding(2);
-            this.ovlAdmissions.Name = "ovlAdmissions";
-            this.ovlAdmissions.Size = new System.Drawing.Size(680, 309);
-            this.ovlAdmissions.TabIndex = 0;
-            this.ovlAdmissions.UseCompatibleStateImageBehavior = false;
-            this.ovlAdmissions.View = System.Windows.Forms.View.Details;
+            this.olvAdmissionsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvAdmissionsList.GridLines = true;
+            this.olvAdmissionsList.Location = new System.Drawing.Point(9, 66);
+            this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(2);
+            this.olvAdmissionsList.Name = "olvAdmissionsList";
+            this.olvAdmissionsList.Size = new System.Drawing.Size(680, 309);
+            this.olvAdmissionsList.TabIndex = 0;
+            this.olvAdmissionsList.UseCompatibleStateImageBehavior = false;
+            this.olvAdmissionsList.View = System.Windows.Forms.View.Details;
             // 
             // PatientID
             // 
@@ -113,6 +113,27 @@
             this.DischargeReason.Text = "Discharge Reason";
             this.DischargeReason.Width = 150;
             // 
+            // Facility
+            // 
+            this.Facility.AspectName = "facility";
+            this.Facility.Text = "Facility";
+            // 
+            // Floor
+            // 
+            this.Floor.AspectName = "floor";
+            this.Floor.Text = "Floor";
+            // 
+            // Room
+            // 
+            this.Room.AspectName = "roomNumber";
+            this.Room.Text = "Room";
+            this.Room.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Bed
+            // 
+            this.Bed.AspectName = "bedNumber";
+            this.Bed.Text = "Bed";
+            // 
             // btnSearchPatient
             // 
             this.btnSearchPatient.Location = new System.Drawing.Point(318, 34);
@@ -122,6 +143,7 @@
             this.btnSearchPatient.TabIndex = 1;
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
+            this.btnSearchPatient.Click += new System.EventHandler(this.btnSearchPatient_Click);
             // 
             // txtPatientSearch
             // 
@@ -207,27 +229,6 @@
             this.lblBed.TabIndex = 10;
             this.lblBed.Text = "Bed #";
             // 
-            // Facility
-            // 
-            this.Facility.AspectName = "facility";
-            this.Facility.Text = "Facility";
-            // 
-            // Floor
-            // 
-            this.Floor.AspectName = "floor";
-            this.Floor.Text = "Floor";
-            // 
-            // Room
-            // 
-            this.Room.AspectName = "roomNumber";
-            this.Room.Text = "Room";
-            this.Room.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Bed
-            // 
-            this.Bed.AspectName = "bedNumber";
-            this.Bed.Text = "Bed";
-            // 
             // Admissions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,11 +244,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
-            this.Controls.Add(this.ovlAdmissions);
+            this.Controls.Add(this.olvAdmissionsList);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Admissions";
             this.Text = "Admissions";
-            ((System.ComponentModel.ISupportInitialize)(this.ovlAdmissions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.olvAdmissionsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,7 +256,7 @@
 
         #endregion
 
-        private BrightIdeasSoftware.ObjectListView ovlAdmissions;
+        private BrightIdeasSoftware.ObjectListView olvAdmissionsList;
         private System.Windows.Forms.Button btnSearchPatient;
         private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.OLVColumn PatientID;

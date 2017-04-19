@@ -59,6 +59,7 @@
             this.btnSearchPatients.TabIndex = 4;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Click += new System.EventHandler(this.btnSearchPatients_Click);
             // 
             // olvProceduresList
             // 

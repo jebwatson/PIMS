@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ovlEContacts = new BrightIdeasSoftware.ObjectListView();
+            this.ovlEmergencyContactsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.EClname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ECfname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -36,32 +36,32 @@
             this.Phone = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ovlEContacts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovlEmergencyContactsList)).BeginInit();
             this.SuspendLayout();
             // 
-            // ovlEContacts
+            // ovlEmergencyContactsList
             // 
-            this.ovlEContacts.AllColumns.Add(this.PatientID);
-            this.ovlEContacts.AllColumns.Add(this.EClname);
-            this.ovlEContacts.AllColumns.Add(this.ECfname);
-            this.ovlEContacts.AllColumns.Add(this.AreaCode);
-            this.ovlEContacts.AllColumns.Add(this.Phone);
-            this.ovlEContacts.CellEditUseWholeCell = false;
-            this.ovlEContacts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ovlEmergencyContactsList.AllColumns.Add(this.PatientID);
+            this.ovlEmergencyContactsList.AllColumns.Add(this.EClname);
+            this.ovlEmergencyContactsList.AllColumns.Add(this.ECfname);
+            this.ovlEmergencyContactsList.AllColumns.Add(this.AreaCode);
+            this.ovlEmergencyContactsList.AllColumns.Add(this.Phone);
+            this.ovlEmergencyContactsList.CellEditUseWholeCell = false;
+            this.ovlEmergencyContactsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
             this.EClname,
             this.ECfname,
             this.AreaCode,
             this.Phone});
-            this.ovlEContacts.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ovlEContacts.GridLines = true;
-            this.ovlEContacts.Location = new System.Drawing.Point(9, 76);
-            this.ovlEContacts.Margin = new System.Windows.Forms.Padding(2);
-            this.ovlEContacts.Name = "ovlEContacts";
-            this.ovlEContacts.Size = new System.Drawing.Size(775, 227);
-            this.ovlEContacts.TabIndex = 0;
-            this.ovlEContacts.UseCompatibleStateImageBehavior = false;
-            this.ovlEContacts.View = System.Windows.Forms.View.Details;
+            this.ovlEmergencyContactsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ovlEmergencyContactsList.GridLines = true;
+            this.ovlEmergencyContactsList.Location = new System.Drawing.Point(9, 76);
+            this.ovlEmergencyContactsList.Margin = new System.Windows.Forms.Padding(2);
+            this.ovlEmergencyContactsList.Name = "ovlEmergencyContactsList";
+            this.ovlEmergencyContactsList.Size = new System.Drawing.Size(775, 227);
+            this.ovlEmergencyContactsList.TabIndex = 0;
+            this.ovlEmergencyContactsList.UseCompatibleStateImageBehavior = false;
+            this.ovlEmergencyContactsList.View = System.Windows.Forms.View.Details;
             // 
             // PatientID
             // 
@@ -102,6 +102,7 @@
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
+            this.btnSearchPatients.Click += new System.EventHandler(this.btnSearchPatients_Click);
             // 
             // txtPatientSearch
             // 
@@ -118,11 +119,11 @@
             this.ClientSize = new System.Drawing.Size(792, 391);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Controls.Add(this.ovlEContacts);
+            this.Controls.Add(this.ovlEmergencyContactsList);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmergencyContacts";
             this.Text = "EmergencyContacts";
-            ((System.ComponentModel.ISupportInitialize)(this.ovlEContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovlEmergencyContactsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +131,7 @@
 
         #endregion
 
-        private BrightIdeasSoftware.ObjectListView ovlEContacts;
+        private BrightIdeasSoftware.ObjectListView ovlEmergencyContactsList;
         private System.Windows.Forms.Button btnSearchPatients;
         private System.Windows.Forms.TextBox txtPatientSearch;
         private BrightIdeasSoftware.OLVColumn PatientID;

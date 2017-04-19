@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using PIMS.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,27 @@ namespace PIMS.Views
 {
     public partial class Insurance : Form
     {
+        // Locals
+        PInsurance Presenter;
+
+        public ObjectListView PatientsList { get { return this.olvInsuranceList; } }
+        public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
+
         public Insurance()
         {
             InitializeComponent();
+            Presenter = new PInsurance(this);
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            Presenter.PopulatePatientsList();
+        }
+
+        private void btnSearchPatients_Click(object sender, EventArgs e)
+        {
+            Presenter.SearchPatients();
         }
     }
 }
