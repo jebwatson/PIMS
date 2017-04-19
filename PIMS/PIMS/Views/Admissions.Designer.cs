@@ -33,7 +33,6 @@
             this.AdmissionTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.DischargeReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Facility = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Floor = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Room = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -57,7 +56,6 @@
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionTime);
             this.olvAdmissionsList.AllColumns.Add(this.DischargeTime);
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionReason);
-            this.olvAdmissionsList.AllColumns.Add(this.DischargeReason);
             this.olvAdmissionsList.AllColumns.Add(this.Facility);
             this.olvAdmissionsList.AllColumns.Add(this.Floor);
             this.olvAdmissionsList.AllColumns.Add(this.Room);
@@ -68,7 +66,6 @@
             this.AdmissionTime,
             this.DischargeTime,
             this.AdmissionReason,
-            this.DischargeReason,
             this.Facility,
             this.Floor,
             this.Room,
@@ -78,6 +75,7 @@
             this.olvAdmissionsList.Location = new System.Drawing.Point(9, 66);
             this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvAdmissionsList.Name = "olvAdmissionsList";
+            this.olvAdmissionsList.ShowGroups = false;
             this.olvAdmissionsList.Size = new System.Drawing.Size(680, 309);
             this.olvAdmissionsList.TabIndex = 0;
             this.olvAdmissionsList.UseCompatibleStateImageBehavior = false;
@@ -106,12 +104,6 @@
             this.AdmissionReason.AspectName = "admissionReason";
             this.AdmissionReason.Text = "Admission Reason";
             this.AdmissionReason.Width = 150;
-            // 
-            // DischargeReason
-            // 
-            this.DischargeReason.AspectName = "dischargeReason";
-            this.DischargeReason.Text = "Discharge Reason";
-            this.DischargeReason.Width = 150;
             // 
             // Facility
             // 
@@ -263,7 +255,6 @@
         private BrightIdeasSoftware.OLVColumn AdmissionTime;
         private BrightIdeasSoftware.OLVColumn DischargeTime;
         private BrightIdeasSoftware.OLVColumn AdmissionReason;
-        private BrightIdeasSoftware.OLVColumn DischargeReason;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

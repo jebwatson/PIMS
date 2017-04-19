@@ -86,6 +86,7 @@
             this.olvProceduresList.Location = new System.Drawing.Point(45, 96);
             this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2);
             this.olvProceduresList.Name = "olvProceduresList";
+            this.olvProceduresList.ShowGroups = false;
             this.olvProceduresList.Size = new System.Drawing.Size(814, 227);
             this.olvProceduresList.TabIndex = 3;
             this.olvProceduresList.UseCompatibleStateImageBehavior = false;

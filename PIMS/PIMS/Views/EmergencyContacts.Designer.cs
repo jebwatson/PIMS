@@ -58,6 +58,7 @@
             this.ovlEmergencyContactsList.Location = new System.Drawing.Point(9, 76);
             this.ovlEmergencyContactsList.Margin = new System.Windows.Forms.Padding(2);
             this.ovlEmergencyContactsList.Name = "ovlEmergencyContactsList";
+            this.ovlEmergencyContactsList.ShowGroups = false;
             this.ovlEmergencyContactsList.Size = new System.Drawing.Size(775, 227);
             this.ovlEmergencyContactsList.TabIndex = 0;
             this.ovlEmergencyContactsList.UseCompatibleStateImageBehavior = false;

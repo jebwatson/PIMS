@@ -83,6 +83,7 @@
             this.olvChargesList.Location = new System.Drawing.Point(42, 72);
             this.olvChargesList.Margin = new System.Windows.Forms.Padding(2);
             this.olvChargesList.Name = "olvChargesList";
+            this.olvChargesList.ShowGroups = false;
             this.olvChargesList.Size = new System.Drawing.Size(905, 227);
             this.olvChargesList.TabIndex = 11;
             this.olvChargesList.UseCompatibleStateImageBehavior = false;

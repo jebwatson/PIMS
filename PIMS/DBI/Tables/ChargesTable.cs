@@ -78,7 +78,7 @@ namespace DBI
                     // extract all fields of the current row
                     int chargeId = Convert.ToInt32(dr["chargeId"]);
                     string description = dr["description"].ToString();
-                    string amountTotal = dr["amountTotals"].ToString();
+                    string amountTotal = dr["amountTotal"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int procedureId = Convert.ToInt32(dr["procedureId"]);

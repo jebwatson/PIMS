@@ -83,6 +83,7 @@
             this.olvBillsList.Location = new System.Drawing.Point(32, 76);
             this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvBillsList.Name = "olvBillsList";
+            this.olvBillsList.ShowGroups = false;
             this.olvBillsList.Size = new System.Drawing.Size(705, 227);
             this.olvBillsList.TabIndex = 0;
             this.olvBillsList.UseCompatibleStateImageBehavior = false;

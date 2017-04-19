@@ -33,5 +33,29 @@ namespace PIMS.Presenters
             AdmissionsForm.ShowDialog();
         }
 
+        public void CreateChargesForm()
+        {
+            Charges ChargesForm = new Charges();
+            ChargesForm.ShowDialog();
+        }
+
+        public void CreateInsuranceForm()
+        {
+            Insurance InsuranceForm = new Insurance();
+            InsuranceForm.ShowDialog();
+        }
+
+        public void CreateEmergencyContactForm()
+        {
+            EmergencyContacts EmergencyContactForm = new EmergencyContacts();
+            EmergencyContactForm.ShowDialog();
+        }
+
+        public void CreateBillsForm()
+        {
+            Bills BillsForm = new Bills();
+            BillsForm.ShowDialog();
+        }
+
     }
 }

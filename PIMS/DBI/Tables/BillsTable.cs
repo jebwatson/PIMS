@@ -103,7 +103,7 @@ namespace DBI
         {
             List<Bills> bills = new List<Bills>();
 
-            string myQuery = "SELECT * FROM " + theTable + "WHERE billId = " + "'" + inputBillId + "'";
+            string myQuery = "SELECT * FROM " + theTable + " WHERE billId = " + "'" + inputBillId + "'";
             DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
 
             if (dsObject != null && dsObject.Tables[0].Rows.Count > 0)
@@ -114,10 +114,10 @@ namespace DBI
                 {
                     // extract all fields of the current row
                     int billId = Convert.ToInt32(dr["billId"]);
-                    string amountTotal = dr["amountTotalDollars"].ToString();
-                    string amountPaidByPatient = dr["amountPaidByPatientDollars"].ToString();
-                    string amountPaidByInsurance = dr["amountPaidByInsuranceDollars"].ToString();
-                    string amountOwed = dr["amountOwedDollars"].ToString();
+                    string amountTotal = dr["amountTotal"].ToString();
+                    string amountPaidByPatient = dr["amountPaidByPatient"].ToString();
+                    string amountPaidByInsurance = dr["amountPaidByInsurance"].ToString();
+                    string amountOwed = dr["amountOwed"].ToString();
                     DateTime dateCharged = Convert.ToDateTime(dr["dateCharged"]);
                     DateTime dateDue = Convert.ToDateTime(dr["dateDue"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);

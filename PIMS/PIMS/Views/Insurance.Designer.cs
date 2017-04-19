@@ -77,6 +77,7 @@
             this.olvInsuranceList.Location = new System.Drawing.Point(42, 80);
             this.olvInsuranceList.Margin = new System.Windows.Forms.Padding(2);
             this.olvInsuranceList.Name = "olvInsuranceList";
+            this.olvInsuranceList.ShowGroups = false;
             this.olvInsuranceList.Size = new System.Drawing.Size(686, 227);
             this.olvInsuranceList.TabIndex = 10;
             this.olvInsuranceList.UseCompatibleStateImageBehavior = false;

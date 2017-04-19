@@ -40,7 +40,7 @@ namespace DBI.Utilities
                 {
                     daObject.Fill(dsObject);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     dsObject = null;
                     //LogManager.writeLog("DBUtils.ExecuteSqlQuery: Exception > [{0}]", ex.Message);

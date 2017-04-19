@@ -80,9 +80,8 @@ namespace DBI
                     DateTime admissionTime = Convert.ToDateTime(dr["admissionTime"]);
                     DateTime dischargeTime = Convert.ToDateTime(dr["dischargeTime"]);
                     string admissionReason = dr["admissionReason"].ToString();
-                    string dischargeReason = dr["dischargeReason"].ToString();
-                    string facilityNumber = dr["facilityNumber"].ToString();
-                    string floorNumber = dr["floorNumber"].ToString();
+                    string facility = dr["facility"].ToString();
+                    string floor = dr["floor"].ToString();
                     string roomNumber = dr["roomNumber"].ToString();
                     string bedNumber = dr["bedNumber"].ToString();
                     int patientId = Convert.ToInt32(dr["patientId"]);
@@ -93,9 +92,8 @@ namespace DBI
                     newAdmission.admissionTime = admissionTime;
                     newAdmission.dischargeTime = dischargeTime;
                     newAdmission.admissionReason = admissionReason;
-                    newAdmission.dischargeReason = dischargeReason;
-                    newAdmission.facilityNumber = facilityNumber;
-                    newAdmission.floorNumber = floorNumber;
+                    newAdmission.facility = facility;
+                    newAdmission.floor = floor;
                     newAdmission.roomNumber = roomNumber;
                     newAdmission.bedNumber = bedNumber;
                     newAdmission.patientId = patientId;
@@ -130,9 +128,8 @@ namespace DBI
                     DateTime admissionTime = Convert.ToDateTime(dr["admissionTime"]);
                     DateTime dischargeTime = Convert.ToDateTime(dr["dischargeTime"]);
                     string admissionReason = dr["admissionReason"].ToString();
-                    string dischargeReason = dr["dischargeReason"].ToString();
-                    string facilityNumber = dr["facilityNumber"].ToString();
-                    string floorNumber = dr["floorNumber"].ToString();
+                    string facility = dr["facility"].ToString();
+                    string floor = dr["floor"].ToString();
                     string roomNumber = dr["roomNumber"].ToString();
                     string bedNumber = dr["bedNumber"].ToString();
                     int patientId = Convert.ToInt32(dr["patientId"]);
@@ -143,9 +140,8 @@ namespace DBI
                     newAdmission.admissionTime = admissionTime;
                     newAdmission.dischargeTime = dischargeTime;
                     newAdmission.admissionReason = admissionReason;
-                    newAdmission.dischargeReason = dischargeReason;
-                    newAdmission.facilityNumber = facilityNumber;
-                    newAdmission.floorNumber = floorNumber;
+                    newAdmission.facility = facility;
+                    newAdmission.floor = floor;
                     newAdmission.roomNumber = roomNumber;
                     newAdmission.bedNumber = bedNumber;
                     newAdmission.patientId = patientId;
@@ -172,9 +168,8 @@ namespace DBI
                     "admissionTime = @admissionTime, " +
                     "dischargeTime = @dischargeTime, " +
                     "admissionReason = @admissionReason, " +
-                    "dischargeReason = @dischargeReason, " +
-                    "facilityNumber = @facilityNumber, " +
-                    "floorNumber = @floorNumber, " +
+                    "facility = @facility, " +
+                    "floor = @floor, " +
                     "roomNumber = @roomNumber, " +
                     "bedNumber = @bedNumber, " +
                     "patientId = @patientId " +
@@ -186,9 +181,8 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@admissionTime", updatedAdmission.admissionTime);
                 myCommand.Parameters.AddWithValue("@dischargeTime", updatedAdmission.dischargeTime);
                 myCommand.Parameters.AddWithValue("@admissionReason", updatedAdmission.admissionReason);
-                myCommand.Parameters.AddWithValue("@dischargeReason", updatedAdmission.dischargeReason);
-                myCommand.Parameters.AddWithValue("@facilityNumber", updatedAdmission.facilityNumber);
-                myCommand.Parameters.AddWithValue("@floorNumber", updatedAdmission.floorNumber);
+                myCommand.Parameters.AddWithValue("@facility", updatedAdmission.facility);
+                myCommand.Parameters.AddWithValue("@floor", updatedAdmission.floor);
                 myCommand.Parameters.AddWithValue("@roomNumber", updatedAdmission.roomNumber);
                 myCommand.Parameters.AddWithValue("@bedNumber", updatedAdmission.bedNumber);
                 myCommand.Parameters.AddWithValue("@patientId", updatedAdmission.patientId);
@@ -220,10 +214,10 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    " (admissionTime, dischargeTime, admissionReason, dischargeReason, " +
-                    "facilityNumber, floorNumber, roomNumber, bedNumber, patientId)" +
-                    "VALUES (@admissionTime, @dischargeTime, @admissionReason, @dischargeReason, " +
-                    "@facilityNumber, @floorNumber, @roomNumber, @bedNumber, @patientId)";
+                    " (admissionTime, dischargeTime, admissionReason, " +
+                    "facility, floor, roomNumber, bedNumber, patientId)" +
+                    "VALUES (@admissionTime, @dischargeTime, @admissionReason, " +
+                    "@facility, @floor, @roomNumber, @bedNumber, @patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
@@ -231,9 +225,8 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@admissionTime", newAdmission.admissionTime);
                 myCommand.Parameters.AddWithValue("@dischargeTime", newAdmission.dischargeTime);
                 myCommand.Parameters.AddWithValue("@admissionReason", newAdmission.admissionReason);
-                myCommand.Parameters.AddWithValue("@dischargeReason", newAdmission.dischargeReason);
-                myCommand.Parameters.AddWithValue("@facilityNumber", newAdmission.facilityNumber);
-                myCommand.Parameters.AddWithValue("@floorNumber", newAdmission.floorNumber);
+                myCommand.Parameters.AddWithValue("@facility", newAdmission.facility);
+                myCommand.Parameters.AddWithValue("@floor", newAdmission.floor);
                 myCommand.Parameters.AddWithValue("@roomNumber", newAdmission.roomNumber);
                 myCommand.Parameters.AddWithValue("@bedNumber", newAdmission.bedNumber);
                 myCommand.Parameters.AddWithValue("@patientId", newAdmission.patientId);

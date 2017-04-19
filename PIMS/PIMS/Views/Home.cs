@@ -31,7 +31,6 @@ namespace PIMS.Views
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -43,12 +42,12 @@ namespace PIMS.Views
 
         private void btnBills_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateBillsForm();
         }
 
         private void btnCharges_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateChargesForm();
         }
 
         private void btnPrescriptions_Click(object sender, EventArgs e)
@@ -73,12 +72,12 @@ namespace PIMS.Views
 
         private void btnEmergencyContact_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateEmergencyContactForm();
         }
 
         private void btnInsurance_Click(object sender, EventArgs e)
         {
-
+            Presenter.CreateInsuranceForm();
         }
         #endregion
     }
