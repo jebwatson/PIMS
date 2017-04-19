@@ -1,4 +1,5 @@
-﻿using PIMS.Presenters;
+﻿using DBI;
+using PIMS.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,49 @@ namespace PIMS.Views
     public partial class frmHome : Form
     {
         private PHome Presenter;
+        private frmLogin loggedIn;
+        private UsersTable MyUsersTable;
+        private List<Users> MyUsersList;
 
-        public frmHome()
+        public frmHome(frmLogin login)
         {
             InitializeComponent();
+
             Presenter = new PHome();
+            loggedIn = login;
+
+            MyUsersTable = new UsersTable();
+            MyUsersList = MyUsersTable.ReadList();
+
+            foreach (Users user in MyUsersList)
+            {
+                if (user.username == loggedIn.Username)
+                {
+                    if (user.accessLevel == 1)
+                    {
+                        btnPatients.Enabled = false;
+                        btnPrescriptions.Enabled = false;
+                        btnProcedures.Enabled = false;
+                        btnEmergencyContact.Enabled = false;
+                        btnInsurance.Enabled = false;
+                        btnCharges.Enabled = false;
+                        btnBills.Enabled = false;
+                        btnNotes.Enabled = false;
+                        btnReports.Enabled = false;
+                    }
+
+                    if (user.accessLevel == 2)
+                    {
+                        btnAdmissions.Enabled = false;
+                        btnVisitors.Enabled = false;
+                        btnPrescriptions.Enabled = false;
+                        btnProcedures.Enabled = false;
+                        btnEmergencyContact.Enabled = false;
+                        btnNotes.Enabled = false;
+                        btnReports.Enabled = false;
+                    }
+                }
+            }
         }
 
         #region Event Handlers
@@ -35,9 +74,58 @@ namespace PIMS.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            frmLogin logout = new frmLogin();
-            logout.Show();
             this.Hide();
+
+            if (loggedIn.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+
+                MyUsersTable = new UsersTable();
+                MyUsersList = MyUsersTable.ReadList();
+
+                foreach (Users user in MyUsersList)
+                {
+                    if (user.username == loggedIn.Username)
+                    {
+                        if (user.accessLevel == 1)
+                        {
+                            btnPrescriptions.Enabled = false;
+                            btnProcedures.Enabled = false;
+                            btnEmergencyContact.Enabled = false;
+                            btnInsurance.Enabled = false;
+                            btnCharges.Enabled = false;
+                            btnBills.Enabled = false;
+                            btnNotes.Enabled = false;
+                            btnReports.Enabled = false;
+                        }
+
+                        if (user.accessLevel == 2)
+                        {
+                            btnAdmissions.Enabled = false;
+                            btnVisitors.Enabled = false;
+                            btnPrescriptions.Enabled = false;
+                            btnProcedures.Enabled = false;
+                            btnEmergencyContact.Enabled = false;
+                            btnNotes.Enabled = false;
+                            btnReports.Enabled = false;
+                        }
+
+                        if (user.accessLevel == 3 || user.accessLevel == 4)
+                        {
+                            btnAdmissions.Enabled = true;
+                            btnVisitors.Enabled = true;
+                            btnPrescriptions.Enabled = true;
+                            btnProcedures.Enabled = true;
+                            btnEmergencyContact.Enabled = true;
+                            btnInsurance.Enabled = true;
+                            btnCharges.Enabled = true;
+                            btnBills.Enabled = true;
+                            btnNotes.Enabled = true;
+                            btnReports.Enabled = true;
+                        }
+                    }
+                }
+            }
         }
 
         private void btnBills_Click(object sender, EventArgs e)

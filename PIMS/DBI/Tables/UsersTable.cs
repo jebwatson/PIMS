@@ -10,7 +10,7 @@ namespace DBI
 {
     public class UsersTable
     {
-        public const string theTable = "UsersDoctor";
+        public const string theTable = "users";
 
         /// <summary>
         /// Delete all records from the table.

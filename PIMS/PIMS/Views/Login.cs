@@ -43,5 +43,9 @@ namespace PIMS.Views
         }
         #endregion
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

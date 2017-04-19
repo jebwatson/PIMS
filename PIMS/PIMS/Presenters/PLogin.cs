@@ -36,7 +36,7 @@ namespace PIMS.Presenters
                     {
                         // Close the view and pass control back to the calling function.
                         view.DialogResult = DialogResult.OK;
-                        view.Close();
+                        view.Hide();
                     }
                     else
                     {
