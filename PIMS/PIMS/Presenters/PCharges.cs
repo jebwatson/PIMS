@@ -37,6 +37,16 @@ namespace PIMS.Presenters
             View.PatientsList.SetObjects(MyChargesTable.ReadList());
         }
 
+        public void AddCharge()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCharges()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.
