@@ -25,10 +25,10 @@ namespace PIMS.Views
         }
 
         #region Properties
-        public string ServerName { get { return this.txtServer.Text; } }
-        public string DatabaseName { get { return this.txtDatabase.Text; } }
-        public string Username { get { return this.txtUsername.Text; } }
-        public string Password { get { return this.txtPassword.Text; } }
+        public string ServerName { get { return this.txtServer.Text; } set { this.txtServer.Text = value; } }
+        public string DatabaseName { get { return this.txtDatabase.Text; } set { this.txtDatabase.Text = value; } }
+        public string Username { get { return this.txtUsername.Text; } set { this.txtUsername.Text = value; } }
+        public string Password { get { return this.txtPassword.Text; } set { this.txtPassword.Text = value; } }
         #endregion
 
         #region Event Handlers

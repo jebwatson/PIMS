@@ -30,7 +30,7 @@ namespace PIMSTests.ModelTableTests
             comparer = new EmergencyContactComparer();
 
             // Establish the connection string
-            ConnectionsManager.SQLServerConnectionString = "Data Source=ALEX\\SQLEXPRESS;Initial Catalog=" +
+            ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
 
             // Establish a connection and close at the end of using
@@ -150,7 +150,7 @@ namespace PIMSTests.ModelTableTests
             // Need some updated data
             EmergencyContact updated1 = new EmergencyContact("Majors", "John", "E", "3333333", "205", 1);
             EmergencyContact updated2 = new EmergencyContact("Stevens", "Chris", "A", "4444444", "256", 1);
-            EmergencyContact updated3 = new EmergencyContact("Kane", "Alex", "A", "5555555", "256", 1);
+            EmergencyContact updated3 = new EmergencyContact("Kane", "CSSA-JEB", "A", "5555555", "256", 1);
 
             myList.Clear();
 

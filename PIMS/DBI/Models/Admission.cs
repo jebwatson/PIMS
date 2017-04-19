@@ -9,8 +9,8 @@ namespace DBI
         private const int _unassigned = -1;
 
         public int admissionId { get; set; }
-        public DateTime admissionTime { get; set; }
-        public DateTime dischargeTime { get; set; }
+        public string admissionTime { get; set; }
+        public string dischargeTime { get; set; }
         public string admissionReason { get; set; }
         public string facility { get; set; }
         public string floor { get; set; }
@@ -21,8 +21,8 @@ namespace DBI
         public Admission()
         {
             admissionId = _unassigned;
-            admissionTime = DateTime.Now;
-            dischargeTime = DateTime.Now;
+            admissionTime = string.Empty;
+            dischargeTime = string.Empty;
             admissionReason = string.Empty;
             facility = string.Empty;
             floor = string.Empty;
@@ -31,7 +31,7 @@ namespace DBI
             patientId = _unassigned;
         }
 
-        public Admission(DateTime valAdmittanceTime, DateTime valDischargeTime, string valAdmittanceReason,
+        public Admission(string valAdmittanceTime, string valDischargeTime, string valAdmittanceReason,
             string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId)
         {
             admissionTime = valAdmittanceTime;

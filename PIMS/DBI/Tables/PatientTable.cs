@@ -330,7 +330,6 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@phoneMobile", newPatient.phoneMobile);
                 myCommand.Parameters.AddWithValue("@areaCodeMobile", newPatient.areaCodeMobile);
                 myCommand.Parameters.AddWithValue("@familyDoctor", newPatient.familyDoctor);
-                myCommand.Parameters.AddWithValue("@patientId", newPatient.patientId);
 
                 myCommand.ExecuteNonQuery();
 

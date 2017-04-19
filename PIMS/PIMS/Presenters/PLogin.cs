@@ -1,4 +1,6 @@
-﻿using DBI.Utilities;
+﻿#define JEBSCOMPUTER
+
+using DBI.Utilities;
 using PIMS.Views;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,14 @@ namespace PIMS.Presenters
         {
             try
             {
+                // Comment out the #define statement at the beginning of this file to disable this.
+#if JEBSCOMPUTER
+                view.ServerName = "CSSA-JEB\\SQLEXPRESS";
+                view.DatabaseName = "PIMSFeatureTest";
+                view.Username = "jwatson";
+                view.Password = "test";
+#endif
+
                 ConnectionsManager.SQLServerConnectionString = "Data Source=" + view.ServerName + ";Initial Catalog=" +
                     view.DatabaseName + ";Integrated Security=False;User Id=" + view.Username + ";Password=" + view.Password + ";MultipleActiveResultSets=True;";
 
