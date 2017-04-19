@@ -32,14 +32,13 @@
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvProceduresList = new BrightIdeasSoftware.ObjectListView();
             this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.ProcedureID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcedureType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationHrs = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationMins = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.DoctorId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.ProcNotes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,25 +63,23 @@
             // olvProceduresList
             // 
             this.olvProceduresList.AllColumns.Add(this.patientid);
-            this.olvProceduresList.AllColumns.Add(this.lname);
-            this.olvProceduresList.AllColumns.Add(this.fname);
-            this.olvProceduresList.AllColumns.Add(this.ProcedureID);
             this.olvProceduresList.AllColumns.Add(this.ProcedureType);
             this.olvProceduresList.AllColumns.Add(this.DurationHrs);
             this.olvProceduresList.AllColumns.Add(this.DurationMins);
             this.olvProceduresList.AllColumns.Add(this.StartTime);
             this.olvProceduresList.AllColumns.Add(this.StopTime);
+            this.olvProceduresList.AllColumns.Add(this.DoctorId);
+            this.olvProceduresList.AllColumns.Add(this.ProcNotes);
             this.olvProceduresList.CellEditUseWholeCell = false;
             this.olvProceduresList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientid,
-            this.lname,
-            this.fname,
-            this.ProcedureID,
             this.ProcedureType,
             this.DurationHrs,
             this.DurationMins,
             this.StartTime,
-            this.StopTime});
+            this.StopTime,
+            this.DoctorId,
+            this.ProcNotes});
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
             this.olvProceduresList.Location = new System.Drawing.Point(45, 96);
@@ -99,24 +96,6 @@
             this.patientid.Text = "Patient ID";
             this.patientid.Width = 120;
             // 
-            // lname
-            // 
-            this.lname.AspectName = "nameLast";
-            this.lname.Text = "Last Name";
-            this.lname.Width = 120;
-            // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 120;
-            // 
-            // ProcedureID
-            // 
-            this.ProcedureID.AspectName = "procId";
-            this.ProcedureID.Text = "Procedure ID";
-            this.ProcedureID.Width = 120;
-            // 
             // ProcedureType
             // 
             this.ProcedureType.AspectName = "procType";
@@ -126,13 +105,13 @@
             // DurationHrs
             // 
             this.DurationHrs.AspectName = "durationHrs";
-            this.DurationHrs.Text = "Durations(Hours)";
+            this.DurationHrs.Text = "Duration (Hours)";
             this.DurationHrs.Width = 120;
             // 
             // DurationMins
             // 
             this.DurationMins.AspectName = "durationMins";
-            this.DurationMins.Text = "DurationMins";
+            this.DurationMins.Text = "Duration (Minutes)";
             this.DurationMins.Width = 120;
             // 
             // StartTime
@@ -146,6 +125,16 @@
             this.StopTime.AspectName = "stopTime";
             this.StopTime.Text = "Stop Time";
             this.StopTime.Width = 120;
+            // 
+            // DoctorId
+            // 
+            this.DoctorId.AspectName = "doctorId";
+            this.DoctorId.Text = "Doctor ID";
+            // 
+            // ProcNotes
+            // 
+            this.ProcNotes.AspectName = "procNotes";
+            this.ProcNotes.Text = "Procedure Notes";
             // 
             // Procedures
             // 
@@ -169,14 +158,13 @@
         private System.Windows.Forms.TextBox txtPatientSearch;
         private System.Windows.Forms.Button btnSearchPatients;
         private BrightIdeasSoftware.ObjectListView olvProceduresList;
-        private BrightIdeasSoftware.OLVColumn ProcedureID;
         private BrightIdeasSoftware.OLVColumn ProcedureType;
         private BrightIdeasSoftware.OLVColumn DurationHrs;
         private BrightIdeasSoftware.OLVColumn DurationMins;
         private BrightIdeasSoftware.OLVColumn StartTime;
         private BrightIdeasSoftware.OLVColumn StopTime;
         private BrightIdeasSoftware.OLVColumn patientid;
-        private BrightIdeasSoftware.OLVColumn lname;
-        private BrightIdeasSoftware.OLVColumn fname;
+        private BrightIdeasSoftware.OLVColumn DoctorId;
+        private BrightIdeasSoftware.OLVColumn ProcNotes;
     }
 }
