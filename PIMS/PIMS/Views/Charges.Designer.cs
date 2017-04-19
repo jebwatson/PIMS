@@ -38,16 +38,17 @@
             this.DueDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcedureID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.OfficeStaffId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatients.Location = new System.Drawing.Point(56, 55);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchPatients.Location = new System.Drawing.Point(136, 22);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -55,11 +56,10 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(187, 59);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPatientSearch.Location = new System.Drawing.Point(234, 25);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
             // 
             // olvChargesList
@@ -71,7 +71,6 @@
             this.olvChargesList.AllColumns.Add(this.DueDate);
             this.olvChargesList.AllColumns.Add(this.ProcedureID);
             this.olvChargesList.AllColumns.Add(this.OfficeStaffId);
-            this.olvChargesList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvChargesList.CellEditUseWholeCell = false;
             this.olvChargesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
@@ -83,11 +82,11 @@
             this.OfficeStaffId});
             this.olvChargesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvChargesList.GridLines = true;
-            this.olvChargesList.Location = new System.Drawing.Point(56, 89);
-            this.olvChargesList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.olvChargesList.Location = new System.Drawing.Point(136, 49);
+            this.olvChargesList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.olvChargesList.Name = "olvChargesList";
             this.olvChargesList.ShowGroups = false;
-            this.olvChargesList.Size = new System.Drawing.Size(904, 278);
+            this.olvChargesList.Size = new System.Drawing.Size(679, 227);
             this.olvChargesList.TabIndex = 11;
             this.olvChargesList.UseCompatibleStateImageBehavior = false;
             this.olvChargesList.View = System.Windows.Forms.View.Details;
@@ -134,16 +133,38 @@
             this.OfficeStaffId.Text = "Staff ID";
             this.OfficeStaffId.Width = 120;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(36, 101);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete Charge";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(36, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add Charge";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // Charges
             // 
             this.AcceptButton = this.btnSearchPatients;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 457);
+            this.ClientSize = new System.Drawing.Size(826, 306);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.olvChargesList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Charges";
             this.Text = "Charges";
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).EndInit();
@@ -163,5 +184,7 @@
         private BrightIdeasSoftware.OLVColumn DueDate;
         private BrightIdeasSoftware.OLVColumn ProcedureID;
         private BrightIdeasSoftware.OLVColumn OfficeStaffId;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
