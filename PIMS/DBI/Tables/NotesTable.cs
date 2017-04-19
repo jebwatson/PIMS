@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using BrightIdeasSoftware;
 
 namespace DBI
 {
@@ -63,7 +64,7 @@ namespace DBI
         /// Read all records from the table and save them in the ItemList
         /// as NotesDoctor objects.
         /// </summary>
-        public void ReadList()
+        public List<Notes> ReadList()
         {
             ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
 
@@ -96,7 +97,14 @@ namespace DBI
                     ItemList.Add(newNotes);
                 } // for
             } // if
+
+            return ItemList;
         } // ReadList
+
+        internal void ClearTableById(OLVColumn patientId)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
