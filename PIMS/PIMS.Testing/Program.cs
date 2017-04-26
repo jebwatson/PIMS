@@ -196,23 +196,19 @@ namespace PIMS.Testing
                 QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query5, myConnection);
 
-                query1 = "INSERT INTO users (nameLast, nameFirst, title, " +
-                    "accessLevel, username) " +
-                    "VALUES ('Watson', 'Jeb', 'Doctor', 4, 'watson')";
                 query2 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Burcham', 'David', 'Volunteer', 1, 'burcham')";
+                    "VALUES ('Burcham', 'David', 'Volunteer', 1, 'volunteer')";
                 query3 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Jasper', 'Morrow', 'Nurse', 3, 'jasper')";
+                    "VALUES ('Jasper', 'Morrow', 'Nurse', 3, 'nurse')";
                 query4 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Indihar', 'CSSA-JEB', 'Doctor', 4, 'CSSA-JEB')";
+                    "VALUES ('Indihar', 'CSSA-JEB', 'Doctor', 4, 'doctor')";
                 query5 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('Indihar', 'CSSA-JEBander', 'Staff', 2, 'indihar')";
+                    "VALUES ('Indihar', 'CSSA-JEBander', 'Staff', 2, 'staff')";
 
-                QueryExecutor.ExecuteSqlNonQuery(query1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query2, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query3, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(query4, myConnection);

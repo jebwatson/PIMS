@@ -1,5 +1,6 @@
 ﻿//#define JEBSCOMPUTER
 
+using DBI;
 using DBI.Utilities;
 using PIMS.Views;
 using System;
@@ -32,7 +33,7 @@ namespace PIMS.Presenters
 #if JEBSCOMPUTER
                 view.ServerName = "CSSA-JEB\\SQLEXPRESS";
                 view.DatabaseName = "PIMSFeatureTest";
-                view.Username = "jwatson";
+                view.Username = "doctor";
                 view.Password = "test";
 #endif
 
@@ -44,6 +45,28 @@ namespace PIMS.Presenters
                 {
                     if (myConnection != null)
                     {
+                        UsersTable MyUsersTable = new UsersTable();
+                        List<Users> MyUsersList = MyUsersTable.ReadListByUserName(view.Username);
+
+                        Settings.User.Default.UserId = MyUsersList[0].userId;
+                        Settings.User.Default.UserName = MyUsersList[0].username;
+
+                        if (MyUsersList[0].accessLevel == 3)
+                        {
+                            Settings.User.Default.Doctor = false;
+                            Settings.User.Default.Nurse = true;
+                        }
+                        else if (MyUsersList[0].accessLevel == 4)
+                        {
+                            Settings.User.Default.Doctor = true;
+                            Settings.User.Default.Nurse = false;
+                        }
+                        else
+                        {
+                            Settings.User.Default.Doctor = false;
+                            Settings.User.Default.Nurse = false;
+                        }
+
                         // Close the view and pass control back to the calling function.
                         view.DialogResult = DialogResult.OK;
                         view.Hide();

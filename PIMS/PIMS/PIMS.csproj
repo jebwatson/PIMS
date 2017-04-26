@@ -70,6 +70,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Login.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>User.settings</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +233,10 @@
     <None Include="Settings\Login.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings\User.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
