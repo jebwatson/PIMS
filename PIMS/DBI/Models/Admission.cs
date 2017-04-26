@@ -17,6 +17,7 @@ namespace DBI
         public string roomNumber { get; set; }
         public string bedNumber { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Admission()
         {

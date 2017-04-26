@@ -38,13 +38,14 @@
             this.AmountOwed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateCharged = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateDue = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
             this.btnSearchPatients.Location = new System.Drawing.Point(27, 33);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 8;
@@ -55,7 +56,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Location = new System.Drawing.Point(144, 36);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
@@ -63,6 +64,7 @@
             // olvBillsList
             // 
             this.olvBillsList.AllColumns.Add(this.PatientID);
+            this.olvBillsList.AllColumns.Add(this.Name);
             this.olvBillsList.AllColumns.Add(this.Total);
             this.olvBillsList.AllColumns.Add(this.PaidbyPatient);
             this.olvBillsList.AllColumns.Add(this.PaidbyInsurance);
@@ -72,6 +74,7 @@
             this.olvBillsList.CellEditUseWholeCell = false;
             this.olvBillsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
+            this.Name,
             this.Total,
             this.PaidbyPatient,
             this.PaidbyInsurance,
@@ -81,7 +84,7 @@
             this.olvBillsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvBillsList.GridLines = true;
             this.olvBillsList.Location = new System.Drawing.Point(27, 70);
-            this.olvBillsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvBillsList.Name = "olvBillsList";
             this.olvBillsList.ShowGroups = false;
             this.olvBillsList.Size = new System.Drawing.Size(705, 227);
@@ -98,38 +101,50 @@
             // Total
             // 
             this.Total.AspectName = "amountTotal";
+            this.Total.DisplayIndex = 1;
             this.Total.Text = "Amount Total";
             this.Total.Width = 100;
             // 
             // PaidbyPatient
             // 
             this.PaidbyPatient.AspectName = "amountPaidByPatient";
+            this.PaidbyPatient.DisplayIndex = 2;
             this.PaidbyPatient.Text = "Amount Paid By Patient";
             this.PaidbyPatient.Width = 120;
             // 
             // PaidbyInsurance
             // 
             this.PaidbyInsurance.AspectName = "amountPaidByInsurance";
+            this.PaidbyInsurance.DisplayIndex = 3;
             this.PaidbyInsurance.Text = "Amount Paid By Insurance";
             this.PaidbyInsurance.Width = 120;
             // 
             // AmountOwed
             // 
             this.AmountOwed.AspectName = "amountOwed";
+            this.AmountOwed.DisplayIndex = 4;
             this.AmountOwed.Text = "Amount Owed";
             this.AmountOwed.Width = 100;
             // 
             // DateCharged
             // 
             this.DateCharged.AspectName = "dateCharged";
+            this.DateCharged.DisplayIndex = 5;
             this.DateCharged.Text = "Date Charged";
             this.DateCharged.Width = 100;
             // 
             // DateDue
             // 
             this.DateDue.AspectName = "dateDue";
+            this.DateDue.DisplayIndex = 6;
             this.DateDue.Text = "Date Due";
             this.DateDue.Width = 100;
+            // 
+            // Name
+            // 
+            this.Name.AspectName = "name";
+            this.Name.DisplayIndex = 7;
+            this.Name.Text = "Name";
             // 
             // Bills
             // 
@@ -140,7 +155,7 @@
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvBillsList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Bills";
             this.Text = "Bills";
             ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).EndInit();
@@ -161,5 +176,6 @@
         private BrightIdeasSoftware.OLVColumn DateCharged;
         private BrightIdeasSoftware.OLVColumn DateDue;
         private BrightIdeasSoftware.OLVColumn PatientID;
+        private BrightIdeasSoftware.OLVColumn Name;
     }
 }

@@ -14,6 +14,7 @@ namespace DBI
         public string relation { get; set; }
         public DateTime lastVisit { get; set; }
         public int patientId { get; set; }
+        public string patientName { get; set; }
 
         public Visitors() {
             nameLast = string.Empty;

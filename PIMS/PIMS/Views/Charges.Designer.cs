@@ -40,13 +40,14 @@
             this.OfficeStaffId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
             this.btnSearchPatients.Location = new System.Drawing.Point(136, 22);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 8;
@@ -57,7 +58,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Location = new System.Drawing.Point(234, 25);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
@@ -65,6 +66,7 @@
             // olvChargesList
             // 
             this.olvChargesList.AllColumns.Add(this.PatientID);
+            this.olvChargesList.AllColumns.Add(this.Name);
             this.olvChargesList.AllColumns.Add(this.Description);
             this.olvChargesList.AllColumns.Add(this.TotalAmount);
             this.olvChargesList.AllColumns.Add(this.ChargeDate);
@@ -74,6 +76,7 @@
             this.olvChargesList.CellEditUseWholeCell = false;
             this.olvChargesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
+            this.Name,
             this.Description,
             this.TotalAmount,
             this.ChargeDate,
@@ -83,7 +86,7 @@
             this.olvChargesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvChargesList.GridLines = true;
             this.olvChargesList.Location = new System.Drawing.Point(136, 49);
-            this.olvChargesList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.olvChargesList.Margin = new System.Windows.Forms.Padding(2);
             this.olvChargesList.Name = "olvChargesList";
             this.olvChargesList.ShowGroups = false;
             this.olvChargesList.Size = new System.Drawing.Size(679, 227);
@@ -153,6 +156,11 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // Name
+            // 
+            this.Name.AspectName = "name";
+            this.Name.Text = "Name";
+            // 
             // Charges
             // 
             this.AcceptButton = this.btnSearchPatients;
@@ -164,7 +172,7 @@
             this.Controls.Add(this.olvChargesList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Charges";
             this.Text = "Charges";
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).EndInit();
@@ -186,5 +194,6 @@
         private BrightIdeasSoftware.OLVColumn OfficeStaffId;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private BrightIdeasSoftware.OLVColumn Name;
     }
 }

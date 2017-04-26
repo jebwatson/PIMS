@@ -16,6 +16,7 @@ namespace DBI
         public DateTime dateCharged { get; set; }
         public DateTime dateDue { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Bills()
         {
