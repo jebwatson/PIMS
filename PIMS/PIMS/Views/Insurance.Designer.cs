@@ -36,16 +36,17 @@
             this.InsuranceCarrier = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.InsuranceAccountNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.InsuranceGroupNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvInsuranceList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatients.Location = new System.Drawing.Point(55, 57);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchPatients.Location = new System.Drawing.Point(41, 46);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchPatients.Name = "btnSearchPatients";
-            this.btnSearchPatients.Size = new System.Drawing.Size(125, 30);
+            this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 8;
             this.btnSearchPatients.Text = "Search";
             this.btnSearchPatients.UseVisualStyleBackColor = true;
@@ -54,15 +55,16 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(186, 61);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPatientSearch.Location = new System.Drawing.Point(140, 50);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(341, 22);
+            this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
             // 
             // olvInsuranceList
             // 
             this.olvInsuranceList.AllColumns.Add(this.PatientID);
+            this.olvInsuranceList.AllColumns.Add(this.Name);
             this.olvInsuranceList.AllColumns.Add(this.InsuranceID);
             this.olvInsuranceList.AllColumns.Add(this.InsuranceCarrier);
             this.olvInsuranceList.AllColumns.Add(this.InsuranceAccountNumber);
@@ -71,17 +73,18 @@
             this.olvInsuranceList.CellEditUseWholeCell = false;
             this.olvInsuranceList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
+            this.Name,
             this.InsuranceID,
             this.InsuranceCarrier,
             this.InsuranceAccountNumber,
             this.InsuranceGroupNumber});
             this.olvInsuranceList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvInsuranceList.GridLines = true;
-            this.olvInsuranceList.Location = new System.Drawing.Point(56, 98);
-            this.olvInsuranceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.olvInsuranceList.Location = new System.Drawing.Point(42, 80);
+            this.olvInsuranceList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.olvInsuranceList.Name = "olvInsuranceList";
             this.olvInsuranceList.ShowGroups = false;
-            this.olvInsuranceList.Size = new System.Drawing.Size(913, 278);
+            this.olvInsuranceList.Size = new System.Drawing.Size(686, 227);
             this.olvInsuranceList.TabIndex = 10;
             this.olvInsuranceList.UseCompatibleStateImageBehavior = false;
             this.olvInsuranceList.View = System.Windows.Forms.View.Details;
@@ -116,16 +119,21 @@
             this.InsuranceGroupNumber.Text = "Group #";
             this.InsuranceGroupNumber.Width = 130;
             // 
+            // Name
+            // 
+            this.Name.AspectName = "name";
+            this.Name.Text = "Name";
+            // 
             // Insurance
             // 
             this.AcceptButton = this.btnSearchPatients;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 505);
+            this.ClientSize = new System.Drawing.Size(774, 410);
             this.Controls.Add(this.olvInsuranceList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Insurance";
             this.Text = "Insurance";
             ((System.ComponentModel.ISupportInitialize)(this.olvInsuranceList)).EndInit();
@@ -143,5 +151,6 @@
         private BrightIdeasSoftware.OLVColumn InsuranceCarrier;
         private BrightIdeasSoftware.OLVColumn InsuranceAccountNumber;
         private BrightIdeasSoftware.OLVColumn InsuranceGroupNumber;
+        private BrightIdeasSoftware.OLVColumn Name;
     }
 }

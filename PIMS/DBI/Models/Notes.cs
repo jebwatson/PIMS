@@ -14,6 +14,7 @@ namespace DBI
         public bool nurse { get; set; }
         public int userId { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Notes()
         {

@@ -30,6 +30,7 @@
         {
             this.olvAdmissionsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -45,6 +46,7 @@
             // olvAdmissionsList
             // 
             this.olvAdmissionsList.AllColumns.Add(this.PatientID);
+            this.olvAdmissionsList.AllColumns.Add(this.Name);
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionTime);
             this.olvAdmissionsList.AllColumns.Add(this.DischargeTime);
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionReason);
@@ -56,6 +58,7 @@
             this.olvAdmissionsList.CellEditUseWholeCell = false;
             this.olvAdmissionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
+            this.Name,
             this.AdmissionTime,
             this.DischargeTime,
             this.AdmissionReason,
@@ -65,11 +68,11 @@
             this.Bed});
             this.olvAdmissionsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvAdmissionsList.GridLines = true;
-            this.olvAdmissionsList.Location = new System.Drawing.Point(12, 81);
-            this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.olvAdmissionsList.Location = new System.Drawing.Point(8, 63);
+            this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvAdmissionsList.Name = "olvAdmissionsList";
             this.olvAdmissionsList.ShowGroups = false;
-            this.olvAdmissionsList.Size = new System.Drawing.Size(905, 379);
+            this.olvAdmissionsList.Size = new System.Drawing.Size(686, 309);
             this.olvAdmissionsList.TabIndex = 0;
             this.olvAdmissionsList.UseCompatibleStateImageBehavior = false;
             this.olvAdmissionsList.View = System.Windows.Forms.View.Details;
@@ -78,7 +81,12 @@
             // 
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
-            this.PatientID.Width = 120;
+            // 
+            // Name
+            // 
+            this.Name.AspectName = "name";
+            this.Name.Text = "Name";
+            this.Name.Width = 168;
             // 
             // AdmissionTime
             // 
@@ -122,10 +130,10 @@
             // btnSearchPatient
             // 
             this.btnSearchPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatient.Location = new System.Drawing.Point(11, 42);
-            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchPatient.Location = new System.Drawing.Point(8, 34);
+            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatient.Name = "btnSearchPatient";
-            this.btnSearchPatient.Size = new System.Drawing.Size(129, 31);
+            this.btnSearchPatient.Size = new System.Drawing.Size(97, 25);
             this.btnSearchPatient.TabIndex = 1;
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
@@ -134,22 +142,22 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(146, 46);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPatientSearch.Location = new System.Drawing.Point(110, 37);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(359, 22);
+            this.txtPatientSearch.Size = new System.Drawing.Size(270, 20);
             this.txtPatientSearch.TabIndex = 2;
             // 
             // Admissions
             // 
             this.AcceptButton = this.btnSearchPatient;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 572);
+            this.ClientSize = new System.Drawing.Size(706, 465);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.olvAdmissionsList);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Admissions";
             this.Text = "Admissions";
             ((System.ComponentModel.ISupportInitialize)(this.olvAdmissionsList)).EndInit();
@@ -171,5 +179,6 @@
         private BrightIdeasSoftware.OLVColumn Floor;
         private BrightIdeasSoftware.OLVColumn Room;
         private BrightIdeasSoftware.OLVColumn Bed;
+        private BrightIdeasSoftware.OLVColumn Name;
     }
 }

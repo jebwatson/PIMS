@@ -14,6 +14,7 @@ namespace DBI
         public string amount { get; set; }
         public DateTime prescDate { get; set; }
         public int duration { get; set; }
+        public string name { get; set; }
 
         public Prescriptions() {
             prescName = string.Empty;

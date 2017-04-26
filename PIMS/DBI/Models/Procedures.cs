@@ -17,6 +17,7 @@ namespace DBI
         public int durationHrs { get; set; }
         public int durationMins { get; set; }
         public string procNotes { get; set; }
+        public string name { get; set; }
 
         public Procedures() {
             procId = _unassigned;

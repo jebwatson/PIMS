@@ -15,6 +15,7 @@ namespace DBI
         public string phone { get; set; }
         public string areaCode { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public EmergencyContact()
         {

@@ -16,6 +16,7 @@ namespace DBI
         public int procedureId { get; set; }
         public int officeStaffId { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Charges()
         {
