@@ -14,16 +14,21 @@ namespace PIMS.Views
 {
     public partial class AddNote : Form
     {
+        private int patientId = 0;
+
         public string AddNoteStr { get { return this.txtAddNote.Text; } }
 
-        public AddNote()
+        public AddNote(int patientId)
         {
             InitializeComponent();
+            this.patientId = patientId;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            DBI.Notes MyNote = new DBI.Notes(AddNoteStr, Settings.User.Default.Doctor, Settings.User.Default.Nurse, Settings.User.Default.UserId, patientId);
+            NotesTable MyNotesTable = new NotesTable();
+            MyNotesTable.WriteItem(MyNote);
             this.Close();
         }
 

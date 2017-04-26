@@ -151,11 +151,11 @@
             this.tabPage1.Controls.Add(this.txtFirstName);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-<<<<<<< HEAD
+
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-=======
+
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
->>>>>>> refs/remotes/origin/master
+
             this.tabPage1.Size = new System.Drawing.Size(572, 460);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
@@ -190,11 +190,11 @@
             this.btnCancel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel1.Location = new System.Drawing.Point(133, 418);
-<<<<<<< HEAD
+
             this.btnCancel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.btnCancel1.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.btnCancel1.Name = "btnCancel1";
             this.btnCancel1.Size = new System.Drawing.Size(127, 37);
             this.btnCancel1.TabIndex = 53;
@@ -207,11 +207,11 @@
             this.btnNext1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNext1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext1.Location = new System.Drawing.Point(323, 418);
-<<<<<<< HEAD
+
             this.btnNext1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.btnNext1.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.btnNext1.Name = "btnNext1";
             this.btnNext1.Size = new System.Drawing.Size(127, 37);
             this.btnNext1.TabIndex = 52;
@@ -219,10 +219,10 @@
             this.btnNext1.UseVisualStyleBackColor = true;
             this.btnNext1.Click += new System.EventHandler(this.btnNext1_Click);
             // 
-<<<<<<< HEAD
+
             // lblPatientId
             // 
-            this.lblPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            /*this.lblPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPatientId.AutoSize = true;
             this.lblPatientId.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientId.Location = new System.Drawing.Point(414, 382);
@@ -230,10 +230,10 @@
             this.lblPatientId.Name = "lblPatientId";
             this.lblPatientId.Size = new System.Drawing.Size(51, 14);
             this.lblPatientId.TabIndex = 51;
-            this.lblPatientId.Text = "Patient ID";
+            this.lblPatientId.Text = "Patient ID";*/
             // 
-=======
->>>>>>> refs/remotes/origin/master
+
+
             // lblFamilyDoctor
             // 
             this.lblFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -246,29 +246,29 @@
             this.lblFamilyDoctor.TabIndex = 50;
             this.lblFamilyDoctor.Text = "Family Doctor";
             // 
-<<<<<<< HEAD
+
             // txtPatientId
             // 
-            this.txtPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            /*this.txtPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientId.Location = new System.Drawing.Point(383, 355);
             this.txtPatientId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPatientId.Name = "txtPatientId";
             this.txtPatientId.Size = new System.Drawing.Size(108, 26);
-            this.txtPatientId.TabIndex = 49;
+            this.txtPatientId.TabIndex = 49;*/
             // 
-=======
->>>>>>> refs/remotes/origin/master
+
+
             // txtFamilyDoctor
             // 
             this.txtFamilyDoctor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFamilyDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFamilyDoctor.Location = new System.Drawing.Point(66, 355);
-<<<<<<< HEAD
+
             this.txtFamilyDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtFamilyDoctor.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtFamilyDoctor.Name = "txtFamilyDoctor";
             this.txtFamilyDoctor.Size = new System.Drawing.Size(134, 26);
             this.txtFamilyDoctor.TabIndex = 48;
@@ -314,11 +314,11 @@
             this.txtCellPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCellPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCellPhone.Location = new System.Drawing.Point(417, 284);
-<<<<<<< HEAD
+
             this.txtCellPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtCellPhone.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtCellPhone.Name = "txtCellPhone";
             this.txtCellPhone.Size = new System.Drawing.Size(90, 26);
             this.txtCellPhone.TabIndex = 44;
@@ -328,11 +328,11 @@
             this.txtWorkPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtWorkPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWorkPhone.Location = new System.Drawing.Point(257, 284);
-<<<<<<< HEAD
+
             this.txtWorkPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtWorkPhone.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtWorkPhone.Name = "txtWorkPhone";
             this.txtWorkPhone.Size = new System.Drawing.Size(105, 26);
             this.txtWorkPhone.TabIndex = 43;
@@ -342,11 +342,11 @@
             this.txtHomePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtHomePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHomePhone.Location = new System.Drawing.Point(99, 284);
-<<<<<<< HEAD
+
             this.txtHomePhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtHomePhone.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtHomePhone.Name = "txtHomePhone";
             this.txtHomePhone.Size = new System.Drawing.Size(105, 26);
             this.txtHomePhone.TabIndex = 42;
@@ -404,11 +404,11 @@
             this.txtZipCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZipCode.Location = new System.Drawing.Point(395, 188);
-<<<<<<< HEAD
+
             this.txtZipCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtZipCode.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(88, 26);
             this.txtZipCode.TabIndex = 37;
@@ -418,11 +418,11 @@
             this.txtState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtState.Location = new System.Drawing.Point(368, 188);
-<<<<<<< HEAD
+
             this.txtState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtState.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(30, 26);
             this.txtState.TabIndex = 36;
@@ -432,11 +432,11 @@
             this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(282, 188);
-<<<<<<< HEAD
+
             this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtCity.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(88, 26);
             this.txtCity.TabIndex = 35;
@@ -446,11 +446,11 @@
             this.txtStreetAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtStreetAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreetAddress.Location = new System.Drawing.Point(66, 188);
-<<<<<<< HEAD
+
             this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.Size = new System.Drawing.Size(219, 26);
             this.txtStreetAddress.TabIndex = 34;
@@ -496,11 +496,11 @@
             this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(368, 84);
-<<<<<<< HEAD
+
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(108, 26);
             this.txtLastName.TabIndex = 30;
@@ -510,11 +510,11 @@
             this.txtMiddleName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.Location = new System.Drawing.Point(219, 84);
-<<<<<<< HEAD
+
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(108, 26);
             this.txtMiddleName.TabIndex = 29;
@@ -537,11 +537,11 @@
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(73, 84);
-<<<<<<< HEAD
+
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> refs/remotes/origin/master
+
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(108, 26);
             this.txtFirstName.TabIndex = 27;
@@ -562,11 +562,11 @@
             this.tabPage2.Controls.Add(this.lblNewPatient2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-<<<<<<< HEAD
+
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-=======
+
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
->>>>>>> refs/remotes/origin/master
+
             this.tabPage2.Size = new System.Drawing.Size(572, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
@@ -690,11 +690,11 @@
             this.tabPage3.Controls.Add(this.lblNewPatientInsurance);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-<<<<<<< HEAD
+
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-=======
+
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
->>>>>>> refs/remotes/origin/master
+
             this.tabPage3.Size = new System.Drawing.Size(572, 460);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
@@ -808,11 +808,11 @@
             this.tabPage4.Controls.Add(this.lblAdmissionInformation);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-<<<<<<< HEAD
+
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-=======
+
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
->>>>>>> refs/remotes/origin/master
+
             this.tabPage4.Size = new System.Drawing.Size(572, 460);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
@@ -959,11 +959,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(593, 329);
-=======
+
             this.ClientSize = new System.Drawing.Size(624, 513);
->>>>>>> refs/remotes/origin/master
+
             this.Controls.Add(this.wizardPages1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmNewPatient";

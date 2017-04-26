@@ -70,6 +70,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Login.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>User.settings</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +153,6 @@
     <Compile Include="Views\Prescriptions.Designer.cs">
       <DependentUpon>Prescriptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Visitors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +214,6 @@
     <EmbeddedResource Include="Views\Prescriptions.resx">
       <DependentUpon>Prescriptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Visitors.resx">
       <DependentUpon>Visitors.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +233,10 @@
     <None Include="Settings\Login.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings\User.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
