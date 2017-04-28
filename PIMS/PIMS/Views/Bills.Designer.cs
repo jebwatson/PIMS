@@ -32,13 +32,13 @@
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.olvBillsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Total = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaidbyPatient = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaidbyInsurance = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AmountOwed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateCharged = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateDue = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvBillsList.Name = "olvBillsList";
             this.olvBillsList.ShowGroups = false;
-            this.olvBillsList.Size = new System.Drawing.Size(705, 227);
+            this.olvBillsList.Size = new System.Drawing.Size(823, 227);
             this.olvBillsList.TabIndex = 0;
             this.olvBillsList.UseCompatibleStateImageBehavior = false;
             this.olvBillsList.View = System.Windows.Forms.View.Details;
@@ -96,62 +96,56 @@
             // 
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
-            this.PatientID.Width = 100;
+            this.PatientID.Width = 59;
+            // 
+            // Name
+            // 
+            this.Name.AspectName = "name";
+            this.Name.Text = "Name";
+            this.Name.Width = 136;
             // 
             // Total
             // 
             this.Total.AspectName = "amountTotal";
-            this.Total.DisplayIndex = 1;
             this.Total.Text = "Amount Total";
-            this.Total.Width = 100;
+            this.Total.Width = 80;
             // 
             // PaidbyPatient
             // 
             this.PaidbyPatient.AspectName = "amountPaidByPatient";
-            this.PaidbyPatient.DisplayIndex = 2;
             this.PaidbyPatient.Text = "Amount Paid By Patient";
-            this.PaidbyPatient.Width = 120;
+            this.PaidbyPatient.Width = 125;
             // 
             // PaidbyInsurance
             // 
             this.PaidbyInsurance.AspectName = "amountPaidByInsurance";
-            this.PaidbyInsurance.DisplayIndex = 3;
             this.PaidbyInsurance.Text = "Amount Paid By Insurance";
-            this.PaidbyInsurance.Width = 120;
+            this.PaidbyInsurance.Width = 138;
             // 
             // AmountOwed
             // 
             this.AmountOwed.AspectName = "amountOwed";
-            this.AmountOwed.DisplayIndex = 4;
             this.AmountOwed.Text = "Amount Owed";
-            this.AmountOwed.Width = 100;
+            this.AmountOwed.Width = 82;
             // 
             // DateCharged
             // 
             this.DateCharged.AspectName = "dateCharged";
-            this.DateCharged.DisplayIndex = 5;
             this.DateCharged.Text = "Date Charged";
             this.DateCharged.Width = 100;
             // 
             // DateDue
             // 
             this.DateDue.AspectName = "dateDue";
-            this.DateDue.DisplayIndex = 6;
             this.DateDue.Text = "Date Due";
             this.DateDue.Width = 100;
-            // 
-            // Name
-            // 
-            this.Name.AspectName = "name";
-            this.Name.DisplayIndex = 7;
-            this.Name.Text = "Name";
             // 
             // Bills
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 340);
+            this.ClientSize = new System.Drawing.Size(874, 340);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvBillsList);
