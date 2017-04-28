@@ -30,7 +30,7 @@
         {
             this.olvAdmissionsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DischargeTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AdmissionReason = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -46,7 +46,7 @@
             // olvAdmissionsList
             // 
             this.olvAdmissionsList.AllColumns.Add(this.PatientID);
-            this.olvAdmissionsList.AllColumns.Add(this.Name);
+            this.olvAdmissionsList.AllColumns.Add(this.PatientName);
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionTime);
             this.olvAdmissionsList.AllColumns.Add(this.DischargeTime);
             this.olvAdmissionsList.AllColumns.Add(this.AdmissionReason);
@@ -58,7 +58,7 @@
             this.olvAdmissionsList.CellEditUseWholeCell = false;
             this.olvAdmissionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.Name,
+            this.PatientName,
             this.AdmissionTime,
             this.DischargeTime,
             this.AdmissionReason,
@@ -82,11 +82,11 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             // 
-            // Name
+            // PatientName
             // 
-            this.Name.AspectName = "name";
-            this.Name.Text = "Name";
-            this.Name.Width = 168;
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
+            this.PatientName.Width = 168;
             // 
             // AdmissionTime
             // 
@@ -179,6 +179,6 @@
         private BrightIdeasSoftware.OLVColumn Floor;
         private BrightIdeasSoftware.OLVColumn Room;
         private BrightIdeasSoftware.OLVColumn Bed;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

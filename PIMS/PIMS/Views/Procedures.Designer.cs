@@ -32,6 +32,7 @@
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvProceduresList = new BrightIdeasSoftware.ObjectListView();
             this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcedureType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationHrs = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DurationMins = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -39,7 +40,6 @@
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DoctorId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcNotes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPatientSearch.Location = new System.Drawing.Point(117, 67);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 5;
@@ -56,7 +56,7 @@
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearchPatients.Location = new System.Drawing.Point(19, 64);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 4;
@@ -67,7 +67,7 @@
             // olvProceduresList
             // 
             this.olvProceduresList.AllColumns.Add(this.patientid);
-            this.olvProceduresList.AllColumns.Add(this.Name);
+            this.olvProceduresList.AllColumns.Add(this.PatientName);
             this.olvProceduresList.AllColumns.Add(this.ProcedureType);
             this.olvProceduresList.AllColumns.Add(this.DurationHrs);
             this.olvProceduresList.AllColumns.Add(this.DurationMins);
@@ -79,7 +79,7 @@
             this.olvProceduresList.CellEditUseWholeCell = false;
             this.olvProceduresList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientid,
-            this.Name,
+            this.PatientName,
             this.ProcedureType,
             this.DurationHrs,
             this.DurationMins,
@@ -90,7 +90,7 @@
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
             this.olvProceduresList.Location = new System.Drawing.Point(19, 99);
-            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2);
             this.olvProceduresList.Name = "olvProceduresList";
             this.olvProceduresList.ShowGroups = false;
             this.olvProceduresList.Size = new System.Drawing.Size(725, 227);
@@ -103,6 +103,11 @@
             this.patientid.AspectName = "patientId";
             this.patientid.Text = "Patient ID";
             this.patientid.Width = 120;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
             // 
             // ProcedureType
             // 
@@ -146,11 +151,6 @@
             this.ProcNotes.Text = "Procedure Notes";
             this.ProcNotes.Width = 120;
             // 
-            // Name
-            // 
-            this.Name.AspectName = "name";
-            this.Name.Text = "Name";
-            // 
             // Procedures
             // 
             this.AcceptButton = this.btnSearchPatients;
@@ -160,7 +160,7 @@
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvProceduresList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Procedures";
             this.Text = "Procedures";
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).EndInit();
@@ -182,6 +182,6 @@
         private BrightIdeasSoftware.OLVColumn patientid;
         private BrightIdeasSoftware.OLVColumn DoctorId;
         private BrightIdeasSoftware.OLVColumn ProcNotes;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

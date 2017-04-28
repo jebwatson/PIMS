@@ -30,20 +30,20 @@
         {
             this.ovlEmergencyContactsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.EClname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ECfname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.AreaCode = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Phone = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.ovlEmergencyContactsList)).BeginInit();
             this.SuspendLayout();
             // 
             // ovlEmergencyContactsList
             // 
             this.ovlEmergencyContactsList.AllColumns.Add(this.PatientID);
-            this.ovlEmergencyContactsList.AllColumns.Add(this.Name);
+            this.ovlEmergencyContactsList.AllColumns.Add(this.PatientName);
             this.ovlEmergencyContactsList.AllColumns.Add(this.EClname);
             this.ovlEmergencyContactsList.AllColumns.Add(this.ECfname);
             this.ovlEmergencyContactsList.AllColumns.Add(this.AreaCode);
@@ -52,7 +52,7 @@
             this.ovlEmergencyContactsList.CellEditUseWholeCell = false;
             this.ovlEmergencyContactsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.Name,
+            this.PatientName,
             this.EClname,
             this.ECfname,
             this.AreaCode,
@@ -60,7 +60,7 @@
             this.ovlEmergencyContactsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.ovlEmergencyContactsList.GridLines = true;
             this.ovlEmergencyContactsList.Location = new System.Drawing.Point(40, 72);
-            this.ovlEmergencyContactsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ovlEmergencyContactsList.Margin = new System.Windows.Forms.Padding(2);
             this.ovlEmergencyContactsList.Name = "ovlEmergencyContactsList";
             this.ovlEmergencyContactsList.ShowGroups = false;
             this.ovlEmergencyContactsList.Size = new System.Drawing.Size(530, 227);
@@ -73,6 +73,11 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 130;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
             // 
             // EClname
             // 
@@ -102,7 +107,7 @@
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearchPatients.Location = new System.Drawing.Point(40, 39);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 8;
@@ -114,15 +119,10 @@
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPatientSearch.Location = new System.Drawing.Point(139, 42);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
-            // 
-            // Name
-            // 
-            this.Name.AspectName = "name";
-            this.Name.Text = "Name";
             // 
             // EmergencyContacts
             // 
@@ -133,7 +133,7 @@
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.ovlEmergencyContactsList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmergencyContacts";
             this.Text = "EmergencyContacts";
             ((System.ComponentModel.ISupportInitialize)(this.ovlEmergencyContactsList)).EndInit();
@@ -152,6 +152,6 @@
         private BrightIdeasSoftware.OLVColumn ECfname;
         private BrightIdeasSoftware.OLVColumn AreaCode;
         private BrightIdeasSoftware.OLVColumn Phone;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

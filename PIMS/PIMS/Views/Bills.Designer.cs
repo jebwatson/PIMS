@@ -32,7 +32,7 @@
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.olvBillsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Total = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaidbyPatient = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaidbyInsurance = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -64,7 +64,7 @@
             // olvBillsList
             // 
             this.olvBillsList.AllColumns.Add(this.PatientID);
-            this.olvBillsList.AllColumns.Add(this.Name);
+            this.olvBillsList.AllColumns.Add(this.PatientName);
             this.olvBillsList.AllColumns.Add(this.Total);
             this.olvBillsList.AllColumns.Add(this.PaidbyPatient);
             this.olvBillsList.AllColumns.Add(this.PaidbyInsurance);
@@ -74,7 +74,7 @@
             this.olvBillsList.CellEditUseWholeCell = false;
             this.olvBillsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.Name,
+            this.PatientName,
             this.Total,
             this.PaidbyPatient,
             this.PaidbyInsurance,
@@ -98,11 +98,11 @@
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 59;
             // 
-            // Name
+            // PatientName
             // 
-            this.Name.AspectName = "name";
-            this.Name.Text = "Name";
-            this.Name.Width = 136;
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
+            this.PatientName.Width = 136;
             // 
             // Total
             // 
@@ -170,6 +170,6 @@
         private BrightIdeasSoftware.OLVColumn DateCharged;
         private BrightIdeasSoftware.OLVColumn DateDue;
         private BrightIdeasSoftware.OLVColumn PatientID;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }
