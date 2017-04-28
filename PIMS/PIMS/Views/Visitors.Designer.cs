@@ -32,7 +32,7 @@
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvVisitorsList = new BrightIdeasSoftware.ObjectListView();
             this.patientid = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.NameLast = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.NameFirst = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Relation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -64,7 +64,7 @@
             // olvVisitorsList
             // 
             this.olvVisitorsList.AllColumns.Add(this.patientid);
-            this.olvVisitorsList.AllColumns.Add(this.Name);
+            this.olvVisitorsList.AllColumns.Add(this.PatientName);
             this.olvVisitorsList.AllColumns.Add(this.NameLast);
             this.olvVisitorsList.AllColumns.Add(this.NameFirst);
             this.olvVisitorsList.AllColumns.Add(this.Relation);
@@ -73,7 +73,7 @@
             this.olvVisitorsList.CellEditUseWholeCell = false;
             this.olvVisitorsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientid,
-            this.Name,
+            this.PatientName,
             this.NameLast,
             this.NameFirst,
             this.Relation,
@@ -95,10 +95,10 @@
             this.patientid.Text = "Patient ID";
             this.patientid.Width = 120;
             // 
-            // Name
+            // PatientName
             // 
-            this.Name.AspectName = "patientName";
-            this.Name.Text = "Name";
+            this.PatientName.AspectName = "patientName";
+            this.PatientName.Text = "Name";
             // 
             // NameLast
             // 
@@ -152,6 +152,6 @@
         private BrightIdeasSoftware.OLVColumn NameFirst;
         private BrightIdeasSoftware.OLVColumn Relation;
         private BrightIdeasSoftware.OLVColumn LastVisit;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

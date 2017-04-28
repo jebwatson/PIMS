@@ -34,7 +34,7 @@ namespace PIMS.Presenters
         {
             MyBillsTable = new BillsTable();
 
-            View.PatientsList.SetObjects(MyBillsTable.ReadList());
+            View.BillsList.SetObjects(MyBillsTable.ReadList());
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace PIMS.Presenters
             foreach (Patient p in MyPatientsList)
             {
                 if (i == 0)
-                    View.PatientsList.SetObjects(MyBillsTable.ReadListById(p.patientId));
+                    View.BillsList.SetObjects(MyBillsTable.ReadListById(p.patientId));
                 else
-                    View.PatientsList.UpdateObjects(MyBillsTable.ReadListById(p.patientId));
+                    View.BillsList.UpdateObjects(MyBillsTable.ReadListById(p.patientId));
 
                 i++;
             }

@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PPrescriptions Presenter;
 
-        public ObjectListView PatientsList { get { return this.olvPrescriptionsList; } }
+        public ObjectListView PrescriptionsList { get { return this.olvPrescriptionsList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public Prescriptions()

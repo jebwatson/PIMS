@@ -32,6 +32,7 @@
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.olvChargesList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Description = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TotalAmount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ChargeDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -40,7 +41,6 @@
             this.OfficeStaffId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             // olvChargesList
             // 
             this.olvChargesList.AllColumns.Add(this.PatientID);
-            this.olvChargesList.AllColumns.Add(this.Name);
+            this.olvChargesList.AllColumns.Add(this.PatientName);
             this.olvChargesList.AllColumns.Add(this.Description);
             this.olvChargesList.AllColumns.Add(this.TotalAmount);
             this.olvChargesList.AllColumns.Add(this.ChargeDate);
@@ -76,7 +76,7 @@
             this.olvChargesList.CellEditUseWholeCell = false;
             this.olvChargesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.Name,
+            this.PatientName,
             this.Description,
             this.TotalAmount,
             this.ChargeDate,
@@ -99,6 +99,11 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 120;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
             // 
             // Description
             // 
@@ -156,11 +161,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // Name
-            // 
-            this.Name.AspectName = "name";
-            this.Name.Text = "Name";
-            // 
             // Charges
             // 
             this.AcceptButton = this.btnSearchPatients;
@@ -194,6 +194,6 @@
         private BrightIdeasSoftware.OLVColumn OfficeStaffId;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

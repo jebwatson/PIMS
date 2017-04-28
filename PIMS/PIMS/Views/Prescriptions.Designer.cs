@@ -32,18 +32,18 @@
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.olvPrescriptionsList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Amount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Duration = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Name = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPatientSearch
             // 
             this.txtPatientSearch.Location = new System.Drawing.Point(136, 39);
-            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 8;
@@ -51,7 +51,7 @@
             // btnSearchPatients
             // 
             this.btnSearchPatients.Location = new System.Drawing.Point(38, 36);
-            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
             this.btnSearchPatients.TabIndex = 7;
@@ -62,7 +62,7 @@
             // olvPrescriptionsList
             // 
             this.olvPrescriptionsList.AllColumns.Add(this.PatientID);
-            this.olvPrescriptionsList.AllColumns.Add(this.Name);
+            this.olvPrescriptionsList.AllColumns.Add(this.PatientName);
             this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionName);
             this.olvPrescriptionsList.AllColumns.Add(this.Amount);
             this.olvPrescriptionsList.AllColumns.Add(this.PrescriptionDate);
@@ -70,7 +70,7 @@
             this.olvPrescriptionsList.CellEditUseWholeCell = false;
             this.olvPrescriptionsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
-            this.Name,
+            this.PatientName,
             this.PrescriptionName,
             this.Amount,
             this.PrescriptionDate,
@@ -78,7 +78,7 @@
             this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvPrescriptionsList.GridLines = true;
             this.olvPrescriptionsList.Location = new System.Drawing.Point(39, 68);
-            this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvPrescriptionsList.Name = "olvPrescriptionsList";
             this.olvPrescriptionsList.ShowGroups = false;
             this.olvPrescriptionsList.Size = new System.Drawing.Size(467, 227);
@@ -91,6 +91,12 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 120;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.DisplayIndex = 5;
+            this.PatientName.Text = "Name";
             // 
             // PrescriptionName
             // 
@@ -119,12 +125,6 @@
             this.Duration.Text = "Duration";
             this.Duration.Width = 120;
             // 
-            // Name
-            // 
-            this.Name.AspectName = "name";
-            this.Name.DisplayIndex = 5;
-            this.Name.Text = "Name";
-            // 
             // Prescriptions
             // 
             this.AcceptButton = this.btnSearchPatients;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvPrescriptionsList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Prescriptions";
             this.Text = "Prescriptions";
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).EndInit();
@@ -153,6 +153,6 @@
         private BrightIdeasSoftware.OLVColumn Duration;
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn Amount;
-        private BrightIdeasSoftware.OLVColumn Name;
+        private BrightIdeasSoftware.OLVColumn PatientName;
     }
 }

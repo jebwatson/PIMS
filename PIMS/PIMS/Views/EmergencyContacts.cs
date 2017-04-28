@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PEmergencyContacts Presenter;
 
-        public ObjectListView PatientsList { get { return this.ovlEmergencyContactsList; } }
+        public ObjectListView EmergencyContactsList { get { return this.ovlEmergencyContactsList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public EmergencyContacts()
