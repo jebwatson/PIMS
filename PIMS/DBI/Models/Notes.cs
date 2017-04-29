@@ -26,13 +26,14 @@ namespace DBI
             patientId = _unassigned;
         }
 
-        public Notes(string notes, bool doctor, bool nurse, int doctorId, int patientId)
+        public Notes(string notes, bool doctor, bool nurse, int doctorId, int patientId, int noteId)
         {
             this.notes = notes;
             this.doctor = doctor;
             this.nurse = nurse;
             this.userId = doctorId;
             this.patientId = patientId;
+            this.noteId = noteId;
         }
     }
 }

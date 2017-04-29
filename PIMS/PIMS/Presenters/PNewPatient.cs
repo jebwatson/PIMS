@@ -50,18 +50,18 @@ namespace PIMS.Presenters
                         // Submit and create patient
                         Patient MyPatient = new Patient(View.NameFirst, View.NameMiddle, View.NameLast,
                             View.StreetAddress, View.City, View.State, View.Zip, View.PhoneHome, View.AreaCodeHome,
-                            View.PhoneWork, View.AreaCodeWork, View.PhoneCell, View.AreaCodeCell, View.FamilyDoctor);
+                            View.PhoneWork, View.AreaCodeWork, View.PhoneCell, View.AreaCodeCell, View.FamilyDoctor, 1);
 
                         PatientTable MyPatientTable = new PatientTable();
                         MyPatientTable.WriteItem(MyPatient);
                         List<Patient> MyPatientList = MyPatientTable.ReadListByName(View.NameLast);
 
                         EmergencyContact MyEmergencyContact = new EmergencyContact(View.NameFirstEC, View.NameLastEC,
-                            "", View.PhoneEC, View.AreaCodeEC, MyPatientList[0].patientId);
+                            "", View.PhoneEC, View.AreaCodeEC, MyPatientList[0].patientId, 1);
                         DBI.Insurance MyInsurance = new DBI.Insurance(View.Carrier, View.AccountNumber, View.GroupNumber,
-                            MyPatientList[0].patientId);
+                            MyPatientList[0].patientId, 1);
                         Admission MyAdmission = new Admission(View.TimeOfAdmission.ToString(), "", View.AdmissionReason, View.Facility,
-                            View.FloorNumber, View.RoomNumber, View.BedNumber, MyPatientList[0].patientId);
+                            View.FloorNumber, View.RoomNumber, View.BedNumber, MyPatientList[0].patientId, 1);
 
                         EmergencyContactTable MyEmergencyContactTable = new EmergencyContactTable();
                         InsuranceTable MyInsuranceTable = new InsuranceTable();

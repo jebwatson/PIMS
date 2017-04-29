@@ -32,7 +32,7 @@ namespace DBI
 
         public Bills(string valAmountTotal, string valAmountPaidByPatient,
             string valAmountPaidByInsurance, string valAmountOwed, DateTime valDateCharged,
-            DateTime valDateDue, int valPatientId)
+            DateTime valDateDue, int valPatientId, int billId)
         {
             amountTotal = valAmountTotal;
             amountPaidByPatient = valAmountPaidByPatient;
@@ -41,6 +41,7 @@ namespace DBI
             dateCharged = valDateCharged;
             dateDue = valDateDue;
             patientId = valPatientId;
+            this.billId = billId;
         }
     }
 }

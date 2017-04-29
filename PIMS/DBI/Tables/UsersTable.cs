@@ -23,6 +23,8 @@ namespace DBI
             string myCommand = "DELETE FROM " + theTable;
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
 
+            myCommand = "DBCC CHECKIDENT('" + theTable + "', RESEED, 0)";
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
         public void ClearTableById(int userId)
@@ -170,7 +172,7 @@ namespace DBI
         }
 
         public void UpdateItem(Users updatedDoctors)
-    {
+        {
         using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
         {
             string myQuery = "UPDATE " + theTable +
@@ -179,7 +181,7 @@ namespace DBI
                 "nameFirst = @nameFirst, " +
                 "title = @title, " +
                 "accessLevel = @accessLevel, " +
-                "username = @username, " +
+                "username = @username " +
                 "WHERE " +
                 "userId = @userId";
 
@@ -197,12 +199,14 @@ namespace DBI
             myConnection.Close();
         } // using
     } // UpdateItem
-    public void UpdateList(List<Users> doctors) {
-        foreach (var Doctor in doctors) {
+
+    public void UpdateList(List<Users> doctors)
+    {
+        foreach (var Doctor in doctors)
+        {
             UpdateItem(Doctor);
         }
-
-        }
+    }
 
         /// Insert a single admission record into the database.
         /// </summary>

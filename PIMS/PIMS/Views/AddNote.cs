@@ -26,7 +26,7 @@ namespace PIMS.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DBI.Notes MyNote = new DBI.Notes(AddNoteStr, Settings.User.Default.Doctor, Settings.User.Default.Nurse, Settings.User.Default.UserId, patientId);
+            DBI.Notes MyNote = new DBI.Notes(AddNoteStr, Settings.User.Default.Doctor, Settings.User.Default.Nurse, Settings.User.Default.UserId, patientId, 1);
             NotesTable MyNotesTable = new NotesTable();
             MyNotesTable.WriteItem(MyNote);
             this.Close();

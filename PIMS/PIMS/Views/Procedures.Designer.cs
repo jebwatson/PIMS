@@ -38,7 +38,6 @@
             this.DurationMins = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.DoctorId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcNotes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +72,6 @@
             this.olvProceduresList.AllColumns.Add(this.DurationMins);
             this.olvProceduresList.AllColumns.Add(this.StartTime);
             this.olvProceduresList.AllColumns.Add(this.StopTime);
-            this.olvProceduresList.AllColumns.Add(this.DoctorId);
             this.olvProceduresList.AllColumns.Add(this.ProcNotes);
             this.olvProceduresList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.olvProceduresList.CellEditUseWholeCell = false;
@@ -85,7 +83,6 @@
             this.DurationMins,
             this.StartTime,
             this.StopTime,
-            this.DoctorId,
             this.ProcNotes});
             this.olvProceduresList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvProceduresList.GridLines = true;
@@ -139,12 +136,6 @@
             this.StopTime.Text = "Stop Time";
             this.StopTime.Width = 120;
             // 
-            // DoctorId
-            // 
-            this.DoctorId.AspectName = "doctorId";
-            this.DoctorId.Text = "Doctor ID";
-            this.DoctorId.Width = 120;
-            // 
             // ProcNotes
             // 
             this.ProcNotes.AspectName = "procNotes";
@@ -180,7 +171,6 @@
         private BrightIdeasSoftware.OLVColumn StartTime;
         private BrightIdeasSoftware.OLVColumn StopTime;
         private BrightIdeasSoftware.OLVColumn patientid;
-        private BrightIdeasSoftware.OLVColumn DoctorId;
         private BrightIdeasSoftware.OLVColumn ProcNotes;
         private BrightIdeasSoftware.OLVColumn PatientName;
     }

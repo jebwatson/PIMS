@@ -22,6 +22,9 @@ namespace DBI
 
             string myCommand = "DELETE FROM " + theTable;
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
+
+            myCommand = "DBCC CHECKIDENT('" + theTable + "', RESEED, 0)";
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
         /// <summary>
@@ -94,6 +97,9 @@ namespace DBI
                     newEmergencyContact.areaCode = areaCode;
                     newEmergencyContact.patientId = patientId;
 
+                    // Need to add the patient name to the object
+                    AddPatientName(newEmergencyContact);
+
                     contacts.Add(newEmergencyContact);
                 } // for
             } // if
@@ -137,6 +143,9 @@ namespace DBI
                     newEmergencyContact.phone = phone;
                     newEmergencyContact.areaCode = areaCode;
                     newEmergencyContact.patientId = patientId;
+
+                    // Need to add the patient name to the object
+                    AddPatientName(newEmergencyContact);
 
                     contacts.Add(newEmergencyContact);
                 } // for
@@ -231,5 +240,20 @@ namespace DBI
                 WriteItem(EmergencyContact);
             } // foreach
         } // writelist
+
+        /// <summary>
+        /// Need to add the patient name to the object.
+        /// </summary>
+        /// <param name="newObject"></param>
+        private void AddPatientName(dynamic newObject)
+        {
+            PatientTable MyPatientTable = new PatientTable();
+            List<Patient> MyPatientsList = MyPatientTable.ReadListById(newObject.patientId);
+
+            if (MyPatientsList.Count > 0)
+            {
+                newObject.name = MyPatientsList[0].nameFirst + " " + MyPatientsList[0].nameLast;
+            }
+        }
     }
 }
