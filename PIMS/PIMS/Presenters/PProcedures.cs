@@ -52,7 +52,7 @@ namespace PIMS.Presenters
                 {
                     foreach (var item in View.ProceduresList.SelectedObjects)
                     {
-                        MyProceduresTable.ClearTableById(((DBI.Procedures)item).patientId);
+                        MyProceduresTable.ClearTableByProc(((DBI.Procedures)item).patientId, ((DBI.Procedures)item).startTime, ((DBI.Procedures)item).stopTime);
                     }
                 }
                 else
