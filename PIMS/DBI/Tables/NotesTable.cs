@@ -24,6 +24,9 @@ namespace DBI
 
             string myCommand = "DELETE FROM " + theTable;
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
+
+            myCommand = "DBCC CHECKIDENT('" + theTable + "', RESEED, 0)";
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
         /// <summary>
@@ -94,17 +97,15 @@ namespace DBI
                     newNotes.userId = doctorId;
                     newNotes.patientId = patientId;
 
+                    // Need to add the patient name to the object
+                    AddPatientName(newNotes);
+
                     ItemList.Add(newNotes);
                 } // for
             } // if
 
             return ItemList;
         } // ReadList
-
-        internal void ClearTableById(OLVColumn patientId)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Read a sinlge record from the table and save the record in the
@@ -129,7 +130,7 @@ namespace DBI
                     string notes = dr["notes"].ToString();
                     bool doctor = Convert.ToBoolean(dr["doctor"]);
                     bool nurse = Convert.ToBoolean(dr["nurse"]);
-                    int doctorId = Convert.ToInt32(dr["doctorId"]);
+                    int userId = Convert.ToInt32(dr["userId"]);
                     int patientId = Convert.ToInt32(dr["patientId"]);
 
                     // fill the ItemList
@@ -138,8 +139,11 @@ namespace DBI
                     newNotes.notes = notes;
                     newNotes.doctor = doctor;
                     newNotes.nurse = nurse;
-                    newNotes.userId = doctorId;
+                    newNotes.userId = userId;
                     newNotes.patientId = patientId;
+
+                    // Need to add the patient name to the object
+                    AddPatientName(newNotes);
 
                     ItemList.Add(newNotes);
                 } // for
@@ -161,7 +165,7 @@ namespace DBI
                     "notes = @notes, " +
                     "doctor = @doctor, " +
                     "nurse = @nurse, " +
-                    "doctorId = @doctorId, " +
+                    "userId = @userId, " +
                     "patientId = @patientId " +
                     "WHERE " +
                     "noteId = @noteId";
@@ -171,7 +175,7 @@ namespace DBI
                 myCommand.Parameters.AddWithValue("@notes", updatedNotes.notes);
                 myCommand.Parameters.AddWithValue("@doctor", updatedNotes.doctor);
                 myCommand.Parameters.AddWithValue("@nurse", updatedNotes.nurse);
-                myCommand.Parameters.AddWithValue("@doctorId", updatedNotes.userId);
+                myCommand.Parameters.AddWithValue("@userId", updatedNotes.userId);
                 myCommand.Parameters.AddWithValue("@patientId", updatedNotes.patientId);
                 myCommand.Parameters.AddWithValue("@noteId", updatedNotes.noteId);
 
@@ -201,15 +205,15 @@ namespace DBI
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 string myQuery = "INSERT INTO " + theTable +
-                    "(notes, doctor, nurse, doctorId, patientId) " +
-                    "VALUES (@notes, @doctor, @nurse, @doctorId, @patientId)";
+                    "(notes, doctor, nurse, userId, patientId) " +
+                    "VALUES (@notes, @doctor, @nurse, @userId, @patientId)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
 
                 myCommand.Parameters.AddWithValue("@notes", newNotesDoctor.notes);
                 myCommand.Parameters.AddWithValue("@doctor", newNotesDoctor.doctor);
                 myCommand.Parameters.AddWithValue("@nurse", newNotesDoctor.nurse);
-                myCommand.Parameters.AddWithValue("@doctorId", newNotesDoctor.userId);
+                myCommand.Parameters.AddWithValue("@userId", newNotesDoctor.userId);
                 myCommand.Parameters.AddWithValue("@patientId", newNotesDoctor.patientId);
                 myCommand.Parameters.AddWithValue("@noteId", newNotesDoctor.noteId);
 
@@ -229,5 +233,20 @@ namespace DBI
                 WriteItem(NotesDoctor);
             } // foreach
         } // writelist
+
+        /// <summary>
+        /// Need to add the patient name to the object.
+        /// </summary>
+        /// <param name="newObject"></param>
+        private void AddPatientName(dynamic newObject)
+        {
+            PatientTable MyPatientTable = new PatientTable();
+            List<Patient> MyPatientsList = MyPatientTable.ReadListById(newObject.patientId);
+
+            if (MyPatientsList.Count > 0)
+            {
+                newObject.name = MyPatientsList[0].nameFirst + " " + MyPatientsList[0].nameLast;
+            }
+        }
     }
 }

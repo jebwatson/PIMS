@@ -22,16 +22,16 @@ namespace PIMSTests.ModelTableTests
             myTable = new PatientTable();
             myList = new List<Patient>()
             {
-                new Patient("Watson", "Jeb", "W", "A", "A", "A", "11111", "1111111", "256", "1111111", "256", "1111111", "256", "A"),
-                new Patient("Burcham", "David", "A", "B", "B", "B", "22222", "2222222", "256", "2222222", "256", "2222222", "256", "B"),
-                new Patient("Morrow", "Jasper", "A", "C", "C", "C", "33333", "3333333", "256", "3333333", "256", "3333333", "256", "C")
+                new Patient("Watson", "Jeb", "W", "A", "A", "A", "11111", "1111111", "256", "1111111", "256", "1111111", "256", "A", 1),
+                new Patient("Burcham", "David", "A", "B", "B", "B", "22222", "2222222", "256", "2222222", "256", "2222222", "256", "B", 2),
+                new Patient("Morrow", "Jasper", "A", "C", "C", "C", "33333", "3333333", "256", "3333333", "256", "3333333", "256", "C", 3)
             };
 
             myList2 = new List<Patient>
             {
-                new Patient("Indihar", "CSSA-JEB", "B", "D", "D", "D", "44444", "4444444", "256", "4444444", "256", "4444444", "256", "D"),
-                new Patient("Norris", "Chuck", "B", "E", "E", "E", "55555", "5555555", "256", "5555555", "256", "5555555", "256", "E"),
-                new Patient("Dempsey", "Jack", "B", "F", "F", "F", "66666", "6666666", "256", "6666666", "256", "6666666", "256", "F")
+                new Patient("Indihar", "CSSA-JEB", "B", "D", "D", "D", "44444", "4444444", "256", "4444444", "256", "4444444", "256", "D", 1),
+                new Patient("Norris", "Chuck", "B", "E", "E", "E", "55555", "5555555", "256", "5555555", "256", "5555555", "256", "E", 2),
+                new Patient("Dempsey", "Jack", "B", "F", "F", "F", "66666", "6666666", "256", "6666666", "256", "6666666", "256", "F", 3)
             };
 
             comparer = new PatientComparer();
@@ -45,7 +45,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM patients";
+                string clearQuery = "DELETE FROM patients DBCC CHECKIDENT('patients', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur

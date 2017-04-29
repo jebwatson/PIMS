@@ -20,37 +20,37 @@ namespace PIMSTests.ModelTableTests
         {
             // NOTE: This occurs before each and every test case.
 
-            myTable = new UsersTable();
-            myList = new List<Users>()
-            {
-                new Users("Moore", "John", "doctor", 4, "JohnMoore"),
-                new Users("John", "Jimmy", "volunteer", 1, "JimmyJohn"),
-                new Users("Sanders", "Bernie", "nurse", 3, "BernieSanders")
-            };
-            comparer = new UsersComparer();
-
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
                 "PIMSTest;Integrated Security=False;User Id=jwatson;Password=test;MultipleActiveResultSets=True;";
+
+            myTable = new UsersTable();
+            myList = new List<Users>()
+            {
+                new Users("Moore", "John", "doctor", 4, "JohnMoore", 1),
+                new Users("John", "Jimmy", "volunteer", 1, "JimmyJohn", 2),
+                new Users("Sanders", "Bernie", "nurse", 3, "BernieSanders", 3)
+            };
+            comparer = new UsersComparer();
 
             // Establish a connection and close at the end of using
 
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM users";
+                string clearQuery = "DELETE FROM users DBCC CHECKIDENT('users', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
                 string populationQuery1 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test1', 'test1', 'test1', 1, 'test1')";
+                    "VALUES ('Moore', 'John', 'doctor', 4, 'JohnMoore')";
                 string populationQuery2 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test2', 'test2', 'test2', '2', 'test2')";
+                    "VALUES ('John', 'Jimmy', 'volunteer', '1', 'JimmyJohn')";
                 string populationQuery3 = "INSERT INTO users (nameLast, nameFirst, title, " +
                     "accessLevel, username) " +
-                    "VALUES ('test3', 'test3', 'test3', '3', 'test3')";
+                    "VALUES ('Sanders', 'Bernie', 'nurse', '3', 'BernieSanders')";
 
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery1, myConnection);
                 QueryExecutor.ExecuteSqlNonQuery(populationQuery2, myConnection);
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Users> users = new List<Users>();
 
             // Need some updated data
-            Users updated1 = new Users("test4", "test4", "test4", 4, "test4");
-            Users updated2 = new Users("test5", "test5", "test5", 5, "test5");
-            Users updated3 = new Users("test6", "test6", "test6", 6, "test6");
+            Users updated1 = new Users("test4", "test4", "test4", 4, "test4", 1);
+            Users updated2 = new Users("test5", "test5", "test5", 5, "test5", 2);
+            Users updated3 = new Users("test6", "test6", "test6", 6, "test6", 3);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Users> users = new List<Users>();
 
             // Need some updated data
-            Users updatedUser = new Users("test4", "test4", "test4", 4, "test4");
+            Users updatedUser = new Users("test4", "test4", "test4", 4, "test4", 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedUser);

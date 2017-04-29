@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new ChargesTable();
             myList = new List<Charges>()
             {
-                new Charges("test1", "1.99", DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1, 1),
-                new Charges("test2", "1.99", DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2, 2),
-                new Charges("test3", "1.99", DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3, 3)
+                new Charges("test1", "1.99", DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1, 1, 1),
+                new Charges("test2", "1.99", DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2, 2, 2),
+                new Charges("test3", "1.99", DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3, 3, 3)
             };
             comparer = new ChargesComparer();
 
@@ -38,7 +38,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM charges";
+                string clearQuery = "DELETE FROM charges DBCC CHECKIDENT('charges', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Charges> charges = new List<Charges>();
 
             // Need some updated data
-            Charges updated1 = new Charges("test4", "1.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4);
-            Charges updated2 = new Charges("test5", "1.99", DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5);
-            Charges updated3 = new Charges("test6", "1.99", DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6);
+            Charges updated1 = new Charges("test4", "1.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 1);
+            Charges updated2 = new Charges("test5", "1.99", DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 5, 5, 2);
+            Charges updated3 = new Charges("test6", "1.99", DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 6, 6, 3);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Charges> charges = new List<Charges>();
 
             // Need some updated data
-            Charges updatedCharge = new Charges("test4", "1.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4);
+            Charges updatedCharge = new Charges("test4", "1.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 4, 4, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedCharge);

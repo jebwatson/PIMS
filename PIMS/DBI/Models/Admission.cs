@@ -33,7 +33,7 @@ namespace DBI
         }
 
         public Admission(string valAdmittanceTime, string valDischargeTime, string valAdmittanceReason,
-            string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId)
+            string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId, int admissionId)
         {
             admissionTime = valAdmittanceTime;
             dischargeTime = valDischargeTime;
@@ -43,6 +43,7 @@ namespace DBI
             roomNumber = valRoomNumber;
             bedNumber = valBedNumber;
             patientId = valPatientId;
+            this.admissionId = admissionId;
         }
     }
 }

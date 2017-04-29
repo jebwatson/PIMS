@@ -26,9 +26,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new NotesTable();
             myList = new List<Notes>()
             {
-                new Notes("note1", true, false, 1, 1),
-                new Notes("note2", false, true, 2, 2),
-                new Notes("note3", true, false, 3, 3)
+                new Notes("note1", true, false, 1, 1, 1),
+                new Notes("note2", false, true, 2, 2, 2),
+                new Notes("note3", true, false, 3, 3, 3)
             };
 
             Comparer = new NotesComparer();
@@ -42,7 +42,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM notes";
+                string clearQuery = "DELETE FROM notes DBCC CHECKIDENT('notes', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -142,9 +142,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            Notes updated1 = new Notes("note", false, true, 1, 1);
-            Notes updated2 = new Notes("this note now gets to be a longer note", true, false, 2, 2);
-            Notes updated3 = new Notes("longish note", false, true, 3, 3);
+            Notes updated1 = new Notes("note", false, true, 1, 1, 1);
+            Notes updated2 = new Notes("this note now gets to be a longer note", true, false, 2, 2, 2);
+            Notes updated3 = new Notes("longish note", false, true, 3, 3, 3);
 
             myList.Clear();
 
@@ -172,7 +172,7 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            Notes updatedNotesDoctor = new Notes("omg this dork made a matrix reference lol", false, true, 1, 1);
+            Notes updatedNotesDoctor = new Notes("omg this dork made a matrix reference lol", false, true, 1, 1, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedNotesDoctor);
