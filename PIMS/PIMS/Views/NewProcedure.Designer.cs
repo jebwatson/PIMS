@@ -34,9 +34,7 @@
             this.durationHours = new System.Windows.Forms.TextBox();
             this.procedureNotes = new System.Windows.Forms.TextBox();
             this.durationMinutes = new System.Windows.Forms.TextBox();
-            this.doctorId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,9 +47,9 @@
             // 
             // submitProcedure
             // 
-            this.submitProcedure.Location = new System.Drawing.Point(215, 232);
+            this.submitProcedure.Location = new System.Drawing.Point(264, 184);
             this.submitProcedure.Name = "submitProcedure";
-            this.submitProcedure.Size = new System.Drawing.Size(99, 51);
+            this.submitProcedure.Size = new System.Drawing.Size(99, 33);
             this.submitProcedure.TabIndex = 0;
             this.submitProcedure.Text = "Submit";
             this.submitProcedure.UseVisualStyleBackColor = true;
@@ -65,7 +63,7 @@
             // 
             // procedureType
             // 
-            this.procedureType.Location = new System.Drawing.Point(28, 119);
+            this.procedureType.Location = new System.Drawing.Point(264, 41);
             this.procedureType.Name = "procedureType";
             this.procedureType.Size = new System.Drawing.Size(199, 20);
             this.procedureType.TabIndex = 2;
@@ -79,7 +77,7 @@
             // 
             // procedureNotes
             // 
-            this.procedureNotes.Location = new System.Drawing.Point(264, 119);
+            this.procedureNotes.Location = new System.Drawing.Point(264, 80);
             this.procedureNotes.Multiline = true;
             this.procedureNotes.Name = "procedureNotes";
             this.procedureNotes.Size = new System.Drawing.Size(258, 98);
@@ -87,17 +85,10 @@
             // 
             // durationMinutes
             // 
-            this.durationMinutes.Location = new System.Drawing.Point(264, 80);
+            this.durationMinutes.Location = new System.Drawing.Point(27, 119);
             this.durationMinutes.Name = "durationMinutes";
             this.durationMinutes.Size = new System.Drawing.Size(200, 20);
             this.durationMinutes.TabIndex = 6;
-            // 
-            // doctorId
-            // 
-            this.doctorId.Location = new System.Drawing.Point(264, 41);
-            this.doctorId.Name = "doctorId";
-            this.doctorId.Size = new System.Drawing.Size(200, 20);
-            this.doctorId.TabIndex = 7;
             // 
             // label1
             // 
@@ -107,15 +98,6 @@
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Patient ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Doctor ID";
             // 
             // label3
             // 
@@ -147,7 +129,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 103);
+            this.label7.Location = new System.Drawing.Point(261, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 16;
@@ -156,7 +138,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 103);
+            this.label8.Location = new System.Drawing.Point(261, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 13);
             this.label8.TabIndex = 17;
@@ -165,7 +147,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(261, 64);
+            this.label9.Location = new System.Drawing.Point(24, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 18;
@@ -186,11 +168,11 @@
             this.stopTime.Size = new System.Drawing.Size(200, 20);
             this.stopTime.TabIndex = 20;
             // 
-            // frmNewProcedures
+            // NewProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 295);
+            this.ClientSize = new System.Drawing.Size(558, 251);
             this.Controls.Add(this.stopTime);
             this.Controls.Add(this.startTime);
             this.Controls.Add(this.label9);
@@ -199,17 +181,15 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.doctorId);
             this.Controls.Add(this.durationMinutes);
             this.Controls.Add(this.procedureNotes);
             this.Controls.Add(this.durationHours);
             this.Controls.Add(this.procedureType);
             this.Controls.Add(this.patientId);
             this.Controls.Add(this.submitProcedure);
-            this.Name = "frmNewProcedures";
-            this.Text = "frmNewProcedures";
+            this.Name = "NewProcedure";
+            this.Text = "Add Procedure";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,9 +203,7 @@
         private System.Windows.Forms.TextBox durationHours;
         private System.Windows.Forms.TextBox procedureNotes;
         private System.Windows.Forms.TextBox durationMinutes;
-        private System.Windows.Forms.TextBox doctorId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

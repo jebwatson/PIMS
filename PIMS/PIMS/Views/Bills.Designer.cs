@@ -44,7 +44,7 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(27, 33);
+            this.btnSearchPatients.Location = new System.Drawing.Point(26, 20);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
@@ -55,7 +55,7 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(144, 36);
+            this.txtPatientSearch.Location = new System.Drawing.Point(143, 23);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
@@ -82,8 +82,10 @@
             this.DateCharged,
             this.DateDue});
             this.olvBillsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvBillsList.FullRowSelect = true;
             this.olvBillsList.GridLines = true;
-            this.olvBillsList.Location = new System.Drawing.Point(27, 70);
+            this.olvBillsList.HideSelection = false;
+            this.olvBillsList.Location = new System.Drawing.Point(26, 57);
             this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvBillsList.Name = "olvBillsList";
             this.olvBillsList.ShowGroups = false;
@@ -145,7 +147,7 @@
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 340);
+            this.ClientSize = new System.Drawing.Size(874, 309);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvBillsList);

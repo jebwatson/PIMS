@@ -67,8 +67,10 @@
             this.Room,
             this.Bed});
             this.olvAdmissionsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvAdmissionsList.FullRowSelect = true;
             this.olvAdmissionsList.GridLines = true;
-            this.olvAdmissionsList.Location = new System.Drawing.Point(8, 63);
+            this.olvAdmissionsList.HideSelection = false;
+            this.olvAdmissionsList.Location = new System.Drawing.Point(28, 55);
             this.olvAdmissionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvAdmissionsList.Name = "olvAdmissionsList";
             this.olvAdmissionsList.ShowGroups = false;
@@ -130,7 +132,7 @@
             // btnSearchPatient
             // 
             this.btnSearchPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatient.Location = new System.Drawing.Point(8, 34);
+            this.btnSearchPatient.Location = new System.Drawing.Point(28, 26);
             this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatient.Name = "btnSearchPatient";
             this.btnSearchPatient.Size = new System.Drawing.Size(97, 25);
@@ -142,7 +144,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(110, 37);
+            this.txtPatientSearch.Location = new System.Drawing.Point(130, 29);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(270, 20);
@@ -153,7 +155,7 @@
             this.AcceptButton = this.btnSearchPatient;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 465);
+            this.ClientSize = new System.Drawing.Size(740, 387);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.olvAdmissionsList);

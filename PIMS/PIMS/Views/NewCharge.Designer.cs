@@ -38,17 +38,13 @@
             this.dtpDateDue = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.olvProcedures = new BrightIdeasSoftware.ObjectListView();
-            this.lblProcedures = new System.Windows.Forms.Label();
-            this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.type = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.notes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.olvProcedures)).BeginInit();
+            this.lblPatientId = new System.Windows.Forms.Label();
+            this.txtPatientId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(12, 251);
+            this.txtDescription.Location = new System.Drawing.Point(12, 91);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(567, 80);
@@ -57,7 +53,7 @@
             // lblAmountDescriptions
             // 
             this.lblAmountDescriptions.AutoSize = true;
-            this.lblAmountDescriptions.Location = new System.Drawing.Point(12, 235);
+            this.lblAmountDescriptions.Location = new System.Drawing.Point(12, 75);
             this.lblAmountDescriptions.Name = "lblAmountDescriptions";
             this.lblAmountDescriptions.Size = new System.Drawing.Size(60, 13);
             this.lblAmountDescriptions.TabIndex = 1;
@@ -66,7 +62,7 @@
             // lblAmountTotal
             // 
             this.lblAmountTotal.AutoSize = true;
-            this.lblAmountTotal.Location = new System.Drawing.Point(12, 345);
+            this.lblAmountTotal.Location = new System.Drawing.Point(12, 185);
             this.lblAmountTotal.Name = "lblAmountTotal";
             this.lblAmountTotal.Size = new System.Drawing.Size(73, 13);
             this.lblAmountTotal.TabIndex = 2;
@@ -74,7 +70,7 @@
             // 
             // txtAmountTotal
             // 
-            this.txtAmountTotal.Location = new System.Drawing.Point(91, 342);
+            this.txtAmountTotal.Location = new System.Drawing.Point(91, 182);
             this.txtAmountTotal.Name = "txtAmountTotal";
             this.txtAmountTotal.Size = new System.Drawing.Size(215, 20);
             this.txtAmountTotal.TabIndex = 3;
@@ -82,7 +78,7 @@
             // lblDateCharged
             // 
             this.lblDateCharged.AutoSize = true;
-            this.lblDateCharged.Location = new System.Drawing.Point(9, 383);
+            this.lblDateCharged.Location = new System.Drawing.Point(9, 223);
             this.lblDateCharged.Name = "lblDateCharged";
             this.lblDateCharged.Size = new System.Drawing.Size(76, 13);
             this.lblDateCharged.TabIndex = 4;
@@ -91,7 +87,7 @@
             // lblDateDue
             // 
             this.lblDateDue.AutoSize = true;
-            this.lblDateDue.Location = new System.Drawing.Point(29, 419);
+            this.lblDateDue.Location = new System.Drawing.Point(29, 259);
             this.lblDateDue.Name = "lblDateDue";
             this.lblDateDue.Size = new System.Drawing.Size(56, 13);
             this.lblDateDue.TabIndex = 5;
@@ -99,23 +95,23 @@
             // 
             // dtpDateCharged
             // 
-            this.dtpDateCharged.Location = new System.Drawing.Point(91, 377);
+            this.dtpDateCharged.Location = new System.Drawing.Point(91, 217);
             this.dtpDateCharged.Name = "dtpDateCharged";
             this.dtpDateCharged.Size = new System.Drawing.Size(215, 20);
             this.dtpDateCharged.TabIndex = 6;
             // 
             // dtpDateDue
             // 
-            this.dtpDateDue.Location = new System.Drawing.Point(91, 413);
+            this.dtpDateDue.Location = new System.Drawing.Point(91, 253);
             this.dtpDateDue.Name = "dtpDateDue";
             this.dtpDateDue.Size = new System.Drawing.Size(215, 20);
             this.dtpDateDue.TabIndex = 7;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(216, 456);
+            this.btnCancel.Location = new System.Drawing.Point(172, 296);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 31);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -123,67 +119,38 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(91, 456);
+            this.btnSubmit.Location = new System.Drawing.Point(91, 296);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(75, 31);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // olvProcedures
+            // lblPatientId
             // 
-            this.olvProcedures.AllColumns.Add(this.id);
-            this.olvProcedures.AllColumns.Add(this.type);
-            this.olvProcedures.AllColumns.Add(this.notes);
-            this.olvProcedures.CellEditUseWholeCell = false;
-            this.olvProcedures.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
-            this.type,
-            this.notes});
-            this.olvProcedures.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvProcedures.Location = new System.Drawing.Point(12, 39);
-            this.olvProcedures.Name = "olvProcedures";
-            this.olvProcedures.ShowGroups = false;
-            this.olvProcedures.Size = new System.Drawing.Size(567, 182);
-            this.olvProcedures.TabIndex = 11;
-            this.olvProcedures.UseCompatibleStateImageBehavior = false;
-            this.olvProcedures.View = System.Windows.Forms.View.Details;
+            this.lblPatientId.AutoSize = true;
+            this.lblPatientId.Location = new System.Drawing.Point(12, 23);
+            this.lblPatientId.Name = "lblPatientId";
+            this.lblPatientId.Size = new System.Drawing.Size(52, 13);
+            this.lblPatientId.TabIndex = 12;
+            this.lblPatientId.Text = "Patient Id";
             // 
-            // lblProcedures
+            // txtPatientId
             // 
-            this.lblProcedures.AutoSize = true;
-            this.lblProcedures.Location = new System.Drawing.Point(12, 23);
-            this.lblProcedures.Name = "lblProcedures";
-            this.lblProcedures.Size = new System.Drawing.Size(61, 13);
-            this.lblProcedures.TabIndex = 12;
-            this.lblProcedures.Text = "Procedures";
+            this.txtPatientId.Location = new System.Drawing.Point(12, 39);
+            this.txtPatientId.Multiline = true;
+            this.txtPatientId.Name = "txtPatientId";
+            this.txtPatientId.Size = new System.Drawing.Size(109, 28);
+            this.txtPatientId.TabIndex = 13;
             // 
-            // id
-            // 
-            this.id.AspectName = "procId";
-            this.id.Text = "ID";
-            this.id.Width = 33;
-            // 
-            // type
-            // 
-            this.type.AspectName = "procType";
-            this.type.Text = "Type";
-            this.type.Width = 156;
-            // 
-            // notes
-            // 
-            this.notes.AspectName = "procNotes";
-            this.notes.FillsFreeSpace = true;
-            this.notes.Text = "Notes";
-            // 
-            // frmNewCharge
+            // NewCharge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 493);
-            this.Controls.Add(this.lblProcedures);
-            this.Controls.Add(this.olvProcedures);
+            this.ClientSize = new System.Drawing.Size(591, 339);
+            this.Controls.Add(this.txtPatientId);
+            this.Controls.Add(this.lblPatientId);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dtpDateDue);
@@ -194,9 +161,8 @@
             this.Controls.Add(this.lblAmountTotal);
             this.Controls.Add(this.lblAmountDescriptions);
             this.Controls.Add(this.txtDescription);
-            this.Name = "frmNewCharge";
-            this.Text = "frmNewCharge";
-            ((System.ComponentModel.ISupportInitialize)(this.olvProcedures)).EndInit();
+            this.Name = "NewCharge";
+            this.Text = "Add Charge";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,10 +180,7 @@
         private System.Windows.Forms.DateTimePicker dtpDateDue;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
-        private BrightIdeasSoftware.ObjectListView olvProcedures;
-        private System.Windows.Forms.Label lblProcedures;
-        private BrightIdeasSoftware.OLVColumn id;
-        private BrightIdeasSoftware.OLVColumn type;
-        private BrightIdeasSoftware.OLVColumn notes;
+        private System.Windows.Forms.Label lblPatientId;
+        private System.Windows.Forms.TextBox txtPatientId;
     }
 }

@@ -231,6 +231,15 @@
     <EmbeddedResource Include="Views\NewPatient.resx">
       <DependentUpon>NewPatient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewPrescription.resx">
+      <DependentUpon>NewPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewProcedure.resx">
+      <DependentUpon>NewProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewVisitor.resx">
+      <DependentUpon>NewVisitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Notes.resx">
       <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
