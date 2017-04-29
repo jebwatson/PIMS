@@ -72,6 +72,7 @@ namespace PIMS.Views
 
         private void btnReports_Click(object sender, EventArgs e)
         {
+            Presenter.CreateReportsForm();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

@@ -68,5 +68,10 @@ namespace PIMS.Presenters
             NotesForm.ShowDialog();
         }
 
+        internal void CreateReportsForm()
+        {
+            Reports ReportsForm = new Reports();
+            ReportsForm.ShowDialog();
+        }
     }
 }
