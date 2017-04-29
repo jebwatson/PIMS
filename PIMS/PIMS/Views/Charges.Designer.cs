@@ -83,7 +83,7 @@
             this.olvChargesList.Margin = new System.Windows.Forms.Padding(2);
             this.olvChargesList.Name = "olvChargesList";
             this.olvChargesList.ShowGroups = false;
-            this.olvChargesList.Size = new System.Drawing.Size(679, 227);
+            this.olvChargesList.Size = new System.Drawing.Size(602, 227);
             this.olvChargesList.TabIndex = 11;
             this.olvChargesList.UseCompatibleStateImageBehavior = false;
             this.olvChargesList.View = System.Windows.Forms.View.Details;
@@ -148,7 +148,7 @@
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 306);
+            this.ClientSize = new System.Drawing.Size(749, 306);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.olvChargesList);
