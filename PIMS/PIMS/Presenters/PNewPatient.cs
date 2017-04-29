@@ -137,9 +137,9 @@ namespace PIMS.Presenters
                         sufficientData = false;
                     }
 
-                    if (View.AreaCodeHome.Length != 3 || View.PhoneHome.Length != 7 ||
-                        View.AreaCodeWork.Length != 3 || View.PhoneWork.Length != 7 ||
-                        View.AreaCodeCell.Length != 3 || View.PhoneCell.Length != 7)
+                    if (View.AreaCodeHome.Length != 3 || View.PhoneHome.Length != 7 || View.PhoneHome.Length != 0 ||
+                        View.AreaCodeWork.Length != 3 || View.PhoneWork.Length != 7 || View.PhoneWork.Length != 0 ||
+                        View.AreaCodeCell.Length != 3 || View.PhoneCell.Length != 7 || View.PhoneCell.Length != 0)
                     {
                         View.AreaCodeHome = string.Empty;
                         View.PhoneHome = string.Empty;
@@ -151,7 +151,7 @@ namespace PIMS.Presenters
                         sufficientData = false;
                     }
 
-                    if (View.FamilyDoctor.Length == 0 || View.FamilyDoctor.Length > 128)
+                    if (View.FamilyDoctor.Length > 128)
                     {
                         View.FamilyDoctor = string.Empty;
                         System.Windows.Forms.MessageBox.Show("Invalid string. Please enter a valid string for family doctor to continue.");
@@ -159,8 +159,7 @@ namespace PIMS.Presenters
                     }
                     break;
                 case 1:
-                    if (View.NameFirstEC.Length == 0 || View.NameFirstEC.Length > 128 ||
-                        View.NameLastEC.Length == 0 || View.NameLastEC.Length > 128)
+                    if (View.NameFirstEC.Length > 128 || View.NameLastEC.Length > 128)
                     {
                         View.NameFirstEC = string.Empty;
                         View.NameLastEC = string.Empty;
@@ -168,7 +167,7 @@ namespace PIMS.Presenters
                         sufficientData = false;
                     }
 
-                    if (View.AreaCodeEC.Length != 3 || View.PhoneEC.Length != 7)
+                    if (View.AreaCodeEC.Length != 3 || View.PhoneEC.Length != 7 || View.PhoneEC.Length != 0)
                     {
                         View.AreaCodeEC = string.Empty;
                         View.PhoneEC = string.Empty;
@@ -177,21 +176,21 @@ namespace PIMS.Presenters
                     }
                     break;
                 case 2:
-                    if (View.Carrier.Length == 0 || View.Carrier.Length > 128)
+                    if (View.Carrier.Length > 128)
                     {
                         View.Carrier = string.Empty;
                         System.Windows.Forms.MessageBox.Show("Invalid carrier string. Enter a valid string to continue.");
                         sufficientData = false;
                     }
 
-                    if (View.AccountNumber.Length != 9)
+                    if (View.AccountNumber.Length != 9 || View.AccountNumber.Length != 0)
                     {
                         View.AccountNumber = string.Empty;
                         System.Windows.Forms.MessageBox.Show("Invalid account number string. Please enter a valid string to continue.");
                         sufficientData = false;
                     }
 
-                    if (View.GroupNumber.Length != 6)
+                    if (View.GroupNumber.Length != 6 || View.GroupNumber.Length != 0)
                     {
                         View.GroupNumber = string.Empty;
                         System.Windows.Forms.MessageBox.Show("Invalid group number string. Please enter a valid string to continue.");
@@ -199,15 +198,16 @@ namespace PIMS.Presenters
                     }
                     break;
                 case 3:
-                    if (View.AdmissionReason.Length == 0)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Please enter a reason for admission to continue.");
-                        sufficientData = false;
-                    }
-                    if (View.Facility.Length == 0 || View.Facility.Length > 128 ||
-                        View.FloorNumber.Length == 0 || View.FloorNumber.Length > 4 ||
-                        View.RoomNumber.Length == 0 || View.RoomNumber.Length > 6 ||
-                        View.BedNumber.Length == 0 || View.BedNumber.Length > 4)
+                    // Disabled these checks to relax the add patient process.
+                    //if (View.AdmissionReason.Length == 0)
+                    //{
+                    //    System.Windows.Forms.MessageBox.Show("Please enter a reason for admission to continue.");
+                    //    sufficientData = false;
+                    //}
+                    if (View.Facility.Length > 128 ||
+                        View.FloorNumber.Length > 32 ||
+                        View.RoomNumber.Length > 32 ||
+                        View.BedNumber.Length > 32)
                     {
                         View.Facility = string.Empty;
                         View.FloorNumber = string.Empty;
