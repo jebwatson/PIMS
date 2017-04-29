@@ -42,15 +42,17 @@
             this.btnPrescriptionsReport = new System.Windows.Forms.Button();
             this.olvReportsList = new BrightIdeasSoftware.ObjectListView();
             this.id = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.lname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.btnDeselect = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvReportsList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatients.Location = new System.Drawing.Point(235, 22);
+            this.btnSearchPatients.Location = new System.Drawing.Point(237, 23);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(75, 23);
             this.btnSearchPatients.TabIndex = 11;
@@ -61,7 +63,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(316, 24);
+            this.txtPatientSearch.Location = new System.Drawing.Point(318, 25);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(373, 20);
             this.txtPatientSearch.TabIndex = 10;
@@ -69,7 +71,7 @@
             // btnBillsReport
             // 
             this.btnBillsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBillsReport.Location = new System.Drawing.Point(12, 157);
+            this.btnBillsReport.Location = new System.Drawing.Point(14, 158);
             this.btnBillsReport.Name = "btnBillsReport";
             this.btnBillsReport.Size = new System.Drawing.Size(202, 50);
             this.btnBillsReport.TabIndex = 9;
@@ -80,7 +82,7 @@
             // btnAdmissionsReport
             // 
             this.btnAdmissionsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdmissionsReport.Location = new System.Drawing.Point(12, 101);
+            this.btnAdmissionsReport.Location = new System.Drawing.Point(14, 102);
             this.btnAdmissionsReport.Name = "btnAdmissionsReport";
             this.btnAdmissionsReport.Size = new System.Drawing.Size(202, 50);
             this.btnAdmissionsReport.TabIndex = 8;
@@ -91,7 +93,7 @@
             // btnPatientReport
             // 
             this.btnPatientReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPatientReport.Location = new System.Drawing.Point(12, 50);
+            this.btnPatientReport.Location = new System.Drawing.Point(14, 51);
             this.btnPatientReport.Name = "btnPatientReport";
             this.btnPatientReport.Size = new System.Drawing.Size(202, 45);
             this.btnPatientReport.TabIndex = 7;
@@ -102,7 +104,7 @@
             // btnChargesReport
             // 
             this.btnChargesReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChargesReport.Location = new System.Drawing.Point(12, 213);
+            this.btnChargesReport.Location = new System.Drawing.Point(14, 214);
             this.btnChargesReport.Name = "btnChargesReport";
             this.btnChargesReport.Size = new System.Drawing.Size(202, 50);
             this.btnChargesReport.TabIndex = 12;
@@ -113,7 +115,7 @@
             // btnEmergencyContactsReport
             // 
             this.btnEmergencyContactsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEmergencyContactsReport.Location = new System.Drawing.Point(12, 269);
+            this.btnEmergencyContactsReport.Location = new System.Drawing.Point(14, 270);
             this.btnEmergencyContactsReport.Name = "btnEmergencyContactsReport";
             this.btnEmergencyContactsReport.Size = new System.Drawing.Size(202, 50);
             this.btnEmergencyContactsReport.TabIndex = 13;
@@ -124,7 +126,7 @@
             // btnNotesReport
             // 
             this.btnNotesReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNotesReport.Location = new System.Drawing.Point(12, 381);
+            this.btnNotesReport.Location = new System.Drawing.Point(14, 382);
             this.btnNotesReport.Name = "btnNotesReport";
             this.btnNotesReport.Size = new System.Drawing.Size(202, 50);
             this.btnNotesReport.TabIndex = 14;
@@ -135,7 +137,7 @@
             // btnInsuranceReport
             // 
             this.btnInsuranceReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnInsuranceReport.Location = new System.Drawing.Point(12, 325);
+            this.btnInsuranceReport.Location = new System.Drawing.Point(14, 326);
             this.btnInsuranceReport.Name = "btnInsuranceReport";
             this.btnInsuranceReport.Size = new System.Drawing.Size(202, 50);
             this.btnInsuranceReport.TabIndex = 15;
@@ -146,7 +148,7 @@
             // btnVisitorsReport
             // 
             this.btnVisitorsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVisitorsReport.Location = new System.Drawing.Point(12, 549);
+            this.btnVisitorsReport.Location = new System.Drawing.Point(14, 550);
             this.btnVisitorsReport.Name = "btnVisitorsReport";
             this.btnVisitorsReport.Size = new System.Drawing.Size(202, 50);
             this.btnVisitorsReport.TabIndex = 16;
@@ -157,7 +159,7 @@
             // btnProceduresReport
             // 
             this.btnProceduresReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProceduresReport.Location = new System.Drawing.Point(12, 493);
+            this.btnProceduresReport.Location = new System.Drawing.Point(14, 494);
             this.btnProceduresReport.Name = "btnProceduresReport";
             this.btnProceduresReport.Size = new System.Drawing.Size(202, 50);
             this.btnProceduresReport.TabIndex = 17;
@@ -168,7 +170,7 @@
             // btnPrescriptionsReport
             // 
             this.btnPrescriptionsReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrescriptionsReport.Location = new System.Drawing.Point(12, 437);
+            this.btnPrescriptionsReport.Location = new System.Drawing.Point(14, 438);
             this.btnPrescriptionsReport.Name = "btnPrescriptionsReport";
             this.btnPrescriptionsReport.Size = new System.Drawing.Size(202, 50);
             this.btnPrescriptionsReport.TabIndex = 18;
@@ -190,7 +192,8 @@
             this.olvReportsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvReportsList.FullRowSelect = true;
             this.olvReportsList.GridLines = true;
-            this.olvReportsList.Location = new System.Drawing.Point(235, 51);
+            this.olvReportsList.HideSelection = false;
+            this.olvReportsList.Location = new System.Drawing.Point(237, 52);
             this.olvReportsList.Name = "olvReportsList";
             this.olvReportsList.ShowGroups = false;
             this.olvReportsList.Size = new System.Drawing.Size(454, 548);
@@ -204,23 +207,47 @@
             this.id.Text = "Patient Id";
             this.id.Width = 100;
             // 
-            // fname
-            // 
-            this.fname.AspectName = "nameFirst";
-            this.fname.Text = "First Name";
-            this.fname.Width = 100;
-            // 
             // lname
             // 
             this.lname.AspectName = "nameLast";
             this.lname.Text = "Last Name";
             this.lname.Width = 96;
             // 
+            // fname
+            // 
+            this.fname.AspectName = "nameFirst";
+            this.fname.Text = "First Name";
+            this.fname.Width = 100;
+            // 
+            // btnDeselect
+            // 
+            this.btnDeselect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeselect.Location = new System.Drawing.Point(489, 611);
+            this.btnDeselect.Name = "btnDeselect";
+            this.btnDeselect.Size = new System.Drawing.Size(202, 50);
+            this.btnDeselect.TabIndex = 19;
+            this.btnDeselect.Text = "Deselect All Selected Patients";
+            this.btnDeselect.UseVisualStyleBackColor = true;
+            this.btnDeselect.Click += new System.EventHandler(this.btnDeselect_Click);
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSelect.Location = new System.Drawing.Point(281, 611);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(202, 50);
+            this.btnSelect.TabIndex = 20;
+            this.btnSelect.Text = "Select All Patients";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 610);
+            this.ClientSize = new System.Drawing.Size(733, 673);
+            this.Controls.Add(this.btnSelect);
+            this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnPrescriptionsReport);
             this.Controls.Add(this.btnProceduresReport);
             this.Controls.Add(this.btnVisitorsReport);
@@ -259,5 +286,7 @@
         private System.Windows.Forms.Button btnProceduresReport;
         private System.Windows.Forms.Button btnPrescriptionsReport;
         private BrightIdeasSoftware.OLVColumn lname;
+        private System.Windows.Forms.Button btnDeselect;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
