@@ -42,7 +42,7 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(136, 39);
+            this.txtPatientSearch.Location = new System.Drawing.Point(131, 24);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
@@ -50,7 +50,7 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(38, 36);
+            this.btnSearchPatients.Location = new System.Drawing.Point(33, 21);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
@@ -76,12 +76,14 @@
             this.PrescriptionDate,
             this.Duration});
             this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvPrescriptionsList.FullRowSelect = true;
             this.olvPrescriptionsList.GridLines = true;
-            this.olvPrescriptionsList.Location = new System.Drawing.Point(39, 68);
+            this.olvPrescriptionsList.HideSelection = false;
+            this.olvPrescriptionsList.Location = new System.Drawing.Point(34, 53);
             this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvPrescriptionsList.Name = "olvPrescriptionsList";
             this.olvPrescriptionsList.ShowGroups = false;
-            this.olvPrescriptionsList.Size = new System.Drawing.Size(467, 227);
+            this.olvPrescriptionsList.Size = new System.Drawing.Size(479, 227);
             this.olvPrescriptionsList.TabIndex = 6;
             this.olvPrescriptionsList.UseCompatibleStateImageBehavior = false;
             this.olvPrescriptionsList.View = System.Windows.Forms.View.Details;
@@ -130,7 +132,7 @@
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 371);
+            this.ClientSize = new System.Drawing.Size(568, 312);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvPrescriptionsList);

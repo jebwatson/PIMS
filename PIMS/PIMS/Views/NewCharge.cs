@@ -17,8 +17,6 @@ namespace PIMS.Views
         public NewCharge()
         {
             InitializeComponent();
-            ProceduresTable MyProceduresTable = new ProceduresTable();
-            this.olvProcedures.SetObjects(MyProceduresTable.ReadList());
         }
 
         // Properties
@@ -26,7 +24,6 @@ namespace PIMS.Views
         public string DateAdded { get { return this.dtpDateCharged.Value.Date.ToString() + " " + this.dtpDateCharged.Value.TimeOfDay.ToString(); } }
         public string DateDue { get { return this.dtpDateDue.Value.Date.ToString() + " " + this.dtpDateDue.Value.TimeOfDay.ToString(); } }
         public string AmountTotal { get { return this.txtAmountTotal.Text; } }
-        public ObjectListView ProceduresList { get { return this.olvProcedures; } }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
