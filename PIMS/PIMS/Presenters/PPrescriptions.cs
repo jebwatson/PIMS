@@ -43,6 +43,40 @@ namespace PIMS.Presenters
             View.PrescriptionsList.SetObjects(MyPrescriptionsTable.ReadList());
         }
 
+        public void AddPrescriptions()
+        {
+            NewPrescription MyNewPrescriptionForm = new NewPrescription();
+            if (MyNewPrescriptionForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshPrescriptionsList();
+            }
+        }
+
+        public void DeletePrescriptions()
+        {
+            if (MessageBox.Show("Are you sure you want to delete the selected prescriptions?",
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (View.PrescriptionsList.SelectedObjects != null)
+                {
+                    foreach (var item in View.PrescriptionsList.SelectedObjects)
+                    {
+                        MyPrescriptionsTable.ClearTableById(((DBI.Prescriptions)item).patientId);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No prescriptions available.");
+                }
+
+                RefreshPrescriptionsList();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.
