@@ -39,6 +39,7 @@
             this.DueDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.refreshCharges = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +128,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(17, 77);
+            this.btnDelete.Location = new System.Drawing.Point(17, 104);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 13;
@@ -137,7 +138,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 48);
+            this.btnAdd.Location = new System.Drawing.Point(17, 75);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 14;
@@ -145,12 +146,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // refreshCharges
+            // 
+            this.refreshCharges.Location = new System.Drawing.Point(17, 46);
+            this.refreshCharges.Name = "refreshCharges";
+            this.refreshCharges.Size = new System.Drawing.Size(75, 23);
+            this.refreshCharges.TabIndex = 15;
+            this.refreshCharges.Text = "Refresh";
+            this.refreshCharges.UseVisualStyleBackColor = true;
+            this.refreshCharges.Click += new System.EventHandler(this.refreshCharges_Click);
+            // 
             // Charges
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 301);
+            this.Controls.Add(this.refreshCharges);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.olvChargesList);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button refreshCharges;
     }
 }

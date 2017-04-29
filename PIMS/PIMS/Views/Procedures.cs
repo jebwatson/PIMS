@@ -36,5 +36,10 @@ namespace PIMS.Views
         {
             Presenter.SearchPatients();
         }
+
+        private void refreshProcedures_Click(object sender, EventArgs e)
+        {
+            Presenter.RefreshProceduresList();
+        }
     }
 }

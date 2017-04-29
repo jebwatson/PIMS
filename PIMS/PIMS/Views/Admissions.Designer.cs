@@ -40,6 +40,7 @@
             this.Bed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatient = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.refreshAdmissions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvAdmissionsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,12 +151,23 @@
             this.txtPatientSearch.Size = new System.Drawing.Size(270, 20);
             this.txtPatientSearch.TabIndex = 2;
             // 
+            // refreshAdmissions
+            // 
+            this.refreshAdmissions.Location = new System.Drawing.Point(639, 26);
+            this.refreshAdmissions.Name = "refreshAdmissions";
+            this.refreshAdmissions.Size = new System.Drawing.Size(75, 23);
+            this.refreshAdmissions.TabIndex = 3;
+            this.refreshAdmissions.Text = "Refresh";
+            this.refreshAdmissions.UseVisualStyleBackColor = true;
+            this.refreshAdmissions.Click += new System.EventHandler(this.refreshAdmissions_Click);
+            // 
             // Admissions
             // 
             this.AcceptButton = this.btnSearchPatient;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 387);
+            this.Controls.Add(this.refreshAdmissions);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatient);
             this.Controls.Add(this.olvAdmissionsList);
@@ -182,5 +194,6 @@
         private BrightIdeasSoftware.OLVColumn Room;
         private BrightIdeasSoftware.OLVColumn Bed;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button refreshAdmissions;
     }
 }

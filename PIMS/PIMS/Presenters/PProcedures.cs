@@ -37,6 +37,12 @@ namespace PIMS.Presenters
             View.ProceduresList.SetObjects(MyProceduresTable.ReadList());
         }
 
+        public void RefreshProceduresList()
+        {
+            ProceduresTable MyProceduresTable = new ProceduresTable();
+            View.ProceduresList.SetObjects(MyProceduresTable.ReadList());
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.

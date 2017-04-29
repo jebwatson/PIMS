@@ -37,6 +37,12 @@ namespace PIMS.Presenters
             View.VisitorsList.SetObjects(MyVisitorsTable.ReadList());
         }
 
+        public void RefreshVisitorsList()
+        {
+            VisitorsTable MyVisitorsTable = new VisitorsTable();
+            View.VisitorsList.SetObjects(MyVisitorsTable.ReadList());
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.
