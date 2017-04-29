@@ -47,7 +47,7 @@
             this.txtDescription.Location = new System.Drawing.Point(12, 91);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(567, 80);
+            this.txtDescription.Size = new System.Drawing.Size(466, 80);
             this.txtDescription.TabIndex = 0;
             // 
             // lblAmountDescriptions
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 339);
+            this.ClientSize = new System.Drawing.Size(501, 339);
             this.Controls.Add(this.txtPatientId);
             this.Controls.Add(this.lblPatientId);
             this.Controls.Add(this.btnSubmit);
