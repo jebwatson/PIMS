@@ -22,9 +22,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new EmergencyContactTable();
             myList = new List<EmergencyContact>()
             {
-                new EmergencyContact("Watson", "Jeb", "W", "8076874", "205", 1),
-                new EmergencyContact("Burcham", "David", "A", "1111111", "256", 1),
-                new EmergencyContact("Morrow", "Jasper", "A", "2222222", "256", 1)
+                new EmergencyContact("Watson", "Jeb", "W", "8076874", "205", 1, 1),
+                new EmergencyContact("Burcham", "David", "A", "1111111", "256", 1, 2),
+                new EmergencyContact("Morrow", "Jasper", "A", "2222222", "256", 1, 3)
             };
 
             comparer = new EmergencyContactComparer();
@@ -38,7 +38,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM emergencyContact";
+                string clearQuery = "DELETE FROM emergencyContact DBCC CHECKIDENT('emergencyContact', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -148,9 +148,9 @@ namespace PIMSTests.ModelTableTests
             List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             // Need some updated data
-            EmergencyContact updated1 = new EmergencyContact("Majors", "John", "E", "3333333", "205", 1);
-            EmergencyContact updated2 = new EmergencyContact("Stevens", "Chris", "A", "4444444", "256", 1);
-            EmergencyContact updated3 = new EmergencyContact("Kane", "CSSA-JEB", "A", "5555555", "256", 1);
+            EmergencyContact updated1 = new EmergencyContact("Majors", "John", "E", "3333333", "205", 1, 1);
+            EmergencyContact updated2 = new EmergencyContact("Stevens", "Chris", "A", "4444444", "256", 1, 2);
+            EmergencyContact updated3 = new EmergencyContact("Kane", "CSSA-JEB", "A", "5555555", "256", 1, 3);
 
             myList.Clear();
 
@@ -179,7 +179,7 @@ namespace PIMSTests.ModelTableTests
             List<EmergencyContact> contacts = new List<EmergencyContact>();
 
             // Need some updated data
-            EmergencyContact updatedEmergencyContact = new EmergencyContact("Matrix", "Neo", "M", "1010110", "110", 1);
+            EmergencyContact updatedEmergencyContact = new EmergencyContact("Matrix", "Neo", "M", "1010110", "110", 1, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedEmergencyContact);

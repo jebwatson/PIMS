@@ -45,7 +45,7 @@ namespace DBI
 
         public Patient(string nameLast, string nameFirst, string nameMiddle, string street,
             string city, string state, string zip, string phoneHome, string areaCodeHome, string phoneWork,
-            string areaCodeWork, string phoneMobile, string areaCodeMobile, string familyDoctor)
+            string areaCodeWork, string phoneMobile, string areaCodeMobile, string familyDoctor, int patientId)
         {
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
@@ -61,6 +61,7 @@ namespace DBI
             this.phoneMobile = phoneMobile;
             this.areaCodeMobile = areaCodeMobile;
             this.familyDoctor = familyDoctor;
+            this.patientId = patientId;
         }
     }
 }

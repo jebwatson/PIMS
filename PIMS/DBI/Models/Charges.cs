@@ -16,6 +16,7 @@ namespace DBI
         public int procedureId { get; set; }
         public int officeStaffId { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Charges()
         {
@@ -30,7 +31,7 @@ namespace DBI
         }
 
         public Charges(string description, string amountTotal, DateTime dateCharged, DateTime dateDue, int procedureId,
-            int officeStaffId, int patientId)
+            int officeStaffId, int patientId, int chargeId)
         {
             this.description = description;
             this.amountTotal = amountTotal;
@@ -39,6 +40,7 @@ namespace DBI
             this.procedureId = procedureId;
             this.officeStaffId = officeStaffId;
             this.patientId = patientId;
+            this.chargeId = chargeId;
         }
     }
 }

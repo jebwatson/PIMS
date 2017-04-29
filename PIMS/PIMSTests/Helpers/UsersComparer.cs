@@ -7,7 +7,6 @@ namespace PIMSTests.Helpers
     {
         public void Compare(Users user1, Users user2)
         {
-            Assert.That(user1.userId, Is.EqualTo(user2.userId));
             Assert.That(user1.nameLast, Is.EqualTo(user2.nameLast));
             Assert.That(user1.nameFirst, Is.EqualTo(user2.nameFirst));
             Assert.That(user1.title, Is.EqualTo(user2.title));

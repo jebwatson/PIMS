@@ -21,9 +21,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new BillsTable();
             myList = new List<Bills>()
             {
-                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1),
-                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2),
-                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 3)
+                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 1, 1),
+                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), 2, 2),
+                new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), 3, 3)
             };
             comparer = new BillsComparer();
 
@@ -35,7 +35,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before and tests occur
-                string clearQuery = "DELETE FROM bills";
+                string clearQuery = "DELETE FROM bills DBCC CHECKIDENT('bills', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -179,9 +179,9 @@ namespace PIMSTests.ModelTableTests
             List<Bills> bills = new List<Bills>();
 
             // Add updated bills
-            Bills newBill1 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4);
-            Bills newBill2 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5);
-            Bills newBill3 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6);
+            Bills newBill1 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 1);
+            Bills newBill2 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), 5, 2);
+            Bills newBill3 = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), 6, 3);
 
             myList.Clear();
 
@@ -213,7 +213,7 @@ namespace PIMSTests.ModelTableTests
             List<Bills> bills = new List<Bills>();
 
             // Add updated bill
-            Bills updatedBill = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4);
+            Bills updatedBill = new Bills("1.99", "2.99", "3.99", "4.99", DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), 4, 1);
 
             myTable.UpdateItem(updatedBill);
             bills = myTable.ReadListById(updatedBill.billId);

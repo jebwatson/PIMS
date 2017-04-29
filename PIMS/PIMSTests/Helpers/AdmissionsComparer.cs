@@ -7,7 +7,6 @@ namespace PIMSTests.Helpers
     {
         public void Compare(Admission adm1, Admission adm2)
         {
-            Assert.That(adm1.admissionId, Is.EqualTo(adm2.admissionId));
             Assert.That(adm1.admissionTime, Is.EqualTo(adm2.admissionTime));
             Assert.That(adm1.dischargeTime, Is.EqualTo(adm2.dischargeTime));
             Assert.That(adm1.admissionReason, Is.EqualTo(adm2.admissionReason));

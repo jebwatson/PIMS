@@ -34,7 +34,7 @@ namespace PIMS.Presenters
         {
             MyEmergencyContactsTable = new EmergencyContactTable();
 
-            View.PatientsList.SetObjects(MyEmergencyContactsTable.ReadList());
+            View.EmergencyContactsList.SetObjects(MyEmergencyContactsTable.ReadList());
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace PIMS.Presenters
             foreach (Patient p in MyPatientsList)
             {
                 if (i == 0)
-                    View.PatientsList.SetObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
+                    View.EmergencyContactsList.SetObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
                 else
-                    View.PatientsList.UpdateObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
+                    View.EmergencyContactsList.UpdateObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
 
                 i++;
             }

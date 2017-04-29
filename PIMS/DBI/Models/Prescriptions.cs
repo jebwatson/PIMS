@@ -14,6 +14,7 @@ namespace DBI
         public string amount { get; set; }
         public DateTime prescDate { get; set; }
         public int duration { get; set; }
+        public string name { get; set; }
 
         public Prescriptions() {
             prescName = string.Empty;
@@ -24,12 +25,13 @@ namespace DBI
             duration = _unassigned;
         }
 
-        public Prescriptions(string prescName, string amount, DateTime prescDate, int duration, int patientId) {
+        public Prescriptions(string prescName, string amount, DateTime prescDate, int duration, int patientId, int prescId) {
             this.prescName = prescName;
             this.patientId = patientId;
             this.amount = amount;
             this.prescDate = prescDate;
             this.duration = duration;
+            this.prescId = prescId;
         }
     }
 }

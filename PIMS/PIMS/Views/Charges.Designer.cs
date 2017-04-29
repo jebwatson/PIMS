@@ -32,11 +32,15 @@
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
             this.olvChargesList = new BrightIdeasSoftware.ObjectListView();
             this.PatientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Description = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.TotalAmount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ChargeDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DueDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+<<<<<<< HEAD
             this.ProcedureID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+=======
+>>>>>>> refs/remotes/origin/master
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
@@ -64,6 +68,7 @@
             // olvChargesList
             // 
             this.olvChargesList.AllColumns.Add(this.PatientID);
+            this.olvChargesList.AllColumns.Add(this.PatientName);
             this.olvChargesList.AllColumns.Add(this.Description);
             this.olvChargesList.AllColumns.Add(this.TotalAmount);
             this.olvChargesList.AllColumns.Add(this.ChargeDate);
@@ -71,6 +76,7 @@
             this.olvChargesList.CellEditUseWholeCell = false;
             this.olvChargesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatientID,
+            this.PatientName,
             this.Description,
             this.TotalAmount,
             this.ChargeDate,
@@ -91,6 +97,11 @@
             this.PatientID.AspectName = "patientId";
             this.PatientID.Text = "Patient ID";
             this.PatientID.Width = 120;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
             // 
             // Description
             // 
@@ -116,6 +127,7 @@
             this.DueDate.Text = "Date Due";
             this.DueDate.Width = 120;
             // 
+<<<<<<< HEAD
             // ProcedureID
             // 
             this.ProcedureID.AspectName = "procedureId";
@@ -123,6 +135,8 @@
             this.ProcedureID.Text = "Procedure ID";
             this.ProcedureID.Width = 120;
             // 
+=======
+>>>>>>> refs/remotes/origin/master
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(36, 101);
@@ -174,6 +188,10 @@
         private BrightIdeasSoftware.OLVColumn DueDate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+<<<<<<< HEAD
         private BrightIdeasSoftware.OLVColumn ProcedureID;
+=======
+        private BrightIdeasSoftware.OLVColumn PatientName;
+>>>>>>> refs/remotes/origin/master
     }
 }

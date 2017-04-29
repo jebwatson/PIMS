@@ -25,13 +25,14 @@ namespace DBI
             username = string.Empty;
         }
 
-        public Users(string nameLast, string nameFirst, string title, int accessLevel, string username)
+        public Users(string nameLast, string nameFirst, string title, int accessLevel, string username, int userId)
         {
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
             this.title = title;
             this.accessLevel = accessLevel;
             this.username = username;
+            this.userId = userId;
         }
     }
 }

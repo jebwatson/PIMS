@@ -21,6 +21,9 @@ namespace DBI
 
             string myCommand = "DELETE FROM " + theTable;
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
+
+            myCommand = "DBCC CHECKIDENT('" + theTable + "', RESEED, 0)";
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
         /// <summary>
@@ -85,6 +88,9 @@ namespace DBI
                     visitor.lastVisit = lastVisit;
                     visitor.relation = relation;
 
+                    // Need to add the patient name to the object
+                    AddPatientName(visitor);
+
                     visitors.Add(visitor);
                 } // for
             } // if
@@ -123,6 +129,9 @@ namespace DBI
                     visitor.patientId = patientId;
                     visitor.lastVisit = lastVisit;
                     visitor.relation = relation;
+
+                    // Need to add the patient name to the object
+                    AddPatientName(visitor);
 
                     visitors.Add(visitor);
                 } // for
@@ -182,7 +191,7 @@ namespace DBI
                 string myQuery = "INSERT INTO " + theTable +
                     " (nameLast, nameFirst, patientId, lastVisit, " +
                     "relation)" +
-                    "VALUES (@nameLast, @nameFirst, @caseId, @patientId, @lastVisit, " +
+                    "VALUES (@nameLast, @nameFirst, @patientId, @lastVisit, " +
                     "@relation)";
 
                 SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
@@ -208,5 +217,20 @@ namespace DBI
                 WriteItem(visitor);
             } // foreach
         } // writelist
+
+        /// <summary>
+        /// Need to add the patient name to the object.
+        /// </summary>
+        /// <param name="newObject"></param>
+        private void AddPatientName(dynamic newObject)
+        {
+            PatientTable MyPatientTable = new PatientTable();
+            List<Patient> MyPatientsList = MyPatientTable.ReadListById(newObject.patientId);
+
+            if (MyPatientsList.Count > 0)
+            {
+                newObject.patientName = MyPatientsList[0].nameFirst + " " + MyPatientsList[0].nameLast;
+            }
+        }
     }
 }

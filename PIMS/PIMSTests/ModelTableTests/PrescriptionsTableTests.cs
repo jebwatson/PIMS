@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new PrescriptionsTable();
             myList = new List<Prescriptions>()
             {
-                new Prescriptions("test1", "1mg", DateTime.Parse("01/01/2017"), 1, 1),
-                new Prescriptions("test2", "2mg", DateTime.Parse("01/02/2017"), 2, 2),
-                new Prescriptions("test3", "3mg", DateTime.Parse("01/03/2017"), 3, 3)
+                new Prescriptions("test1", "1mg", DateTime.Parse("01/01/2017"), 1, 1, 1),
+                new Prescriptions("test2", "2mg", DateTime.Parse("01/02/2017"), 2, 2, 2),
+                new Prescriptions("test3", "3mg", DateTime.Parse("01/03/2017"), 3, 3, 3)
             };
             comparer = new PrescriptionsComparer();
 
@@ -38,7 +38,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM prescriptions";
+                string clearQuery = "DELETE FROM prescriptions DBCC CHECKIDENT('prescriptions', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Prescriptions> prescs = new List<Prescriptions>();
 
             // Need some updated data
-            Prescriptions updated1 = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4);
-            Prescriptions updated2 = new Prescriptions("test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5);
-            Prescriptions updated3 = new Prescriptions("test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6);
+            Prescriptions updated1 = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 1);
+            Prescriptions updated2 = new Prescriptions("test5", "5mg", DateTime.Parse("01/05/2017"), 5, 5, 2);
+            Prescriptions updated3 = new Prescriptions("test6", "6mg", DateTime.Parse("01/06/2017"), 6, 6, 3);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Prescriptions> prescs = new List<Prescriptions>();
 
             // Need some updated data
-            Prescriptions updatedPrescription = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4);
+            Prescriptions updatedPrescription = new Prescriptions("test4", "4mg", DateTime.Parse("01/04/2017"), 4, 4, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedPrescription);
