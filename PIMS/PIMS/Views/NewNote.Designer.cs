@@ -1,6 +1,6 @@
 ﻿namespace PIMS.Views
 {
-    partial class frmNewNotes
+    partial class NewNote
     {
         /// <summary>
         /// Required designer variable.

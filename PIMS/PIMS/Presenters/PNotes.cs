@@ -47,11 +47,11 @@ namespace PIMS.Presenters
         /// </summary>
         public void AddNotes()
         {
-            AddNote MyAddNoteView = new AddNote(((DBI.Notes)View.NotesList.Objects).patientId);
-            if (MyAddNoteView.ShowDialog() == DialogResult.OK)
-            {
-                RefreshNotesList();
-            }
+            //AddNote MyAddNoteView = new AddNote(((DBI.Notes)View.NotesList.Objects).patientId);
+            //if (MyAddNoteView.ShowDialog() == DialogResult.OK)
+            //{
+            //    RefreshNotesList();
+            //}
         }
 
         /// <summary>

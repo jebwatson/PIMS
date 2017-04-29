@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class frmNewPrescriptions : Form
+    public partial class NewNote : Form
     {
-        public frmNewPrescriptions()
+        public NewNote()
         {
             InitializeComponent();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PIMS.Views
 {
-    partial class frmNewProcedures
+    partial class NewProcedure
     {
         /// <summary>
         /// Required designer variable.
