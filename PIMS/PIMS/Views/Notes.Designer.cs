@@ -95,6 +95,8 @@
             // 
             // PatientName
             // 
+            this.PatientName.AspectName = "name";
+            this.PatientName.Text = "Name";
             this.PatientName.Width = 90;
             // 
             // note
