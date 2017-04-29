@@ -37,7 +37,6 @@
             this.TotalAmount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ChargeDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DueDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.ProcedureID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvChargesList)).BeginInit();
@@ -123,13 +122,6 @@
             this.DueDate.AspectName = "dateDue";
             this.DueDate.Text = "Date Due";
             this.DueDate.Width = 120;
-            // 
-            // ProcedureID
-            // 
-            this.ProcedureID.AspectName = "procedureId";
-            this.ProcedureID.DisplayIndex = 5;
-            this.ProcedureID.Text = "Procedure ID";
-            this.ProcedureID.Width = 120;
             // 
             // btnDelete
             // 

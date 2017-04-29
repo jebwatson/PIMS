@@ -35,11 +35,9 @@
             this.patientId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PatientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.note = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.UserId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.refreshNotes = new System.Windows.Forms.Button();
             this.addNote = new System.Windows.Forms.Button();
             this.removeNote = new System.Windows.Forms.Button();
-            this.patientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvNotesList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,16 +76,13 @@
             this.olvNotesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientId,
             this.PatientName,
-            this.note,
-            this.UserId});
+            this.note});
             this.olvNotesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvNotesList.FullRowSelect = true;
             this.olvNotesList.GridLines = true;
             this.olvNotesList.Location = new System.Drawing.Point(35, 47);
-            this.olvNotesList.Margin = new System.Windows.Forms.Padding(2);
             this.olvNotesList.Name = "olvNotesList";
-            this.olvNotesList.ShowGroups = false;
-            this.olvNotesList.Size = new System.Drawing.Size(589, 323);
+            this.olvNotesList.Size = new System.Drawing.Size(566, 322);
             this.olvNotesList.TabIndex = 1;
             this.olvNotesList.UseCompatibleStateImageBehavior = false;
             this.olvNotesList.View = System.Windows.Forms.View.Details;
@@ -96,23 +91,17 @@
             // 
             this.patientId.AspectName = "patientId";
             this.patientId.Text = "Patient ID";
-            this.patientId.Width = 75;
+            this.patientId.Width = 63;
             // 
             // PatientName
             // 
-            this.PatientName.AspectName = "name";
-            this.PatientName.Text = "Name";
+            this.PatientName.Width = 90;
             // 
             // note
             // 
             this.note.AspectName = "notes";
             this.note.Text = "Note";
-            this.note.Width = 358;
-            // 
-            // UserId
-            // 
-            this.UserId.AspectName = "userId";
-            this.UserId.Text = "User ID";
+            this.note.Width = 406;
             // 
             // refreshNotes
             // 
@@ -143,11 +132,6 @@
             this.removeNote.Text = "Remove Note";
             this.removeNote.UseVisualStyleBackColor = true;
             this.removeNote.Click += new System.EventHandler(this.removeNote_Click);
-            // 
-            // patientName
-            // 
-            this.patientName.Text = "Patient Name";
-            this.patientName.Width = 136;
             // 
             // Notes
             // 
