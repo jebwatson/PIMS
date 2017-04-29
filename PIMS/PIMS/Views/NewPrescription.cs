@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class frmNewProcedures : Form
+    public partial class NewPrescription : Form
     {
-        public frmNewProcedures()
+        public NewPrescription()
         {
             InitializeComponent();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

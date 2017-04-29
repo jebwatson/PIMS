@@ -1,6 +1,6 @@
 ﻿namespace PIMS.Views
 {
-    partial class frmNewCharge
+    partial class NewCharge
     {
         /// <summary>
         /// Required designer variable.

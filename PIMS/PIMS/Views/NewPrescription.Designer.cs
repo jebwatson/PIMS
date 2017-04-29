@@ -1,6 +1,6 @@
 ﻿namespace PIMS.Views
 {
-    partial class frmNewPrescriptions
+    partial class NewPrescription
     {
         /// <summary>
         /// Required designer variable.

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PIMS.Views
 {
-    public partial class frmNewCharge : Form
+    public partial class NewCharge : Form
     {
-        public frmNewCharge()
+        public NewCharge()
         {
             InitializeComponent();
             ProceduresTable MyProceduresTable = new ProceduresTable();

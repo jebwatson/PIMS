@@ -39,7 +39,7 @@ namespace PIMS.Presenters
 
         public void AddCharge()
         {
-            if (new frmNewCharge().ShowDialog() == DialogResult.OK)
+            if (new NewCharge().ShowDialog() == DialogResult.OK)
             {
                 RefreshChargesList();
             }

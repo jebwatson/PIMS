@@ -100,35 +100,35 @@
     <Compile Include="Views\EmergencyContacts.Designer.cs">
       <DependentUpon>EmergencyContacts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmNewCharge.cs">
+    <Compile Include="Views\NewCharge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmNewCharge.Designer.cs">
-      <DependentUpon>frmNewCharge.cs</DependentUpon>
+    <Compile Include="Views\NewCharge.Designer.cs">
+      <DependentUpon>NewCharge.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmNewNotes.cs">
+    <Compile Include="Views\NewNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmNewNotes.Designer.cs">
-      <DependentUpon>frmNewNotes.cs</DependentUpon>
+    <Compile Include="Views\NewNote.Designer.cs">
+      <DependentUpon>NewNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmNewPrescriptions.cs">
+    <Compile Include="Views\NewPrescription.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmNewPrescriptions.Designer.cs">
-      <DependentUpon>frmNewPrescriptions.cs</DependentUpon>
+    <Compile Include="Views\NewPrescription.Designer.cs">
+      <DependentUpon>NewPrescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmNewProcedures.cs">
+    <Compile Include="Views\NewProcedure.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmNewProcedures.Designer.cs">
-      <DependentUpon>frmNewProcedures.cs</DependentUpon>
+    <Compile Include="Views\NewProcedure.Designer.cs">
+      <DependentUpon>NewProcedure.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmNewVisitors.cs">
+    <Compile Include="Views\NewVisitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmNewVisitors.Designer.cs">
-      <DependentUpon>frmNewVisitors.cs</DependentUpon>
+    <Compile Include="Views\NewVisitor.Designer.cs">
+      <DependentUpon>NewVisitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
@@ -212,8 +212,8 @@
     <EmbeddedResource Include="Views\EmergencyContacts.resx">
       <DependentUpon>EmergencyContacts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmNewCharge.resx">
-      <DependentUpon>frmNewCharge.cs</DependentUpon>
+    <EmbeddedResource Include="Views\NewCharge.resx">
+      <DependentUpon>NewCharge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
