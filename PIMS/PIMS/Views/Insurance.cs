@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PInsurance Presenter;
 
-        public ObjectListView PatientsList { get { return this.olvInsuranceList; } }
+        public ObjectListView InsuranceList { get { return this.olvInsuranceList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public Insurance()

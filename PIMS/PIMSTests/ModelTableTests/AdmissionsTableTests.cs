@@ -27,9 +27,9 @@ namespace PIMSTests.ModelTableTests
 
             // NOTE: This occurs before each and every test case.
             myList.Clear();
-            myList.Add(new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "A", "1", "1", "1", "1", 1));
-            myList.Add(new Admission(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "B", "2", "2", "2", "2", 2));
-            myList.Add(new Admission(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "C", "3", "3", "3", "3", 3));
+            myList.Add(new Admission("01/01/2017", "12/01/2017", "A", "1", "1", "1", "1", 1, 1));
+            myList.Add(new Admission("01/02/2017", "12/02/2017", "B", "2", "2", "2", "2", 2, 2));
+            myList.Add(new Admission("01/03/2017", "12/03/2017", "C", "3", "3", "3", "3", 3, 3));
 
             // Establish the connection string
             ConnectionsManager.SQLServerConnectionString = "Data Source=CSSA-JEB\\SQLEXPRESS;Initial Catalog=" +
@@ -39,7 +39,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM admissions";
+                string clearQuery = "DELETE FROM admissions DBCC CHECKIDENT('admissions', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -153,9 +153,9 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateList()
         {
             // Need some updated data
-            Admission updated1 = new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "D", "1", "1", "1", "1", 1);
-            Admission updated2 = new Admission(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "E", "2", "2", "2", "2", 2);
-            Admission updated3 = new Admission(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "F", "3", "3", "3", "3", 3);
+            Admission updated1 = new Admission("01/01/2017", "12/01/2017", "D", "1", "1", "1", "1", 1, 1);
+            Admission updated2 = new Admission("01/02/2017", "12/02/2017", "E", "2", "2", "2", "2", 2, 2);
+            Admission updated3 = new Admission("01/03/2017", "12/03/2017", "F", "3", "3", "3", "3", 3, 3);
 
             myList.Clear();
 
@@ -182,8 +182,8 @@ namespace PIMSTests.ModelTableTests
         public void ShouldUpdateItem()
         {
             // Need some updated data
-            Admission updatedAdmission = new Admission(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), 
-                "Z", "1", "1", "1", "1", 1);
+            Admission updatedAdmission = new Admission("01/01/2017", "12/01/2017", 
+                "Z", "1", "1", "1", "1", 1, 1);
             
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedAdmission);

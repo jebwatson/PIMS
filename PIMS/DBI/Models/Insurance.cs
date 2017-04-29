@@ -13,6 +13,7 @@ namespace DBI
         public string accountNumber { get; set; }
         public string groupNumber { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Insurance()
         {
@@ -23,12 +24,13 @@ namespace DBI
             patientId = _unassigned;
         }
 
-        public Insurance(string carrier, string accountNumber, string groupNumber, int patientId)
+        public Insurance(string carrier, string accountNumber, string groupNumber, int patientId, int insuranceId)
         {
             insuranceCarrier = carrier;
             this.accountNumber = accountNumber;
             this.groupNumber = groupNumber;
             this.patientId = patientId;
+            this.insuranceId = insuranceId;
         }
     }
 }

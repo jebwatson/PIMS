@@ -15,6 +15,7 @@ namespace DBI
         public string phone { get; set; }
         public string areaCode { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public EmergencyContact()
         {
@@ -28,7 +29,7 @@ namespace DBI
         }
 
         public EmergencyContact(string nameLast, string nameFirst, string nameMiddle, string phone,
-            string areaCode, int patientId)
+            string areaCode, int patientId, int emergencyContactId)
         {
             this.nameLast = nameLast;
             this.nameFirst = nameFirst;
@@ -36,6 +37,7 @@ namespace DBI
             this.phone = phone;
             this.areaCode = areaCode;
             this.patientId = patientId;
+            this.emergencyContactId = emergencyContactId;
         }
     }
 }

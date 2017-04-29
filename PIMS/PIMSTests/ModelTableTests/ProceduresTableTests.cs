@@ -23,9 +23,9 @@ namespace PIMSTests.ModelTableTests
             myTable = new ProceduresTable();
             myList = new List<Procedures>()
             {
-                new Procedures(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "test1", 1, 1, 1, "test1", 1),
-                new Procedures(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "test2", 2, 2, 2, "test2", 2),
-                new Procedures(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "test3", 3, 3, 3, "test3", 3)
+                new Procedures(DateTime.Parse("01/01/2017"), DateTime.Parse("12/01/2017"), "test1", 1, 1, 1, "test1", 1, 1),
+                new Procedures(DateTime.Parse("01/02/2017"), DateTime.Parse("12/02/2017"), "test2", 2, 2, 2, "test2", 2, 2),
+                new Procedures(DateTime.Parse("01/03/2017"), DateTime.Parse("12/03/2017"), "test3", 3, 3, 3, "test3", 3, 3)
             };
             comparer = new ProceduresComparer();
 
@@ -38,7 +38,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM procedures";
+                string clearQuery = "DELETE FROM procedures DBCC CHECKIDENT('procedures', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur
@@ -159,9 +159,9 @@ namespace PIMSTests.ModelTableTests
             List<Procedures> procs = new List<Procedures>();
 
             // Need some updated data
-            Procedures updated1 = new Procedures(DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4);
-            Procedures updated2 = new Procedures(DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), "test5", 5, 5, 5, "test5", 5);
-            Procedures updated3 = new Procedures(DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), "test6", 6, 6, 6, "test6", 6);
+            Procedures updated1 = new Procedures(DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4, 1);
+            Procedures updated2 = new Procedures(DateTime.Parse("01/05/2017"), DateTime.Parse("12/05/2017"), "test5", 5, 5, 5, "test5", 5, 2);
+            Procedures updated3 = new Procedures(DateTime.Parse("01/06/2017"), DateTime.Parse("12/06/2017"), "test6", 6, 6, 6, "test6", 6, 3);
 
             myList.Clear();
 
@@ -190,7 +190,7 @@ namespace PIMSTests.ModelTableTests
             List<Procedures> procs = new List<Procedures>();
 
             // Need some updated data
-            Procedures updatedProcedure = new Procedures(DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4);
+            Procedures updatedProcedure = new Procedures(DateTime.Parse("01/04/2017"), DateTime.Parse("12/04/2017"), "test4", 4, 4, 4, "test4", 4, 1);
 
             // Update the table with the updated admission (id = 1)
             myTable.UpdateItem(updatedProcedure);

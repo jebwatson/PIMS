@@ -17,6 +17,7 @@ namespace DBI
         public int durationHrs { get; set; }
         public int durationMins { get; set; }
         public string procNotes { get; set; }
+        public string name { get; set; }
 
         public Procedures() {
             procId = _unassigned;
@@ -30,7 +31,7 @@ namespace DBI
             procNotes = string.Empty;
         }
 
-        public Procedures(DateTime startTime, DateTime stopTime, string procType, int durationHrs, int durationMins, int doctorId,  string procNotes, int patientId) {
+        public Procedures(DateTime startTime, DateTime stopTime, string procType, int durationHrs, int durationMins, int doctorId,  string procNotes, int patientId, int procId) {
             this.procType = procType;
             this.patientId = patientId;
             this.doctorId = doctorId;
@@ -39,6 +40,7 @@ namespace DBI
             this.durationHrs = durationHrs;
             this.durationMins = durationMins;
             this.procNotes = procNotes;
+            this.procId = procId;
         }
     }
 }

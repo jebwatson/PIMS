@@ -17,6 +17,7 @@ namespace DBI
         public string roomNumber { get; set; }
         public string bedNumber { get; set; }
         public int patientId { get; set; }
+        public string name { get; set; }
 
         public Admission()
         {
@@ -32,7 +33,7 @@ namespace DBI
         }
 
         public Admission(string valAdmittanceTime, string valDischargeTime, string valAdmittanceReason,
-            string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId)
+            string valFacility, string valFloor, string valRoomNumber, string valBedNumber, int valPatientId, int admissionId)
         {
             admissionTime = valAdmittanceTime;
             dischargeTime = valDischargeTime;
@@ -42,6 +43,7 @@ namespace DBI
             roomNumber = valRoomNumber;
             bedNumber = valBedNumber;
             patientId = valPatientId;
+            this.admissionId = admissionId;
         }
     }
 }

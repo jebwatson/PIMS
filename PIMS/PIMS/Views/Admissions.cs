@@ -17,7 +17,7 @@ namespace PIMS.Views
         // Locals
         PAdmissions Presenter;
 
-        public ObjectListView PatientsList { get { return this.olvAdmissionsList; } }
+        public ObjectListView AdmissionsList { get { return this.olvAdmissionsList; } }
         public string PatientSearch { get { return this.txtPatientSearch.Text.Replace('*', '%'); } }
 
         public Admissions()

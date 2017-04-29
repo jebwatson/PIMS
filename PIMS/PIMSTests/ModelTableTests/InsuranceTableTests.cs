@@ -23,16 +23,16 @@ namespace PIMSTests.ModelTableTests
             myTable = new InsuranceTable();
             myList = new List<Insurance>()
             {
-                new Insurance("A", "1", "1", 1),
-                new Insurance("B", "2", "2", 2),
-                new Insurance("C", "3", "3", 3)
+                new Insurance("A", "1", "1", 1, 1),
+                new Insurance("B", "2", "2", 2, 2),
+                new Insurance("C", "3", "3", 3, 3)
             };
 
             myList2 = new List<Insurance>
             {
-                new Insurance("D", "4", "4", 4),
-                new Insurance("E", "5", "5", 5),
-                new Insurance("F", "6", "6", 6)
+                new Insurance("D", "4", "4", 4, 1),
+                new Insurance("E", "5", "5", 5, 2),
+                new Insurance("F", "6", "6", 6, 3)
             };
 
             comparer = new InsuranceComparer();
@@ -46,7 +46,7 @@ namespace PIMSTests.ModelTableTests
             using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
             {
                 // Clear the table before any tests occur
-                string clearQuery = "DELETE FROM insurance";
+                string clearQuery = "DELETE FROM insurance DBCC CHECKIDENT('insurance', RESEED, 0)";
                 QueryExecutor.ExecuteSqlNonQuery(clearQuery, myConnection);
 
                 // Populate the table with known values before tests occur

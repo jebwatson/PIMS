@@ -22,6 +22,9 @@ namespace DBI
 
             string myCommand = "DELETE FROM " + theTable;
             QueryExecutor.ExecuteSqlNonQuery(myCommand);
+
+            myCommand = "DBCC CHECKIDENT('" + theTable + "', RESEED, 0)";
+            QueryExecutor.ExecuteSqlNonQuery(myCommand);
         }
 
         /// <summary>
