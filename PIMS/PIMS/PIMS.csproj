@@ -75,6 +75,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>User.settings</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admissions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,30 +110,6 @@
     </Compile>
     <Compile Include="Views\frmNewCharge.Designer.cs">
       <DependentUpon>frmNewCharge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmNewNotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmNewNotes.Designer.cs">
-      <DependentUpon>frmNewNotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmNewPrescriptions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmNewPrescriptions.Designer.cs">
-      <DependentUpon>frmNewPrescriptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmNewProcedures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmNewProcedures.Designer.cs">
-      <DependentUpon>frmNewProcedures.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmNewVisitors.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmNewVisitors.Designer.cs">
-      <DependentUpon>frmNewVisitors.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
@@ -193,6 +175,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admissions.resx">
       <DependentUpon>Admissions.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,18 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmNewCharge.resx">
       <DependentUpon>frmNewCharge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmNewNotes.resx">
-      <DependentUpon>frmNewNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmNewPrescriptions.resx">
-      <DependentUpon>frmNewPrescriptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmNewProcedures.resx">
-      <DependentUpon>frmNewProcedures.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmNewVisitors.resx">
-      <DependentUpon>frmNewVisitors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
