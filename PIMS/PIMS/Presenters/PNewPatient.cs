@@ -63,11 +63,11 @@ namespace PIMS.Presenters
                         Admission MyAdmission = new Admission(View.TimeOfAdmission.ToString(), "", View.AdmissionReason, View.Facility,
                             View.FloorNumber, View.RoomNumber, View.BedNumber, MyPatientList[0].patientId, 1);
 
-                        EmergencyContactTable MyEmergencyContactTable = new EmergencyContactTable();
+                        EmergencyContactTable MyEmergencyContactsTable = new EmergencyContactTable();
                         InsuranceTable MyInsuranceTable = new InsuranceTable();
                         AdmissionsTable MyAdmissionsTable = new AdmissionsTable();
 
-                        MyEmergencyContactTable.WriteItem(MyEmergencyContact);
+                        MyEmergencyContactsTable.WriteItem(MyEmergencyContact);
                         MyInsuranceTable.WriteItem(MyInsurance);
                         MyAdmissionsTable.WriteItem(MyAdmission);
 

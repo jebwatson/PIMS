@@ -37,6 +37,7 @@
             this.Phone = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnSearchPatients = new System.Windows.Forms.Button();
             this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.refreshEmergencyContacts = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ovlEmergencyContactsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,12 +127,23 @@
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
             this.txtPatientSearch.TabIndex = 9;
             // 
+            // refreshEmergencyContacts
+            // 
+            this.refreshEmergencyContacts.Location = new System.Drawing.Point(493, 22);
+            this.refreshEmergencyContacts.Name = "refreshEmergencyContacts";
+            this.refreshEmergencyContacts.Size = new System.Drawing.Size(75, 23);
+            this.refreshEmergencyContacts.TabIndex = 10;
+            this.refreshEmergencyContacts.Text = "Refresh";
+            this.refreshEmergencyContacts.UseVisualStyleBackColor = true;
+            this.refreshEmergencyContacts.Click += new System.EventHandler(this.refreshEmergencyContacts_Click);
+            // 
             // EmergencyContacts
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 305);
+            this.Controls.Add(this.refreshEmergencyContacts);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.ovlEmergencyContactsList);
@@ -155,5 +167,6 @@
         private BrightIdeasSoftware.OLVColumn AreaCode;
         private BrightIdeasSoftware.OLVColumn Phone;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button refreshEmergencyContacts;
     }
 }

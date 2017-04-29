@@ -18,7 +18,7 @@ namespace PIMS.Presenters
         // Locals
         Views.EmergencyContacts View;
         PatientTable MyPatientsTable;
-        EmergencyContactTable MyEmergencyContactsTable;
+        EmergencyContactTable MyEmergencyContactTable;
         List<Patient> MyPatientsList;
 
         public PEmergencyContacts(Views.EmergencyContacts view)
@@ -32,9 +32,15 @@ namespace PIMS.Presenters
         /// </summary>
         public void PopulatePatientsList()
         {
-            MyEmergencyContactsTable = new EmergencyContactTable();
+            MyEmergencyContactTable = new EmergencyContactTable();
 
-            View.EmergencyContactsList.SetObjects(MyEmergencyContactsTable.ReadList());
+            View.EmergencyContactsList.SetObjects(MyEmergencyContactTable.ReadList());
+        }
+
+        public void RefreshEmergencyContactsList()
+        {
+            EmergencyContactTable MyEmergencyContactTable = new EmergencyContactTable();
+            View.EmergencyContactsList.SetObjects(MyEmergencyContactTable.ReadList());
         }
 
         /// <summary>
@@ -43,7 +49,7 @@ namespace PIMS.Presenters
         /// </summary>
         public void SearchPatients()
         {
-            MyEmergencyContactsTable = new EmergencyContactTable();
+            MyEmergencyContactTable = new EmergencyContactTable();
             MyPatientsTable = new PatientTable();
             MyPatientsList = MyPatientsTable.ReadListByName(View.PatientSearch);
             int i = 0;
@@ -51,9 +57,9 @@ namespace PIMS.Presenters
             foreach (Patient p in MyPatientsList)
             {
                 if (i == 0)
-                    View.EmergencyContactsList.SetObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
+                    View.EmergencyContactsList.SetObjects(MyEmergencyContactTable.ReadListById(p.patientId));
                 else
-                    View.EmergencyContactsList.UpdateObjects(MyEmergencyContactsTable.ReadListById(p.patientId));
+                    View.EmergencyContactsList.UpdateObjects(MyEmergencyContactTable.ReadListById(p.patientId));
 
                 i++;
             }

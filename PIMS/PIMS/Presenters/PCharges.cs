@@ -45,7 +45,7 @@ namespace PIMS.Presenters
             }
         }
 
-        private void RefreshChargesList()
+        public void RefreshChargesList()
         {
             ChargesTable MyChargesTable = new ChargesTable();
             View.ChargesList.SetObjects(MyChargesTable.ReadList());

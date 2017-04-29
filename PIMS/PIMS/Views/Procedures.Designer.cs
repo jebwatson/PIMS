@@ -39,13 +39,16 @@
             this.StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcNotes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.addProcedure = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.refreshProcedures = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(124, 25);
+            this.txtPatientSearch.Location = new System.Drawing.Point(125, 23);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
@@ -54,7 +57,7 @@
             // btnSearchPatients
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatients.Location = new System.Drawing.Point(26, 22);
+            this.btnSearchPatients.Location = new System.Drawing.Point(27, 20);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
@@ -88,7 +91,7 @@
             this.olvProceduresList.FullRowSelect = true;
             this.olvProceduresList.GridLines = true;
             this.olvProceduresList.HideSelection = false;
-            this.olvProceduresList.Location = new System.Drawing.Point(26, 57);
+            this.olvProceduresList.Location = new System.Drawing.Point(27, 55);
             this.olvProceduresList.Margin = new System.Windows.Forms.Padding(2);
             this.olvProceduresList.Name = "olvProceduresList";
             this.olvProceduresList.ShowGroups = false;
@@ -144,12 +147,43 @@
             this.ProcNotes.Text = "Procedure Notes";
             this.ProcNotes.Width = 120;
             // 
+            // addProcedure
+            // 
+            this.addProcedure.Location = new System.Drawing.Point(279, 297);
+            this.addProcedure.Name = "addProcedure";
+            this.addProcedure.Size = new System.Drawing.Size(86, 31);
+            this.addProcedure.TabIndex = 7;
+            this.addProcedure.Text = "Add Procedure";
+            this.addProcedure.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(386, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 31);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Delete Procedure";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // refreshProcedures
+            // 
+            this.refreshProcedures.Location = new System.Drawing.Point(171, 297);
+            this.refreshProcedures.Name = "refreshProcedures";
+            this.refreshProcedures.Size = new System.Drawing.Size(86, 31);
+            this.refreshProcedures.TabIndex = 9;
+            this.refreshProcedures.Text = "Refresh";
+            this.refreshProcedures.UseVisualStyleBackColor = true;
+            this.refreshProcedures.Click += new System.EventHandler(this.refreshProcedures_Click);
+            // 
             // Procedures
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 311);
+            this.ClientSize = new System.Drawing.Size(780, 353);
+            this.Controls.Add(this.refreshProcedures);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addProcedure);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvProceduresList);
@@ -175,5 +209,8 @@
         private BrightIdeasSoftware.OLVColumn patientid;
         private BrightIdeasSoftware.OLVColumn ProcNotes;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button addProcedure;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button refreshProcedures;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.searchNote = new System.Windows.Forms.Button();
-            this.editNote = new System.Windows.Forms.Button();
             this.searchNotesBox = new System.Windows.Forms.TextBox();
             this.olvNotesList = new BrightIdeasSoftware.ObjectListView();
             this.patientId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -49,16 +48,6 @@
             this.searchNote.TabIndex = 2;
             this.searchNote.Text = "Search";
             this.searchNote.UseVisualStyleBackColor = true;
-            // 
-            // editNote
-            // 
-            this.editNote.Location = new System.Drawing.Point(320, 375);
-            this.editNote.Name = "editNote";
-            this.editNote.Size = new System.Drawing.Size(91, 54);
-            this.editNote.TabIndex = 5;
-            this.editNote.Text = "Edit Note";
-            this.editNote.UseVisualStyleBackColor = true;
-            this.editNote.Click += new System.EventHandler(this.editNote_Click);
             // 
             // searchNotesBox
             // 
@@ -107,7 +96,7 @@
             // 
             // refreshNotes
             // 
-            this.refreshNotes.Location = new System.Drawing.Point(126, 375);
+            this.refreshNotes.Location = new System.Drawing.Point(178, 375);
             this.refreshNotes.Name = "refreshNotes";
             this.refreshNotes.Size = new System.Drawing.Size(91, 54);
             this.refreshNotes.TabIndex = 3;
@@ -117,7 +106,7 @@
             // 
             // addNote
             // 
-            this.addNote.Location = new System.Drawing.Point(223, 375);
+            this.addNote.Location = new System.Drawing.Point(275, 375);
             this.addNote.Name = "addNote";
             this.addNote.Size = new System.Drawing.Size(91, 54);
             this.addNote.TabIndex = 4;
@@ -127,7 +116,7 @@
             // 
             // removeNote
             // 
-            this.removeNote.Location = new System.Drawing.Point(417, 375);
+            this.removeNote.Location = new System.Drawing.Point(372, 375);
             this.removeNote.Name = "removeNote";
             this.removeNote.Size = new System.Drawing.Size(91, 54);
             this.removeNote.TabIndex = 6;
@@ -142,7 +131,6 @@
             this.ClientSize = new System.Drawing.Size(664, 441);
             this.Controls.Add(this.searchNotesBox);
             this.Controls.Add(this.removeNote);
-            this.Controls.Add(this.editNote);
             this.Controls.Add(this.addNote);
             this.Controls.Add(this.refreshNotes);
             this.Controls.Add(this.searchNote);
@@ -161,7 +149,6 @@
         private BrightIdeasSoftware.OLVColumn note;
         private BrightIdeasSoftware.OLVColumn patientId;
         private System.Windows.Forms.Button searchNote;
-        private System.Windows.Forms.Button editNote;
         private System.Windows.Forms.TextBox searchNotesBox;
         private System.Windows.Forms.Button refreshNotes;
         private System.Windows.Forms.Button addNote;
