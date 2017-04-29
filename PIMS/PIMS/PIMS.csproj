@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +65,7 @@
     <Compile Include="Presenters\PPatients.cs" />
     <Compile Include="Presenters\PPrescriptions.cs" />
     <Compile Include="Presenters\PProcedures.cs" />
+    <Compile Include="Presenters\PReports.cs" />
     <Compile Include="Presenters\PVisitors.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +157,12 @@
     <Compile Include="Views\Prescriptions.Designer.cs">
       <DependentUpon>Prescriptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Visitors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Prescriptions.resx">
       <DependentUpon>Prescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Visitors.resx">
       <DependentUpon>Visitors.cs</DependentUpon>
