@@ -75,12 +75,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>User.settings</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddNote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\AddNote.Designer.cs">
-      <DependentUpon>AddNote.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Admissions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +104,12 @@
     </Compile>
     <Compile Include="Views\frmNewCharge.Designer.cs">
       <DependentUpon>frmNewCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmNewNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmNewNotes.Designer.cs">
+      <DependentUpon>frmNewNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.cs">
       <SubType>Form</SubType>
@@ -175,9 +175,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\AddNote.resx">
-      <DependentUpon>AddNote.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admissions.resx">
       <DependentUpon>Admissions.cs</DependentUpon>
     </EmbeddedResource>
