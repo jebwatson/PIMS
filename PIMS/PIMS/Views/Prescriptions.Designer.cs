@@ -138,6 +138,7 @@
             this.addPrescription.TabIndex = 9;
             this.addPrescription.Text = "Add Prescription";
             this.addPrescription.UseVisualStyleBackColor = true;
+            this.addPrescription.Click += new System.EventHandler(this.addPrescription_Click);
             // 
             // deletePrescription
             // 
@@ -147,6 +148,7 @@
             this.deletePrescription.TabIndex = 10;
             this.deletePrescription.Text = "Delete Prescription";
             this.deletePrescription.UseVisualStyleBackColor = true;
+            this.deletePrescription.Click += new System.EventHandler(this.deletePrescription_Click);
             // 
             // refreshPrescription
             // 

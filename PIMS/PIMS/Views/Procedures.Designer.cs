@@ -40,8 +40,8 @@
             this.StopTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.ProcNotes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.addProcedure = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.refreshProcedures = new System.Windows.Forms.Button();
+            this.deleteProcedure = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvProceduresList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,15 +155,7 @@
             this.addProcedure.TabIndex = 7;
             this.addProcedure.Text = "Add Procedure";
             this.addProcedure.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(386, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Delete Procedure";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addProcedure.Click += new System.EventHandler(this.addProcedure_Click);
             // 
             // refreshProcedures
             // 
@@ -175,14 +167,24 @@
             this.refreshProcedures.UseVisualStyleBackColor = true;
             this.refreshProcedures.Click += new System.EventHandler(this.refreshProcedures_Click);
             // 
+            // deleteProcedure
+            // 
+            this.deleteProcedure.Location = new System.Drawing.Point(387, 297);
+            this.deleteProcedure.Name = "deleteProcedure";
+            this.deleteProcedure.Size = new System.Drawing.Size(99, 31);
+            this.deleteProcedure.TabIndex = 10;
+            this.deleteProcedure.Text = "Delete Procedure";
+            this.deleteProcedure.UseVisualStyleBackColor = true;
+            this.deleteProcedure.Click += new System.EventHandler(this.deleteProcedure_Click);
+            // 
             // Procedures
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 353);
+            this.Controls.Add(this.deleteProcedure);
             this.Controls.Add(this.refreshProcedures);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.addProcedure);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
@@ -210,7 +212,7 @@
         private BrightIdeasSoftware.OLVColumn ProcNotes;
         private BrightIdeasSoftware.OLVColumn PatientName;
         private System.Windows.Forms.Button addProcedure;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button refreshProcedures;
+        private System.Windows.Forms.Button deleteProcedure;
     }
 }

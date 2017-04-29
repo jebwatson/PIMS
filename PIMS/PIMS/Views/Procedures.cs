@@ -41,5 +41,15 @@ namespace PIMS.Views
         {
             Presenter.RefreshProceduresList();
         }
+
+        private void deleteProcedure_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteProcedures();
+        }
+
+        private void addProcedure_Click(object sender, EventArgs e)
+        {
+            Presenter.AddProcedures();
+        }
     }
 }
