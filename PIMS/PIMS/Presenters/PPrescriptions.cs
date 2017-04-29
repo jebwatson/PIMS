@@ -61,7 +61,7 @@ namespace PIMS.Presenters
                 {
                     foreach (var item in View.PrescriptionsList.SelectedObjects)
                     {
-                        MyPrescriptionsTable.ClearTableById(((DBI.Prescriptions)item).patientId);
+                        MyPrescriptionsTable.ClearTableByPresc(((DBI.Prescriptions)item).patientId, ((DBI.Prescriptions)item).prescDate);
                     }
                 }
                 else

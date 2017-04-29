@@ -46,6 +46,28 @@ namespace DBI
         }
 
         /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="prescId"></param>
+        public void ClearTableByPresc(int patientId, DateTime prescDate)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "patientId = @patientId AND prescDate = @prescDate";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@patientId", patientId);
+                myCommand.Parameters.AddWithValue("@prescDate", prescDate);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
+        /// <summary>
         /// Get a count of all records in the table.
         /// </summary>
         /// <returns></returns>

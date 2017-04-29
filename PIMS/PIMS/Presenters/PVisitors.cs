@@ -52,7 +52,7 @@ namespace PIMS.Presenters
                 {
                     foreach (var item in View.VisitorsList.SelectedObjects)
                     {
-                        MyVisitorsTable.ClearTableById(((DBI.Visitors)item).patientId);
+                        MyVisitorsTable.ClearTableByVisitor(((DBI.Visitors)item).patientId, ((DBI.Visitors)item).lastVisit);
                     }
                 }
                 else
