@@ -137,6 +137,7 @@
             this.addVisitor.TabIndex = 6;
             this.addVisitor.Text = "Add Visitor";
             this.addVisitor.UseVisualStyleBackColor = true;
+            this.addVisitor.Click += new System.EventHandler(this.addVisitor_Click);
             // 
             // deleteVisitor
             // 
@@ -146,6 +147,7 @@
             this.deleteVisitor.TabIndex = 7;
             this.deleteVisitor.Text = "Delete Visitor";
             this.deleteVisitor.UseVisualStyleBackColor = true;
+            this.deleteVisitor.Click += new System.EventHandler(this.deleteVisitor_Click);
             // 
             // refreshVisitors
             // 
