@@ -39,16 +39,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.prescriptionDate = new System.Windows.Forms.DateTimePicker();
+            this.cancelPrescriptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // submitPrescriptions
             // 
             this.submitPrescriptions.Location = new System.Drawing.Point(254, 147);
             this.submitPrescriptions.Name = "submitPrescriptions";
-            this.submitPrescriptions.Size = new System.Drawing.Size(110, 36);
+            this.submitPrescriptions.Size = new System.Drawing.Size(90, 36);
             this.submitPrescriptions.TabIndex = 0;
             this.submitPrescriptions.Text = "Submit";
             this.submitPrescriptions.UseVisualStyleBackColor = true;
+            this.submitPrescriptions.Click += new System.EventHandler(this.submitPrescriptions_Click);
             // 
             // patientId
             // 
@@ -130,11 +132,22 @@
             this.prescriptionDate.Size = new System.Drawing.Size(200, 20);
             this.prescriptionDate.TabIndex = 10;
             // 
+            // cancelPrescriptions
+            // 
+            this.cancelPrescriptions.Location = new System.Drawing.Point(364, 147);
+            this.cancelPrescriptions.Name = "cancelPrescriptions";
+            this.cancelPrescriptions.Size = new System.Drawing.Size(90, 36);
+            this.cancelPrescriptions.TabIndex = 11;
+            this.cancelPrescriptions.Text = "Cancel";
+            this.cancelPrescriptions.UseVisualStyleBackColor = true;
+            this.cancelPrescriptions.Click += new System.EventHandler(this.cancelPrescriptions_Click);
+            // 
             // NewPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 211);
+            this.Controls.Add(this.cancelPrescriptions);
             this.Controls.Add(this.prescriptionDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker prescriptionDate;
+        private System.Windows.Forms.Button cancelPrescriptions;
     }
 }
