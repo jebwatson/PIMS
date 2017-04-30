@@ -79,6 +79,9 @@ namespace PIMS.Views
         {
             this.Hide();
 
+            loggedIn.txtUsername.Clear();
+            loggedIn.txtPassword.Clear();
+
             if (loggedIn.ShowDialog() == DialogResult.OK)
             {
                 this.Show();
