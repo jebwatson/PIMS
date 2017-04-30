@@ -40,9 +40,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.startTime = new System.Windows.Forms.DateTimePicker();
             this.stopTime = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cancelProcedure = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // submitProcedure
@@ -53,6 +54,7 @@
             this.submitProcedure.TabIndex = 0;
             this.submitProcedure.Text = "Submit";
             this.submitProcedure.UseVisualStyleBackColor = true;
+            this.submitProcedure.Click += new System.EventHandler(this.submitProcedure_Click);
             // 
             // patientId
             // 
@@ -144,16 +146,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Procedure Notes";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Duration (Minutes)";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
             // startTime
             // 
             this.startTime.Location = new System.Drawing.Point(27, 158);
@@ -168,14 +160,34 @@
             this.stopTime.Size = new System.Drawing.Size(200, 20);
             this.stopTime.TabIndex = 20;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Duration (Minutes)";
+            // 
+            // cancelProcedure
+            // 
+            this.cancelProcedure.Location = new System.Drawing.Point(423, 185);
+            this.cancelProcedure.Name = "cancelProcedure";
+            this.cancelProcedure.Size = new System.Drawing.Size(99, 32);
+            this.cancelProcedure.TabIndex = 22;
+            this.cancelProcedure.Text = "Cancel";
+            this.cancelProcedure.UseVisualStyleBackColor = true;
+            this.cancelProcedure.Click += new System.EventHandler(this.cancelProcedure_Click);
+            // 
             // NewProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 251);
+            this.Controls.Add(this.cancelProcedure);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.stopTime);
             this.Controls.Add(this.startTime);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -209,8 +221,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker startTime;
         private System.Windows.Forms.DateTimePicker stopTime;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cancelProcedure;
     }
 }

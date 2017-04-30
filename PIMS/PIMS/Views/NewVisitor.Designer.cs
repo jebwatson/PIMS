@@ -39,16 +39,18 @@
             this.lastName = new System.Windows.Forms.TextBox();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastVisit = new System.Windows.Forms.DateTimePicker();
+            this.cancelVisitor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // submitVisitors
             // 
             this.submitVisitors.Location = new System.Drawing.Point(276, 117);
             this.submitVisitors.Name = "submitVisitors";
-            this.submitVisitors.Size = new System.Drawing.Size(109, 36);
+            this.submitVisitors.Size = new System.Drawing.Size(87, 36);
             this.submitVisitors.TabIndex = 0;
             this.submitVisitors.Text = "Submit";
             this.submitVisitors.UseVisualStyleBackColor = true;
+            this.submitVisitors.Click += new System.EventHandler(this.submitVisitors_Click);
             // 
             // label1
             // 
@@ -130,11 +132,22 @@
             this.lastVisit.Size = new System.Drawing.Size(200, 20);
             this.lastVisit.TabIndex = 10;
             // 
+            // cancelVisitor
+            // 
+            this.cancelVisitor.Location = new System.Drawing.Point(389, 117);
+            this.cancelVisitor.Name = "cancelVisitor";
+            this.cancelVisitor.Size = new System.Drawing.Size(87, 36);
+            this.cancelVisitor.TabIndex = 11;
+            this.cancelVisitor.Text = "Cancel";
+            this.cancelVisitor.UseVisualStyleBackColor = true;
+            this.cancelVisitor.Click += new System.EventHandler(this.cancelVisitor_Click);
+            // 
             // NewVisitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 188);
+            this.Controls.Add(this.cancelVisitor);
             this.Controls.Add(this.lastVisit);
             this.Controls.Add(this.firstName);
             this.Controls.Add(this.lastName);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.TextBox lastName;
         private System.Windows.Forms.TextBox firstName;
         private System.Windows.Forms.DateTimePicker lastVisit;
+        private System.Windows.Forms.Button cancelVisitor;
     }
 }
