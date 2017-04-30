@@ -17,9 +17,31 @@ namespace PIMS.Views
             InitializeComponent();
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
+        //Properties
+        public DateTime DateStarted { get { return this.startTime.Value.Date; } }
+        public DateTime DateStopped { get { return this.stopTime.Value.Date; } }
+        public string ProcedureType { get { return this.procedureType.Text; } }
+        public int DurationHours { get { return Convert.ToInt32(this.durationHours.Text); } }
+        public int DurationMinutes { get { return Convert.ToInt32(this.durationMinutes.Text); } }
+        public string ProcedureNotes { get { return this.procedureNotes.Text; } }
+        public int Id { get { return Convert.ToInt32(this.patientId.Text); } }
 
+        private void submitProcedure_Click(object sender, EventArgs e)
+        {
+            DBI.Procedures MyProcedure = new DBI.Procedures(DateStarted, DateStopped, ProcedureType, DurationHours, DurationMinutes, 1, ProcedureNotes, Id, 1);
+
+            DBI.ProceduresTable MyProceduresTable = new DBI.ProceduresTable();
+
+            MyProceduresTable.WriteItem(MyProcedure);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void cancelProcedure_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
