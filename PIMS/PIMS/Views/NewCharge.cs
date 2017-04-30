@@ -20,13 +20,22 @@ namespace PIMS.Views
         }
 
         // Properties
+        public int Id { get { return Convert.ToInt32(this.txtPatientId.Text); } }
         public string Description { get { return this.txtDescription.Text; } }
-        public string DateCharged { get { return this.dtpDateCharged.Value.Date.ToString() + " " + this.dtpDateCharged.Value.TimeOfDay.ToString(); } }
-        public string DateDue { get { return this.dtpDateDue.Value.Date.ToString() + " " + this.dtpDateDue.Value.TimeOfDay.ToString(); } }
+        public DateTime DateCharged { get { return this.dtpDateCharged.Value.Date; } }
+        public DateTime DateDue { get { return this.dtpDateDue.Value.Date; } }
         public string AmountTotal { get { return this.txtAmountTotal.Text; } }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            DBI.Charges MyCharge = new DBI.Charges(Description, AmountTotal, DateCharged, DateDue, 1, 1, Id, 1);
+
+            ChargesTable MyChargesTable = new ChargesTable();
+
+            MyChargesTable.WriteItem(MyCharge);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
