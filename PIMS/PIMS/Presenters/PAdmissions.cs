@@ -37,6 +37,12 @@ namespace PIMS.Presenters
             View.AdmissionsList.SetObjects(MyAdmissionsTable.ReadList());
         }
 
+        public void RefreshAdmissionsList()
+        {
+            AdmissionsTable MyAdmissionsTable = new AdmissionsTable();
+            View.AdmissionsList.SetObjects(MyAdmissionsTable.ReadList());
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.

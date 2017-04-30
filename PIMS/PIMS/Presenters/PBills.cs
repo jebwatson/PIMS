@@ -37,6 +37,12 @@ namespace PIMS.Presenters
             View.BillsList.SetObjects(MyBillsTable.ReadList());
         }
 
+        public void RefreshBillsList()
+        {
+            BillsTable MyBillsTable = new BillsTable();
+            View.BillsList.SetObjects(MyBillsTable.ReadList());
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.

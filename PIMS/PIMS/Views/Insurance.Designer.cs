@@ -37,6 +37,7 @@
             this.InsuranceCarrier = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.InsuranceAccountNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.InsuranceGroupNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.refreshInsurance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvInsuranceList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,12 +127,23 @@
             this.InsuranceGroupNumber.Text = "Group #";
             this.InsuranceGroupNumber.Width = 130;
             // 
+            // refreshInsurance
+            // 
+            this.refreshInsurance.Location = new System.Drawing.Point(661, 24);
+            this.refreshInsurance.Name = "refreshInsurance";
+            this.refreshInsurance.Size = new System.Drawing.Size(75, 23);
+            this.refreshInsurance.TabIndex = 11;
+            this.refreshInsurance.Text = "Refresh";
+            this.refreshInsurance.UseVisualStyleBackColor = true;
+            this.refreshInsurance.Click += new System.EventHandler(this.refreshInsurance_Click);
+            // 
             // Insurance
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 314);
+            this.Controls.Add(this.refreshInsurance);
             this.Controls.Add(this.olvInsuranceList);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
@@ -154,5 +166,6 @@
         private BrightIdeasSoftware.OLVColumn InsuranceAccountNumber;
         private BrightIdeasSoftware.OLVColumn InsuranceGroupNumber;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button refreshInsurance;
     }
 }
