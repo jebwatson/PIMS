@@ -47,6 +47,29 @@ namespace DBI
         }
 
         /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="nameLast"></param>
+        /// <param name="nameFirst"></param>
+        public void ClearTableByVisitor(int patientId, DateTime lastVisit)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "patientId = @patientId AND lastVisit = @lastVisit";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@patientId", patientId);
+                myCommand.Parameters.AddWithValue("@lastVisit", lastVisit);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
+        /// <summary>
         /// Get a count of all records in the table.
         /// </summary>
         /// <returns></returns>
