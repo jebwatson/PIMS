@@ -37,6 +37,46 @@ namespace PIMS.Presenters
             View.ProceduresList.SetObjects(MyProceduresTable.ReadList());
         }
 
+        public void RefreshProceduresList()
+        {
+            ProceduresTable MyProceduresTable = new ProceduresTable();
+            View.ProceduresList.SetObjects(MyProceduresTable.ReadList());
+        }
+
+        public void DeleteProcedures()
+        {
+            if (MessageBox.Show("Are you sure you want to delete the selected procedures?",
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (View.ProceduresList.SelectedObjects != null)
+                {
+                    foreach (var item in View.ProceduresList.SelectedObjects)
+                    {
+                        MyProceduresTable.ClearTableByProc(((DBI.Procedures)item).patientId, ((DBI.Procedures)item).startTime, ((DBI.Procedures)item).stopTime);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No procedures available.");
+                }
+
+                RefreshProceduresList();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void AddProcedures()
+        {
+            NewProcedure MyNewProcedureForm = new NewProcedure();
+            if (MyNewProcedureForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshProceduresList();
+            }
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.

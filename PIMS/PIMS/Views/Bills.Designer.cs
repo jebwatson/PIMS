@@ -39,12 +39,13 @@
             this.AmountOwed = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateCharged = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.DateDue = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.refreshBills = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvBillsList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(27, 33);
+            this.btnSearchPatients.Location = new System.Drawing.Point(26, 20);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
@@ -55,7 +56,7 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(144, 36);
+            this.txtPatientSearch.Location = new System.Drawing.Point(143, 23);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
@@ -82,8 +83,10 @@
             this.DateCharged,
             this.DateDue});
             this.olvBillsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvBillsList.FullRowSelect = true;
             this.olvBillsList.GridLines = true;
-            this.olvBillsList.Location = new System.Drawing.Point(27, 70);
+            this.olvBillsList.HideSelection = false;
+            this.olvBillsList.Location = new System.Drawing.Point(26, 57);
             this.olvBillsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvBillsList.Name = "olvBillsList";
             this.olvBillsList.ShowGroups = false;
@@ -140,12 +143,23 @@
             this.DateDue.Text = "Date Due";
             this.DateDue.Width = 100;
             // 
+            // refreshBills
+            // 
+            this.refreshBills.Location = new System.Drawing.Point(774, 23);
+            this.refreshBills.Name = "refreshBills";
+            this.refreshBills.Size = new System.Drawing.Size(75, 23);
+            this.refreshBills.TabIndex = 10;
+            this.refreshBills.Text = "Refresh";
+            this.refreshBills.UseVisualStyleBackColor = true;
+            this.refreshBills.Click += new System.EventHandler(this.refreshBills_Click);
+            // 
             // Bills
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 340);
+            this.ClientSize = new System.Drawing.Size(874, 309);
+            this.Controls.Add(this.refreshBills);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvBillsList);
@@ -171,5 +185,6 @@
         private BrightIdeasSoftware.OLVColumn DateDue;
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button refreshBills;
     }
 }

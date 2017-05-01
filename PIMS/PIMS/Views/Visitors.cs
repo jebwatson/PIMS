@@ -36,5 +36,20 @@ namespace PIMS.Views
         {
             Presenter.SearchPatients();
         }
+
+        private void refreshVisitors_Click(object sender, EventArgs e)
+        {
+            Presenter.RefreshVisitorsList();
+        }
+
+        private void deleteVisitor_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteVisitors();
+        }
+
+        private void addVisitor_Click(object sender, EventArgs e)
+        {
+            Presenter.AddVisitors();
+        }
     }
 }

@@ -46,5 +46,10 @@ namespace PIMS.Views
         {
             Presenter.DeleteCharges();
         }
+
+        private void refreshCharges_Click(object sender, EventArgs e)
+        {
+            Presenter.RefreshChargesList();
+        }
     }
 }

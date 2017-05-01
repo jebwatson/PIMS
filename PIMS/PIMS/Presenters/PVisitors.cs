@@ -37,6 +37,46 @@ namespace PIMS.Presenters
             View.VisitorsList.SetObjects(MyVisitorsTable.ReadList());
         }
 
+        public void RefreshVisitorsList()
+        {
+            VisitorsTable MyVisitorsTable = new VisitorsTable();
+            View.VisitorsList.SetObjects(MyVisitorsTable.ReadList());
+        }
+
+        public void DeleteVisitors()
+        {
+            if (MessageBox.Show("Are you sure you want to delete the selected visitors?",
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (View.VisitorsList.SelectedObjects != null)
+                {
+                    foreach (var item in View.VisitorsList.SelectedObjects)
+                    {
+                        MyVisitorsTable.ClearTableByVisitor(((DBI.Visitors)item).patientId, ((DBI.Visitors)item).lastVisit);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No visitors available.");
+                }
+
+                RefreshVisitorsList();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void AddVisitors()
+        {
+            NewVisitor MyNewVisitorForm = new NewVisitor();
+            if (MyNewVisitorForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshVisitorsList();
+            }
+        }
+
         /// <summary>
         /// Read the database by the user specified string and populate the table with 
         /// the new list of patients.

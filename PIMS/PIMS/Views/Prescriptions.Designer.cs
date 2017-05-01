@@ -37,12 +37,15 @@
             this.Amount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PrescriptionDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Duration = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.addPrescription = new System.Windows.Forms.Button();
+            this.deletePrescription = new System.Windows.Forms.Button();
+            this.refreshPrescription = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvPrescriptionsList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(136, 39);
+            this.txtPatientSearch.Location = new System.Drawing.Point(131, 24);
             this.txtPatientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 20);
@@ -50,7 +53,7 @@
             // 
             // btnSearchPatients
             // 
-            this.btnSearchPatients.Location = new System.Drawing.Point(38, 36);
+            this.btnSearchPatients.Location = new System.Drawing.Point(33, 21);
             this.btnSearchPatients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(94, 24);
@@ -76,12 +79,14 @@
             this.PrescriptionDate,
             this.Duration});
             this.olvPrescriptionsList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvPrescriptionsList.FullRowSelect = true;
             this.olvPrescriptionsList.GridLines = true;
-            this.olvPrescriptionsList.Location = new System.Drawing.Point(39, 68);
+            this.olvPrescriptionsList.HideSelection = false;
+            this.olvPrescriptionsList.Location = new System.Drawing.Point(34, 53);
             this.olvPrescriptionsList.Margin = new System.Windows.Forms.Padding(2);
             this.olvPrescriptionsList.Name = "olvPrescriptionsList";
             this.olvPrescriptionsList.ShowGroups = false;
-            this.olvPrescriptionsList.Size = new System.Drawing.Size(467, 227);
+            this.olvPrescriptionsList.Size = new System.Drawing.Size(479, 227);
             this.olvPrescriptionsList.TabIndex = 6;
             this.olvPrescriptionsList.UseCompatibleStateImageBehavior = false;
             this.olvPrescriptionsList.View = System.Windows.Forms.View.Details;
@@ -125,12 +130,45 @@
             this.Duration.Text = "Duration";
             this.Duration.Width = 120;
             // 
+            // addPrescription
+            // 
+            this.addPrescription.Location = new System.Drawing.Point(246, 294);
+            this.addPrescription.Name = "addPrescription";
+            this.addPrescription.Size = new System.Drawing.Size(101, 31);
+            this.addPrescription.TabIndex = 9;
+            this.addPrescription.Text = "Add Prescription";
+            this.addPrescription.UseVisualStyleBackColor = true;
+            this.addPrescription.Click += new System.EventHandler(this.addPrescription_Click);
+            // 
+            // deletePrescription
+            // 
+            this.deletePrescription.Location = new System.Drawing.Point(353, 294);
+            this.deletePrescription.Name = "deletePrescription";
+            this.deletePrescription.Size = new System.Drawing.Size(106, 31);
+            this.deletePrescription.TabIndex = 10;
+            this.deletePrescription.Text = "Delete Prescription";
+            this.deletePrescription.UseVisualStyleBackColor = true;
+            this.deletePrescription.Click += new System.EventHandler(this.deletePrescription_Click);
+            // 
+            // refreshPrescription
+            // 
+            this.refreshPrescription.Location = new System.Drawing.Point(134, 294);
+            this.refreshPrescription.Name = "refreshPrescription";
+            this.refreshPrescription.Size = new System.Drawing.Size(106, 31);
+            this.refreshPrescription.TabIndex = 11;
+            this.refreshPrescription.Text = "Refresh";
+            this.refreshPrescription.UseVisualStyleBackColor = true;
+            this.refreshPrescription.Click += new System.EventHandler(this.refreshPrescription_Click);
+            // 
             // Prescriptions
             // 
             this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 371);
+            this.ClientSize = new System.Drawing.Size(568, 337);
+            this.Controls.Add(this.refreshPrescription);
+            this.Controls.Add(this.deletePrescription);
+            this.Controls.Add(this.addPrescription);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.olvPrescriptionsList);
@@ -154,5 +192,8 @@
         private BrightIdeasSoftware.OLVColumn PatientID;
         private BrightIdeasSoftware.OLVColumn Amount;
         private BrightIdeasSoftware.OLVColumn PatientName;
+        private System.Windows.Forms.Button addPrescription;
+        private System.Windows.Forms.Button deletePrescription;
+        private System.Windows.Forms.Button refreshPrescription;
     }
 }

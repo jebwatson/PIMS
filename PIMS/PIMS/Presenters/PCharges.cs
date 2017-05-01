@@ -39,13 +39,14 @@ namespace PIMS.Presenters
 
         public void AddCharge()
         {
-            if (new frmNewCharge().ShowDialog() == DialogResult.OK)
+            NewCharge MyNewChargesForm = new NewCharge();
+            if (MyNewChargesForm.ShowDialog() == DialogResult.OK)
             {
                 RefreshChargesList();
             }
         }
 
-        private void RefreshChargesList()
+        public void RefreshChargesList()
         {
             ChargesTable MyChargesTable = new ChargesTable();
             View.ChargesList.SetObjects(MyChargesTable.ReadList());
@@ -53,7 +54,27 @@ namespace PIMS.Presenters
 
         public void DeleteCharges()
         {
-            throw new NotImplementedException();
+            if (MessageBox.Show("Are you sure you want to delete the selected patients?",
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (View.ChargesList.SelectedObjects != null)
+                {
+                    foreach (var item in View.ChargesList.SelectedObjects)
+                    {
+                        MyChargesTable.ClearTableByCharge(((DBI.Charges)item).patientId, ((DBI.Charges)item).dateCharged);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete patients.");
+                }
+
+                RefreshChargesList();
+            }
+            else
+            {
+                return;
+            }
         }
 
         /// <summary>

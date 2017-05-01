@@ -55,7 +55,7 @@
             // btnRefreshPatients
             // 
             this.btnRefreshPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRefreshPatients.Location = new System.Drawing.Point(12, 59);
+            this.btnRefreshPatients.Location = new System.Drawing.Point(29, 54);
             this.btnRefreshPatients.Name = "btnRefreshPatients";
             this.btnRefreshPatients.Size = new System.Drawing.Size(100, 45);
             this.btnRefreshPatients.TabIndex = 1;
@@ -66,7 +66,7 @@
             // btnAddPatient
             // 
             this.btnAddPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPatient.Location = new System.Drawing.Point(12, 110);
+            this.btnAddPatient.Location = new System.Drawing.Point(29, 105);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(100, 50);
             this.btnAddPatient.TabIndex = 2;
@@ -77,7 +77,7 @@
             // btnDeletePatients
             // 
             this.btnDeletePatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDeletePatients.Location = new System.Drawing.Point(12, 166);
+            this.btnDeletePatients.Location = new System.Drawing.Point(29, 161);
             this.btnDeletePatients.Name = "btnDeletePatients";
             this.btnDeletePatients.Size = new System.Drawing.Size(100, 50);
             this.btnDeletePatients.TabIndex = 3;
@@ -88,7 +88,7 @@
             // txtPatientSearch
             // 
             this.txtPatientSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatientSearch.Location = new System.Drawing.Point(199, 35);
+            this.txtPatientSearch.Location = new System.Drawing.Point(216, 30);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(373, 20);
             this.txtPatientSearch.TabIndex = 4;
@@ -96,7 +96,7 @@
             // btnSearchPatients
             // 
             this.btnSearchPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchPatients.Location = new System.Drawing.Point(118, 32);
+            this.btnSearchPatients.Location = new System.Drawing.Point(135, 27);
             this.btnSearchPatients.Name = "btnSearchPatients";
             this.btnSearchPatients.Size = new System.Drawing.Size(75, 23);
             this.btnSearchPatients.TabIndex = 5;
@@ -142,10 +142,11 @@
             this.olvPatientsList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvPatientsList.FullRowSelect = true;
             this.olvPatientsList.GridLines = true;
-            this.olvPatientsList.Location = new System.Drawing.Point(118, 59);
+            this.olvPatientsList.HideSelection = false;
+            this.olvPatientsList.Location = new System.Drawing.Point(135, 54);
             this.olvPatientsList.Name = "olvPatientsList";
             this.olvPatientsList.ShowGroups = false;
-            this.olvPatientsList.Size = new System.Drawing.Size(1209, 340);
+            this.olvPatientsList.Size = new System.Drawing.Size(892, 340);
             this.olvPatientsList.TabIndex = 0;
             this.olvPatientsList.UseCompatibleStateImageBehavior = false;
             this.olvPatientsList.View = System.Windows.Forms.View.Details;
@@ -243,9 +244,10 @@
             // 
             // Patients
             // 
+            this.AcceptButton = this.btnSearchPatients;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 468);
+            this.ClientSize = new System.Drawing.Size(1068, 419);
             this.Controls.Add(this.btnSearchPatients);
             this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnDeletePatients);

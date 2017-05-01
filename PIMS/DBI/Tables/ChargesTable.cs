@@ -49,6 +49,28 @@ namespace DBI
         }
 
         /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="chargeId"></param>
+        public void ClearTableByCharge(int patientId, DateTime dateCharged)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "patientId = @patientId AND dateCharged = @dateCharged";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@patientId", patientId);
+                myCommand.Parameters.AddWithValue("@dateCharged", dateCharged);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
+        /// <summary>
         /// Get a count of all records in the table.
         /// </summary>
         /// <returns></returns>

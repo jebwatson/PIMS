@@ -46,6 +46,29 @@ namespace DBI
         }
 
         /// <summary>
+        /// Delete any records with the admissionId specified.
+        /// </summary>
+        /// <param name="procId"></param>
+        public void ClearTableByProc(int patientId, DateTime startTime, DateTime stopTime)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "patientId = @patientId AND startTime = @startTime AND stopTime = @stopTime";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@patientId", patientId);
+                myCommand.Parameters.AddWithValue("@startTime", startTime);
+                myCommand.Parameters.AddWithValue("@stopTime", stopTime);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
+        /// <summary>
         /// Get a count of all records in the table.
         /// </summary>
         /// <returns></returns>

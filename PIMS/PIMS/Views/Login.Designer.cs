@@ -62,7 +62,7 @@ namespace PIMS.Views
             // 
             this.imgPims.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgPims.Image = global::PIMS.Properties.Resources.Redcrossnew1;
-            this.imgPims.Location = new System.Drawing.Point(9, 10);
+            this.imgPims.Location = new System.Drawing.Point(7, 8);
             this.imgPims.Margin = new System.Windows.Forms.Padding(2);
             this.imgPims.Name = "imgPims";
             this.imgPims.Size = new System.Drawing.Size(122, 122);
@@ -74,30 +74,31 @@ namespace PIMS.Views
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(348, 180);
+            this.txtUsername.Location = new System.Drawing.Point(274, 181);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 41);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.Size = new System.Drawing.Size(204, 35);
+            this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(348, 237);
+            this.txtPassword.Location = new System.Drawing.Point(274, 220);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(271, 41);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Size = new System.Drawing.Size(204, 35);
+            this.txtPassword.TabIndex = 3;
             // 
             // lblUser
             // 
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(154, 180);
+            this.lblUser.Location = new System.Drawing.Point(128, 185);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(189, 38);
+            this.lblUser.Size = new System.Drawing.Size(142, 31);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "Username:";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -106,9 +107,10 @@ namespace PIMS.Views
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(151, 237);
+            this.lblPassword.Location = new System.Drawing.Point(128, 225);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(189, 36);
+            this.lblPassword.Size = new System.Drawing.Size(142, 29);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -118,10 +120,9 @@ namespace PIMS.Views
             this.lblDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDatabase.AutoSize = true;
             this.lblDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatabase.Location = new System.Drawing.Point(191, 127);
-            this.lblDatabase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatabase.Location = new System.Drawing.Point(147, 144);
             this.lblDatabase.Name = "lblDatabase";
-            this.lblDatabase.Size = new System.Drawing.Size(149, 35);
+            this.lblDatabase.Size = new System.Drawing.Size(121, 27);
             this.lblDatabase.TabIndex = 7;
             this.lblDatabase.Text = "Database:";
             // 
@@ -130,10 +131,9 @@ namespace PIMS.Views
             this.lblServer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblServer.AutoSize = true;
             this.lblServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServer.Location = new System.Drawing.Point(217, 77);
-            this.lblServer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServer.Location = new System.Drawing.Point(180, 104);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(110, 35);
+            this.lblServer.Size = new System.Drawing.Size(88, 27);
             this.lblServer.TabIndex = 8;
             this.lblServer.Text = "Server:";
             // 
@@ -141,34 +141,32 @@ namespace PIMS.Views
             // 
             this.txtServer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.Location = new System.Drawing.Point(348, 74);
-            this.txtServer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtServer.Location = new System.Drawing.Point(274, 101);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(271, 42);
-            this.txtServer.TabIndex = 9;
+            this.txtServer.Size = new System.Drawing.Size(204, 35);
+            this.txtServer.TabIndex = 0;
             this.txtServer.Tag = "";
             // 
             // txtDatabase
             // 
             this.txtDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabase.Location = new System.Drawing.Point(348, 124);
-            this.txtDatabase.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDatabase.Location = new System.Drawing.Point(274, 141);
             this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(271, 42);
-            this.txtDatabase.TabIndex = 10;
+            this.txtDatabase.Size = new System.Drawing.Size(204, 35);
+            this.txtDatabase.TabIndex = 1;
             this.txtDatabase.Text = "PIMSFeatureTest";
             // 
             // btnLogin
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(296, 298);
+            this.btnLogin.Location = new System.Drawing.Point(270, 269);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(123, 50);
+            this.btnLogin.Size = new System.Drawing.Size(102, 41);
             this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login ";
+            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -176,10 +174,10 @@ namespace PIMS.Views
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(443, 298);
+            this.btnCancel.Location = new System.Drawing.Point(376, 269);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(131, 50);
+            this.btnCancel.Size = new System.Drawing.Size(102, 41);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -188,9 +186,9 @@ namespace PIMS.Views
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 458);
+            this.ClientSize = new System.Drawing.Size(629, 372);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtDatabase);
             this.Controls.Add(this.txtServer);
@@ -215,8 +213,6 @@ namespace PIMS.Views
         #endregion
 
         private System.Windows.Forms.PictureBox imgPims;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblDatabase;
@@ -225,5 +221,7 @@ namespace PIMS.Views
         private System.Windows.Forms.TextBox txtDatabase;
         private Button btnLogin;
         private Button btnCancel;
+        public TextBox txtUsername;
+        public TextBox txtPassword;
     }
 }

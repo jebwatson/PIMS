@@ -86,5 +86,15 @@ namespace PIMS.Views
         {
             Presenter.GenerateVisitorsReport();
         }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            olvReportsList.SelectAll();
+        }
+
+        private void btnDeselect_Click(object sender, EventArgs e)
+        {
+            olvReportsList.DeselectAll();
+        }
     }
 }
