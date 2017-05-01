@@ -64,7 +64,7 @@
             // 
             this.searchNotesBox.Location = new System.Drawing.Point(223, 13);
             this.searchNotesBox.Name = "searchNotesBox";
-            this.searchNotesBox.Size = new System.Drawing.Size(378, 20);
+            this.searchNotesBox.Size = new System.Drawing.Size(429, 20);
             this.searchNotesBox.TabIndex = 7;
             // 
             // olvNotesList
@@ -80,9 +80,10 @@
             this.olvNotesList.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvNotesList.FullRowSelect = true;
             this.olvNotesList.GridLines = true;
-            this.olvNotesList.Location = new System.Drawing.Point(35, 47);
+            this.olvNotesList.Location = new System.Drawing.Point(12, 47);
             this.olvNotesList.Name = "olvNotesList";
-            this.olvNotesList.Size = new System.Drawing.Size(566, 322);
+            this.olvNotesList.ShowGroups = false;
+            this.olvNotesList.Size = new System.Drawing.Size(640, 322);
             this.olvNotesList.TabIndex = 1;
             this.olvNotesList.UseCompatibleStateImageBehavior = false;
             this.olvNotesList.View = System.Windows.Forms.View.Details;

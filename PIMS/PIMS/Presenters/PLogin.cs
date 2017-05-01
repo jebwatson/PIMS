@@ -1,4 +1,4 @@
-﻿//#define JEBSCOMPUTER
+﻿#define JEBSCOMPUTER
 
 using DBI;
 using DBI.Utilities;
@@ -43,33 +43,31 @@ namespace PIMS.Presenters
                 // Establish a connection and close at the end of using
                 using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
                 {
+                    // If the connection is valid, this means that the username is valid.
+                    // If the username is valid, it needs to be in the users table. If it is not,
+                    // we need to add it.
                     if (myConnection != null)
                     {
                         UsersTable MyUsersTable = new UsersTable();
                         List<Users> MyUsersList = MyUsersTable.ReadListByUserName(view.Username);
 
-                        Settings.User.Default.UserId = MyUsersList[0].userId;
-                        Settings.User.Default.UserName = MyUsersList[0].username;
+                        // Only proceed if the current user exists in the users table
+                        if (MyUsersList.Count > 0)
+                        {
+                            Settings.User.Default.UserId = MyUsersList[0].userId;
+                            Settings.User.Default.UserName = MyUsersList[0].username;
 
-                        if (MyUsersList[0].accessLevel == 3)
-                        {
-                            Settings.User.Default.Doctor = false;
-                            Settings.User.Default.Nurse = true;
-                        }
-                        else if (MyUsersList[0].accessLevel == 4)
-                        {
-                            Settings.User.Default.Doctor = true;
-                            Settings.User.Default.Nurse = false;
+                            // Close the view and pass control back to the calling function.
+                            view.DialogResult = DialogResult.OK;
+                            view.Hide();
                         }
                         else
                         {
-                            Settings.User.Default.Doctor = false;
-                            Settings.User.Default.Nurse = false;
+                            MessageBox.Show("Error encountered: The current user does not exist in the database." +
+                                "Please contact your database administrator for help with this issue.");
+                            view.DialogResult = DialogResult.Cancel;
+                            view.Close();
                         }
-
-                        // Close the view and pass control back to the calling function.
-                        view.DialogResult = DialogResult.OK;
-                        view.Hide();
                     }
                     else
                     {

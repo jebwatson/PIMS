@@ -46,29 +46,5 @@ namespace PIMS.Settings {
                 this["UserName"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Doctor {
-            get {
-                return ((bool)(this["Doctor"]));
-            }
-            set {
-                this["Doctor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Nurse {
-            get {
-                return ((bool)(this["Nurse"]));
-            }
-            set {
-                this["Nurse"] = value;
-            }
-        }
     }
 }

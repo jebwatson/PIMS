@@ -47,11 +47,11 @@ namespace PIMS.Presenters
         /// </summary>
         public void AddNotes()
         {
-            //AddNote MyAddNoteView = new AddNote(((DBI.Notes)View.NotesList.Objects).patientId);
-            //if (MyAddNoteView.ShowDialog() == DialogResult.OK)
-            //{
-            //    RefreshNotesList();
-            //}
+            frmNewNotes MyNewNotesView = new frmNewNotes();
+            if (MyNewNotesView.ShowDialog() == DialogResult.OK)
+            {
+                RefreshNotesList();
+            }
         }
 
         /// <summary>
@@ -89,6 +89,63 @@ namespace PIMS.Presenters
         public void SearchNotes()
         {
            
+        }
+
+        /// <summary>
+        /// Open a new window for editing the notes and then refresh the notes list when the window closes.
+        /// </summary>
+        public void EditNotes()
+        {
+            if (DetermineEditAccess())
+            {
+                frmNewNotes EditNotes = new frmNewNotes((DBI.Notes)View.NotesList.SelectedObject);
+                if (EditNotes.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Notes saved successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Problem saving notes. Notes were not saved.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You do not have sufficient access privileges to edit this note.");
+            }
+
+            RefreshNotesList();
+        }
+
+        /// <summary>
+        /// Determine whether or not the current user can edit a note.
+        /// </summary>
+        /// <returns></returns>
+        private bool DetermineEditAccess()
+        {
+            bool CanEdit = false;
+
+            NotesTable MyNotesTable = new NotesTable();
+            DBI.Notes MyNote;
+            MyNotesTable.ReadListById(((DBI.Notes)View.NotesList.SelectedObject).noteId);
+
+            if (MyNotesTable.ItemList.Count > 0)
+            {
+                MyNote = MyNotesTable.ItemList[0];
+
+                UsersTable MyUserTable = new UsersTable();
+                List<Users> MyUsers = MyUserTable.ReadListById(MyNote.userId);
+                List<Users> MyCurrentUser = MyUserTable.ReadListById(Settings.User.Default.UserId);
+
+                if (MyUsers.Count > 0 && MyCurrentUser.Count > 0)
+                {
+                    if (MyCurrentUser[0].accessLevel >= MyUsers[0].accessLevel)
+                    {
+                        CanEdit = true;
+                    }
+                }
+            }
+
+            return CanEdit;
         }
     }
 }

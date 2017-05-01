@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicManagers\AdmissionsManager.cs" />
     <Compile Include="BusinessLogicManagers\PatientsManager.cs" />
     <Compile Include="Helpers\WizardPages.cs">
       <SubType>Component</SubType>
@@ -214,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmNewCharge.resx">
       <DependentUpon>frmNewCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmNewNotes.resx">
+      <DependentUpon>frmNewNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

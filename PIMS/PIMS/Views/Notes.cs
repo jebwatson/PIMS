@@ -38,7 +38,7 @@ namespace PIMS.Views
 
         private void editNote_Click(object sender, EventArgs e)
         {
-            
+            Presenter.EditNotes();
         }
 
         private void addNote_Click(object sender, EventArgs e)
