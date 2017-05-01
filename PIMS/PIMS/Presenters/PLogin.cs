@@ -1,5 +1,5 @@
 ﻿//#define JEBSCOMPUTER
-#define JEBSPERSONAL
+//#define JEBSPERSONAL
 
 using DBI;
 using DBI.Utilities;
