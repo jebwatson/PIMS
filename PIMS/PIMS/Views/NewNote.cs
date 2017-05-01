@@ -12,7 +12,7 @@ namespace PIMS.Views
 {
     public partial class NewNote : Form
     {
-        public NewNote()
+        public NewNote(DBI.Notes CurrentNote)
         {
             InitializeComponent();
         }
