@@ -17,20 +17,23 @@ namespace PIMS.Presenters
         // Locals
         Views.Notes View;
         NotesTable MyNotesTable;
+        PatientTable MyPatientsTable;
 
         public PNotes(Views.Notes view)
         {
             View = view;
         }
 
-        /// <summary>
-        /// Populate the notes table for the first time after it is created.
-        /// If there are no notes in the database, add a default case.
-        /// </summary>
-        public void PopulateNotesList()
+        public void RefreshPatientsList()
         {
-            MyNotesTable = new NotesTable();
-            View.NotesList.SetObjects(MyNotesTable.ReadList());
+            MyPatientsTable = new PatientTable();
+            View.PatientsList.SetObjects(MyPatientsTable.ReadList());
+        }
+
+        public void RefreshPatientsList(string patientName)
+        {
+            MyPatientsTable = new PatientTable();
+            View.PatientsList.SetObjects(MyPatientsTable.ReadListByName(patientName));
         }
 
         /// <summary>
@@ -39,7 +42,11 @@ namespace PIMS.Presenters
         public void RefreshNotesList()
         {
             MyNotesTable = new NotesTable();
-            View.NotesList.SetObjects(MyNotesTable.ReadList());
+
+            if (View.PatientsList.SelectedObject != null)
+            {
+                View.NotesList.SetObjects(MyNotesTable.ReadListByPatientId(((Patient)(View.PatientsList.SelectedObject)).patientId));
+            }
         }
 
         /// <summary>
@@ -51,6 +58,7 @@ namespace PIMS.Presenters
             if (MyNewNotesView.ShowDialog() == DialogResult.OK)
             {
                 RefreshNotesList();
+                MessageBox.Show("Note saved successfully.");
             }
         }
 
@@ -59,26 +67,39 @@ namespace PIMS.Presenters
         /// </summary>
         public void RemoveNotes()
         {
-            if (MessageBox.Show("Are you sure you want to delete the selected notes?",
-                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            try
             {
                 if (View.NotesList.SelectedObjects != null)
                 {
+                    List<DBI.Notes> ItemsForDeletion = new List<DBI.Notes>();
                     foreach (var item in View.NotesList.SelectedObjects)
                     {
-                        MyNotesTable.ClearTableById(((DBI.Notes)item).patientId);
+                        ItemsForDeletion.Add((DBI.Notes)item);
                     }
+
+                    if (MessageBox.Show("Are you sure you want to delete the selected notes?",
+                    "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        foreach (var item in ItemsForDeletion)
+                        {
+                            MyNotesTable.ClearTableById(item.noteId);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No notes available.");
+                    }
+
+                    RefreshNotesList();
                 }
                 else
                 {
-                    MessageBox.Show("No notes available.");
+                    return;
                 }
-
-                RefreshNotesList();
             }
-            else
+            catch (Exception)
             {
-                return;
+                MessageBox.Show("Unexpected error - reverting to last valid state.");
             }
         }
 
@@ -88,7 +109,27 @@ namespace PIMS.Presenters
         /// </summary>
         public void SearchNotes()
         {
+            if (View.SearchText.Length > 0 && View.SearchText != "Patient Name")
+            {
+                PatientTable MyPatientTable = new PatientTable();
+                RefreshPatientsList(View.SearchText);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a patient name or partial patient name.");
+            }
+        }
 
+        public void ToggleSearch()
+        {
+            if (View.SearchText.Length > 0)
+            {
+                View.SearchEnabled = true;
+            }
+            else
+            {
+                View.SearchEnabled = false;
+            }
         }
 
         /// <summary>
@@ -96,24 +137,32 @@ namespace PIMS.Presenters
         /// </summary>
         public void EditNotes()
         {
-            if (DetermineEditAccess())
+            try
             {
-                NewNote EditNotes = new NewNote((DBI.Notes)View.NotesList.SelectedObject);
-                if (EditNotes.ShowDialog() == DialogResult.OK)
+                if (DetermineEditAccess())
                 {
-                    MessageBox.Show("Notes saved successfully.");
+                    NewNote EditNotes = new NewNote((DBI.Notes)View.NotesList.SelectedObject);
+
+                    if (EditNotes.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Notes saved successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Problem saving notes. Notes were not saved.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Problem saving notes. Notes were not saved.");
+                    MessageBox.Show("You do not have sufficient access privileges to edit this note.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("You do not have sufficient access privileges to edit this note.");
-            }
 
-            RefreshNotesList();
+                RefreshNotesList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unexpected error - Reverting to last valid state.");
+            }
         }
 
         /// <summary>
@@ -126,26 +175,45 @@ namespace PIMS.Presenters
 
             NotesTable MyNotesTable = new NotesTable();
             DBI.Notes MyNote;
-            MyNotesTable.ReadListById(((DBI.Notes)View.NotesList.SelectedObject).noteId);
 
-            if (MyNotesTable.ItemList.Count > 0)
+            if (View.NotesList.SelectedObject != null)
             {
-                MyNote = MyNotesTable.ItemList[0];
+                MyNotesTable.ReadListById(((DBI.Notes)View.NotesList.SelectedObject).noteId);
 
-                UsersTable MyUserTable = new UsersTable();
-                List<Users> MyUsers = MyUserTable.ReadListById(MyNote.userId);
-                List<Users> MyCurrentUser = MyUserTable.ReadListById(Settings.User.Default.UserId);
-
-                if (MyUsers.Count > 0 && MyCurrentUser.Count > 0)
+                if (MyNotesTable.ItemList.Count > 0)
                 {
-                    if (MyCurrentUser[0].accessLevel >= MyUsers[0].accessLevel)
+                    MyNote = MyNotesTable.ItemList[0];
+
+                    UsersTable MyUserTable = new UsersTable();
+                    List<Users> MyUsers = MyUserTable.ReadListById(MyNote.userId);
+                    List<Users> MyCurrentUser = MyUserTable.ReadListById(Settings.User.Default.UserId);
+
+                    if (MyUsers.Count > 0 && MyCurrentUser.Count > 0)
                     {
-                        CanEdit = true;
+                        if (MyCurrentUser[0].accessLevel >= MyUsers[0].accessLevel)
+                        {
+                            CanEdit = true;
+                        }
                     }
                 }
             }
 
             return CanEdit;
+        }
+
+        public void RefreshForm()
+        {
+            if (View.NotesList.SelectedObjects == null)
+            {
+                // toggle the buttons
+                View.EditEnabled = false;
+                View.DeleteEnabled = false;
+            }
+            else
+            {
+                View.EditEnabled = true;
+                View.DeleteEnabled = true;
+            }
         }
     }
 }

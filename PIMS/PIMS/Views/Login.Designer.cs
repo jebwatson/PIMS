@@ -73,22 +73,22 @@ namespace PIMS.Views
             // txtUsername
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(274, 181);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(274, 187);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(204, 35);
+            this.txtUsername.Size = new System.Drawing.Size(204, 26);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(274, 220);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(274, 228);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(204, 35);
+            this.txtPassword.Size = new System.Drawing.Size(204, 26);
             this.txtPassword.TabIndex = 3;
             // 
             // lblUser
@@ -140,20 +140,20 @@ namespace PIMS.Views
             // txtServer
             // 
             this.txtServer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtServer.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.Location = new System.Drawing.Point(274, 101);
+            this.txtServer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServer.Location = new System.Drawing.Point(274, 107);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(204, 35);
+            this.txtServer.Size = new System.Drawing.Size(204, 26);
             this.txtServer.TabIndex = 0;
             this.txtServer.Tag = "";
             // 
             // txtDatabase
             // 
             this.txtDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDatabase.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabase.Location = new System.Drawing.Point(274, 141);
+            this.txtDatabase.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatabase.Location = new System.Drawing.Point(274, 147);
             this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(204, 35);
+            this.txtDatabase.Size = new System.Drawing.Size(204, 26);
             this.txtDatabase.TabIndex = 1;
             this.txtDatabase.Text = "PIMSFeatureTest";
             // 

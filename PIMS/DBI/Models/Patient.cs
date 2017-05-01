@@ -23,6 +23,7 @@ namespace DBI
         public string phoneMobile { get; set; }
         public string areaCodeMobile { get; set; }
         public string familyDoctor { get; set; }
+        public int NotesCount { get; set; }
 
         public Patient()
         {
@@ -41,6 +42,7 @@ namespace DBI
             phoneMobile = string.Empty;
             areaCodeMobile = string.Empty;
             familyDoctor = string.Empty;
+            NotesCount = 0;
         }
 
         public Patient(string nameLast, string nameFirst, string nameMiddle, string street,
@@ -62,6 +64,7 @@ namespace DBI
             this.areaCodeMobile = areaCodeMobile;
             this.familyDoctor = familyDoctor;
             this.patientId = patientId;
+            this.NotesCount = 0;
         }
     }
 }

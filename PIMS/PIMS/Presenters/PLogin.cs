@@ -1,4 +1,5 @@
 ﻿//#define JEBSCOMPUTER
+#define JEBSPERSONAL
 
 using DBI;
 using DBI.Utilities;
@@ -34,6 +35,13 @@ namespace PIMS.Presenters
                 view.ServerName = "CSSA-JEB\\SQLEXPRESS";
                 view.DatabaseName = "PIMSFeatureTest";
                 view.Username = "doctor";
+                view.Password = "test";
+#endif
+
+#if JEBSPERSONAL
+                view.ServerName = "JEBSDESKTOP\\SQLEXPRESS";
+                view.DatabaseName = "PIMSFeatureTest";
+                view.Username = "watson";
                 view.Password = "test";
 #endif
 

@@ -50,6 +50,23 @@ namespace DBI
             }
         }
 
+        public void ClearTableByPatientId(int patientId)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "DELETE FROM " + theTable +
+                    " WHERE " +
+                    "patientId = @patientId";
+
+                SqlCommand myCommand = new SqlCommand(myQuery, myConnection);
+
+                myCommand.Parameters.AddWithValue("@patientId", patientId);
+
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+            }
+        }
+
         /// <summary>
         /// Get a count of all records in the table.
         /// </summary>
@@ -62,6 +79,15 @@ namespace DBI
                 return QueryExecutor.ExecuteSqlQueryScalar(myQuery, myConnection);
             } // using
         } // CountRows
+
+        public int CountRowsByPatientId(int patientId)
+        {
+            using (SqlConnection myConnection = ConnectionsManager.GetNewConnection())
+            {
+                string myQuery = "SELECT COUNT(*) FROM " + theTable + " WHERE patientId = " + patientId;
+                return QueryExecutor.ExecuteSqlQueryScalar(myQuery, myConnection);
+            }
+        }
 
         /// <summary>
         /// Read all records from the table and save them in the ItemList
@@ -149,6 +175,91 @@ namespace DBI
                 } // for
             } // if
         } // ReadList
+
+        public List<Notes> ReadListByPatientId(int id)
+        {
+            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+
+            string myQuery = "SELECT * FROM " + theTable + " WHERE patientId = " + "'" + id + "'";
+
+            DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+            if (dsObject != null && dsObject.Tables[0].Rows.Count > 0)
+            {
+                DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                foreach (DataRow dr in dtObject.Rows)
+                {
+                    // extract all fields of the current row
+                    int noteId = Convert.ToInt32(dr["noteId"]);
+                    string notes = dr["notes"].ToString();
+                    bool doctor = Convert.ToBoolean(dr["doctor"]);
+                    bool nurse = Convert.ToBoolean(dr["nurse"]);
+                    int userId = Convert.ToInt32(dr["userId"]);
+                    int patientId = Convert.ToInt32(dr["patientId"]);
+
+                    // fill the ItemList
+                    Notes newNotes = new Notes();
+                    newNotes.noteId = noteId;
+                    newNotes.notes = notes;
+                    newNotes.doctor = doctor;
+                    newNotes.nurse = nurse;
+                    newNotes.userId = userId;
+                    newNotes.patientId = patientId;
+
+                    // Need to add the patient name to the object
+                    AddPatientName(newNotes);
+
+                    ItemList.Add(newNotes);
+                } // for
+            } // if
+
+            return ItemList;
+        }
+
+        public List<Notes> ReadListByPatients(List<Patient> currentPatients)
+        {
+            ItemList.Clear();   // ensure that the itemlist is empty so we don't get duplicates
+
+            foreach (var patient in currentPatients)
+            {
+                string myQuery = "SELECT * FROM " + theTable + " WHERE patientId = " + "'" + patient.patientId + "'";
+
+                DataSet dsObject = QueryExecutor.ExecuteSqlQuery(myQuery);
+
+                if (dsObject != null && dsObject.Tables[0].Rows.Count > 0)
+                {
+                    DataTable dtObject = dsObject.Tables[0];    // get the DataTable reference once
+
+                    foreach (DataRow dr in dtObject.Rows)
+                    {
+                        // extract all fields of the current row
+                        int noteId = Convert.ToInt32(dr["noteId"]);
+                        string notes = dr["notes"].ToString();
+                        bool doctor = Convert.ToBoolean(dr["doctor"]);
+                        bool nurse = Convert.ToBoolean(dr["nurse"]);
+                        int userId = Convert.ToInt32(dr["userId"]);
+                        int patientId = Convert.ToInt32(dr["patientId"]);
+
+                        // fill the ItemList
+                        Notes newNotes = new Notes();
+                        newNotes.noteId = noteId;
+                        newNotes.notes = notes;
+                        newNotes.doctor = doctor;
+                        newNotes.nurse = nurse;
+                        newNotes.userId = userId;
+                        newNotes.patientId = patientId;
+
+                        // Need to add the patient name to the object
+                        AddPatientName(newNotes);
+
+                        ItemList.Add(newNotes);
+                    } // for
+                } // if
+            }
+
+            return ItemList;
+        }
 
         /// <summary>
         /// Given a single NotesDoctor object, update the record corresponding

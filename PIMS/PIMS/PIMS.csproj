@@ -228,6 +228,9 @@
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewNote.resx">
+      <DependentUpon>NewNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NewPatient.resx">
       <DependentUpon>NewPatient.cs</DependentUpon>
     </EmbeddedResource>

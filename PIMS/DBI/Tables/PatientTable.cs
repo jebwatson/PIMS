@@ -113,6 +113,9 @@ namespace DBI
                     newPatient.areaCodeMobile = areaCodeMobile;
                     newPatient.familyDoctor = familyDoctor;
 
+                    NotesTable MyNotesTable = new NotesTable();
+                    newPatient.NotesCount = MyNotesTable.CountRowsByPatientId(patientId);
+
                     patients.Add(newPatient);
                 } // for
             } // if
@@ -173,6 +176,9 @@ namespace DBI
                     newPatient.areaCodeMobile = areaCodeMobile;
                     newPatient.familyDoctor = familyDoctor;
 
+                    NotesTable MyNotesTable = new NotesTable();
+                    newPatient.NotesCount = MyNotesTable.CountRowsByPatientId(patientId);
+
                     patients.Add(newPatient);
                 } // for
             } // if
@@ -232,6 +238,9 @@ namespace DBI
                     newPatient.phoneMobile = phoneMobile;
                     newPatient.areaCodeMobile = areaCodeMobile;
                     newPatient.familyDoctor = familyDoctor;
+
+                    NotesTable MyNotesTable = new NotesTable();
+                    newPatient.NotesCount = MyNotesTable.CountRowsByPatientId(patientId);
 
                     patients.Add(newPatient);
                 } // for
